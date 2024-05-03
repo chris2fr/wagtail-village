@@ -6,7 +6,7 @@
   {% if settings.content_manager.CmsDsfrConfig.operator_logo_file and settings.content_manager.CmsDsfrConfig.operator_logo_alt %}
     {% image settings.content_manager.CmsDsfrConfig.operator_logo_file original as logo_img %}
     <div class="fr-footer__brand fr-enlarge-link">
-      <p class="fr-logo"
+      <p class="gv-logo"
          title="{{ settings.content_manager.CmsDsfrConfig.footer_brand|default:'république française' }}">
         {{ settings.content_manager.CmsDsfrConfig.footer_brand_html| default_if_none:'république<br />française' | safe }}
       </p>
