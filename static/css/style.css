@@ -32,3 +32,21 @@
   margin: 1.5rem;
   width: 4.5rem;
 }
+
+
+
+body {
+  font-family: 'fengardoneue', 'Charter', 'Bitstream Charter', 'Sitka Text', 'Cambria', 'serif';
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'lack', 'system-ui', 'sans-serif';
+}
+
+.fr-logo:after {
+  background-image: unset;
+}
+
+.fr-logo:before {
+  background-image: unset;
+}
