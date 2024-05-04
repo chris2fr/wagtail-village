@@ -9,10 +9,11 @@ from wagtail.documents import urls as wagtaildocs_urls
 urlpatterns = [
     path("cms-admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 
 urlpatterns += i18n_patterns(
     path("", include("blog.urls", namespace="blog")),
     path("", include("content_manager.urls")),
     prefix_default_language=False,
 )
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
