@@ -1,0 +1,7 @@
+/*!
+ * dsfacile v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */@media (min-width:36em){
+  /*! media sm */}@media (min-width:48em){
+  /*! media md */}@media (min-width:62em){
+  /*! media lg */}@media (min-width:78em){
+  /*! media xl */}@media (-ms-high-contrast:active),(-ms-high-contrast:none){.dsfacile-link{background-image:none;color:#000091;text-decoration:underline}.dsfacile-link--sm:before,.dsfacile-link:before{height:1rem;width:1rem}.dsfacile-link--lg:before,.dsfacile-link--sm:before,.dsfacile-link:before{background-color:transparent;background-repeat:no-repeat;background-size:100%}.dsfacile-link--lg:before{height:1.5rem;width:1.5rem}ol.dsfacile-links-group,ul.dsfacile-links-group{list-style-type:none}ol.dsfacile-links-group,ul.dsfacile-links-group{margin-bottom:0;margin-top:0;padding-left:0}.dsfacile-link__detail{color:#666}.dsfacile-links-group li::marker{color:#000091}.dsfacile-links-group--bordered{box-shadow:inset 0 0 0 1px #ddd}.dsfacile-link--close{background-color:transparent;color:#000091}.dsfacile-link--close:hover{background-color:rgba(0,0,0,.05)}.dsfacile-link--close:active{background-color:rgba(0,0,0,.1)}.dsfacile-link--close:disabled,a.dsfacile-link--close:not([href]){background-color:transparent;color:#929292}.dsfacile-link--close:disabled:hover,a.dsfacile-link--close:not([href]):hover{background-color:rgba(0,0,0,.05)}.dsfacile-link--close:disabled:active,a.dsfacile-link--close:not([href]):active{background-color:rgba(0,0,0,.1)}}

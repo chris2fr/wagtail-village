@@ -21,12 +21,20 @@
     {% include "favicon.html" %}
 
     {% dsfr_css %}
+
+    <link href="{% static 'css/dsfacile/dsfacile.min.css' %}" rel="stylesheet">
+
     <link href="{% static 'dsfr/dist/utility/utility.min.css' %}"
           rel="stylesheet"
           type="text/css" />
+
     <link href="{% sass_src 'css/style.sass' %}"
           rel="stylesheet"
           type="text/css" />
+
+          <script type="module" href="js/dsfacile/dsfacile.module.min.js" ></script>
+          <script type="text/javascript" nomodule href="js/dsfacile/dsfacile.nomodule.min.js" ></script>
+
 
     {% block extra_css %}
     {% endblock extra_css %}

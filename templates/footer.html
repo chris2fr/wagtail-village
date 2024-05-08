@@ -19,7 +19,7 @@
               <img class="fr-footer__logo"
                    src="{{ SITE_CONFIG.operator_logo_file.url }}"
                    alt="{{ SITE_CONFIG.operator_logo_alt }}"
-                   {% if SITE_CONFIG.operator_logo_width >= 1 %}style="max-width:{{ SITE_CONFIG.operator_logo_width|floatformat }}rem;"{% endif %} />
+                   {% if SITE_CONFIG.operator_logo_width >= 1 %}style="max-width:{{ SITE_CONFIG.operator_logo_width|floatformat:"0" }}rem;"{% endif %} />
               {# L'alternative de l'image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l'image #}
             </a>
           </div>
