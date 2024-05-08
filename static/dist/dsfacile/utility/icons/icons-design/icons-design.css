@@ -1,0 +1,515 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  ICON DESIGN
+\* ˍˍˍˍˍˍˍˍˍ */
+.dsfacile-icon-ball-pen-fill::before,
+.dsfacile-icon-ball-pen-fill::after {
+  -webkit-mask-image: url("../../../icons/design/ball-pen-fill.svg");
+  mask-image: url("../../../icons/design/ball-pen-fill.svg");
+}
+
+.dsfacile-icon-ball-pen-line::before,
+.dsfacile-icon-ball-pen-line::after {
+  -webkit-mask-image: url("../../../icons/design/ball-pen-line.svg");
+  mask-image: url("../../../icons/design/ball-pen-line.svg");
+}
+
+.dsfacile-icon-brush-3-fill::before,
+.dsfacile-icon-brush-3-fill::after {
+  -webkit-mask-image: url("../../../icons/design/brush-3-fill.svg");
+  mask-image: url("../../../icons/design/brush-3-fill.svg");
+}
+
+.dsfacile-icon-brush-3-line::before,
+.dsfacile-icon-brush-3-line::after {
+  -webkit-mask-image: url("../../../icons/design/brush-3-line.svg");
+  mask-image: url("../../../icons/design/brush-3-line.svg");
+}
+
+.dsfacile-icon-brush-fill::before,
+.dsfacile-icon-brush-fill::after {
+  -webkit-mask-image: url("../../../icons/design/brush-fill.svg");
+  mask-image: url("../../../icons/design/brush-fill.svg");
+}
+
+.dsfacile-icon-brush-line::before,
+.dsfacile-icon-brush-line::after {
+  -webkit-mask-image: url("../../../icons/design/brush-line.svg");
+  mask-image: url("../../../icons/design/brush-line.svg");
+}
+
+.dsfacile-icon-contrast-fill::before,
+.dsfacile-icon-contrast-fill::after {
+  -webkit-mask-image: url("../../../icons/design/contrast-fill.svg");
+  mask-image: url("../../../icons/design/contrast-fill.svg");
+}
+
+.dsfacile-icon-contrast-line::before,
+.dsfacile-icon-contrast-line::after {
+  -webkit-mask-image: url("../../../icons/design/contrast-line.svg");
+  mask-image: url("../../../icons/design/contrast-line.svg");
+}
+
+.dsfacile-icon-crop-fill::before,
+.dsfacile-icon-crop-fill::after {
+  -webkit-mask-image: url("../../../icons/design/crop-fill.svg");
+  mask-image: url("../../../icons/design/crop-fill.svg");
+}
+
+.dsfacile-icon-crop-line::before,
+.dsfacile-icon-crop-line::after {
+  -webkit-mask-image: url("../../../icons/design/crop-line.svg");
+  mask-image: url("../../../icons/design/crop-line.svg");
+}
+
+.dsfacile-icon-drag-move-2-fill::before,
+.dsfacile-icon-drag-move-2-fill::after {
+  -webkit-mask-image: url("../../../icons/design/drag-move-2-fill.svg");
+  mask-image: url("../../../icons/design/drag-move-2-fill.svg");
+}
+
+.dsfacile-icon-drag-move-2-line::before,
+.dsfacile-icon-drag-move-2-line::after {
+  -webkit-mask-image: url("../../../icons/design/drag-move-2-line.svg");
+  mask-image: url("../../../icons/design/drag-move-2-line.svg");
+}
+
+.dsfacile-icon-drop-fill::before,
+.dsfacile-icon-drop-fill::after {
+  -webkit-mask-image: url("../../../icons/design/drop-fill.svg");
+  mask-image: url("../../../icons/design/drop-fill.svg");
+}
+
+.dsfacile-icon-drop-line::before,
+.dsfacile-icon-drop-line::after {
+  -webkit-mask-image: url("../../../icons/design/drop-line.svg");
+  mask-image: url("../../../icons/design/drop-line.svg");
+}
+
+.dsfacile-icon-edit-box-fill::before,
+.dsfacile-icon-edit-box-fill::after {
+  -webkit-mask-image: url("../../../icons/design/edit-box-fill.svg");
+  mask-image: url("../../../icons/design/edit-box-fill.svg");
+}
+
+.dsfacile-icon-edit-box-line::before,
+.dsfacile-icon-edit-box-line::after {
+  -webkit-mask-image: url("../../../icons/design/edit-box-line.svg");
+  mask-image: url("../../../icons/design/edit-box-line.svg");
+}
+
+.dsfacile-icon-edit-fill::before,
+.dsfacile-icon-edit-fill::after {
+  -webkit-mask-image: url("../../../icons/design/edit-fill.svg");
+  mask-image: url("../../../icons/design/edit-fill.svg");
+}
+
+.dsfacile-icon-edit-line::before,
+.dsfacile-icon-edit-line::after {
+  -webkit-mask-image: url("../../../icons/design/edit-line.svg");
+  mask-image: url("../../../icons/design/edit-line.svg");
+}
+
+.dsfacile-icon-ink-bottle-fill::before,
+.dsfacile-icon-ink-bottle-fill::after {
+  -webkit-mask-image: url("../../../icons/design/ink-bottle-fill.svg");
+  mask-image: url("../../../icons/design/ink-bottle-fill.svg");
+}
+
+.dsfacile-icon-ink-bottle-line::before,
+.dsfacile-icon-ink-bottle-line::after {
+  -webkit-mask-image: url("../../../icons/design/ink-bottle-line.svg");
+  mask-image: url("../../../icons/design/ink-bottle-line.svg");
+}
+
+.dsfacile-icon-layout-grid-fill::before,
+.dsfacile-icon-layout-grid-fill::after {
+  -webkit-mask-image: url("../../../icons/design/layout-grid-fill.svg");
+  mask-image: url("../../../icons/design/layout-grid-fill.svg");
+}
+
+.dsfacile-icon-layout-grid-line::before,
+.dsfacile-icon-layout-grid-line::after {
+  -webkit-mask-image: url("../../../icons/design/layout-grid-line.svg");
+  mask-image: url("../../../icons/design/layout-grid-line.svg");
+}
+
+.dsfacile-icon-mark-pen-fill::before,
+.dsfacile-icon-mark-pen-fill::after {
+  -webkit-mask-image: url("../../../icons/design/mark-pen-fill.svg");
+  mask-image: url("../../../icons/design/mark-pen-fill.svg");
+}
+
+.dsfacile-icon-mark-pen-line::before,
+.dsfacile-icon-mark-pen-line::after {
+  -webkit-mask-image: url("../../../icons/design/mark-pen-line.svg");
+  mask-image: url("../../../icons/design/mark-pen-line.svg");
+}
+
+.dsfacile-icon-paint-brush-fill::before,
+.dsfacile-icon-paint-brush-fill::after {
+  -webkit-mask-image: url("../../../icons/design/paint-brush-fill.svg");
+  mask-image: url("../../../icons/design/paint-brush-fill.svg");
+}
+
+.dsfacile-icon-paint-brush-line::before,
+.dsfacile-icon-paint-brush-line::after {
+  -webkit-mask-image: url("../../../icons/design/paint-brush-line.svg");
+  mask-image: url("../../../icons/design/paint-brush-line.svg");
+}
+
+.dsfacile-icon-paint-fill::before,
+.dsfacile-icon-paint-fill::after {
+  -webkit-mask-image: url("../../../icons/design/paint-fill.svg");
+  mask-image: url("../../../icons/design/paint-fill.svg");
+}
+
+.dsfacile-icon-paint-line::before,
+.dsfacile-icon-paint-line::after {
+  -webkit-mask-image: url("../../../icons/design/paint-line.svg");
+  mask-image: url("../../../icons/design/paint-line.svg");
+}
+
+.dsfacile-icon-palette-fill::before,
+.dsfacile-icon-palette-fill::after {
+  -webkit-mask-image: url("../../../icons/design/palette-fill.svg");
+  mask-image: url("../../../icons/design/palette-fill.svg");
+}
+
+.dsfacile-icon-palette-line::before,
+.dsfacile-icon-palette-line::after {
+  -webkit-mask-image: url("../../../icons/design/palette-line.svg");
+  mask-image: url("../../../icons/design/palette-line.svg");
+}
+
+.dsfacile-icon-pantone-fill::before,
+.dsfacile-icon-pantone-fill::after {
+  -webkit-mask-image: url("../../../icons/design/pantone-fill.svg");
+  mask-image: url("../../../icons/design/pantone-fill.svg");
+}
+
+.dsfacile-icon-pantone-line::before,
+.dsfacile-icon-pantone-line::after {
+  -webkit-mask-image: url("../../../icons/design/pantone-line.svg");
+  mask-image: url("../../../icons/design/pantone-line.svg");
+}
+
+.dsfacile-icon-pen-nib-fill::before,
+.dsfacile-icon-pen-nib-fill::after {
+  -webkit-mask-image: url("../../../icons/design/pen-nib-fill.svg");
+  mask-image: url("../../../icons/design/pen-nib-fill.svg");
+}
+
+.dsfacile-icon-pen-nib-line::before,
+.dsfacile-icon-pen-nib-line::after {
+  -webkit-mask-image: url("../../../icons/design/pen-nib-line.svg");
+  mask-image: url("../../../icons/design/pen-nib-line.svg");
+}
+
+.dsfacile-icon-pencil-fill::before,
+.dsfacile-icon-pencil-fill::after {
+  -webkit-mask-image: url("../../../icons/design/pencil-fill.svg");
+  mask-image: url("../../../icons/design/pencil-fill.svg");
+}
+
+.dsfacile-icon-pencil-line::before,
+.dsfacile-icon-pencil-line::after {
+  -webkit-mask-image: url("../../../icons/design/pencil-line.svg");
+  mask-image: url("../../../icons/design/pencil-line.svg");
+}
+
+.dsfacile-icon-pencil-ruler-fill::before,
+.dsfacile-icon-pencil-ruler-fill::after {
+  -webkit-mask-image: url("../../../icons/design/pencil-ruler-fill.svg");
+  mask-image: url("../../../icons/design/pencil-ruler-fill.svg");
+}
+
+.dsfacile-icon-pencil-ruler-line::before,
+.dsfacile-icon-pencil-ruler-line::after {
+  -webkit-mask-image: url("../../../icons/design/pencil-ruler-line.svg");
+  mask-image: url("../../../icons/design/pencil-ruler-line.svg");
+}
+
+.dsfacile-icon-sip-fill::before,
+.dsfacile-icon-sip-fill::after {
+  -webkit-mask-image: url("../../../icons/design/sip-fill.svg");
+  mask-image: url("../../../icons/design/sip-fill.svg");
+}
+
+.dsfacile-icon-sip-line::before,
+.dsfacile-icon-sip-line::after {
+  -webkit-mask-image: url("../../../icons/design/sip-line.svg");
+  mask-image: url("../../../icons/design/sip-line.svg");
+}
+
+.dsfacile-icon-table-fill::before,
+.dsfacile-icon-table-fill::after {
+  -webkit-mask-image: url("../../../icons/design/table-fill.svg");
+  mask-image: url("../../../icons/design/table-fill.svg");
+}
+
+.dsfacile-icon-table-line::before,
+.dsfacile-icon-table-line::after {
+  -webkit-mask-image: url("../../../icons/design/table-line.svg");
+  mask-image: url("../../../icons/design/table-line.svg");
+}
+
+.dsfacile-fi-edit-fill::before,
+.dsfacile-fi-edit-fill::after {
+  -webkit-mask-image: url("../../../icons/design/edit-fill.svg");
+  mask-image: url("../../../icons/design/edit-fill.svg");
+}
+
+.dsfacile-fi-edit-line::before,
+.dsfacile-fi-edit-line::after {
+  -webkit-mask-image: url("../../../icons/design/edit-line.svg");
+  mask-image: url("../../../icons/design/edit-line.svg");
+}
+
+@media (min-width: 36em) {
+  /*! media sm */
+
+  /*! media sm */
+}
+
+@media (min-width: 48em) {
+  /*! media md */
+
+  /*! media md */
+}
+
+@media (min-width: 62em) {
+  /*! media lg */
+
+  /*! media lg */
+}
+
+@media (min-width: 78em) {
+  /*! media xl */
+
+  /*! media xl */
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .dsfacile-icon-ball-pen-fill::before,
+  .dsfacile-icon-ball-pen-fill::after {
+    background-image: url("../../../icons/design/ball-pen-fill.svg");
+  }
+
+  .dsfacile-icon-ball-pen-line::before,
+  .dsfacile-icon-ball-pen-line::after {
+    background-image: url("../../../icons/design/ball-pen-line.svg");
+  }
+
+  .dsfacile-icon-brush-3-fill::before,
+  .dsfacile-icon-brush-3-fill::after {
+    background-image: url("../../../icons/design/brush-3-fill.svg");
+  }
+
+  .dsfacile-icon-brush-3-line::before,
+  .dsfacile-icon-brush-3-line::after {
+    background-image: url("../../../icons/design/brush-3-line.svg");
+  }
+
+  .dsfacile-icon-brush-fill::before,
+  .dsfacile-icon-brush-fill::after {
+    background-image: url("../../../icons/design/brush-fill.svg");
+  }
+
+  .dsfacile-icon-brush-line::before,
+  .dsfacile-icon-brush-line::after {
+    background-image: url("../../../icons/design/brush-line.svg");
+  }
+
+  .dsfacile-icon-contrast-fill::before,
+  .dsfacile-icon-contrast-fill::after {
+    background-image: url("../../../icons/design/contrast-fill.svg");
+  }
+
+  .dsfacile-icon-contrast-line::before,
+  .dsfacile-icon-contrast-line::after {
+    background-image: url("../../../icons/design/contrast-line.svg");
+  }
+
+  .dsfacile-icon-crop-fill::before,
+  .dsfacile-icon-crop-fill::after {
+    background-image: url("../../../icons/design/crop-fill.svg");
+  }
+
+  .dsfacile-icon-crop-line::before,
+  .dsfacile-icon-crop-line::after {
+    background-image: url("../../../icons/design/crop-line.svg");
+  }
+
+  .dsfacile-icon-drag-move-2-fill::before,
+  .dsfacile-icon-drag-move-2-fill::after {
+    background-image: url("../../../icons/design/drag-move-2-fill.svg");
+  }
+
+  .dsfacile-icon-drag-move-2-line::before,
+  .dsfacile-icon-drag-move-2-line::after {
+    background-image: url("../../../icons/design/drag-move-2-line.svg");
+  }
+
+  .dsfacile-icon-drop-fill::before,
+  .dsfacile-icon-drop-fill::after {
+    background-image: url("../../../icons/design/drop-fill.svg");
+  }
+
+  .dsfacile-icon-drop-line::before,
+  .dsfacile-icon-drop-line::after {
+    background-image: url("../../../icons/design/drop-line.svg");
+  }
+
+  .dsfacile-icon-edit-box-fill::before,
+  .dsfacile-icon-edit-box-fill::after {
+    background-image: url("../../../icons/design/edit-box-fill.svg");
+  }
+
+  .dsfacile-icon-edit-box-line::before,
+  .dsfacile-icon-edit-box-line::after {
+    background-image: url("../../../icons/design/edit-box-line.svg");
+  }
+
+  .dsfacile-icon-edit-fill::before,
+  .dsfacile-icon-edit-fill::after {
+    background-image: url("../../../icons/design/edit-fill.svg");
+  }
+
+  .dsfacile-icon-edit-line::before,
+  .dsfacile-icon-edit-line::after {
+    background-image: url("../../../icons/design/edit-line.svg");
+  }
+
+  .dsfacile-icon-ink-bottle-fill::before,
+  .dsfacile-icon-ink-bottle-fill::after {
+    background-image: url("../../../icons/design/ink-bottle-fill.svg");
+  }
+
+  .dsfacile-icon-ink-bottle-line::before,
+  .dsfacile-icon-ink-bottle-line::after {
+    background-image: url("../../../icons/design/ink-bottle-line.svg");
+  }
+
+  .dsfacile-icon-layout-grid-fill::before,
+  .dsfacile-icon-layout-grid-fill::after {
+    background-image: url("../../../icons/design/layout-grid-fill.svg");
+  }
+
+  .dsfacile-icon-layout-grid-line::before,
+  .dsfacile-icon-layout-grid-line::after {
+    background-image: url("../../../icons/design/layout-grid-line.svg");
+  }
+
+  .dsfacile-icon-mark-pen-fill::before,
+  .dsfacile-icon-mark-pen-fill::after {
+    background-image: url("../../../icons/design/mark-pen-fill.svg");
+  }
+
+  .dsfacile-icon-mark-pen-line::before,
+  .dsfacile-icon-mark-pen-line::after {
+    background-image: url("../../../icons/design/mark-pen-line.svg");
+  }
+
+  .dsfacile-icon-paint-brush-fill::before,
+  .dsfacile-icon-paint-brush-fill::after {
+    background-image: url("../../../icons/design/paint-brush-fill.svg");
+  }
+
+  .dsfacile-icon-paint-brush-line::before,
+  .dsfacile-icon-paint-brush-line::after {
+    background-image: url("../../../icons/design/paint-brush-line.svg");
+  }
+
+  .dsfacile-icon-paint-fill::before,
+  .dsfacile-icon-paint-fill::after {
+    background-image: url("../../../icons/design/paint-fill.svg");
+  }
+
+  .dsfacile-icon-paint-line::before,
+  .dsfacile-icon-paint-line::after {
+    background-image: url("../../../icons/design/paint-line.svg");
+  }
+
+  .dsfacile-icon-palette-fill::before,
+  .dsfacile-icon-palette-fill::after {
+    background-image: url("../../../icons/design/palette-fill.svg");
+  }
+
+  .dsfacile-icon-palette-line::before,
+  .dsfacile-icon-palette-line::after {
+    background-image: url("../../../icons/design/palette-line.svg");
+  }
+
+  .dsfacile-icon-pantone-fill::before,
+  .dsfacile-icon-pantone-fill::after {
+    background-image: url("../../../icons/design/pantone-fill.svg");
+  }
+
+  .dsfacile-icon-pantone-line::before,
+  .dsfacile-icon-pantone-line::after {
+    background-image: url("../../../icons/design/pantone-line.svg");
+  }
+
+  .dsfacile-icon-pen-nib-fill::before,
+  .dsfacile-icon-pen-nib-fill::after {
+    background-image: url("../../../icons/design/pen-nib-fill.svg");
+  }
+
+  .dsfacile-icon-pen-nib-line::before,
+  .dsfacile-icon-pen-nib-line::after {
+    background-image: url("../../../icons/design/pen-nib-line.svg");
+  }
+
+  .dsfacile-icon-pencil-fill::before,
+  .dsfacile-icon-pencil-fill::after {
+    background-image: url("../../../icons/design/pencil-fill.svg");
+  }
+
+  .dsfacile-icon-pencil-line::before,
+  .dsfacile-icon-pencil-line::after {
+    background-image: url("../../../icons/design/pencil-line.svg");
+  }
+
+  .dsfacile-icon-pencil-ruler-fill::before,
+  .dsfacile-icon-pencil-ruler-fill::after {
+    background-image: url("../../../icons/design/pencil-ruler-fill.svg");
+  }
+
+  .dsfacile-icon-pencil-ruler-line::before,
+  .dsfacile-icon-pencil-ruler-line::after {
+    background-image: url("../../../icons/design/pencil-ruler-line.svg");
+  }
+
+  .dsfacile-icon-sip-fill::before,
+  .dsfacile-icon-sip-fill::after {
+    background-image: url("../../../icons/design/sip-fill.svg");
+  }
+
+  .dsfacile-icon-sip-line::before,
+  .dsfacile-icon-sip-line::after {
+    background-image: url("../../../icons/design/sip-line.svg");
+  }
+
+  .dsfacile-icon-table-fill::before,
+  .dsfacile-icon-table-fill::after {
+    background-image: url("../../../icons/design/table-fill.svg");
+  }
+
+  .dsfacile-icon-table-line::before,
+  .dsfacile-icon-table-line::after {
+    background-image: url("../../../icons/design/table-line.svg");
+  }
+
+  .dsfacile-fi-edit-fill::before {
+    background-image: url("../../../icons/design/edit-fill.svg");
+  }
+
+  .dsfacile-fi-edit-line::before {
+    background-image: url("../../../icons/design/edit-line.svg");
+  }
+}

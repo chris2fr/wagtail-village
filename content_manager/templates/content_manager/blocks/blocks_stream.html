@@ -1,4 +1,4 @@
-{% load static dsfr_tags wagtailcore_tags wagtailimages_tags wagtailmarkdown %}
+{% load static django_dsfacile_tags wagtailcore_tags wagtailimages_tags wagtailmarkdown %}
 
 {% for block in stream %}
   {% if block.block_type == 'alert' %}
@@ -6,9 +6,9 @@
   {% elif block.block_type == 'callout' %}
     {% include "content_manager/blocks/callout.html" %}
   {% elif block.block_type == 'image' %}
-    <div class="fr-container fr-my-3w">
-      <div class="fr-grid-row fr-grid-row--gutters">
-        <div class="fr-col-12">{% include_block block %}</div>
+    <div class="dsfacile-container dsfacile-my-3w">
+      <div class="dsfacile-grid-row dsfacile-grid-row--gutters">
+        <div class="dsfacile-col-12">{% include_block block %}</div>
       </div>
     </div>
   {% elif block.block_type == 'multicolumns' %}
@@ -16,20 +16,20 @@
   {% elif block.block_type == 'fullwidthbackground' %}
     {% include_block block %}
   {% elif block.block_type == 'paragraph' %}
-    <div class="fr-container">{{ block.value|richtext }}</div>
+    <div class="dsfacile-container">{{ block.value|richtext }}</div>
   {% elif block.block_type == 'accordions' %}
     {% include "content_manager/blocks/accordions.html" with accordions_id=forloop.counter0|lower %}
   {% elif block.block_type == 'stepper' %}
     {% include "content_manager/blocks/stepper.html" %}
   {% elif block.block_type == 'separator' %}
-    <div class="fr-container">
-      <hr class="fr-mt-{{ block.value.top_margin }}w fr-mb-{{ block.value.bottom_margin }}w fr-py-1v">
+    <div class="dsfacile-container">
+      <hr class="dsfacile-mt-{{ block.value.top_margin }}w dsfacile-mb-{{ block.value.bottom_margin }}w dsfacile-py-1v">
     </div>
   {% elif block.block_type == 'markdown' %}
-    <div class="fr-container">{{ block.value|markdown }}</div>
+    <div class="dsfacile-container">{{ block.value|markdown }}</div>
   {% elif block.block_type == 'html' %}
-    <div class="fr-container">{{ block.value|safe }}</div>
+    <div class="dsfacile-container">{{ block.value|safe }}</div>
   {% else %}
-    <div class="fr-container">{% include_block block %}</div>
+    <div class="dsfacile-container">{% include_block block %}</div>
   {% endif %}
 {% endfor %}

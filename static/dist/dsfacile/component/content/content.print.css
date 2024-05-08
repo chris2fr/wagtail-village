@@ -1,0 +1,25 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@media print {
+  .dsfacile-content-media__caption,
+  .dsfacile-content-media .dsfacile-link {
+    color: #666;
+  }
+
+  .dsfacile-content-media__caption {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .dsfacile-content-media__caption .dsfacile-link {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 0 0;
+  }
+
+  .dsfacile-content-media__caption .dsfacile-link::before,
+  .dsfacile-content-media__caption .dsfacile-link::after {
+    --icon-size: 1rem;
+  }
+}

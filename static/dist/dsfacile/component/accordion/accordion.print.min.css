@@ -1,0 +1,3 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */@media print{.dsfacile-accordion:before{box-shadow:inset 0 1px 0 0 #ddd,0 1px 0 0 #ddd}.dsfacile-accordion__btn{color:#05435f}.dsfacile-accordion__btn[aria-expanded=true]{background-color:#cedbe1}.dsfacile-accordion__btn:after{transform:rotate(-180deg)}.dsfacile-accordion .dsfacile-collapse:not(.dsfacile-collapse--expanded){--collapse-max-height:none!important;--collapse:inherit!important;padding:1rem;visibility:visible}}

@@ -1,0 +1,491 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  ICON COMMUNICATION
+\* ˍˍˍˍˍˍˍˍˍ */
+.dsfacile-icon-chrome-fill::before,
+.dsfacile-icon-chrome-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/chrome-fill.svg");
+  mask-image: url("../../../icons/logo/chrome-fill.svg");
+}
+
+.dsfacile-icon-chrome-line::before,
+.dsfacile-icon-chrome-line::after {
+  -webkit-mask-image: url("../../../icons/logo/chrome-line.svg");
+  mask-image: url("../../../icons/logo/chrome-line.svg");
+}
+
+.dsfacile-icon-edge-fill::before,
+.dsfacile-icon-edge-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/edge-fill.svg");
+  mask-image: url("../../../icons/logo/edge-fill.svg");
+}
+
+.dsfacile-icon-edge-line::before,
+.dsfacile-icon-edge-line::after {
+  -webkit-mask-image: url("../../../icons/logo/edge-line.svg");
+  mask-image: url("../../../icons/logo/edge-line.svg");
+}
+
+.dsfacile-icon-facebook-circle-fill::before,
+.dsfacile-icon-facebook-circle-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/facebook-circle-fill.svg");
+  mask-image: url("../../../icons/logo/facebook-circle-fill.svg");
+}
+
+.dsfacile-icon-facebook-circle-line::before,
+.dsfacile-icon-facebook-circle-line::after {
+  -webkit-mask-image: url("../../../icons/logo/facebook-circle-line.svg");
+  mask-image: url("../../../icons/logo/facebook-circle-line.svg");
+}
+
+.dsfacile-icon-firefox-fill::before,
+.dsfacile-icon-firefox-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/firefox-fill.svg");
+  mask-image: url("../../../icons/logo/firefox-fill.svg");
+}
+
+.dsfacile-icon-firefox-line::before,
+.dsfacile-icon-firefox-line::after {
+  -webkit-mask-image: url("../../../icons/logo/firefox-line.svg");
+  mask-image: url("../../../icons/logo/firefox-line.svg");
+}
+
+.dsfacile-icon-dailymotion-fill::before,
+.dsfacile-icon-dailymotion-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/fr--dailymotion-fill.svg");
+  mask-image: url("../../../icons/logo/fr--dailymotion-fill.svg");
+}
+
+.dsfacile-icon-dailymotion-line::before,
+.dsfacile-icon-dailymotion-line::after {
+  -webkit-mask-image: url("../../../icons/logo/fr--dailymotion-line.svg");
+  mask-image: url("../../../icons/logo/fr--dailymotion-line.svg");
+}
+
+.dsfacile-icon-tiktok-fill::before,
+.dsfacile-icon-tiktok-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/fr--tiktok-fill.svg");
+  mask-image: url("../../../icons/logo/fr--tiktok-fill.svg");
+}
+
+.dsfacile-icon-tiktok-line::before,
+.dsfacile-icon-tiktok-line::after {
+  -webkit-mask-image: url("../../../icons/logo/fr--tiktok-line.svg");
+  mask-image: url("../../../icons/logo/fr--tiktok-line.svg");
+}
+
+.dsfacile-icon-github-fill::before,
+.dsfacile-icon-github-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/github-fill.svg");
+  mask-image: url("../../../icons/logo/github-fill.svg");
+}
+
+.dsfacile-icon-github-line::before,
+.dsfacile-icon-github-line::after {
+  -webkit-mask-image: url("../../../icons/logo/github-line.svg");
+  mask-image: url("../../../icons/logo/github-line.svg");
+}
+
+.dsfacile-icon-google-fill::before,
+.dsfacile-icon-google-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/google-fill.svg");
+  mask-image: url("../../../icons/logo/google-fill.svg");
+}
+
+.dsfacile-icon-google-line::before,
+.dsfacile-icon-google-line::after {
+  -webkit-mask-image: url("../../../icons/logo/google-line.svg");
+  mask-image: url("../../../icons/logo/google-line.svg");
+}
+
+.dsfacile-icon-ie-fill::before,
+.dsfacile-icon-ie-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/ie-fill.svg");
+  mask-image: url("../../../icons/logo/ie-fill.svg");
+}
+
+.dsfacile-icon-ie-line::before,
+.dsfacile-icon-ie-line::after {
+  -webkit-mask-image: url("../../../icons/logo/ie-line.svg");
+  mask-image: url("../../../icons/logo/ie-line.svg");
+}
+
+.dsfacile-icon-instagram-fill::before,
+.dsfacile-icon-instagram-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/instagram-fill.svg");
+  mask-image: url("../../../icons/logo/instagram-fill.svg");
+}
+
+.dsfacile-icon-instagram-line::before,
+.dsfacile-icon-instagram-line::after {
+  -webkit-mask-image: url("../../../icons/logo/instagram-line.svg");
+  mask-image: url("../../../icons/logo/instagram-line.svg");
+}
+
+.dsfacile-icon-linkedin-box-fill::before,
+.dsfacile-icon-linkedin-box-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/linkedin-box-fill.svg");
+  mask-image: url("../../../icons/logo/linkedin-box-fill.svg");
+}
+
+.dsfacile-icon-linkedin-box-line::before,
+.dsfacile-icon-linkedin-box-line::after {
+  -webkit-mask-image: url("../../../icons/logo/linkedin-box-line.svg");
+  mask-image: url("../../../icons/logo/linkedin-box-line.svg");
+}
+
+.dsfacile-icon-mastodon-fill::before,
+.dsfacile-icon-mastodon-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/mastodon-fill.svg");
+  mask-image: url("../../../icons/logo/mastodon-fill.svg");
+}
+
+.dsfacile-icon-mastodon-line::before,
+.dsfacile-icon-mastodon-line::after {
+  -webkit-mask-image: url("../../../icons/logo/mastodon-line.svg");
+  mask-image: url("../../../icons/logo/mastodon-line.svg");
+}
+
+.dsfacile-icon-npmjs-fill::before,
+.dsfacile-icon-npmjs-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/npmjs-fill.svg");
+  mask-image: url("../../../icons/logo/npmjs-fill.svg");
+}
+
+.dsfacile-icon-npmjs-line::before,
+.dsfacile-icon-npmjs-line::after {
+  -webkit-mask-image: url("../../../icons/logo/npmjs-line.svg");
+  mask-image: url("../../../icons/logo/npmjs-line.svg");
+}
+
+.dsfacile-icon-remixicon-fill::before,
+.dsfacile-icon-remixicon-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/remixicon-fill.svg");
+  mask-image: url("../../../icons/logo/remixicon-fill.svg");
+}
+
+.dsfacile-icon-remixicon-line::before,
+.dsfacile-icon-remixicon-line::after {
+  -webkit-mask-image: url("../../../icons/logo/remixicon-line.svg");
+  mask-image: url("../../../icons/logo/remixicon-line.svg");
+}
+
+.dsfacile-icon-safari-fill::before,
+.dsfacile-icon-safari-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/safari-fill.svg");
+  mask-image: url("../../../icons/logo/safari-fill.svg");
+}
+
+.dsfacile-icon-safari-line::before,
+.dsfacile-icon-safari-line::after {
+  -webkit-mask-image: url("../../../icons/logo/safari-line.svg");
+  mask-image: url("../../../icons/logo/safari-line.svg");
+}
+
+.dsfacile-icon-slack-fill::before,
+.dsfacile-icon-slack-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/slack-fill.svg");
+  mask-image: url("../../../icons/logo/slack-fill.svg");
+}
+
+.dsfacile-icon-slack-line::before,
+.dsfacile-icon-slack-line::after {
+  -webkit-mask-image: url("../../../icons/logo/slack-line.svg");
+  mask-image: url("../../../icons/logo/slack-line.svg");
+}
+
+.dsfacile-icon-snapchat-fill::before,
+.dsfacile-icon-snapchat-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/snapchat-fill.svg");
+  mask-image: url("../../../icons/logo/snapchat-fill.svg");
+}
+
+.dsfacile-icon-snapchat-line::before,
+.dsfacile-icon-snapchat-line::after {
+  -webkit-mask-image: url("../../../icons/logo/snapchat-line.svg");
+  mask-image: url("../../../icons/logo/snapchat-line.svg");
+}
+
+.dsfacile-icon-telegram-fill::before,
+.dsfacile-icon-telegram-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/telegram-fill.svg");
+  mask-image: url("../../../icons/logo/telegram-fill.svg");
+}
+
+.dsfacile-icon-telegram-line::before,
+.dsfacile-icon-telegram-line::after {
+  -webkit-mask-image: url("../../../icons/logo/telegram-line.svg");
+  mask-image: url("../../../icons/logo/telegram-line.svg");
+}
+
+.dsfacile-icon-threads-fill::before,
+.dsfacile-icon-threads-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/threads-fill.svg");
+  mask-image: url("../../../icons/logo/threads-fill.svg");
+}
+
+.dsfacile-icon-threads-line::before,
+.dsfacile-icon-threads-line::after {
+  -webkit-mask-image: url("../../../icons/logo/threads-line.svg");
+  mask-image: url("../../../icons/logo/threads-line.svg");
+}
+
+.dsfacile-icon-twitch-fill::before,
+.dsfacile-icon-twitch-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/twitch-fill.svg");
+  mask-image: url("../../../icons/logo/twitch-fill.svg");
+}
+
+.dsfacile-icon-twitch-line::before,
+.dsfacile-icon-twitch-line::after {
+  -webkit-mask-image: url("../../../icons/logo/twitch-line.svg");
+  mask-image: url("../../../icons/logo/twitch-line.svg");
+}
+
+.dsfacile-icon-twitter-fill::before,
+.dsfacile-icon-twitter-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/twitter-fill.svg");
+  mask-image: url("../../../icons/logo/twitter-fill.svg");
+}
+
+.dsfacile-icon-twitter-line::before,
+.dsfacile-icon-twitter-line::after {
+  -webkit-mask-image: url("../../../icons/logo/twitter-line.svg");
+  mask-image: url("../../../icons/logo/twitter-line.svg");
+}
+
+.dsfacile-icon-twitter-x-fill::before,
+.dsfacile-icon-twitter-x-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/twitter-x-fill.svg");
+  mask-image: url("../../../icons/logo/twitter-x-fill.svg");
+}
+
+.dsfacile-icon-twitter-x-line::before,
+.dsfacile-icon-twitter-x-line::after {
+  -webkit-mask-image: url("../../../icons/logo/twitter-x-line.svg");
+  mask-image: url("../../../icons/logo/twitter-x-line.svg");
+}
+
+.dsfacile-icon-vimeo-fill::before,
+.dsfacile-icon-vimeo-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/vimeo-fill.svg");
+  mask-image: url("../../../icons/logo/vimeo-fill.svg");
+}
+
+.dsfacile-icon-vimeo-line::before,
+.dsfacile-icon-vimeo-line::after {
+  -webkit-mask-image: url("../../../icons/logo/vimeo-line.svg");
+  mask-image: url("../../../icons/logo/vimeo-line.svg");
+}
+
+.dsfacile-icon-vuejs-fill::before,
+.dsfacile-icon-vuejs-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/vuejs-fill.svg");
+  mask-image: url("../../../icons/logo/vuejs-fill.svg");
+}
+
+.dsfacile-icon-vuejs-line::before,
+.dsfacile-icon-vuejs-line::after {
+  -webkit-mask-image: url("../../../icons/logo/vuejs-line.svg");
+  mask-image: url("../../../icons/logo/vuejs-line.svg");
+}
+
+.dsfacile-icon-youtube-fill::before,
+.dsfacile-icon-youtube-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/youtube-fill.svg");
+  mask-image: url("../../../icons/logo/youtube-fill.svg");
+}
+
+.dsfacile-icon-youtube-line::before,
+.dsfacile-icon-youtube-line::after {
+  -webkit-mask-image: url("../../../icons/logo/youtube-line.svg");
+  mask-image: url("../../../icons/logo/youtube-line.svg");
+}
+
+.dsfacile-fi-facebook-circle-fill::before,
+.dsfacile-fi-facebook-circle-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/facebook-circle-fill.svg");
+  mask-image: url("../../../icons/logo/facebook-circle-fill.svg");
+}
+
+.dsfacile-fi-facebook-circle-line::before,
+.dsfacile-fi-facebook-circle-line::after {
+  -webkit-mask-image: url("../../../icons/logo/facebook-circle-line.svg");
+  mask-image: url("../../../icons/logo/facebook-circle-line.svg");
+}
+
+.dsfacile-fi-dailymotion-fill::before,
+.dsfacile-fi-dailymotion-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/fr--dailymotion-fill.svg");
+  mask-image: url("../../../icons/logo/fr--dailymotion-fill.svg");
+}
+
+.dsfacile-fi-dailymotion-line::before,
+.dsfacile-fi-dailymotion-line::after {
+  -webkit-mask-image: url("../../../icons/logo/fr--dailymotion-line.svg");
+  mask-image: url("../../../icons/logo/fr--dailymotion-line.svg");
+}
+
+.dsfacile-fi-github-fill::before,
+.dsfacile-fi-github-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/github-fill.svg");
+  mask-image: url("../../../icons/logo/github-fill.svg");
+}
+
+.dsfacile-fi-github-line::before,
+.dsfacile-fi-github-line::after {
+  -webkit-mask-image: url("../../../icons/logo/github-line.svg");
+  mask-image: url("../../../icons/logo/github-line.svg");
+}
+
+.dsfacile-fi-instagram-fill::before,
+.dsfacile-fi-instagram-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/instagram-fill.svg");
+  mask-image: url("../../../icons/logo/instagram-fill.svg");
+}
+
+.dsfacile-fi-instagram-line::before,
+.dsfacile-fi-instagram-line::after {
+  -webkit-mask-image: url("../../../icons/logo/instagram-line.svg");
+  mask-image: url("../../../icons/logo/instagram-line.svg");
+}
+
+.dsfacile-fi-linkedin-box-fill::before,
+.dsfacile-fi-linkedin-box-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/linkedin-box-fill.svg");
+  mask-image: url("../../../icons/logo/linkedin-box-fill.svg");
+}
+
+.dsfacile-fi-linkedin-box-line::before,
+.dsfacile-fi-linkedin-box-line::after {
+  -webkit-mask-image: url("../../../icons/logo/linkedin-box-line.svg");
+  mask-image: url("../../../icons/logo/linkedin-box-line.svg");
+}
+
+.dsfacile-fi-npmjs-fill::before,
+.dsfacile-fi-npmjs-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/npmjs-fill.svg");
+  mask-image: url("../../../icons/logo/npmjs-fill.svg");
+}
+
+.dsfacile-fi-npmjs-line::before,
+.dsfacile-fi-npmjs-line::after {
+  -webkit-mask-image: url("../../../icons/logo/npmjs-line.svg");
+  mask-image: url("../../../icons/logo/npmjs-line.svg");
+}
+
+.dsfacile-fi-remixicon-fill::before,
+.dsfacile-fi-remixicon-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/remixicon-fill.svg");
+  mask-image: url("../../../icons/logo/remixicon-fill.svg");
+}
+
+.dsfacile-fi-remixicon-line::before,
+.dsfacile-fi-remixicon-line::after {
+  -webkit-mask-image: url("../../../icons/logo/remixicon-line.svg");
+  mask-image: url("../../../icons/logo/remixicon-line.svg");
+}
+
+.dsfacile-fi-slack-fill::before,
+.dsfacile-fi-slack-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/slack-fill.svg");
+  mask-image: url("../../../icons/logo/slack-fill.svg");
+}
+
+.dsfacile-fi-slack-line::before,
+.dsfacile-fi-slack-line::after {
+  -webkit-mask-image: url("../../../icons/logo/slack-line.svg");
+  mask-image: url("../../../icons/logo/slack-line.svg");
+}
+
+.dsfacile-fi-snapchat-fill::before,
+.dsfacile-fi-snapchat-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/snapchat-fill.svg");
+  mask-image: url("../../../icons/logo/snapchat-fill.svg");
+}
+
+.dsfacile-fi-snapchat-line::before,
+.dsfacile-fi-snapchat-line::after {
+  -webkit-mask-image: url("../../../icons/logo/snapchat-line.svg");
+  mask-image: url("../../../icons/logo/snapchat-line.svg");
+}
+
+.dsfacile-fi-telegram-fill::before,
+.dsfacile-fi-telegram-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/telegram-fill.svg");
+  mask-image: url("../../../icons/logo/telegram-fill.svg");
+}
+
+.dsfacile-fi-telegram-line::before,
+.dsfacile-fi-telegram-line::after {
+  -webkit-mask-image: url("../../../icons/logo/telegram-line.svg");
+  mask-image: url("../../../icons/logo/telegram-line.svg");
+}
+
+.dsfacile-fi-twitch-fill::before,
+.dsfacile-fi-twitch-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/twitch-fill.svg");
+  mask-image: url("../../../icons/logo/twitch-fill.svg");
+}
+
+.dsfacile-fi-twitch-line::before,
+.dsfacile-fi-twitch-line::after {
+  -webkit-mask-image: url("../../../icons/logo/twitch-line.svg");
+  mask-image: url("../../../icons/logo/twitch-line.svg");
+}
+
+.dsfacile-fi-twitter-fill::before,
+.dsfacile-fi-twitter-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/twitter-fill.svg");
+  mask-image: url("../../../icons/logo/twitter-fill.svg");
+}
+
+.dsfacile-fi-twitter-line::before,
+.dsfacile-fi-twitter-line::after {
+  -webkit-mask-image: url("../../../icons/logo/twitter-line.svg");
+  mask-image: url("../../../icons/logo/twitter-line.svg");
+}
+
+.dsfacile-fi-vimeo-fill::before,
+.dsfacile-fi-vimeo-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/vimeo-fill.svg");
+  mask-image: url("../../../icons/logo/vimeo-fill.svg");
+}
+
+.dsfacile-fi-vimeo-line::before,
+.dsfacile-fi-vimeo-line::after {
+  -webkit-mask-image: url("../../../icons/logo/vimeo-line.svg");
+  mask-image: url("../../../icons/logo/vimeo-line.svg");
+}
+
+.dsfacile-fi-youtube-fill::before,
+.dsfacile-fi-youtube-fill::after {
+  -webkit-mask-image: url("../../../icons/logo/youtube-fill.svg");
+  mask-image: url("../../../icons/logo/youtube-fill.svg");
+}
+
+.dsfacile-fi-youtube-line::before,
+.dsfacile-fi-youtube-line::after {
+  -webkit-mask-image: url("../../../icons/logo/youtube-line.svg");
+  mask-image: url("../../../icons/logo/youtube-line.svg");
+}
+
+@media (min-width: 36em) {
+  /*! media sm */
+}
+
+@media (min-width: 48em) {
+  /*! media md */
+}
+
+@media (min-width: 62em) {
+  /*! media lg */
+}
+
+@media (min-width: 78em) {
+  /*! media xl */
+}

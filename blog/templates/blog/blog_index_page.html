@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static dsfr_tags wagtailcore_tags wagtailimages_tags i18n %}
+{% load static django_dsfacile_tags wagtailcore_tags wagtailimages_tags i18n %}
 
 {% block title %}
     <title>{{ page.seo_title|default:page.title }} — {{ settings.content_manager.CmsDsfrConfig.site_title }}</title>
@@ -48,14 +48,14 @@
 
     <div class="fr-container fr-mt-6w">
         {% if category %}
-            {% dsfr_breadcrumb breadcrumb %}
+            {% dsfacile_breadcrumb breadcrumb %}
             <h1>{% blocktranslate %}Posts in category {{ category }}{% endblocktranslate %}</h1>
             {% if category_description %}<p>{{ category_description }}</p>{% endif %}
         {% elif tag %}
-            {% dsfr_breadcrumb breadcrumb %}
+            {% dsfacile_breadcrumb breadcrumb %}
             <h1>{% blocktranslate %}Posts tagged with {{ tag }}{% endblocktranslate %}</h1>
         {% elif author %}
-            {% dsfr_breadcrumb breadcrumb %}
+            {% dsfacile_breadcrumb breadcrumb %}
             <h1>{% blocktranslate %}Posts written by{% endblocktranslate %} {{ author.first_name }} {{ author.last_name }}</h1>
         {% elif year %}
             <h1 class="title">{% blocktranslate %}Posts published in {{ year }}{% endblocktranslate %}</h1>
@@ -109,7 +109,7 @@
     </div>
 
     {% if posts.paginator.num_pages > 1 %}
-        <div class="fr-container fr-grid-row fr-grid-row--center fr-mt-6w">{% dsfr_pagination posts %}</div>
+        <div class="fr-container fr-grid-row fr-grid-row--center fr-mt-6w">{% dsfacile_pagination posts %}</div>
     {% endif %}
 
 {% endblock content %}

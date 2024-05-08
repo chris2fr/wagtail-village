@@ -1,0 +1,166 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@media (min-width: 36em) {
+  /*! media sm */
+}
+@media (min-width: 48em) {
+  /*! media md */
+}
+@media (min-width: 62em) {
+  /*! media lg */
+}
+@media (min-width: 78em) {
+  /*! media xl */
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .dsfacile-card--no-icon::after {
+    content: none;
+  }
+
+  .dsfacile-card__title,
+  .dsfacile-card__desc {
+    flex: 1 0 auto;
+  }
+
+  .dsfacile-card__title a::after {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/system/arrow-right-line.svg");
+    width: 1rem;
+    height: 1rem;
+    background-color: transparent;
+  }
+
+  .dsfacile-card__title [target=_blank]::after {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/system/external-link-line.svg");
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dsfacile-card__detail::before {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dsfacile-card--download .dsfacile-tile__title a::after {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/system/download-line.svg");
+  }
+
+  .dsfacile-card--download .dsfacile-card__header {
+    padding-top: 56.25%;
+  }
+
+  .dsfacile-card--download .dsfacile-card__header .dsfacile-card__img img {
+    height: auto !important;
+    width: auto;
+    margin: auto;
+  }
+
+  .dsfacile-card.dsfacile-enlarge-link .dsfacile-card__title a {
+    text-decoration: none;
+  }
+
+  .dsfacile-card.dsfacile-enlarge-link .dsfacile-card__title a::after {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+  }
+
+  .dsfacile-card--sm.dsfacile-enlarge-link .dsfacile-card__title a::after {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dsfacile-card--sm .dsfacile-card__title a::after {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dsfacile-card--lg.dsfacile-enlarge-link .dsfacile-card__title a::after {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .dsfacile-card--lg .dsfacile-card__title a::after {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .dsfacile-card > .dsfacile-card__img {
+    flex-shrink: 0;
+  }
+
+  .dsfacile-card {
+    background-color: #fff;
+  }
+
+  .dsfacile-card:not(.dsfacile-card--no-border):not(.dsfacile-card--shadow) {
+    background-image: linear-gradient(0deg, #ddd, #ddd), linear-gradient(0deg, #ddd, #ddd), linear-gradient(0deg, #ddd, #ddd), linear-gradient(0deg, #ddd, #ddd);
+  }
+
+  .dsfacile-card--grey {
+    background-color: #eee;
+  }
+
+  .dsfacile-card--shadow {
+    z-index: 500;
+    background-color: #fff;
+  }
+
+  .dsfacile-card--shadow.dsfacile-card--grey {
+    background-color: #eee;
+  }
+
+  .dsfacile-card--no-background {
+    background-color: transparent;
+  }
+
+  .dsfacile-card--no-background:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .dsfacile-card--no-background:active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .dsfacile-card--download:not(.dsfacile-card--no-background) .dsfacile-card__header {
+    background-color: #f6f6f6;
+  }
+
+  .dsfacile-card__detail {
+    color: #666;
+  }
+
+  .dsfacile-card__title {
+    color: #161616;
+  }
+
+  .dsfacile-card__title a[href] {
+    color: #05435f;
+  }
+
+  .dsfacile-card__title:disabled,
+  a.dsfacile-card__title:not([href]) {
+    color: #929292;
+    background-color: #e5e5e5;
+  }
+}
+@media (-ms-high-contrast: none) and (min-width: 48em), (-ms-high-contrast: active) and (min-width: 48em) {
+  .dsfacile-card--download .dsfacile-card__header {
+    padding-top: 0;
+  }
+
+  .dsfacile-card--download .dsfacile-card__body,
+  .dsfacile-card--horizontal .dsfacile-card__body,
+  .dsfacile-card--horizontal-half .dsfacile-card__body,
+  .dsfacile-card--horizontal-tier .dsfacile-card__body {
+    flex-basis: 100%;
+  }
+}

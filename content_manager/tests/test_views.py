@@ -72,7 +72,7 @@ class ConfigTestCase(WagtailPageTestCase):
         self.assertInHTML(
             """<a href="/"
                 title="Accueil — République française">
-                <p class="fr-logo">République<br />française</p>
+                <p class="dsfacile-logo">République<br />française</p>
             </a>""",
             response.content.decode(),
         )
@@ -82,10 +82,10 @@ class ConfigTestCase(WagtailPageTestCase):
         response = self.client.get(url)
 
         self.assertInHTML(
-            """<div class="fr-footer__brand fr-enlarge-link">
+            """<div class="dsfacile-footer__brand dsfacile-enlarge-link">
                 <a id="footer-operator" href="/"
                     title="Retour à l’accueil du site - Site title - République française">
-                    <p class="fr-logo">
+                    <p class="dsfacile-logo">
                         République<br />française
                     </p>
                 </a>
@@ -98,11 +98,11 @@ class ConfigTestCase(WagtailPageTestCase):
         response = self.client.get(url)
 
         self.assertInHTML(
-            """<div class="fr-header__service">
+            """<div class="dsfacile-header__service">
                 <a href="/" title="Accueil — Site title">
-                    <p class="fr-header__service-title">Site title</p>
+                    <p class="dsfacile-header__service-title">Site title</p>
                 </a>
-                <p class="fr-header__service-tagline">Site tagline</p>
+                <p class="dsfacile-header__service-tagline">Site tagline</p>
             </div>""",
             response.content.decode(),
         )
@@ -113,7 +113,7 @@ class ConfigTestCase(WagtailPageTestCase):
 
         self.assertNotContains(
             response,
-            "fr-notice__body",
+            "dsfacile-notice__body",
         )
 
     def test_notice_can_be_set(self):
@@ -124,10 +124,10 @@ class ConfigTestCase(WagtailPageTestCase):
         response = self.client.get(url)
 
         self.assertInHTML(
-            """<div class="fr-notice fr-notice--info">
-                <div class="fr-container">
-                    <div class="fr-notice__body">
-                        <p class="fr-notice__title">
+            """<div class="dsfacile-notice dsfacile-notice--info">
+                <div class="dsfacile-container">
+                    <div class="dsfacile-notice__body">
+                        <p class="dsfacile-notice__title">
                             Ceci est une information <b>importante</b> et <i>temporaire</i>.
                         </p>
                     </div>
@@ -142,7 +142,7 @@ class ConfigTestCase(WagtailPageTestCase):
 
         self.assertNotContains(
             response,
-            '<span class="fr-badge fr-badge--sm fr-badge--green-emeraude">BETA</span>',
+            '<span class="dsfacile-badge dsfacile-badge--sm dsfacile-badge--green-emeraude">BETA</span>',
         )
 
     def test_beta_tag_can_be_set(self):
@@ -154,7 +154,7 @@ class ConfigTestCase(WagtailPageTestCase):
 
         self.assertContains(
             response,
-            '<span class="fr-badge fr-badge--sm fr-badge--green-emeraude">BETA</span>',
+            '<span class="dsfacile-badge dsfacile-badge--sm dsfacile-badge--green-emeraude">BETA</span>',
         )
 
     def test_footer_description_uses_conf(self):
@@ -162,7 +162,7 @@ class ConfigTestCase(WagtailPageTestCase):
         response = self.client.get(url)
 
         self.assertInHTML(
-            """<p class="fr-footer__content-desc">
+            """<p class="dsfacile-footer__content-desc">
                     Site <b>description</b>.
                 </p>""",
             response.content.decode(),
@@ -204,12 +204,12 @@ class MenusTestCase(WagtailPageTestCase):
 
         # Selected menu item : home page
         self.assertInHTML(
-            '<a class="fr-nav__link" href="/" aria-current="page" target="_self">Accueil</a>',
+            '<a class="dsfacile-nav__link" href="/" aria-current="page" target="_self">Accueil</a>',
             response.content.decode(),
         )
 
         self.assertInHTML(
-            f"""<button class="fr-nav__btn"
+            f"""<button class="dsfacile-nav__btn"
                 aria-expanded="false"
                 aria-controls="menu-{self.publications_menu_item.link_page.pk}">
                 Publications
@@ -218,19 +218,19 @@ class MenusTestCase(WagtailPageTestCase):
         )
 
         self.assertInHTML(
-            '<a class="fr-nav__link" href="/publications/publication-1/" target="_self">Publication 1</a>',
+            '<a class="dsfacile-nav__link" href="/publications/publication-1/" target="_self">Publication 1</a>',
             response.content.decode(),
         )
 
         # Selected menu item : publication 1
         response = self.client.get(self.example_publication_page.url)
         self.assertInHTML(
-            '<a class="fr-nav__link" href="/" target="_self">Accueil</a>',
+            '<a class="dsfacile-nav__link" href="/" target="_self">Accueil</a>',
             response.content.decode(),
         )
 
         self.assertInHTML(
-            f"""<button class="fr-nav__btn"
+            f"""<button class="dsfacile-nav__btn"
                 aria-current="true"
                 aria-expanded="false"
                 aria-controls="menu-{self.publications_menu_item.link_page.pk}">
@@ -240,7 +240,7 @@ class MenusTestCase(WagtailPageTestCase):
         )
 
         self.assertInHTML(
-            """<a class="fr-nav__link"
+            """<a class="dsfacile-nav__link"
                 aria-current="page"
                 href="/publications/publication-1/"
                 target="_self">
@@ -273,12 +273,12 @@ class MenusTestCase(WagtailPageTestCase):
         response = self.client.get(self.example_publication_page.url)
 
         self.assertInHTML(
-            '<p class="fr-hidden fr-displayed-lg">Ceci est une description</p>',
+            '<p class="dsfacile-hidden dsfacile-displayed-lg">Ceci est une description</p>',
             response.content.decode(),
         )
 
         self.assertInHTML(
-            f"""<button class="fr-nav__btn"
+            f"""<button class="dsfacile-nav__btn"
                         aria-expanded="false"
                         aria-current="true"
                         aria-controls="mega-menu-{self.publications_menu_item.id}">Publications</button>
@@ -287,7 +287,7 @@ class MenusTestCase(WagtailPageTestCase):
         )
 
         self.assertInHTML(
-            """<a class="fr-nav__link"
+            """<a class="dsfacile-nav__link"
                 aria-current="page"
                 href="/publications/publication-1/"
                 target="_self">

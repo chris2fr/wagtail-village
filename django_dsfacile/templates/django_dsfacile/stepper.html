@@ -1,0 +1,20 @@
+{% load i18n %}
+<div class="dsfacile-stepper">
+  <{{ self.heading_tag | default:"h2" }} class="dsfacile-stepper__title">
+  <span class="dsfacile-stepper__state">
+    {% with current_step_id=self.current_step_id total_steps=self.total_steps %}
+      {% blocktranslate %}Step {{ current_step_id }} of {{ total_steps }}{% endblocktranslate %}
+    {% endwith %}
+  </span>
+  {{ self.current_step_title }}
+  </{{ self.heading_tag | default:"h2" }}>
+  <div class="dsfacile-stepper__steps"
+       data-dsfacile-current-step="{{ self.current_step_id }}"
+       data-dsfacile-steps="{{ self.total_steps }}">
+  </div>
+  {% if self.next_step_title %}
+    <p class="dsfacile-stepper__details">
+      <span class="dsfacile-text--bold">{% translate "Next step:" %}</span> {{ self.next_step_title }}
+    </p>
+  {% endif %}
+</div>

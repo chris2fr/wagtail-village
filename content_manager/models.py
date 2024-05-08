@@ -15,7 +15,7 @@ from wagtail.snippets.models import register_snippet
 from content_manager.abstract import SitesFacilesBasePage
 from content_manager.constants import LIMITED_RICHTEXTFIELD_FEATURES
 from content_manager.managers import TagManager
-from content_manager.widgets import DsfrIconPickerWidget
+from content_manager.widgets import DsfacileIconPickerWidget
 
 
 class ContentPage(SitesFacilesBasePage):
@@ -284,7 +284,7 @@ class SocialMediaItem(Orderable):
     panels = [
         FieldPanel("title"),
         FieldPanel("url"),
-        FieldPanel("icon_class", widget=DsfrIconPickerWidget),
+        FieldPanel("icon_class", widget=DsfacileIconPickerWidget),
     ]
 
     class Meta:

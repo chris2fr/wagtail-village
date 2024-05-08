@@ -1,0 +1,371 @@
+.dsfacile-code .hll {
+  background-color: var(--background-contrast-grey)
+}
+
+.dsfacile-code pre,
+pre.dsfacile-code {
+  background: var(--background-alt-grey);
+  border: 1px solid var(--border-default-grey);
+  color: var(--text-default-grey);
+  padding: 1rem;
+  margin: 2rem 0;
+  white-space: pre-wrap;
+}
+
+/* Comment */
+.dsfacile-code .c {
+  color: var(--green-emeraude-sun-425);
+  font-style: italic
+}
+
+/* Error */
+.dsfacile-code .err {
+  border: 1px solid var(--red-marianne-main-472)
+}
+
+/* Keyword */
+.dsfacile-code .k {
+  color: var(--green-bourgeon-main-640);
+  font-weight: bold
+}
+
+/* Operator */
+.dsfacile-code .o {
+  color: var(--beige-gris-galet-sun-407)
+}
+
+/* Comment.Hashbang */
+.dsfacile-code .ch {
+  color: var(--green-emeraude-sun-425);
+  font-style: italic
+}
+
+/* Comment.Multiline */
+.dsfacile-code .cm {
+  color: var(--green-emeraude-sun-425);
+  font-style: italic
+}
+
+/* Comment.Preproc */
+.dsfacile-code .cp {
+  color: var(--warning-main-525)
+}
+
+/* Comment.PreprocFile */
+.dsfacile-code .cpf {
+  color: var(--green-emeraude-sun-425);
+  font-style: italic
+}
+
+/* Comment.Single */
+.dsfacile-code .c1 {
+  color: var(--green-emeraude-sun-425);
+  font-style: italic
+}
+
+/* Comment.Special */
+.dsfacile-code .cs {
+  color: var(--green-emeraude-sun-425);
+  font-style: italic
+}
+
+/* Generic.Deleted */
+.dsfacile-code .gd {
+  color: var(--red-marianne-200)
+}
+
+/* Generic.Emph */
+.dsfacile-code .ge {
+  font-style: italic
+}
+
+/* Generic.Error */
+.dsfacile-code .gr {
+  color: var(--red-marianne-main-472)
+}
+
+/* Generic.Heading */
+.dsfacile-code .gh {
+  color: var(--blue-france-125);
+  font-weight: bold
+}
+
+/* Generic.Inserted */
+.dsfacile-code .gi {
+  color: var(--green-bourgeon-850)
+}
+
+/* Generic.Output */
+.dsfacile-code .go {
+  color: var(--grey-main-525)
+}
+
+/* Generic.Prompt */
+.dsfacile-code .gp {
+  color: var(--blue-france-125);
+  font-weight: bold
+}
+
+/* Generic.Strong */
+.dsfacile-code .gs {
+  font-weight: bold
+}
+
+/* Generic.Subheading */
+.dsfacile-code .gu {
+  color: var(--purple-glycine-sun-319);
+  font-weight: bold
+}
+
+/* Generic.Traceback */
+.dsfacile-code .gt {
+  color: var(--blue-cumulus-main-526)
+}
+
+/* Keyword.Constant */
+.dsfacile-code .kc {
+  color: var(--green-bourgeon-main-640);
+  font-weight: bold
+}
+
+/* Keyword.Declaration */
+.dsfacile-code .kd {
+  color: var(--green-bourgeon-main-640);
+  font-weight: bold
+}
+
+/* Keyword.Namespace */
+.dsfacile-code .kn {
+  color: var(--green-bourgeon-main-640);
+  font-weight: bold
+}
+
+/* Keyword.Pseudo */
+.dsfacile-code .kp {
+  color: var(--green-bourgeon-main-640)
+}
+
+/* Keyword.Reserved */
+.dsfacile-code .kr {
+  color: var(--green-bourgeon-main-640);
+  font-weight: bold
+}
+
+/* Keyword.Type */
+.dsfacile-code .kt {
+  color: var(--pink-tuile-200)
+}
+
+/* Literal.Number */
+.dsfacile-code .m {
+  color: var(--beige-gris-galet-sun-407)
+}
+
+/* Literal.String */
+.dsfacile-code .s {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Name.Attribute */
+.dsfacile-code .na {
+  color: var(--green-tilleul-verveine-main-707)
+}
+
+/* Name.Builtin */
+.dsfacile-code .nb {
+  color: var(--green-bourgeon-main-640)
+}
+
+/* Name.Class */
+.dsfacile-code .nc {
+  color: var(--blue-ecume-main-400);
+  font-weight: bold
+}
+
+/* Name.Constant */
+.dsfacile-code .no {
+  color: var(--warning-200)
+}
+
+/* Name.Decorator */
+.dsfacile-code .nd {
+  color: var(--purple-glycine-main-494)
+}
+
+/* Name.Entity */
+.dsfacile-code .ni {
+  color: var(--grey-625);
+  font-weight: bold
+}
+
+/* Name.Exception */
+.dsfacile-code .ne {
+  color: var(--pink-tuile-sun-425);
+  font-weight: bold
+}
+
+/* Name.Function */
+.dsfacile-code .nf {
+  color: var(--blue-ecume-main-400)
+}
+
+/* Name.Label */
+.dsfacile-code .nl {
+  color: var(--green-tilleul-verveine-main-707)
+}
+
+/* Name.Namespace */
+.dsfacile-code .nn {
+  color: var(--blue-ecume-main-400);
+  font-weight: bold
+}
+
+/* Name.Tag */
+.dsfacile-code .nt {
+  color: var(--green-bourgeon-main-640);
+  font-weight: bold
+}
+
+/* Name.Variable */
+.dsfacile-code .nv {
+  color: var(--blue-cumulus-200)
+}
+
+/* Operator.Word */
+.dsfacile-code .ow {
+  color: var(--purple-glycine-main-494);
+  font-weight: bold
+}
+
+/* Text.Whitespace */
+.dsfacile-code .w {
+  color: var(--beige-gris-galet-main-702)
+}
+
+/* Literal.Number.Bin */
+.dsfacile-code .mb {
+  color: var(--beige-gris-galet-sun-407)
+}
+
+/* Literal.Number.Float */
+.dsfacile-code .mf {
+  color: var(--beige-gris-galet-sun-407)
+}
+
+/* Literal.Number.Hex */
+.dsfacile-code .mh {
+  color: var(--beige-gris-galet-sun-407)
+}
+
+/* Literal.Number.Integer */
+.dsfacile-code .mi {
+  color: var(--beige-gris-galet-sun-407)
+}
+
+/* Literal.Number.Oct */
+.dsfacile-code .mo {
+  color: var(--beige-gris-galet-sun-407)
+}
+
+/* Literal.String.Affix */
+.dsfacile-code .sa {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Literal.String.Backtick */
+.dsfacile-code .sb {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Literal.String.Char */
+.dsfacile-code .sc {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Literal.String.Delimiter */
+.dsfacile-code .dl {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Literal.String.Doc */
+.dsfacile-code .sd {
+  color: var(--pink-tuile-main-556);
+  font-style: italic
+}
+
+/* Literal.String.Double */
+.dsfacile-code .s2 {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Literal.String.Escape */
+.dsfacile-code .se {
+  color: var(--brown-caramel-main-648);
+  font-weight: bold
+}
+
+/* Literal.String.Heredoc */
+.dsfacile-code .sh {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Literal.String.Interpol */
+.dsfacile-code .si {
+  color: var(--purple-glycine-main-494);
+  font-weight: bold
+}
+
+/* Literal.String.Other */
+.dsfacile-code .sx {
+  color: var(--green-bourgeon-main-640)
+}
+
+/* Literal.String.Regex */
+.dsfacile-code .sr {
+  color: var(--purple-glycine-main-494)
+}
+
+/* Literal.String.Single */
+.dsfacile-code .s1 {
+  color: var(--pink-tuile-main-556)
+}
+
+/* Literal.String.Symbol */
+.dsfacile-code .ss {
+  color: var(--blue-cumulus-200)
+}
+
+/* Name.Builtin.Pseudo */
+.dsfacile-code .bp {
+  color: var(--green-bourgeon-main-640)
+}
+
+/* Name.Function.Magic */
+.dsfacile-code .fm {
+  color: var(--blue-ecume-main-400)
+}
+
+/* Name.Variable.Class */
+.dsfacile-code .vc {
+  color: var(--blue-cumulus-200)
+}
+
+/* Name.Variable.Global */
+.dsfacile-code .vg {
+  color: var(--blue-cumulus-200)
+}
+
+/* Name.Variable.Instance */
+.dsfacile-code .vi {
+  color: var(--blue-cumulus-200)
+}
+
+/* Name.Variable.Magic */
+.dsfacile-code .vm {
+  color: var(--blue-cumulus-200)
+}
+
+/* Literal.Number.Integer.Long */
+.dsfacile-code .il {
+  color: var(--beige-gris-galet-sun-407)
+}

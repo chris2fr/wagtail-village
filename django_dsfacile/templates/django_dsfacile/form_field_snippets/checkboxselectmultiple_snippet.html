@@ -1,0 +1,36 @@
+{% load widget_tweaks django_dsfacile_tags %}
+<fieldset class="dsfacile-fieldset{% if field.errors %} dsfacile-fieldset--error{% endif %}"
+          id="checkboxes-{{ field.auto_id }}"
+          aria-labelledby="{{ field.auto_id }}-legend{% if field.errors %} {{ field.auto_id }}-messages{% endif %}">
+  <legend class="dsfacile-fieldset__legend facile-text--regular"
+          id="{{ field.auto_id }}-legend">
+    {{ field.label_tag }}
+    {% if field.field.required %}
+      *
+    {% endif %}
+    {% if field.help_text %}
+      <span class="dsfacile-hint-text">{{ field.help_text }}</span>
+    {% endif %}
+  </legend>
+  <div class="dsfacile-fieldset__content">
+    <div class="dsfacile-checkbox-group{% if field.errors %} dsfacile-checkbox-group--error{% endif %}{% if field.field.disabled %} dsfacile-input-group--disabled{% endif %}">
+      {% if field.errors %}
+        {% with aria_describedby="aria-describedby:"|add:field.auto_id|add:"-desc-error" %}
+          {{ field|django_dsfacile_input_class_attr|attr:"type:checkbox"|attr:aria_describedby }}
+        {% endwith %}
+      {% else %}
+        {{ field|django_dsfacile_input_class_attr|attr:"type:checkbox" }}
+      {% endif %}
+      {% if field.errors %}
+        <div id="{{ field.auto_id }}-desc-error" class="dsfacile-error-text">
+          {{ field.errors }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {% if field.errors %}
+    <div id="{{ field.auto_id }}-messages">
+      {{ field.errors }}
+    </div>
+  {% endif %}
+</fieldset>

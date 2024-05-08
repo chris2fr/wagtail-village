@@ -1,0 +1,119 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@media print {
+  .dsfacile-badge {
+    color: #3a3a3a;
+    background-color: #eee;
+  }
+
+  .dsfacile-badge--info {
+    color: #0063cb;
+    background-color: #e8edff;
+  }
+
+  .dsfacile-badge--error {
+    color: #ce0500;
+    background-color: #ffe9e9;
+  }
+
+  .dsfacile-badge--success {
+    color: #18753c;
+    background-color: #b8fec9;
+  }
+
+  .dsfacile-badge--warning {
+    color: #b34000;
+    background-color: #ffe9e6;
+  }
+
+  .dsfacile-badge--new {
+    color: #695240;
+    background-color: #feebd0;
+  }
+
+  .dsfacile-badge--green-tilleul-verveine {
+    color: #66673d;
+    background-color: #fceeac;
+  }
+
+  .dsfacile-badge--green-bourgeon {
+    color: #447049;
+    background-color: #c9fcac;
+  }
+
+  .dsfacile-badge--green-emeraude {
+    color: #297254;
+    background-color: #c3fad5;
+  }
+
+  .dsfacile-badge--green-menthe {
+    color: #37635f;
+    background-color: #bafaee;
+  }
+
+  .dsfacile-badge--green-archipel {
+    color: #006a6f;
+    background-color: #c7f6fc;
+  }
+
+  .dsfacile-badge--blue-ecume {
+    color: #2f4077;
+    background-color: #e9edfe;
+  }
+
+  .dsfacile-badge--blue-cumulus {
+    color: #3558a2;
+    background-color: #e6eefe;
+  }
+
+  .dsfacile-badge--purple-glycine {
+    color: #6e445a;
+    background-color: #fee7fc;
+  }
+
+  .dsfacile-badge--pink-macaron {
+    color: #8d533e;
+    background-color: #fee9e6;
+  }
+
+  .dsfacile-badge--pink-tuile {
+    color: #a94645;
+    background-color: #fee9e7;
+  }
+
+  .dsfacile-badge--yellow-tournesol {
+    color: #716043;
+    background-color: #feecc2;
+  }
+
+  .dsfacile-badge--yellow-moutarde {
+    color: #695240;
+    background-color: #feebd0;
+  }
+
+  .dsfacile-badge--orange-terre-battue {
+    color: #755348;
+    background-color: #fee9e5;
+  }
+
+  .dsfacile-badge--brown-cafe-creme {
+    color: #685c48;
+    background-color: #f7ecdb;
+  }
+
+  .dsfacile-badge--brown-caramel {
+    color: #845d48;
+    background-color: #f7ebe5;
+  }
+
+  .dsfacile-badge--brown-opera {
+    color: #745b47;
+    background-color: #f7ece4;
+  }
+
+  .dsfacile-badge--beige-gris-galet {
+    color: #6a6156;
+    background-color: #f3ede5;
+  }
+}

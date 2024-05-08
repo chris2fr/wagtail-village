@@ -1,8 +1,8 @@
 {% load wagtailimages_tags wagtailcore_tags %}
-<div class="fr-card{% if value.url or value.document %} fr-enlarge-link{% endif %}">
-  <div class="fr-card__body">
-    <div class="fr-card__content">
-      <h3 class="fr-card__title">
+<div class="dsfacile-card{% if value.url or value.document %} dsfacile-enlarge-link{% endif %}">
+  <div class="dsfacile-card__body">
+    <div class="dsfacile-card__content">
+      <h3 class="dsfacile-card__title">
         {% if value.url %}
           <a href="{{ value.url }}">{{ value.title }}</a>
         {% elif value.document %}
@@ -11,17 +11,17 @@
           {{ value.title }}
         {% endif %}
       </h3>
-      <p class="fr-card__desc">{{ value.description|linebreaksbr }}</p>
+      <p class="dsfacile-card__desc">{{ value.description|linebreaksbr }}</p>
     </div>
   </div>
-  <div class="fr-card__header">
+  <div class="dsfacile-card__header">
     {% if value.image %}
-      <div class="fr-card__img">{% image value.image original class="fr-responsive-img" %}</div>
+      <div class="dsfacile-card__img">{% image value.image original class="dsfacile-responsive-img" %}</div>
     {% endif %}
     {% if value.badge_text %}
-      <ul class="fr-badges-group">
+      <ul class="dsfacile-badges-group">
         <li>
-          <p class="fr-badge fr-badge--{{ value.badge_level }}{% if value.badge_icon %} fr-badge--no-icon{% endif %}">
+          <p class="dsfacile-badge dsfacile-badge--{{ value.badge_level }}{% if value.badge_icon %} dsfacile-badge--no-icon{% endif %}">
             {{ value.badge_text }}
           </p>
         </li>

@@ -1,0 +1,94 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+.dsfacile-input:disabled {
+  color: var(--text-disabled-grey);
+  box-shadow: inset 0 -2px 0 0 var(--border-disabled-grey);
+}
+@media (min-width: 36em) {
+  /*! media sm */
+
+  /*! media sm */
+}
+@media (min-width: 48em) {
+  /*! media md */
+
+  /*! media md */
+}
+@media (min-width: 62em) {
+  /*! media lg */
+
+  /*! media lg */
+}
+@media (min-width: 78em) {
+  /*! media xl */
+
+  /*! media xl */
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .dsfacile-input-wrap--addon .dsfacile-btn {
+    flex-shrink: 0;
+  }
+
+  .dsfacile-input {
+    color: #3a3a3a;
+    background-color: #eee;
+    box-shadow: inset 0 -2px 0 0 #3a3a3a;
+  }
+
+  .dsfacile-input::placeholder {
+    color: #666;
+  }
+
+  .dsfacile-input::-webkit-contacts-auto-fill-button {
+    background-color: #161616;
+  }
+
+  .dsfacile-input::-webkit-contacts-auto-fill-button:hover {
+    background-color: #343434;
+  }
+
+  .dsfacile-input::-webkit-contacts-auto-fill-button:active {
+    background-color: #474747;
+  }
+
+  .dsfacile-input:autofill,
+  .dsfacile-input:autofill:hover,
+  .dsfacile-input:autofill:focus,
+  .dsfacile-input:-webkit-autofill,
+  .dsfacile-input:-webkit-autofill:hover,
+  .dsfacile-input:-webkit-autofill:focus {
+    box-shadow: inset 0 -2px 0 0 #3a3a3a, inset 0 0 0 1000px #e8edff;
+    -webkit-text-fill-color: #161616;
+  }
+
+  .dsfacile-input-wrap--addon > .dsfacile-input:not(:last-child) {
+    box-shadow: inset 0 -2px 0 0 #05435f;
+  }
+
+  .dsfacile-fieldset--valid .dsfacile-input,
+  .dsfacile-fieldset--valid .dsfacile-input-wrap--addon > .dsfacile-input:not(:last-child),
+  .dsfacile-input-group--valid .dsfacile-input,
+  .dsfacile-input-group--valid .dsfacile-input-wrap--addon > .dsfacile-input:not(:last-child) {
+    box-shadow: inset 0 -2px 0 0 #18753c;
+  }
+
+  .dsfacile-fieldset--error .dsfacile-input,
+  .dsfacile-fieldset--error .dsfacile-input-wrap--addon > .dsfacile-input:not(:last-child),
+  .dsfacile-input-group--error .dsfacile-input,
+  .dsfacile-input-group--error .dsfacile-input-wrap--addon > .dsfacile-input:not(:last-child) {
+    box-shadow: inset 0 -2px 0 0 #ce0500;
+  }
+
+  .dsfacile-input-group--error::before {
+    background-image: linear-gradient(0deg, #ce0500, #ce0500);
+  }
+
+  .dsfacile-input-group--valid::before {
+    background-image: linear-gradient(0deg, #18753c, #18753c);
+  }
+
+  .dsfacile-input-group--info::before {
+    background-image: linear-gradient(0deg, #0063cb, #0063cb);
+  }
+}

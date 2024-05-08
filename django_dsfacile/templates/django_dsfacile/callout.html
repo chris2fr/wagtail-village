@@ -1,0 +1,18 @@
+{% load django_dsfacile_tags %}
+<div class="dsfacile-callout {% if self.icon_class %}{{ self.icon_class }}{% endif %}{% if self.extra_classes %} {{ self.extra_classes }}{% endif %}">
+  {% if self.title %}
+    <{{ self.heading_tag | default:"p" }} class="dsfacile-callout__title">
+    {{ self.title }}
+    </{{ self.heading_tag | default:"p" }}>
+  {% endif %}
+  <p class="dsfacile-callout__text">
+    {{ self.text }}
+  </p>
+  {% if self.button %}
+    {% if self.button.onclick %}
+      {% dsfacile_button self.button %}
+    {% elif self.button.url %}
+      <a href="{{ self.button.url }}" class="dsfacile-btn">{{ self.button.label }}</a>
+    {% endif %}
+  {% endif %}
+</div>

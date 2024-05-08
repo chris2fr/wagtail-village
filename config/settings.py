@@ -66,7 +66,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "widget_tweaks",
-    "dsfr",
+    "django_dsfacile",
     "sass_processor",
     "content_manager",
     "blog",
@@ -97,7 +97,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(BASE_DIR, "dsfr/templates"),
+            os.path.join(BASE_DIR, "django_dsfacile/templates"),
             os.path.join(BASE_DIR, "templates"),
         ],
         "APP_DIRS": True,

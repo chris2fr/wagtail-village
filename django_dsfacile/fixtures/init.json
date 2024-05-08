@@ -1,0 +1,15 @@
+[{
+  "model": "django_dsfacile.dsfacileconfig",
+  "pk": 1,
+  "fields": {
+    "header_brand": "Sites Faciles",
+    "header_brand_html": "Sites<br />Faciles",
+    "footer_brand": "Sites Faciles",
+    "footer_brand_html": "Sites<br />Faciles",
+    "site_title": "Titre du site",
+    "site_tagline": "Sous-titre du site",
+    "footer_description": "Exemple de description",
+    "mourning": false,
+    "accessibility_status": "NOT"
+  }
+}]

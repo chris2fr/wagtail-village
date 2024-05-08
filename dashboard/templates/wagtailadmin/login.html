@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load widget_tweaks i18n static dsfr_tags %}
+{% load widget_tweaks i18n static django_dsfacile_tags %}
 {% block content %}
     <div class="fr-container fr-container--fluid fr-my-md-14v">
         <div class="fr-grid-row fr-grid-row-gutters fr-grid-row--center">
@@ -36,7 +36,7 @@
                                                         </div>
                                                     {% endif %}
                                                 {% endif %}
-                                                {% dsfr_django_messages %}
+                                                {% dsfacile_django_messages %}
                                             </div>
                                         </div>
                                         <div class="fr-fieldset__element">
@@ -94,5 +94,5 @@
 {% endblock content %}
 {% block extra_css %}
     <link rel="stylesheet"
-          href="{% static 'dsfr/dist/utility/utility.min.css' %}">
+          href="{% static 'dist/dsfacile/utility/utility.min.css' %}">
 {% endblock extra_css %}

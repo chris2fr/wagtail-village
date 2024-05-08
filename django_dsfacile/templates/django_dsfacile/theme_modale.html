@@ -1,0 +1,76 @@
+{% load static i18n %}
+<dialog id="dsfacile-theme-modal"
+        class="dsfacile-modal"
+        aria-labelledby="dsfacile-theme-modal-title">
+  <div class="dsfacile-container dsfacile-container--fluid facile-container-md">
+    <div class="dsfacile-grid-row dsfacile-grid-row--center">
+      <div class="dsfacile-col-12 dsfacile-col-md-6 dsfacile-col-lg-4">
+        <div class="dsfacile-modal__body">
+          <div class="dsfacile-modal__header">
+            <button class="dsfacile-btn--close dsfacile-btn"
+                    aria-describedby="dsfacile-theme-modal-title"
+                    aria-controls="dsfacile-theme-modal">
+              {% translate "Close" %}
+            </button>
+          </div>
+          <div class="dsfacile-modal__content">
+            <h1 id="dsfacile-theme-modal-title" class="dsfacile-modal__title">
+              {% translate "Display settings" %}
+            </h1>
+            <div id="dsfacile-display" class="dsfacile-form-group dsfacile-display">
+              <div class="dsfacile-form-group">
+                <fieldset class="dsfacile-fieldset">
+                  <legend class="dsfacile-fieldset__legend facile-text--regular" id="-legend">
+                    {% translate "Choose a theme to customize the appearance of the site." %}
+                  </legend>
+                  <div class="dsfacile-fieldset__content">
+                    <div class="dsfacile-radio-group dsfacile-radio-rich">
+                      <input value="light"
+                             type="radio"
+                             id="dsfacile-radios-theme-light"
+                             name="dsfacile-radios-theme" />
+                      <label class="dsfacile-label" for="dsfacile-radios-theme-light">
+                        {% translate "Light theme" %}
+                      </label>
+                      <div class="dsfacile-radio-rich__img" data-dsfacile-inject-svg>
+                        <img src="{% static 'dsfacile/dist/artwork/light.svg' %}" alt="" />
+                        {# L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance #}
+                      </div>
+                    </div>
+                    <div class="dsfacile-radio-group dsfacile-radio-rich">
+                      <input value="dark"
+                             type="radio"
+                             id="dsfacile-radios-theme-dark"
+                             name="dsfacile-radios-theme" />
+                      <label class="dsfacile-label" for="dsfacile-radios-theme-dark">
+                        {% translate "Dark theme" %}
+                      </label>
+                      <div class="dsfacile-radio-rich__img" data-dsfacile-inject-svg>
+                        <img src="{% static 'dsfacile/dist/artwork/dark.svg' %}" alt="" />
+                        {# L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance #}
+                      </div>
+                    </div>
+                    <div class="dsfacile-radio-group dsfacile-radio-rich">
+                      <input value="system"
+                             type="radio"
+                             id="dsfacile-radios-theme-system"
+                             name="dsfacile-radios-theme" />
+                      <label class="dsfacile-label" for="dsfacile-radios-theme-system">
+                        {% translate "System" %}
+                        <span class="dsfacile-hint-text">{% translate "Uses system settings." %}</span>
+                      </label>
+                      <div class="dsfacile-radio-rich__img" data-dsfacile-inject-svg>
+                        <img src="{% static 'dsfacile/dist/artwork/system.svg' %}" alt="" />
+                        {# L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance #}
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>

@@ -1,0 +1,120 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+.dsfacile-sidemenu {
+  /*
+  @include elevation.elevate(raised, (legacy:$legacy));
+  @include respond-from(md) {
+    @include elevation.drop((legacy:$legacy));
+  }
+   */
+}
+@media (min-width: 36em) {
+  /*! media sm */
+}
+@media (min-width: 48em) {
+  /*! media md */
+}
+@media (min-width: 62em) {
+  /*! media lg */
+}
+@media (min-width: 78em) {
+  /*! media xl */
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+  * Correctif de la hauteur de la navigation latérale
+  */
+  .dsfacile-sidemenu {
+    height: auto;
+    box-shadow: inset 0 -1px 0 0 #ddd, inset 0 1px 0 0 #ddd;
+  }
+
+  .dsfacile-sidemenu ul {
+    list-style-type: none;
+  }
+
+  .dsfacile-sidemenu ol {
+    list-style-type: none;
+  }
+
+  .dsfacile-sidemenu ul,
+  .dsfacile-sidemenu ol {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .dsfacile-sidemenu [href] {
+    text-decoration: none;
+  }
+
+  .dsfacile-sidemenu__btn[aria-expanded]::after {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/system/arrow-down-s-line.svg");
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dsfacile-sidemenu__title {
+    color: #161616;
+    box-shadow: inset 0 -1px 0 0 #ddd;
+  }
+
+  .dsfacile-sidemenu__item .dsfacile-sidemenu__link,
+  .dsfacile-sidemenu__item .dsfacile-sidemenu__btn {
+    color: #161616;
+  }
+
+  .dsfacile-sidemenu__item::before {
+    box-shadow: 0 -1px 0 0 #ddd, inset 0 -1px 0 0 #ddd;
+  }
+
+  .dsfacile-sidemenu__item:first-child::before {
+    box-shadow: inset 0 -1px 0 0 #ddd;
+  }
+
+  .dsfacile-sidemenu__item:last-child::before {
+    box-shadow: 0 -1px 0 0 #ddd;
+  }
+
+  .dsfacile-sidemenu__link,
+  .dsfacile-sidemenu__btn {
+    color: #05435f;
+  }
+
+  .dsfacile-sidemenu__link[aria-current]:not([aria-current=false]),
+  .dsfacile-sidemenu__btn[aria-current]:not([aria-current=false]) {
+    color: #05435f;
+  }
+
+  .dsfacile-sidemenu__link[aria-current]:not([aria-current=false])::before,
+  .dsfacile-sidemenu__btn[aria-current]:not([aria-current=false])::before {
+    background-color: #05435f;
+  }
+
+  .dsfacile-sidemenu__btn[aria-expanded=true] {
+    background-color: #cedbe1;
+  }
+}
+@media (min-width: 48em) and (-ms-high-contrast: none), (min-width: 48em) and (-ms-high-contrast: active) {
+  .dsfacile-sidemenu {
+    box-shadow: none;
+  }
+
+  .dsfacile-sidemenu__title {
+    box-shadow: none;
+  }
+
+  .dsfacile-sidemenu__inner {
+    box-shadow: inset -1px 0 0 0 #ddd;
+  }
+
+  .dsfacile-sidemenu--right .dsfacile-sidemenu__inner {
+    box-shadow: inset 1px 0 0 0 #ddd;
+  }
+}

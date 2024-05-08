@@ -1,0 +1,227 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  ICON COMMUNICATION
+\* ˍˍˍˍˍˍˍˍˍ */
+.dsfacile-icon-article-fill::before,
+.dsfacile-icon-article-fill::after {
+  -webkit-mask-image: url("../../../icons/document/article-fill.svg");
+  mask-image: url("../../../icons/document/article-fill.svg");
+}
+
+.dsfacile-icon-article-line::before,
+.dsfacile-icon-article-line::after {
+  -webkit-mask-image: url("../../../icons/document/article-line.svg");
+  mask-image: url("../../../icons/document/article-line.svg");
+}
+
+.dsfacile-icon-book-2-fill::before,
+.dsfacile-icon-book-2-fill::after {
+  -webkit-mask-image: url("../../../icons/document/book-2-fill.svg");
+  mask-image: url("../../../icons/document/book-2-fill.svg");
+}
+
+.dsfacile-icon-book-2-line::before,
+.dsfacile-icon-book-2-line::after {
+  -webkit-mask-image: url("../../../icons/document/book-2-line.svg");
+  mask-image: url("../../../icons/document/book-2-line.svg");
+}
+
+.dsfacile-icon-booklet-fill::before,
+.dsfacile-icon-booklet-fill::after {
+  -webkit-mask-image: url("../../../icons/document/booklet-fill.svg");
+  mask-image: url("../../../icons/document/booklet-fill.svg");
+}
+
+.dsfacile-icon-booklet-line::before,
+.dsfacile-icon-booklet-line::after {
+  -webkit-mask-image: url("../../../icons/document/booklet-line.svg");
+  mask-image: url("../../../icons/document/booklet-line.svg");
+}
+
+.dsfacile-icon-clipboard-fill::before,
+.dsfacile-icon-clipboard-fill::after {
+  -webkit-mask-image: url("../../../icons/document/clipboard-fill.svg");
+  mask-image: url("../../../icons/document/clipboard-fill.svg");
+}
+
+.dsfacile-icon-clipboard-line::before,
+.dsfacile-icon-clipboard-line::after {
+  -webkit-mask-image: url("../../../icons/document/clipboard-line.svg");
+  mask-image: url("../../../icons/document/clipboard-line.svg");
+}
+
+.dsfacile-icon-draft-fill::before,
+.dsfacile-icon-draft-fill::after {
+  -webkit-mask-image: url("../../../icons/document/draft-fill.svg");
+  mask-image: url("../../../icons/document/draft-fill.svg");
+}
+
+.dsfacile-icon-draft-line::before,
+.dsfacile-icon-draft-line::after {
+  -webkit-mask-image: url("../../../icons/document/draft-line.svg");
+  mask-image: url("../../../icons/document/draft-line.svg");
+}
+
+.dsfacile-icon-file-add-fill::before,
+.dsfacile-icon-file-add-fill::after {
+  -webkit-mask-image: url("../../../icons/document/file-add-fill.svg");
+  mask-image: url("../../../icons/document/file-add-fill.svg");
+}
+
+.dsfacile-icon-file-add-line::before,
+.dsfacile-icon-file-add-line::after {
+  -webkit-mask-image: url("../../../icons/document/file-add-line.svg");
+  mask-image: url("../../../icons/document/file-add-line.svg");
+}
+
+.dsfacile-icon-file-download-fill::before,
+.dsfacile-icon-file-download-fill::after {
+  -webkit-mask-image: url("../../../icons/document/file-download-fill.svg");
+  mask-image: url("../../../icons/document/file-download-fill.svg");
+}
+
+.dsfacile-icon-file-download-line::before,
+.dsfacile-icon-file-download-line::after {
+  -webkit-mask-image: url("../../../icons/document/file-download-line.svg");
+  mask-image: url("../../../icons/document/file-download-line.svg");
+}
+
+.dsfacile-icon-file-fill::before,
+.dsfacile-icon-file-fill::after {
+  -webkit-mask-image: url("../../../icons/document/file-fill.svg");
+  mask-image: url("../../../icons/document/file-fill.svg");
+}
+
+.dsfacile-icon-file-line::before,
+.dsfacile-icon-file-line::after {
+  -webkit-mask-image: url("../../../icons/document/file-line.svg");
+  mask-image: url("../../../icons/document/file-line.svg");
+}
+
+.dsfacile-icon-file-pdf-fill::before,
+.dsfacile-icon-file-pdf-fill::after {
+  -webkit-mask-image: url("../../../icons/document/file-pdf-fill.svg");
+  mask-image: url("../../../icons/document/file-pdf-fill.svg");
+}
+
+.dsfacile-icon-file-pdf-line::before,
+.dsfacile-icon-file-pdf-line::after {
+  -webkit-mask-image: url("../../../icons/document/file-pdf-line.svg");
+  mask-image: url("../../../icons/document/file-pdf-line.svg");
+}
+
+.dsfacile-icon-file-text-fill::before,
+.dsfacile-icon-file-text-fill::after {
+  -webkit-mask-image: url("../../../icons/document/file-text-fill.svg");
+  mask-image: url("../../../icons/document/file-text-fill.svg");
+}
+
+.dsfacile-icon-file-text-line::before,
+.dsfacile-icon-file-text-line::after {
+  -webkit-mask-image: url("../../../icons/document/file-text-line.svg");
+  mask-image: url("../../../icons/document/file-text-line.svg");
+}
+
+.dsfacile-icon-folder-2-fill::before,
+.dsfacile-icon-folder-2-fill::after {
+  -webkit-mask-image: url("../../../icons/document/folder-2-fill.svg");
+  mask-image: url("../../../icons/document/folder-2-fill.svg");
+}
+
+.dsfacile-icon-folder-2-line::before,
+.dsfacile-icon-folder-2-line::after {
+  -webkit-mask-image: url("../../../icons/document/folder-2-line.svg");
+  mask-image: url("../../../icons/document/folder-2-line.svg");
+}
+
+.dsfacile-icon-newspaper-fill::before,
+.dsfacile-icon-newspaper-fill::after {
+  -webkit-mask-image: url("../../../icons/document/newspaper-fill.svg");
+  mask-image: url("../../../icons/document/newspaper-fill.svg");
+}
+
+.dsfacile-icon-newspaper-line::before,
+.dsfacile-icon-newspaper-line::after {
+  -webkit-mask-image: url("../../../icons/document/newspaper-line.svg");
+  mask-image: url("../../../icons/document/newspaper-line.svg");
+}
+
+.dsfacile-icon-survey-fill::before,
+.dsfacile-icon-survey-fill::after {
+  -webkit-mask-image: url("../../../icons/document/survey-fill.svg");
+  mask-image: url("../../../icons/document/survey-fill.svg");
+}
+
+.dsfacile-icon-survey-line::before,
+.dsfacile-icon-survey-line::after {
+  -webkit-mask-image: url("../../../icons/document/survey-line.svg");
+  mask-image: url("../../../icons/document/survey-line.svg");
+}
+
+.dsfacile-icon-todo-fill::before,
+.dsfacile-icon-todo-fill::after {
+  -webkit-mask-image: url("../../../icons/document/todo-fill.svg");
+  mask-image: url("../../../icons/document/todo-fill.svg");
+}
+
+.dsfacile-icon-todo-line::before,
+.dsfacile-icon-todo-line::after {
+  -webkit-mask-image: url("../../../icons/document/todo-line.svg");
+  mask-image: url("../../../icons/document/todo-line.svg");
+}
+
+.dsfacile-fi-file-download-fill::before,
+.dsfacile-fi-file-download-fill::after {
+  -webkit-mask-image: url("../../../icons/document/file-download-fill.svg");
+  mask-image: url("../../../icons/document/file-download-fill.svg");
+}
+
+.dsfacile-fi-file-download-line::before,
+.dsfacile-fi-file-download-line::after {
+  -webkit-mask-image: url("../../../icons/document/file-download-line.svg");
+  mask-image: url("../../../icons/document/file-download-line.svg");
+}
+
+.dsfacile-fi-file-fill::before,
+.dsfacile-fi-file-fill::after {
+  -webkit-mask-image: url("../../../icons/document/file-fill.svg");
+  mask-image: url("../../../icons/document/file-fill.svg");
+}
+
+.dsfacile-fi-file-line::before,
+.dsfacile-fi-file-line::after {
+  -webkit-mask-image: url("../../../icons/document/file-line.svg");
+  mask-image: url("../../../icons/document/file-line.svg");
+}
+
+.dsfacile-fi-file-pdf-fill::before,
+.dsfacile-fi-file-pdf-fill::after {
+  -webkit-mask-image: url("../../../icons/document/file-pdf-fill.svg");
+  mask-image: url("../../../icons/document/file-pdf-fill.svg");
+}
+
+.dsfacile-fi-file-pdf-line::before,
+.dsfacile-fi-file-pdf-line::after {
+  -webkit-mask-image: url("../../../icons/document/file-pdf-line.svg");
+  mask-image: url("../../../icons/document/file-pdf-line.svg");
+}
+
+@media (min-width: 36em) {
+  /*! media sm */
+}
+
+@media (min-width: 48em) {
+  /*! media md */
+}
+
+@media (min-width: 62em) {
+  /*! media lg */
+}
+
+@media (min-width: 78em) {
+  /*! media xl */
+}

@@ -1,0 +1,102 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@media (min-width: 36em) {
+  /*! media sm */
+}
+@media (min-width: 48em) {
+  /*! media md */
+}
+@media (min-width: 62em) {
+  /*! media lg */
+}
+@media (min-width: 78em) {
+  /*! media xl */
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .dsfacile-link {
+    background-image: none;
+    text-decoration: underline;
+    color: #05435f;
+  }
+
+  .dsfacile-link::before {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dsfacile-link--sm::before {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dsfacile-link--lg::before {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  ul.dsfacile-links-group {
+    list-style-type: none;
+  }
+
+  ol.dsfacile-links-group {
+    list-style-type: none;
+  }
+
+  ul.dsfacile-links-group,
+  ol.dsfacile-links-group {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .dsfacile-link__detail {
+    color: #666;
+  }
+
+  .dsfacile-links-group li::marker {
+    color: #05435f;
+  }
+
+  .dsfacile-links-group--bordered {
+    box-shadow: inset 0 0 0 1px #ddd;
+  }
+
+  .dsfacile-link--close {
+    background-color: transparent;
+    color: #05435f;
+  }
+
+  .dsfacile-link--close:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .dsfacile-link--close:active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .dsfacile-link--close:disabled,
+  a.dsfacile-link--close:not([href]) {
+    color: #929292;
+    background-color: transparent;
+  }
+
+  .dsfacile-link--close:disabled:hover,
+  a.dsfacile-link--close:not([href]):hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .dsfacile-link--close:disabled:active,
+  a.dsfacile-link--close:not([href]):active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}

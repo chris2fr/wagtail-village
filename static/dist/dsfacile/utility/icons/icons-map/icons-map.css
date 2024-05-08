@@ -1,0 +1,601 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  ICON COMMUNICATION
+\* ˍˍˍˍˍˍˍˍˍ */
+.dsfacile-icon-anchor-fill::before,
+.dsfacile-icon-anchor-fill::after {
+  -webkit-mask-image: url("../../../icons/map/anchor-fill.svg");
+  mask-image: url("../../../icons/map/anchor-fill.svg");
+}
+
+.dsfacile-icon-anchor-line::before,
+.dsfacile-icon-anchor-line::after {
+  -webkit-mask-image: url("../../../icons/map/anchor-line.svg");
+  mask-image: url("../../../icons/map/anchor-line.svg");
+}
+
+.dsfacile-icon-bike-fill::before,
+.dsfacile-icon-bike-fill::after {
+  -webkit-mask-image: url("../../../icons/map/bike-fill.svg");
+  mask-image: url("../../../icons/map/bike-fill.svg");
+}
+
+.dsfacile-icon-bike-line::before,
+.dsfacile-icon-bike-line::after {
+  -webkit-mask-image: url("../../../icons/map/bike-line.svg");
+  mask-image: url("../../../icons/map/bike-line.svg");
+}
+
+.dsfacile-icon-bus-fill::before,
+.dsfacile-icon-bus-fill::after {
+  -webkit-mask-image: url("../../../icons/map/bus-fill.svg");
+  mask-image: url("../../../icons/map/bus-fill.svg");
+}
+
+.dsfacile-icon-bus-line::before,
+.dsfacile-icon-bus-line::after {
+  -webkit-mask-image: url("../../../icons/map/bus-line.svg");
+  mask-image: url("../../../icons/map/bus-line.svg");
+}
+
+.dsfacile-icon-car-fill::before,
+.dsfacile-icon-car-fill::after {
+  -webkit-mask-image: url("../../../icons/map/car-fill.svg");
+  mask-image: url("../../../icons/map/car-fill.svg");
+}
+
+.dsfacile-icon-car-line::before,
+.dsfacile-icon-car-line::after {
+  -webkit-mask-image: url("../../../icons/map/car-line.svg");
+  mask-image: url("../../../icons/map/car-line.svg");
+}
+
+.dsfacile-icon-caravan-fill::before,
+.dsfacile-icon-caravan-fill::after {
+  -webkit-mask-image: url("../../../icons/map/caravan-fill.svg");
+  mask-image: url("../../../icons/map/caravan-fill.svg");
+}
+
+.dsfacile-icon-caravan-line::before,
+.dsfacile-icon-caravan-line::after {
+  -webkit-mask-image: url("../../../icons/map/caravan-line.svg");
+  mask-image: url("../../../icons/map/caravan-line.svg");
+}
+
+.dsfacile-icon-charging-pile-2-fill::before,
+.dsfacile-icon-charging-pile-2-fill::after {
+  -webkit-mask-image: url("../../../icons/map/charging-pile-2-fill.svg");
+  mask-image: url("../../../icons/map/charging-pile-2-fill.svg");
+}
+
+.dsfacile-icon-charging-pile-2-line::before,
+.dsfacile-icon-charging-pile-2-line::after {
+  -webkit-mask-image: url("../../../icons/map/charging-pile-2-line.svg");
+  mask-image: url("../../../icons/map/charging-pile-2-line.svg");
+}
+
+.dsfacile-icon-compass-3-fill::before,
+.dsfacile-icon-compass-3-fill::after {
+  -webkit-mask-image: url("../../../icons/map/compass-3-fill.svg");
+  mask-image: url("../../../icons/map/compass-3-fill.svg");
+}
+
+.dsfacile-icon-compass-3-line::before,
+.dsfacile-icon-compass-3-line::after {
+  -webkit-mask-image: url("../../../icons/map/compass-3-line.svg");
+  mask-image: url("../../../icons/map/compass-3-line.svg");
+}
+
+.dsfacile-icon-cup-fill::before,
+.dsfacile-icon-cup-fill::after {
+  -webkit-mask-image: url("../../../icons/map/cup-fill.svg");
+  mask-image: url("../../../icons/map/cup-fill.svg");
+}
+
+.dsfacile-icon-cup-line::before,
+.dsfacile-icon-cup-line::after {
+  -webkit-mask-image: url("../../../icons/map/cup-line.svg");
+  mask-image: url("../../../icons/map/cup-line.svg");
+}
+
+.dsfacile-icon-earth-fill::before,
+.dsfacile-icon-earth-fill::after {
+  -webkit-mask-image: url("../../../icons/map/earth-fill.svg");
+  mask-image: url("../../../icons/map/earth-fill.svg");
+}
+
+.dsfacile-icon-earth-line::before,
+.dsfacile-icon-earth-line::after {
+  -webkit-mask-image: url("../../../icons/map/earth-line.svg");
+  mask-image: url("../../../icons/map/earth-line.svg");
+}
+
+.dsfacile-icon-france-fill::before,
+.dsfacile-icon-france-fill::after {
+  -webkit-mask-image: url("../../../icons/map/france-fill.svg");
+  mask-image: url("../../../icons/map/france-fill.svg");
+}
+
+.dsfacile-icon-france-line::before,
+.dsfacile-icon-france-line::after {
+  -webkit-mask-image: url("../../../icons/map/france-line.svg");
+  mask-image: url("../../../icons/map/france-line.svg");
+}
+
+.dsfacile-icon-gas-station-fill::before,
+.dsfacile-icon-gas-station-fill::after {
+  -webkit-mask-image: url("../../../icons/map/gas-station-fill.svg");
+  mask-image: url("../../../icons/map/gas-station-fill.svg");
+}
+
+.dsfacile-icon-gas-station-line::before,
+.dsfacile-icon-gas-station-line::after {
+  -webkit-mask-image: url("../../../icons/map/gas-station-line.svg");
+  mask-image: url("../../../icons/map/gas-station-line.svg");
+}
+
+.dsfacile-icon-goblet-fill::before,
+.dsfacile-icon-goblet-fill::after {
+  -webkit-mask-image: url("../../../icons/map/goblet-fill.svg");
+  mask-image: url("../../../icons/map/goblet-fill.svg");
+}
+
+.dsfacile-icon-goblet-line::before,
+.dsfacile-icon-goblet-line::after {
+  -webkit-mask-image: url("../../../icons/map/goblet-line.svg");
+  mask-image: url("../../../icons/map/goblet-line.svg");
+}
+
+.dsfacile-icon-map-pin-2-fill::before,
+.dsfacile-icon-map-pin-2-fill::after {
+  -webkit-mask-image: url("../../../icons/map/map-pin-2-fill.svg");
+  mask-image: url("../../../icons/map/map-pin-2-fill.svg");
+}
+
+.dsfacile-icon-map-pin-2-line::before,
+.dsfacile-icon-map-pin-2-line::after {
+  -webkit-mask-image: url("../../../icons/map/map-pin-2-line.svg");
+  mask-image: url("../../../icons/map/map-pin-2-line.svg");
+}
+
+.dsfacile-icon-map-pin-user-fill::before,
+.dsfacile-icon-map-pin-user-fill::after {
+  -webkit-mask-image: url("../../../icons/map/map-pin-user-fill.svg");
+  mask-image: url("../../../icons/map/map-pin-user-fill.svg");
+}
+
+.dsfacile-icon-map-pin-user-line::before,
+.dsfacile-icon-map-pin-user-line::after {
+  -webkit-mask-image: url("../../../icons/map/map-pin-user-line.svg");
+  mask-image: url("../../../icons/map/map-pin-user-line.svg");
+}
+
+.dsfacile-icon-motorbike-fill::before,
+.dsfacile-icon-motorbike-fill::after {
+  -webkit-mask-image: url("../../../icons/map/motorbike-fill.svg");
+  mask-image: url("../../../icons/map/motorbike-fill.svg");
+}
+
+.dsfacile-icon-motorbike-line::before,
+.dsfacile-icon-motorbike-line::after {
+  -webkit-mask-image: url("../../../icons/map/motorbike-line.svg");
+  mask-image: url("../../../icons/map/motorbike-line.svg");
+}
+
+.dsfacile-icon-passport-fill::before,
+.dsfacile-icon-passport-fill::after {
+  -webkit-mask-image: url("../../../icons/map/passport-fill.svg");
+  mask-image: url("../../../icons/map/passport-fill.svg");
+}
+
+.dsfacile-icon-passport-line::before,
+.dsfacile-icon-passport-line::after {
+  -webkit-mask-image: url("../../../icons/map/passport-line.svg");
+  mask-image: url("../../../icons/map/passport-line.svg");
+}
+
+.dsfacile-icon-restaurant-fill::before,
+.dsfacile-icon-restaurant-fill::after {
+  -webkit-mask-image: url("../../../icons/map/restaurant-fill.svg");
+  mask-image: url("../../../icons/map/restaurant-fill.svg");
+}
+
+.dsfacile-icon-restaurant-line::before,
+.dsfacile-icon-restaurant-line::after {
+  -webkit-mask-image: url("../../../icons/map/restaurant-line.svg");
+  mask-image: url("../../../icons/map/restaurant-line.svg");
+}
+
+.dsfacile-icon-road-map-fill::before,
+.dsfacile-icon-road-map-fill::after {
+  -webkit-mask-image: url("../../../icons/map/road-map-fill.svg");
+  mask-image: url("../../../icons/map/road-map-fill.svg");
+}
+
+.dsfacile-icon-road-map-line::before,
+.dsfacile-icon-road-map-line::after {
+  -webkit-mask-image: url("../../../icons/map/road-map-line.svg");
+  mask-image: url("../../../icons/map/road-map-line.svg");
+}
+
+.dsfacile-icon-sailboat-fill::before,
+.dsfacile-icon-sailboat-fill::after {
+  -webkit-mask-image: url("../../../icons/map/sailboat-fill.svg");
+  mask-image: url("../../../icons/map/sailboat-fill.svg");
+}
+
+.dsfacile-icon-sailboat-line::before,
+.dsfacile-icon-sailboat-line::after {
+  -webkit-mask-image: url("../../../icons/map/sailboat-line.svg");
+  mask-image: url("../../../icons/map/sailboat-line.svg");
+}
+
+.dsfacile-icon-ship-2-fill::before,
+.dsfacile-icon-ship-2-fill::after {
+  -webkit-mask-image: url("../../../icons/map/ship-2-fill.svg");
+  mask-image: url("../../../icons/map/ship-2-fill.svg");
+}
+
+.dsfacile-icon-ship-2-line::before,
+.dsfacile-icon-ship-2-line::after {
+  -webkit-mask-image: url("../../../icons/map/ship-2-line.svg");
+  mask-image: url("../../../icons/map/ship-2-line.svg");
+}
+
+.dsfacile-icon-signal-tower-fill::before,
+.dsfacile-icon-signal-tower-fill::after {
+  -webkit-mask-image: url("../../../icons/map/signal-tower-fill.svg");
+  mask-image: url("../../../icons/map/signal-tower-fill.svg");
+}
+
+.dsfacile-icon-signal-tower-line::before,
+.dsfacile-icon-signal-tower-line::after {
+  -webkit-mask-image: url("../../../icons/map/signal-tower-line.svg");
+  mask-image: url("../../../icons/map/signal-tower-line.svg");
+}
+
+.dsfacile-icon-suitcase-2-fill::before,
+.dsfacile-icon-suitcase-2-fill::after {
+  -webkit-mask-image: url("../../../icons/map/suitcase-2-fill.svg");
+  mask-image: url("../../../icons/map/suitcase-2-fill.svg");
+}
+
+.dsfacile-icon-suitcase-2-line::before,
+.dsfacile-icon-suitcase-2-line::after {
+  -webkit-mask-image: url("../../../icons/map/suitcase-2-line.svg");
+  mask-image: url("../../../icons/map/suitcase-2-line.svg");
+}
+
+.dsfacile-icon-taxi-fill::before,
+.dsfacile-icon-taxi-fill::after {
+  -webkit-mask-image: url("../../../icons/map/taxi-fill.svg");
+  mask-image: url("../../../icons/map/taxi-fill.svg");
+}
+
+.dsfacile-icon-taxi-line::before,
+.dsfacile-icon-taxi-line::after {
+  -webkit-mask-image: url("../../../icons/map/taxi-line.svg");
+  mask-image: url("../../../icons/map/taxi-line.svg");
+}
+
+.dsfacile-icon-train-fill::before,
+.dsfacile-icon-train-fill::after {
+  -webkit-mask-image: url("../../../icons/map/train-fill.svg");
+  mask-image: url("../../../icons/map/train-fill.svg");
+}
+
+.dsfacile-icon-train-line::before,
+.dsfacile-icon-train-line::after {
+  -webkit-mask-image: url("../../../icons/map/train-line.svg");
+  mask-image: url("../../../icons/map/train-line.svg");
+}
+
+.dsfacile-fi-map-pin-2-fill::before,
+.dsfacile-fi-map-pin-2-fill::after {
+  -webkit-mask-image: url("../../../icons/map/map-pin-2-fill.svg");
+  mask-image: url("../../../icons/map/map-pin-2-fill.svg");
+}
+
+.dsfacile-fi-map-pin-2-line::before,
+.dsfacile-fi-map-pin-2-line::after {
+  -webkit-mask-image: url("../../../icons/map/map-pin-2-line.svg");
+  mask-image: url("../../../icons/map/map-pin-2-line.svg");
+}
+
+.dsfacile-fi-road-map-fill::before,
+.dsfacile-fi-road-map-fill::after {
+  -webkit-mask-image: url("../../../icons/map/road-map-fill.svg");
+  mask-image: url("../../../icons/map/road-map-fill.svg");
+}
+
+.dsfacile-fi-road-map-line::before,
+.dsfacile-fi-road-map-line::after {
+  -webkit-mask-image: url("../../../icons/map/road-map-line.svg");
+  mask-image: url("../../../icons/map/road-map-line.svg");
+}
+
+@media (min-width: 36em) {
+  /*! media sm */
+
+  /*! media sm */
+}
+
+@media (min-width: 48em) {
+  /*! media md */
+
+  /*! media md */
+}
+
+@media (min-width: 62em) {
+  /*! media lg */
+
+  /*! media lg */
+}
+
+@media (min-width: 78em) {
+  /*! media xl */
+
+  /*! media xl */
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .dsfacile-icon-anchor-fill::before,
+  .dsfacile-icon-anchor-fill::after {
+    background-image: url("../../../icons/map/anchor-fill.svg");
+  }
+
+  .dsfacile-icon-anchor-line::before,
+  .dsfacile-icon-anchor-line::after {
+    background-image: url("../../../icons/map/anchor-line.svg");
+  }
+
+  .dsfacile-icon-bike-fill::before,
+  .dsfacile-icon-bike-fill::after {
+    background-image: url("../../../icons/map/bike-fill.svg");
+  }
+
+  .dsfacile-icon-bike-line::before,
+  .dsfacile-icon-bike-line::after {
+    background-image: url("../../../icons/map/bike-line.svg");
+  }
+
+  .dsfacile-icon-bus-fill::before,
+  .dsfacile-icon-bus-fill::after {
+    background-image: url("../../../icons/map/bus-fill.svg");
+  }
+
+  .dsfacile-icon-bus-line::before,
+  .dsfacile-icon-bus-line::after {
+    background-image: url("../../../icons/map/bus-line.svg");
+  }
+
+  .dsfacile-icon-car-fill::before,
+  .dsfacile-icon-car-fill::after {
+    background-image: url("../../../icons/map/car-fill.svg");
+  }
+
+  .dsfacile-icon-car-line::before,
+  .dsfacile-icon-car-line::after {
+    background-image: url("../../../icons/map/car-line.svg");
+  }
+
+  .dsfacile-icon-caravan-fill::before,
+  .dsfacile-icon-caravan-fill::after {
+    background-image: url("../../../icons/map/caravan-fill.svg");
+  }
+
+  .dsfacile-icon-caravan-line::before,
+  .dsfacile-icon-caravan-line::after {
+    background-image: url("../../../icons/map/caravan-line.svg");
+  }
+
+  .dsfacile-icon-charging-pile-2-fill::before,
+  .dsfacile-icon-charging-pile-2-fill::after {
+    background-image: url("../../../icons/map/charging-pile-2-fill.svg");
+  }
+
+  .dsfacile-icon-charging-pile-2-line::before,
+  .dsfacile-icon-charging-pile-2-line::after {
+    background-image: url("../../../icons/map/charging-pile-2-line.svg");
+  }
+
+  .dsfacile-icon-compass-3-fill::before,
+  .dsfacile-icon-compass-3-fill::after {
+    background-image: url("../../../icons/map/compass-3-fill.svg");
+  }
+
+  .dsfacile-icon-compass-3-line::before,
+  .dsfacile-icon-compass-3-line::after {
+    background-image: url("../../../icons/map/compass-3-line.svg");
+  }
+
+  .dsfacile-icon-cup-fill::before,
+  .dsfacile-icon-cup-fill::after {
+    background-image: url("../../../icons/map/cup-fill.svg");
+  }
+
+  .dsfacile-icon-cup-line::before,
+  .dsfacile-icon-cup-line::after {
+    background-image: url("../../../icons/map/cup-line.svg");
+  }
+
+  .dsfacile-icon-earth-fill::before,
+  .dsfacile-icon-earth-fill::after {
+    background-image: url("../../../icons/map/earth-fill.svg");
+  }
+
+  .dsfacile-icon-earth-line::before,
+  .dsfacile-icon-earth-line::after {
+    background-image: url("../../../icons/map/earth-line.svg");
+  }
+
+  .dsfacile-icon-france-fill::before,
+  .dsfacile-icon-france-fill::after {
+    background-image: url("../../../icons/map/france-fill.svg");
+  }
+
+  .dsfacile-icon-france-line::before,
+  .dsfacile-icon-france-line::after {
+    background-image: url("../../../icons/map/france-line.svg");
+  }
+
+  .dsfacile-icon-gas-station-fill::before,
+  .dsfacile-icon-gas-station-fill::after {
+    background-image: url("../../../icons/map/gas-station-fill.svg");
+  }
+
+  .dsfacile-icon-gas-station-line::before,
+  .dsfacile-icon-gas-station-line::after {
+    background-image: url("../../../icons/map/gas-station-line.svg");
+  }
+
+  .dsfacile-icon-goblet-fill::before,
+  .dsfacile-icon-goblet-fill::after {
+    background-image: url("../../../icons/map/goblet-fill.svg");
+  }
+
+  .dsfacile-icon-goblet-line::before,
+  .dsfacile-icon-goblet-line::after {
+    background-image: url("../../../icons/map/goblet-line.svg");
+  }
+
+  .dsfacile-icon-map-pin-2-fill::before,
+  .dsfacile-icon-map-pin-2-fill::after {
+    background-image: url("../../../icons/map/map-pin-2-fill.svg");
+  }
+
+  .dsfacile-icon-map-pin-2-line::before,
+  .dsfacile-icon-map-pin-2-line::after {
+    background-image: url("../../../icons/map/map-pin-2-line.svg");
+  }
+
+  .dsfacile-icon-map-pin-user-fill::before,
+  .dsfacile-icon-map-pin-user-fill::after {
+    background-image: url("../../../icons/map/map-pin-user-fill.svg");
+  }
+
+  .dsfacile-icon-map-pin-user-line::before,
+  .dsfacile-icon-map-pin-user-line::after {
+    background-image: url("../../../icons/map/map-pin-user-line.svg");
+  }
+
+  .dsfacile-icon-motorbike-fill::before,
+  .dsfacile-icon-motorbike-fill::after {
+    background-image: url("../../../icons/map/motorbike-fill.svg");
+  }
+
+  .dsfacile-icon-motorbike-line::before,
+  .dsfacile-icon-motorbike-line::after {
+    background-image: url("../../../icons/map/motorbike-line.svg");
+  }
+
+  .dsfacile-icon-passport-fill::before,
+  .dsfacile-icon-passport-fill::after {
+    background-image: url("../../../icons/map/passport-fill.svg");
+  }
+
+  .dsfacile-icon-passport-line::before,
+  .dsfacile-icon-passport-line::after {
+    background-image: url("../../../icons/map/passport-line.svg");
+  }
+
+  .dsfacile-icon-restaurant-fill::before,
+  .dsfacile-icon-restaurant-fill::after {
+    background-image: url("../../../icons/map/restaurant-fill.svg");
+  }
+
+  .dsfacile-icon-restaurant-line::before,
+  .dsfacile-icon-restaurant-line::after {
+    background-image: url("../../../icons/map/restaurant-line.svg");
+  }
+
+  .dsfacile-icon-road-map-fill::before,
+  .dsfacile-icon-road-map-fill::after {
+    background-image: url("../../../icons/map/road-map-fill.svg");
+  }
+
+  .dsfacile-icon-road-map-line::before,
+  .dsfacile-icon-road-map-line::after {
+    background-image: url("../../../icons/map/road-map-line.svg");
+  }
+
+  .dsfacile-icon-sailboat-fill::before,
+  .dsfacile-icon-sailboat-fill::after {
+    background-image: url("../../../icons/map/sailboat-fill.svg");
+  }
+
+  .dsfacile-icon-sailboat-line::before,
+  .dsfacile-icon-sailboat-line::after {
+    background-image: url("../../../icons/map/sailboat-line.svg");
+  }
+
+  .dsfacile-icon-ship-2-fill::before,
+  .dsfacile-icon-ship-2-fill::after {
+    background-image: url("../../../icons/map/ship-2-fill.svg");
+  }
+
+  .dsfacile-icon-ship-2-line::before,
+  .dsfacile-icon-ship-2-line::after {
+    background-image: url("../../../icons/map/ship-2-line.svg");
+  }
+
+  .dsfacile-icon-signal-tower-fill::before,
+  .dsfacile-icon-signal-tower-fill::after {
+    background-image: url("../../../icons/map/signal-tower-fill.svg");
+  }
+
+  .dsfacile-icon-signal-tower-line::before,
+  .dsfacile-icon-signal-tower-line::after {
+    background-image: url("../../../icons/map/signal-tower-line.svg");
+  }
+
+  .dsfacile-icon-suitcase-2-fill::before,
+  .dsfacile-icon-suitcase-2-fill::after {
+    background-image: url("../../../icons/map/suitcase-2-fill.svg");
+  }
+
+  .dsfacile-icon-suitcase-2-line::before,
+  .dsfacile-icon-suitcase-2-line::after {
+    background-image: url("../../../icons/map/suitcase-2-line.svg");
+  }
+
+  .dsfacile-icon-taxi-fill::before,
+  .dsfacile-icon-taxi-fill::after {
+    background-image: url("../../../icons/map/taxi-fill.svg");
+  }
+
+  .dsfacile-icon-taxi-line::before,
+  .dsfacile-icon-taxi-line::after {
+    background-image: url("../../../icons/map/taxi-line.svg");
+  }
+
+  .dsfacile-icon-train-fill::before,
+  .dsfacile-icon-train-fill::after {
+    background-image: url("../../../icons/map/train-fill.svg");
+  }
+
+  .dsfacile-icon-train-line::before,
+  .dsfacile-icon-train-line::after {
+    background-image: url("../../../icons/map/train-line.svg");
+  }
+
+  .dsfacile-fi-map-pin-2-fill::before {
+    background-image: url("../../../icons/map/map-pin-2-fill.svg");
+  }
+
+  .dsfacile-fi-map-pin-2-line::before {
+    background-image: url("../../../icons/map/map-pin-2-line.svg");
+  }
+
+  .dsfacile-fi-road-map-fill::before {
+    background-image: url("../../../icons/map/road-map-fill.svg");
+  }
+
+  .dsfacile-fi-road-map-line::before {
+    background-image: url("../../../icons/map/road-map-line.svg");
+  }
+}

@@ -2,14 +2,14 @@ from django import forms
 from django.conf import settings
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _, pgettext_lazy
-from dsfr.constants import COLOR_CHOICES, COLOR_CHOICES_ILLUSTRATION, COLOR_CHOICES_SYSTEM
 from wagtail import blocks
 from wagtail.documents.blocks import DocumentChooserBlock
 from wagtail.images.blocks import ImageChooserBlock
 from wagtailmarkdown.blocks import MarkdownBlock
 
 from content_manager.constants import HEADING_CHOICES, LEVEL_CHOICES
-from content_manager.widgets import DsfrIconPickerWidget
+from content_manager.widgets import DsfacileIconPickerWidget
+from django_dsfacile.constants import COLOR_CHOICES, COLOR_CHOICES_ILLUSTRATION, COLOR_CHOICES_SYSTEM
 
 
 # Wagtail Block Documentation : https://docs.wagtail.org/en/stable/reference/streamfield/blocks.html
@@ -68,7 +68,7 @@ class IconPickerBlock(blocks.FieldBlock):
 
     @cached_property
     def field(self):
-        field_kwargs = {"widget": DsfrIconPickerWidget()}
+        field_kwargs = {"widget": DsfacileIconPickerWidget()}
         field_kwargs.update(self.field_options)
         return forms.CharField(**field_kwargs)
 

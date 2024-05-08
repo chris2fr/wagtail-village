@@ -1,0 +1,440 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-10 16:17+0200\n"
+"PO-Revision-Date: 2024-04-10 16:19+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4\n"
+
+#: dsfacile/admin.py:59
+msgid "Newsletter"
+msgstr "Lettre d’information"
+
+#: dsfacile/constants.py:5
+msgid "English"
+msgstr "Anglais"
+
+#: dsfacile/constants.py:6
+msgid "French"
+msgstr "Français"
+
+#: dsfacile/constants.py:12
+msgid "Blue France"
+msgstr "Bleu France"
+
+#: dsfacile/constants.py:13
+msgid "Red Marianne"
+msgstr "Rouge Marianne"
+
+#: dsfacile/constants.py:17
+msgid "Grey"
+msgstr "Gris"
+
+#: dsfacile/constants.py:21
+msgid "Info"
+msgstr "Info"
+
+#: dsfacile/constants.py:22
+msgid "Success"
+msgstr "Succès"
+
+#: dsfacile/constants.py:23
+msgid "Warning"
+msgstr "Avertissement"
+
+#: dsfacile/constants.py:24
+msgid "Error"
+msgstr "Erreur"
+
+#: dsfacile/constants.py:48 dsfacile/constants.py:54
+msgid "Primary colors"
+msgstr "Couleurs primaires"
+
+#: dsfacile/constants.py:49 dsfacile/constants.py:55
+msgid "Neutral colors"
+msgstr "Couleurs neutres"
+
+#: dsfacile/constants.py:50 dsfacile/constants.py:57
+msgid "Illustration colors"
+msgstr "Couleurs illustratives"
+
+#: dsfacile/constants.py:56
+msgid "System colors"
+msgstr "Couleurs système"
+
+#: dsfacile/models.py:20
+msgid "Language"
+msgstr "Langue"
+
+#: dsfacile/models.py:23
+msgid "Only one configuration is allowed per language"
+msgstr "Une seule configuration autorisée par langue"
+
+#: dsfacile/models.py:29
+msgid "fully"
+msgstr "totalement"
+
+#: dsfacile/models.py:30
+msgid "partially"
+msgstr "partiellement"
+
+#: dsfacile/models.py:31
+msgid "not"
+msgstr "non"
+
+#: dsfacile/models.py:36
+msgid "Site title"
+msgstr "Titre du site"
+
+#: dsfacile/models.py:39
+msgid "Site tagline"
+msgstr "Sous-titre du site"
+
+#: dsfacile/models.py:42
+msgid "Important notice"
+msgstr "Bandeau d’information importante"
+
+#: dsfacile/models.py:46
+msgid ""
+"The important notice banner should only be used for essential and temporary "
+"information.             (Excessive or continuous use risks “drowning” the "
+"message.)"
+msgstr ""
+"Le bandeau d’information importante doit être utilisé uniquement pour une "
+"information primordiale et temporaire.  (Une utilisation excessive ou "
+"continue risque de “noyer” le message)"
+
+#: dsfacile/models.py:53
+msgid "Institution (header)"
+msgstr "Institution (en-tête)"
+
+#: dsfacile/models.py:59
+msgid "Institution with line break (header)"
+msgstr "Institution avec césure (en-tête)"
+
+#: dsfacile/models.py:64
+msgid "Show the BETA tag next to the title"
+msgstr "Afficher la mention BETA à côté du titre"
+
+#: dsfacile/models.py:68
+msgid "Institution (footer)"
+msgstr "Institution (pied"
+
+#: dsfacile/models.py:74
+msgid "Institution with line break (footer)"
+msgstr "Institution avec césure (pied)"
+
+#: dsfacile/models.py:79
+msgid "Description"
+msgstr "Description"
+
+#: dsfacile/models.py:82
+msgid "Newsletter description"
+msgstr "Description de la lettre d’information"
+
+#: dsfacile/models.py:86
+msgid "Newsletter registration URL"
+msgstr "URL d‘inscription à la lettre d’information"
+
+#: dsfacile/models.py:93
+msgid "Operator logo"
+msgstr "Logo opérateur"
+
+#: dsfacile/models.py:100
+msgid "Logo alt text"
+msgstr "Alternative textuelle du logo"
+
+#: dsfacile/models.py:103
+msgid "Must contain the text present in the image."
+msgstr "Doit impérativement contenir le texte présent dans l’image."
+
+#: dsfacile/models.py:106
+msgid "Width (em)"
+msgstr "Largeur (em)"
+
+#: dsfacile/models.py:112
+msgid ""
+"To be adjusted according to the width of the logo.            Example for a "
+"vertical logo: 3.5, Example for a horizontal logo: 8."
+msgstr ""
+"À ajuster en fonction de la largeur du logo.  Exemple pour un logo vertical: "
+"3.5, Exemple pour un logo horizontal: 8."
+
+#: dsfacile/models.py:118
+msgid "Mourning"
+msgstr "Mise en berne"
+
+#: dsfacile/models.py:121
+msgid "Accessibility compliance status"
+msgstr "Statut de conformité de l’accessibilité"
+
+#: dsfacile/models.py:128
+msgid "Configuration"
+msgstr "Configuration"
+
+#: dsfacile/models.py:131
+msgid "Site config:"
+msgstr "Configuration du site :"
+
+#: dsfacile/models.py:139
+msgid "Title"
+msgstr "Titre"
+
+#: dsfacile/models.py:142
+msgid "URL"
+msgstr "URL"
+
+#: dsfacile/models.py:147
+msgid "Icon class"
+msgstr "Classe d’icône"
+
+#: dsfacile/models.py:154
+msgid "Social media"
+msgstr "Réseau social"
+
+#: dsfacile/models.py:155
+msgid "Social medias"
+msgstr "Réseaux sociaux"
+
+#: dsfacile/templates/dsfacile/alert.html:2 dsfacile/templates/dsfacile/notice.html:2
+msgid "Hide message"
+msgstr "Masquer le message"
+
+#: dsfacile/templates/dsfacile/breadcrumb.html:2
+msgid "you are here:"
+msgstr "vous êtes ici :"
+
+#: dsfacile/templates/dsfacile/breadcrumb.html:10
+msgid "See breadcrumb"
+msgstr "Voir le fil d’Ariane"
+
+#: dsfacile/templates/dsfacile/breadcrumb.html:15 dsfacile/templates/dsfacile/header.html:10
+msgid "Home page"
+msgstr "Accueil"
+
+#: dsfacile/templates/dsfacile/card.html:2 dsfacile/templates/dsfacile/follow.html:2
+#: dsfacile/templates/dsfacile/footer.html:2 dsfacile/templates/dsfacile/france_connect.html:9
+#: dsfacile/templates/dsfacile/link.html:7 dsfacile/templates/dsfacile/quote.html:2
+msgid "Opens a new window"
+msgstr "Ouvre une nouvelle fenêtre"
+
+#: dsfacile/templates/dsfacile/consent.html:13
+msgid "Allow all cookies"
+msgstr "Autoriser tous les cookies"
+
+#: dsfacile/templates/dsfacile/consent.html:17
+msgid "Accept all"
+msgstr "Tout accepter"
+
+#: dsfacile/templates/dsfacile/consent.html:21
+msgid "Reject all cookies"
+msgstr "Refuser tous les cookies"
+
+#: dsfacile/templates/dsfacile/consent.html:25
+msgid "Reject all"
+msgstr "Tout refuser"
+
+#: dsfacile/templates/dsfacile/consent.html:29
+msgid "Customize cookies"
+msgstr "Personnaliser les cookies"
+
+#: dsfacile/templates/dsfacile/consent.html:35
+msgid "Customize"
+msgstr "Personnaliser"
+
+#: dsfacile/templates/dsfacile/follow.html:11
+msgctxt "Section title"
+msgid "Subscribe to our newsletter"
+msgstr "Abonnez-vous à notre lettre d’information"
+
+#: dsfacile/templates/dsfacile/follow.html:18
+msgctxt "Button title"
+msgid "Subscribe to our newsletter"
+msgstr "S'abonner à notre lettre d’information"
+
+#: dsfacile/templates/dsfacile/follow.html:24
+msgid "Subscribe"
+msgstr "S’abonner"
+
+#: dsfacile/templates/dsfacile/follow.html:34
+msgid "Follow us <br /> on social media"
+msgstr "Suivez-nous <br /> sur les réseaux sociaux"
+
+#: dsfacile/templates/dsfacile/footer.html:9
+msgid "Back to home page"
+msgstr "Retour à l’accueil du site"
+
+#: dsfacile/templates/dsfacile/footer.html:93
+msgid "Sitemap"
+msgstr "Plan du site"
+
+#: dsfacile/templates/dsfacile/footer.html:98
+#, python-format
+msgid "Accessibility: %(accessibility_status)s compliant"
+msgstr "Accessibilité : %(accessibility_status)s conforme"
+
+#: dsfacile/templates/dsfacile/footer.html:103
+msgid "Legal notice"
+msgstr "Mentions légales"
+
+#: dsfacile/templates/dsfacile/footer.html:106
+msgid "Personal data"
+msgstr "Données personnelles"
+
+#: dsfacile/templates/dsfacile/footer.html:109
+msgid "Cookie management"
+msgstr "Gestion des cookies"
+
+#: dsfacile/templates/dsfacile/footer.html:115
+msgid "etalab-2.0 license"
+msgstr "licence etalab-2.0"
+
+#: dsfacile/templates/dsfacile/footer.html:116
+msgid ""
+"Unless explicit mention of intellectual property held by third parties, the "
+"contents of this site are offered under"
+msgstr ""
+"Sauf mention explicite de propriété intellectuelle détenue par des tiers, "
+"les contenus de ce site sont proposés sous"
+
+#: dsfacile/templates/dsfacile/formset_base.html:27
+msgid "Delete this item"
+msgstr "Supprimer cet élément"
+
+#: dsfacile/templates/dsfacile/formset_base.html:37
+msgid "Add an item"
+msgstr "Ajouter un élément"
+
+#: dsfacile/templates/dsfacile/france_connect.html:5
+msgid "Login with"
+msgstr "S’identifier avec"
+
+#: dsfacile/templates/dsfacile/france_connect.html:10
+msgid "What is FranceConnect+?"
+msgstr "Qu’est-ce que FranceConnect+ ?"
+
+#: dsfacile/templates/dsfacile/france_connect.html:11
+msgid "What is FranceConnect?"
+msgstr "Qu’est-ce que FranceConnect ?"
+
+#: dsfacile/templates/dsfacile/header.html:29
+msgid "Menu"
+msgstr "Menu"
+
+#: dsfacile/templates/dsfacile/header.html:87 dsfacile/templates/dsfacile/theme_modale.html:13
+#: dsfacile/templates/dsfacile/transcription.html:30
+msgid "Close"
+msgstr "Fermer"
+
+#: dsfacile/templates/dsfacile/header.html:91
+msgid "Main menu"
+msgstr "Menu principal"
+
+#: dsfacile/templates/dsfacile/pagination.html:2
+msgid "Pagination"
+msgstr "Pagination"
+
+#: dsfacile/templates/dsfacile/pagination.html:9
+msgid "First page"
+msgstr "Première page"
+
+#: dsfacile/templates/dsfacile/pagination.html:14
+msgid "Previous page"
+msgstr "Page précédente"
+
+#: dsfacile/templates/dsfacile/pagination.html:25
+msgid "Page"
+msgstr "Page"
+
+#: dsfacile/templates/dsfacile/pagination.html:46
+msgid "Next page"
+msgstr "Page suivante"
+
+#: dsfacile/templates/dsfacile/pagination.html:52
+msgid "Last page"
+msgstr "Dernière page"
+
+#: dsfacile/templates/dsfacile/sidemenu.html:2
+msgid "Side menu"
+msgstr "Menu latéral"
+
+#: dsfacile/templates/dsfacile/sidemenu.html:11
+msgid "In this section"
+msgstr "Dans cette rubrique"
+
+#: dsfacile/templates/dsfacile/skiplinks.html:2
+msgid "Skip links"
+msgstr "Accès rapide"
+
+#: dsfacile/templates/dsfacile/stepper.html:6
+#, python-format
+msgid "Step %(current_step_id)s of %(total_steps)s"
+msgstr "Étape %(current_step_id)s sur %(total_steps)s"
+
+#: dsfacile/templates/dsfacile/stepper.html:17
+msgid "Next step:"
+msgstr "Étape suivante :"
+
+#: dsfacile/templates/dsfacile/summary.html:6
+msgid "Summary"
+msgstr "Sommaire"
+
+#: dsfacile/templates/dsfacile/tag.html:3
+msgid "Remove filter"
+msgstr "Retirer le filtre"
+
+#: dsfacile/templates/dsfacile/theme_modale.html:18
+msgid "Display settings"
+msgstr "Paramètres d’affichage"
+
+#: dsfacile/templates/dsfacile/theme_modale.html:24
+msgid "Choose a theme to customize the appearance of the site."
+msgstr "Choisissez un thème pour personnaliser l’apparence du site."
+
+#: dsfacile/templates/dsfacile/theme_modale.html:33
+msgid "Light theme"
+msgstr "Thème clair"
+
+#: dsfacile/templates/dsfacile/theme_modale.html:46
+msgid "Dark theme"
+msgstr "Thème sombre"
+
+#: dsfacile/templates/dsfacile/theme_modale.html:59
+msgid "System"
+msgstr "Système"
+
+#: dsfacile/templates/dsfacile/theme_modale.html:60
+msgid "Uses system settings."
+msgstr "Utilise les paramètres système."
+
+#: dsfacile/templates/dsfacile/toggle.html:2
+msgid "Checked"
+msgstr "Activé"
+
+#: dsfacile/templates/dsfacile/toggle.html:3
+msgid "Unchecked"
+msgstr "Désactivé"
+
+#: dsfacile/templates/dsfacile/tooltip.html:6
+msgid "Contextual information"
+msgstr "Information contextuelle"
+
+#: dsfacile/templates/dsfacile/transcription.html:2
+msgid "Transcript"
+msgstr "Transcription"
+
+#: dsfacile/templates/dsfacile/transcription.html:12
+msgid "Enlarge"
+msgstr "Agrandir"

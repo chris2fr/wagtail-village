@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static dsfr_tags wagtailcore_tags wagtailimages_tags i18n %}
+{% load static django_dsfacile_tags wagtailcore_tags wagtailimages_tags i18n %}
 
 {% block title %}
     <title>{{ page.seo_title|default:page.title }} — {{ settings.content_manager.CmsDsfrConfig.site_title }}</title>
@@ -42,7 +42,7 @@
 
 {% block content %}
     {% include "content_manager/blocks/heading.html" %}
-    <div class="fr-container fr-pt-4w">
+    <div class="dsfacile-container dsfacile-pt-4w">
         {% include "content_manager/blocks/breadcrumbs.html" %}
         {% if not page.header_with_title %}<h1>{{ page.title }}</h1>{% endif %}
     </div>
@@ -51,9 +51,9 @@
 
     {% include "content_manager/blocks/blocks_stream.html" with stream=page.body %}
 
-    <div class="fr-container fr-my-6w">
+    <div class="dsfacile-container dsfacile-my-6w">
         {% for tag in page.tags.all|dictsort:"slug" %}
-            <a class="fr-tag" target="_self" href="{% url 'global_tag' tag.slug %}">{{ tag }}</a>
+            <a class="dsfacile-tag" target="_self" href="{% url 'global_tag' tag.slug %}">{{ tag }}</a>
         {% endfor %}
     </div>
 {% endblock content %}

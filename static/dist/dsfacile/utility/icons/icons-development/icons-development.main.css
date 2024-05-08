@@ -1,0 +1,179 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  ICON COMMUNICATION
+\* ˍˍˍˍˍˍˍˍˍ */
+.dsfacile-icon-bug-fill::before,
+.dsfacile-icon-bug-fill::after {
+  -webkit-mask-image: url("../../../icons/development/bug-fill.svg");
+  mask-image: url("../../../icons/development/bug-fill.svg");
+}
+
+.dsfacile-icon-bug-line::before,
+.dsfacile-icon-bug-line::after {
+  -webkit-mask-image: url("../../../icons/development/bug-line.svg");
+  mask-image: url("../../../icons/development/bug-line.svg");
+}
+
+.dsfacile-icon-code-box-fill::before,
+.dsfacile-icon-code-box-fill::after {
+  -webkit-mask-image: url("../../../icons/development/code-box-fill.svg");
+  mask-image: url("../../../icons/development/code-box-fill.svg");
+}
+
+.dsfacile-icon-code-box-line::before,
+.dsfacile-icon-code-box-line::after {
+  -webkit-mask-image: url("../../../icons/development/code-box-line.svg");
+  mask-image: url("../../../icons/development/code-box-line.svg");
+}
+
+.dsfacile-icon-code-s-slash-line::before,
+.dsfacile-icon-code-s-slash-line::after {
+  -webkit-mask-image: url("../../../icons/development/code-s-slash-line.svg");
+  mask-image: url("../../../icons/development/code-s-slash-line.svg");
+}
+
+.dsfacile-icon-cursor-fill::before,
+.dsfacile-icon-cursor-fill::after {
+  -webkit-mask-image: url("../../../icons/development/cursor-fill.svg");
+  mask-image: url("../../../icons/development/cursor-fill.svg");
+}
+
+.dsfacile-icon-cursor-line::before,
+.dsfacile-icon-cursor-line::after {
+  -webkit-mask-image: url("../../../icons/development/cursor-line.svg");
+  mask-image: url("../../../icons/development/cursor-line.svg");
+}
+
+.dsfacile-icon-git-branch-fill::before,
+.dsfacile-icon-git-branch-fill::after {
+  -webkit-mask-image: url("../../../icons/development/git-branch-fill.svg");
+  mask-image: url("../../../icons/development/git-branch-fill.svg");
+}
+
+.dsfacile-icon-git-branch-line::before,
+.dsfacile-icon-git-branch-line::after {
+  -webkit-mask-image: url("../../../icons/development/git-branch-line.svg");
+  mask-image: url("../../../icons/development/git-branch-line.svg");
+}
+
+.dsfacile-icon-git-commit-fill::before,
+.dsfacile-icon-git-commit-fill::after {
+  -webkit-mask-image: url("../../../icons/development/git-commit-fill.svg");
+  mask-image: url("../../../icons/development/git-commit-fill.svg");
+}
+
+.dsfacile-icon-git-commit-line::before,
+.dsfacile-icon-git-commit-line::after {
+  -webkit-mask-image: url("../../../icons/development/git-commit-line.svg");
+  mask-image: url("../../../icons/development/git-commit-line.svg");
+}
+
+.dsfacile-icon-git-merge-fill::before,
+.dsfacile-icon-git-merge-fill::after {
+  -webkit-mask-image: url("../../../icons/development/git-merge-fill.svg");
+  mask-image: url("../../../icons/development/git-merge-fill.svg");
+}
+
+.dsfacile-icon-git-merge-line::before,
+.dsfacile-icon-git-merge-line::after {
+  -webkit-mask-image: url("../../../icons/development/git-merge-line.svg");
+  mask-image: url("../../../icons/development/git-merge-line.svg");
+}
+
+.dsfacile-icon-git-pull-request-fill::before,
+.dsfacile-icon-git-pull-request-fill::after {
+  -webkit-mask-image: url("../../../icons/development/git-pull-request-fill.svg");
+  mask-image: url("../../../icons/development/git-pull-request-fill.svg");
+}
+
+.dsfacile-icon-git-pull-request-line::before,
+.dsfacile-icon-git-pull-request-line::after {
+  -webkit-mask-image: url("../../../icons/development/git-pull-request-line.svg");
+  mask-image: url("../../../icons/development/git-pull-request-line.svg");
+}
+
+.dsfacile-icon-git-repository-commits-fill::before,
+.dsfacile-icon-git-repository-commits-fill::after {
+  -webkit-mask-image: url("../../../icons/development/git-repository-commits-fill.svg");
+  mask-image: url("../../../icons/development/git-repository-commits-fill.svg");
+}
+
+.dsfacile-icon-git-repository-commits-line::before,
+.dsfacile-icon-git-repository-commits-line::after {
+  -webkit-mask-image: url("../../../icons/development/git-repository-commits-line.svg");
+  mask-image: url("../../../icons/development/git-repository-commits-line.svg");
+}
+
+.dsfacile-icon-git-repository-fill::before,
+.dsfacile-icon-git-repository-fill::after {
+  -webkit-mask-image: url("../../../icons/development/git-repository-fill.svg");
+  mask-image: url("../../../icons/development/git-repository-fill.svg");
+}
+
+.dsfacile-icon-git-repository-line::before,
+.dsfacile-icon-git-repository-line::after {
+  -webkit-mask-image: url("../../../icons/development/git-repository-line.svg");
+  mask-image: url("../../../icons/development/git-repository-line.svg");
+}
+
+.dsfacile-icon-git-repository-private-fill::before,
+.dsfacile-icon-git-repository-private-fill::after {
+  -webkit-mask-image: url("../../../icons/development/git-repository-private-fill.svg");
+  mask-image: url("../../../icons/development/git-repository-private-fill.svg");
+}
+
+.dsfacile-icon-git-repository-private-line::before,
+.dsfacile-icon-git-repository-private-line::after {
+  -webkit-mask-image: url("../../../icons/development/git-repository-private-line.svg");
+  mask-image: url("../../../icons/development/git-repository-private-line.svg");
+}
+
+.dsfacile-icon-terminal-box-fill::before,
+.dsfacile-icon-terminal-box-fill::after {
+  -webkit-mask-image: url("../../../icons/development/terminal-box-fill.svg");
+  mask-image: url("../../../icons/development/terminal-box-fill.svg");
+}
+
+.dsfacile-icon-terminal-box-line::before,
+.dsfacile-icon-terminal-box-line::after {
+  -webkit-mask-image: url("../../../icons/development/terminal-box-line.svg");
+  mask-image: url("../../../icons/development/terminal-box-line.svg");
+}
+
+.dsfacile-icon-terminal-line::before,
+.dsfacile-icon-terminal-line::after {
+  -webkit-mask-image: url("../../../icons/development/terminal-line.svg");
+  mask-image: url("../../../icons/development/terminal-line.svg");
+}
+
+.dsfacile-icon-terminal-window-fill::before,
+.dsfacile-icon-terminal-window-fill::after {
+  -webkit-mask-image: url("../../../icons/development/terminal-window-fill.svg");
+  mask-image: url("../../../icons/development/terminal-window-fill.svg");
+}
+
+.dsfacile-icon-terminal-window-line::before,
+.dsfacile-icon-terminal-window-line::after {
+  -webkit-mask-image: url("../../../icons/development/terminal-window-line.svg");
+  mask-image: url("../../../icons/development/terminal-window-line.svg");
+}
+
+@media (min-width: 36em) {
+  /*! media sm */
+}
+
+@media (min-width: 48em) {
+  /*! media md */
+}
+
+@media (min-width: 62em) {
+  /*! media lg */
+}
+
+@media (min-width: 78em) {
+  /*! media xl */
+}

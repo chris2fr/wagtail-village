@@ -1,0 +1,6 @@
+{% load django_dsfacile_tags %}
+<div class="dsfacile-accordions-group">
+  {% for item in self.items %}
+    {% dsfacile_accordion item %}
+  {% endfor %}
+</div>

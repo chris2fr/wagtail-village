@@ -1,0 +1,75 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@media print {
+  .dsfacile-sidemenu {
+    box-shadow: inset 0 -1px 0 0 #ddd, inset 0 1px 0 0 #ddd;
+
+    /*
+    @include elevation.elevate(raised, (legacy:$legacy));
+    @include respond-from(md) {
+      @include elevation.drop((legacy:$legacy));
+    }
+     */
+    display: none;
+  }
+
+  .dsfacile-sidemenu__title {
+    color: #161616;
+    box-shadow: inset 0 -1px 0 0 #ddd;
+  }
+
+  .dsfacile-sidemenu__item .dsfacile-sidemenu__link,
+  .dsfacile-sidemenu__item .dsfacile-sidemenu__btn {
+    color: #161616;
+  }
+
+  .dsfacile-sidemenu__item::before {
+    box-shadow: 0 -1px 0 0 #ddd, inset 0 -1px 0 0 #ddd;
+  }
+
+  .dsfacile-sidemenu__item:first-child::before {
+    box-shadow: inset 0 -1px 0 0 #ddd;
+  }
+
+  .dsfacile-sidemenu__item:last-child::before {
+    box-shadow: 0 -1px 0 0 #ddd;
+  }
+
+  .dsfacile-sidemenu__link,
+  .dsfacile-sidemenu__btn {
+    color: #05435f;
+  }
+
+  .dsfacile-sidemenu__link[aria-current]:not([aria-current=false]),
+  .dsfacile-sidemenu__btn[aria-current]:not([aria-current=false]) {
+    color: #05435f;
+  }
+
+  .dsfacile-sidemenu__link[aria-current]:not([aria-current=false])::before,
+  .dsfacile-sidemenu__btn[aria-current]:not([aria-current=false])::before {
+    background-color: #05435f;
+  }
+
+  .dsfacile-sidemenu__btn[aria-expanded=true] {
+    background-color: #cedbe1;
+  }
+}
+@media print and (min-width: 48em) and (-ms-high-contrast: none), print and (min-width: 48em) and (-ms-high-contrast: active) {
+  .dsfacile-sidemenu {
+    box-shadow: none;
+  }
+
+  .dsfacile-sidemenu__title {
+    box-shadow: none;
+  }
+}
+@media print and (min-width: 48em) {
+  .dsfacile-sidemenu__inner {
+    box-shadow: inset -1px 0 0 0 #ddd;
+  }
+
+  .dsfacile-sidemenu--right .dsfacile-sidemenu__inner {
+    box-shadow: inset 1px 0 0 0 #ddd;
+  }
+}

@@ -1,0 +1,19 @@
+{% load i18n %}
+{% if self.is_clickable|default:False %}
+  <button class="dsfacile-btn--tooltip dsfacile-btn"
+          id="button-{{ self.id }}"
+          aria-describedby="{{ self.id }}">
+    {% translate "Contextual information" %}
+  </button>
+{% else %}
+  <a class="dsfacile-link"
+     aria-describedby="{{ self.id }}"
+     id="link-{{ self.id }}"
+     href="#">
+    {{ self.label }}
+  </a>
+{% endif %}
+<span class="dsfacile-tooltip dsfacile-placement"
+      id="{{ self.id }}"
+      role="tooltip"
+      aria-hidden="true">{{ self.content }}</span>

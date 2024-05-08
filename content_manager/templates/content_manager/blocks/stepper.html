@@ -1,13 +1,13 @@
-<div class="fr-container fr-my-3w">
-    <div class="fr-stepper">
-        <h2 class="fr-stepper__title">{{ block.value.title }}</h2>
-        <div class="fr-stepper__steps"
-             data-fr-current-step="{{ block.value.current }}"
-             data-fr-steps="{{ block.value.total }}">
+<div class="dsfacile-container dsfacile-my-3w">
+    <div class="dsfacile-stepper">
+        <h2 class="dsfacile-stepper__title">{{ block.value.title }}</h2>
+        <div class="dsfacile-stepper__steps"
+             data-dsfacile-current-step="{{ block.value.current }}"
+             data-dsfacile-steps="{{ block.value.total }}">
         </div>
-        <div class="fr-grid-row fr-grid-row--gutters">
+        <div class="dsfacile-grid-row dsfacile-grid-row--gutters">
             {% for subblock in block.value.steps %}
-                <div class="fr-col-12 fr-col-sm">
+                <div class="dsfacile-col-12 dsfacile-col-sm">
                     <p>
                         <strong>{{ subblock.value.title }}</strong>
                     </p>

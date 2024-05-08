@@ -1,0 +1,29 @@
+{% load widget_tweaks django_dsfacile_tags %}
+<fieldset class="dsfacile-fieldset{% if field.errors %} dsfacile-fieldset--error{% endif %}"
+          id="radio-{{ field.auto_id }}"
+          aria-labelledby="{{ field.auto_id }}-legend{% if field.errors %} {{ field.auto_id }}-messages{% endif %}">
+  <legend class="dsfacile-fieldset__legend facile-text--regular"
+          id="{{ field.auto_id }}-legend">
+    {{ field.label_tag }}
+    {% if field.field.required %}
+      *
+    {% endif %}
+    {% if field.help_text %}
+      <span class="dsfacile-hint-text">{{ field.help_text }}</span>
+    {% endif %}
+  </legend>
+  <div class="dsfacile-fieldset__content">
+    <div class="dsfacile-radio-group">
+      {% if field.field.disabled %}
+        {{ field|django_dsfacile_input_class_attr|attr:"type:radio"|attr:"disabled" }}
+      {% else %}
+        {{ field|django_dsfacile_input_class_attr|attr:"type:radio" }}
+      {% endif %}
+    </div>
+  </div>
+  {% if field.errors %}
+    <div class="dsfacile-messages-group" id="{{ field.auto_id }}-messages">
+      {{ field.errors }}
+    </div>
+  {% endif %}
+</fieldset>

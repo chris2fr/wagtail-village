@@ -1,0 +1,13 @@
+<section class="dsfacile-accordion">
+  <{{ self.heading_tag | default:"h3" }} class="dsfacile-accordion__title">
+  <button type="button"
+          class="dsfacile-accordion__btn"
+          aria-expanded="false"
+          aria-controls="{{ self.id }}">
+    {{ self.title }}
+  </button>
+  </{{ self.heading_tag | default:"h3" }}>
+  <div class="dsfacile-collapse" id="{{ self.id }}">
+    {{ self.content | safe }}
+  </div>
+</section>

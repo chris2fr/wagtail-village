@@ -1,0 +1,58 @@
+{% load i18n %}
+{% translate "Opens a new window" as new_window_label %}
+<div class="dsfacile-follow">
+  <div class="dsfacile-container">
+    <div class="dsfacile-grid-row">
+      {% block follow_newsletter %}
+        <div class="dsfacile-col-12 dsfacile-col-md-8">
+          <div class="dsfacile-follow__newsletter">
+            <div>
+              <h2 class="dsfacile-h5">
+                {% translate "Subscribe to our newsletter" context "Section title" %}
+              </h2>
+              <p class="dsfacile-text--sm">
+                {{ SITE_CONFIG.newsletter_description | safe }}
+              </p>
+            </div>
+            <div class="dsfacile-btns-group dsfacile-btns-group--inline-md">
+              {% translate "Subscribe to our newsletter" context "Button title" as subcribe_button_title %}
+              <a class="dsfacile-btn"
+                 href="{{ SITE_CONFIG.newsletter_url }}"
+                 target="_blank"
+                 rel="noopener external"
+                 title="{{ subcribe_button_title }} - {{ new_window_label }}">
+                {% translate "Subscribe" %}
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endblock follow_newsletter %}
+      {% block follow_social %}
+        <div class="dsfacile-col-12 dsfacile-col-md-4">
+          <div class="dsfacile-follow__social">
+            <h2 class="dsfacile-h5">
+              {% blocktranslate trimmed %}
+                Follow us
+                <br />
+                on social media
+              {% endblocktranslate %}
+            </h2>
+            <ul class="dsfacile-btns-group">
+              {% for link in SITE_CONFIG.social_media %}
+                <li>
+                  <a class="{{ link.icon_class }} dsfacile-btn"
+                     href="{{ link.url }}"
+                     target="_blank"
+                     title="{{ link.title }} - {{ new_window_label }}"
+                     rel="noopener external">
+                    {{ link.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endblock follow_social %}
+    </div>
+  </div>
+</div>

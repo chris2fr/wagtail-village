@@ -1,8 +1,8 @@
 from django.forms import Media, widgets
 
 
-class DsfrIconPickerWidget(widgets.TextInput):
-    template_name = "content_manager/widgets/dsfr-icon-picker-widget.html"
+class DsfacileIconPickerWidget(widgets.TextInput):
+    template_name = "content_manager/widgets/dsfacile-icon-picker-widget.html"
 
     def __init__(self, attrs=None):
         default_attrs = {}
@@ -13,6 +13,6 @@ class DsfrIconPickerWidget(widgets.TextInput):
     @property
     def media(self):
         return Media(
-            css={"all": ["css/icon-picker.css", "dsfr/dist/utility/utility.min.css"]},
-            js=["django-dsfr/icon-picker/assets/js/universal-icon-picker.min.js"],
+            css={"all": ["css/icon-picker.css", "dist/dsfacile/utility/utility.min.css"]},
+            js=["django-dsfacile/icon-picker/assets/js/universal-icon-picker.min.js"],
         )

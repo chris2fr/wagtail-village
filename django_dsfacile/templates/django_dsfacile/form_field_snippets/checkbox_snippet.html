@@ -1,0 +1,21 @@
+{% load widget_tweaks django_dsfacile_tags %}
+<div class="dsfacile-checkbox-group{% if field.errors %} dsfacile-checkbox-group--error{% endif %}{% if field.field.disabled %} dsfacile-input-group--disabled{% endif %} dsfacile-mb-2w">
+  {% if field.errors %}
+    {% with aria_describedby="aria-describedby:"|add:field.auto_id|add:"-desc-error" %}
+      {{ field|django_dsfacile_input_class_attr|attr:"type:checkbox"|attr:aria_describedby }}
+    {% endwith %}
+  {% else %}
+    {{ field|django_dsfacile_input_class_attr|attr:"type:checkbox" }}
+  {% endif %}
+  <label for="{{ field.id_for_label }}" class="dsfacile-label">
+    {{ field.label_tag }}
+    {% if field.help_text %}
+      <span class="dsfacile-hint-text">{{ field.help_text }}</span>
+    {% endif %}
+  </label>
+  {% if field.errors %}
+    <div id="{{ field.auto_id }}-desc-error">
+      {{ field.errors }}
+    </div>
+  {% endif %}
+</div>

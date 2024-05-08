@@ -1,0 +1,122 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@media (min-width: 36em) {
+  /*! media sm */
+}
+@media (min-width: 48em) {
+  /*! media md */
+}
+@media (min-width: 62em) {
+  /*! media lg */
+}
+@media (min-width: 78em) {
+  /*! media xl */
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+  * Marge des titres et textes
+  */
+  .dsfacile-callout__title {
+    margin: 0 0 0.5rem;
+    color: #161616;
+  }
+
+  .dsfacile-callout__text {
+    margin: 0;
+  }
+
+  .dsfacile-callout {
+    background-color: #eee;
+    background-image: linear-gradient(0deg, #0075ab, #0075ab);
+  }
+
+  .dsfacile-callout::before {
+    color: #161616;
+  }
+
+  .dsfacile-callout--green-tilleul-verveine {
+    background-image: linear-gradient(0deg, #b7a73f, #b7a73f);
+    background-color: #fceeac;
+  }
+
+  .dsfacile-callout--green-bourgeon {
+    background-image: linear-gradient(0deg, #68a532, #68a532);
+    background-color: #c9fcac;
+  }
+
+  .dsfacile-callout--green-emeraude {
+    background-image: linear-gradient(0deg, #00a95f, #00a95f);
+    background-color: #c3fad5;
+  }
+
+  .dsfacile-callout--green-menthe {
+    background-image: linear-gradient(0deg, #009081, #009081);
+    background-color: #bafaee;
+  }
+
+  .dsfacile-callout--green-archipel {
+    background-image: linear-gradient(0deg, #009099, #009099);
+    background-color: #c7f6fc;
+  }
+
+  .dsfacile-callout--blue-ecume {
+    background-image: linear-gradient(0deg, #465f9d, #465f9d);
+    background-color: #e9edfe;
+  }
+
+  .dsfacile-callout--blue-cumulus {
+    background-image: linear-gradient(0deg, #417dc4, #417dc4);
+    background-color: #e6eefe;
+  }
+
+  .dsfacile-callout--purple-glycine {
+    background-image: linear-gradient(0deg, #a558a0, #a558a0);
+    background-color: #fee7fc;
+  }
+
+  .dsfacile-callout--pink-macaron {
+    background-image: linear-gradient(0deg, #e18b76, #e18b76);
+    background-color: #fee9e6;
+  }
+
+  .dsfacile-callout--pink-tuile {
+    background-image: linear-gradient(0deg, #ce614a, #ce614a);
+    background-color: #fee9e7;
+  }
+
+  .dsfacile-callout--yellow-tournesol {
+    background-image: linear-gradient(0deg, #c8aa39, #c8aa39);
+    background-color: #feecc2;
+  }
+
+  .dsfacile-callout--yellow-moutarde {
+    background-image: linear-gradient(0deg, #c3992a, #c3992a);
+    background-color: #feebd0;
+  }
+
+  .dsfacile-callout--orange-terre-battue {
+    background-image: linear-gradient(0deg, #e4794a, #e4794a);
+    background-color: #fee9e5;
+  }
+
+  .dsfacile-callout--brown-cafe-creme {
+    background-image: linear-gradient(0deg, #d1b781, #d1b781);
+    background-color: #f7ecdb;
+  }
+
+  .dsfacile-callout--brown-caramel {
+    background-image: linear-gradient(0deg, #c08c65, #c08c65);
+    background-color: #f7ebe5;
+  }
+
+  .dsfacile-callout--brown-opera {
+    background-image: linear-gradient(0deg, #bd987a, #bd987a);
+    background-color: #f7ece4;
+  }
+
+  .dsfacile-callout--beige-gris-galet {
+    background-image: linear-gradient(0deg, #aea397, #aea397);
+    background-color: #f3ede5;
+  }
+}

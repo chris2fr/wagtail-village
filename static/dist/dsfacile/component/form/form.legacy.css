@@ -1,0 +1,207 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@media (min-width: 36em) {
+  /*! media sm */
+}
+@media (min-width: 48em) {
+  /*! media md */
+}
+@media (min-width: 62em) {
+  /*! media lg */
+}
+@media (min-width: 78em) {
+  /*! media xl */
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .dsfacile-fieldset__legend {
+    max-width: 100%;
+    color: #161616;
+  }
+
+  .dsfacile-message--error::before,
+  .dsfacile-message--error::after {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/system/fr--error-fill.svg");
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dsfacile-message--valid::before,
+  .dsfacile-message--valid::after {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/system/fr--success-fill.svg");
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dsfacile-message--info::before,
+  .dsfacile-message--info::after {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/system/fr--info-fill.svg");
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dsfacile-select-group--valid label,
+  .dsfacile-input-group--valid label,
+  .dsfacile-range-group--valid label,
+  .dsfacile-upload-group--valid label {
+    color: #18753c;
+  }
+
+  .dsfacile-select-group--error label,
+  .dsfacile-input-group--error label,
+  .dsfacile-range-group--error label,
+  .dsfacile-upload-group--error label {
+    color: #ce0500;
+  }
+
+  .dsfacile-select-group--info label,
+  .dsfacile-input-group--info label,
+  .dsfacile-range-group--info label,
+  .dsfacile-upload-group--info label {
+    color: #0063cb;
+  }
+
+  .dsfacile-select-group--disabled label,
+  .dsfacile-select-group--disabled .dsfacile-hint-text,
+  .dsfacile-input-group--disabled label,
+  .dsfacile-input-group--disabled .dsfacile-hint-text,
+  .dsfacile-range-group--disabled label,
+  .dsfacile-range-group--disabled .dsfacile-hint-text,
+  .dsfacile-upload-group--disabled label,
+  .dsfacile-upload-group--disabled .dsfacile-hint-text {
+    color: #929292;
+  }
+
+  .dsfacile-label {
+    color: #161616;
+  }
+
+  .dsfacile-label--error {
+    color: #ce0500;
+  }
+
+  .dsfacile-label--success {
+    color: #18753c;
+  }
+
+  .dsfacile-label--info {
+    color: #0063cb;
+  }
+
+  .dsfacile-label--disabled,
+  .dsfacile-label--disabled .dsfacile-hint-text {
+    color: #929292;
+  }
+
+  .dsfacile-hint-text,
+  .dsfacile-message {
+    color: #666;
+  }
+
+  .dsfacile-message--error {
+    color: #ce0500;
+  }
+
+  .dsfacile-message--valid {
+    color: #18753c;
+  }
+
+  .dsfacile-message--info {
+    color: #0063cb;
+  }
+
+  .dsfacile-fieldset:disabled .dsfacile-label,
+  .dsfacile-fieldset:disabled .dsfacile-hint-text,
+  .dsfacile-fieldset:disabled .dsfacile-fieldset__legend {
+    color: #929292;
+  }
+
+  .dsfacile-fieldset input:disabled + label,
+  .dsfacile-fieldset input:disabled + label .dsfacile-hint-text,
+  .dsfacile-fieldset input:disabled + label + .dsfacile-hint-text {
+    color: #929292;
+  }
+
+  .dsfacile-fieldset--error,
+  .dsfacile-fieldset--error .dsfacile-fieldset__legend {
+    background-image: linear-gradient(0deg, #ce0500, #ce0500);
+  }
+
+  .dsfacile-fieldset--error .dsfacile-fieldset__legend,
+  .dsfacile-fieldset--error .dsfacile-label {
+    color: #ce0500;
+  }
+
+  .dsfacile-fieldset--valid,
+  .dsfacile-fieldset--valid .dsfacile-fieldset__legend {
+    background-image: linear-gradient(0deg, #18753c, #18753c);
+  }
+
+  .dsfacile-fieldset--valid .dsfacile-fieldset__legend,
+  .dsfacile-fieldset--valid .dsfacile-label {
+    color: #18753c;
+  }
+
+  .dsfacile-fieldset--info,
+  .dsfacile-fieldset--info .dsfacile-fieldset__legend {
+    background-image: linear-gradient(0deg, #0063cb, #0063cb);
+  }
+
+  .dsfacile-fieldset--info .dsfacile-fieldset__legend,
+  .dsfacile-fieldset--info .dsfacile-label {
+    color: #0063cb;
+  }
+
+  .dsfacile-error-text::before,
+  .dsfacile-error-text::after {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/system/fr--error-fill.svg");
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dsfacile-valid-text::before,
+  .dsfacile-valid-text::after {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/system/fr--success-fill.svg");
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .dsfacile-error-text {
+    color: #ce0500;
+  }
+
+  .dsfacile-valid-text {
+    color: #18753c;
+  }
+
+  .dsfacile-info-text {
+    color: #0063cb;
+  }
+
+  .dsfacile-fieldset--valid .dsfacile-fieldset__content::before {
+    box-shadow: inset 2px 0 0 0 #18753c;
+  }
+
+  .dsfacile-fieldset--error .dsfacile-fieldset__content::before {
+    box-shadow: inset 2px 0 0 0 #ce0500;
+  }
+
+  .dsfacile-fieldset--info .dsfacile-fieldset__content::before {
+    box-shadow: inset 2px 0 0 0 #0063cb;
+  }
+}

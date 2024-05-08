@@ -1,0 +1,25 @@
+{% load widget_tweaks django_dsfacile_tags %}
+{# Generic input snippet used by most of the field types #}
+<div class="{{ field.field.widget.group_class|default:'dsfacile-input-group' }}{% if field.errors %} {{ field.field.widget.group_class|default:'dsfacile-input-group' }}--error{% endif %}{% if field.field.disabled %} dsfacile-input-group--disabled{% endif %}">
+  <label for="{{ field.id_for_label }}" class="dsfacile-label">
+    {{ field.label }}
+    {% if field.field.required %}
+      *
+    {% endif %}
+    {% if field.help_text %}
+      <span class="dsfacile-hint-text">{{ field.help_text }}</span>
+    {% endif %}
+  </label>
+  {% if field.errors %}
+    {% with aria_describedby="aria-describedby:"|add:field.auto_id|add:"-desc-error" %}
+      {{ field|django_dsfacile_input_class_attr|attr:"aria-invalid:true"|attr:aria_describedby }}
+    {% endwith %}
+  {% else %}
+    {{ field|django_dsfacile_input_class_attr }}
+  {% endif %}
+  {% if field.errors %}
+    <div id="{{ field.auto_id }}-desc-error">
+      {{ field.errors }}
+    </div>
+  {% endif %}
+</div>

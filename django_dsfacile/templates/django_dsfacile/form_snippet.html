@@ -1,0 +1,11 @@
+{% if form.non_field_errors %}
+  <section class="dsfacile-my-4v dsfacile-input-group dsfacile-input-group--error">
+    {{ form.non_field_errors }}
+  </section>
+{% endif %}
+{% for hidden in form.hidden_fields %}
+  {{ hidden }}
+{% endfor %}
+{% for field in form.visible_fields %}
+  {% include "dsfacile/form_field_snippets/field_snippet.html" %}
+{% endfor %}

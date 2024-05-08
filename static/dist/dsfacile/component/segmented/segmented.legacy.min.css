@@ -1,0 +1,7 @@
+/*!
+ * DSFACILE v1.11.2 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */@media (min-width:36em){
+  /*! media sm */}@media (min-width:48em){
+  /*! media md */}@media (min-width:62em){
+  /*! media lg */}@media (min-width:78em){
+  /*! media xl */}@media (-ms-high-contrast:active),(-ms-high-contrast:none){.dsfacile-segmented{display:block}.dsfacile-segmented--sm .dsfacile-segmented__legend--inline{margin:.25rem 0 0}.dsfacile-segmented__legend--inline{margin:.5rem 0 0}.dsfacile-segmented__elements{box-shadow:inset 0 0 0 1px #ddd;display:inline-flex}.dsfacile-segmented input+label:before{height:1rem;vertical-align:-2px;width:1rem}.dsfacile-segmented input:focus+label:before{outline:none}.dsfacile-segmented__element label{color:#161616}.dsfacile-segmented__element input:checked+label{box-shadow:inset 0 0 0 1px #05435f;color:#05435f}.dsfacile-segmented__element input:checked:disabled+label{box-shadow:inset 0 0 0 1px #929292;color:#929292}}

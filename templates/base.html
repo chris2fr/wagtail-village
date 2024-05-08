@@ -1,9 +1,9 @@
-{% load i18n static dsfr_tags wagtailuserbar wagtailsettings_tags sass_tags %}
+{% load i18n static django_dsfacile_tags wagtailuserbar wagtailsettings_tags sass_tags %}
 {% get_settings %}
 <!DOCTYPE html>
 <html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
-      data-fr-scheme="system"
-      {% if settings.content_manager.CmsDsfrConfig.mourning %}data-fr-mourning{% endif %}>
+      data-dsfacile-scheme="system"
+      {% if settings.content_manager.CmsDsfrConfig.mourning %}data-dsfacile-mourning{% endif %}>
 
   <head>
     <meta charset="utf-8" />
@@ -20,20 +20,14 @@
 
     {% include "favicon.html" %}
 
-    {% dsfr_css %}
+    {% dsfacile_css %}
 
-    <link href="{% static 'css/dsfacile/dsfacile.min.css' %}" rel="stylesheet">
+    <link href="{% static 'dist/dsfacile/dsfacile.min.css' %}" rel="stylesheet">
 
-    <link href="{% static 'dsfr/dist/utility/utility.min.css' %}"
-          rel="stylesheet"
-          type="text/css" />
 
     <link href="{% sass_src 'css/style.sass' %}"
           rel="stylesheet"
           type="text/css" />
-
-          <script type="module" href="js/dsfacile/dsfacile.module.min.js" ></script>
-          <script type="text/javascript" nomodule href="js/dsfacile/dsfacile.nomodule.min.js" ></script>
 
 
     {% block extra_css %}
@@ -47,21 +41,20 @@
 
     {% block social_media %}
     {% endblock social_media %}
-    <link rel="stylesheet" type="text/css"  href="{% static 'fonts/lack-master/webfonts/stylesheet.css' %}" />
-    <link rel="stylesheet" type="text/css"  href="{% static 'fonts/fengardo_neue/web/font.css' %}" />
+    
   </head>
 
   <body>
     {% block skiplinks %}
-      {% dsfr_skiplinks skiplinks %}
+      {% dsfacile_skiplinks skiplinks %}
     {% endblock skiplinks %}
 
     {% include "blocks/header.html" %}
-    {% dsfr_theme_modale %}
+    {% dsfacile_theme_modale %}
     {% wagtailuserbar %}
 
     {% if settings.content_manager.CmsDsfrConfig.notice %}
-      {% dsfr_notice title=settings.content_manager.CmsDsfrConfig.notice %}
+      {% dsfacile_notice title=settings.content_manager.CmsDsfrConfig.notice %}
     {% endif %}
 
     <main id="content" role="main">
@@ -77,8 +70,12 @@
 
     {% include "blocks/footer.html" %}
 
-    {% dsfr_js nonce=request.csp_nonce %}
+    {% comment %}
+    {% dsfacile_js nonce=request.csp_nonce %}
+    {% endcomment %}
     {% block extra_js %}
+    <script type="module" src="{% static 'dist/dsfacile/dsfacile.module.min.js' %}" nonce></script>
+    <script type="text/javascript" src="{% static 'dist/dsfacile/dsfacile.nomodule.min.js' %}" nomodule></script>
     {% endblock extra_js %}
 
     {% block body_tracking_scripts %}
