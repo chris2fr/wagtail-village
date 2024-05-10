@@ -1,20 +1,20 @@
 {% load static wagtailimages_tags %}
 {% if page.header_image or page.header_color_class %}
   {% image page.header_image fill-1200x350 as bg_img %}
-  <div class="cmsdsfacile-hero{% if page.header_large %} cmsdsfacile-hero-large{% endif %}{% if page.header_darken %} cmsdsfacile-background-dark{% endif %}"
+  <div class="cmswebfastoche-hero{% if page.header_large %} cmswebfastoche-hero-large{% endif %}{% if page.header_darken %} cmswebfastoche-background-dark{% endif %}"
        style="{% if page.header_image %}background-image: {% if page.header_darken %}linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),{% endif %}url({{ bg_img.url }});
               {% elif page.header_color_class %}background-color: var(--background-alt-{{ page.header_color_class }});
               {% endif %} min-height: 350px">
     {% if page.header_with_title or page.header_cta_link and page.header_cta_label %}
-      <div class="dsfacile-container dsfacile-py-14w">
-        <div class="dsfacile-grid-row dsfacile-grid-row--gutters">
-          <div class="dsfacile-col dsfacile-col-12{% if not page.header_large %}dsfacile-col-md-6{% endif %}">
+      <div class="webfastoche-container webfastoche-py-14w">
+        <div class="webfastoche-grid-row webfastoche-grid-row--gutters">
+          <div class="webfastoche-col webfastoche-col-12{% if not page.header_large %}webfastoche-col-md-6{% endif %}">
             {% if page.header_with_title %}
-              <h1 {% if block.value.large %}class="dsfacile-display--sm"{% endif %}>{{ page.title }}</h1>
+              <h1 {% if block.value.large %}class="webfastoche-display--sm"{% endif %}>{{ page.title }}</h1>
             {% endif %}
             {% if page.header_cta_text %}<p>{{ page.header_cta_text }}</p>{% endif %}
             {% if page.header_cta_link and page.header_cta_label %}
-              <a class="dsfacile-btn {% if page.header_darken %}dsfacile-btn--secondary dsfacile-background-alt--blue-france dsfacile-btn--lg{% else %}dsfacile-btn--primary{% endif %} dsfacile-btn--lg"
+              <a class="webfastoche-btn {% if page.header_darken %}webfastoche-btn--secondary webfastoche-background-alt--blue-france webfastoche-btn--lg{% else %}webfastoche-btn--primary{% endif %} webfastoche-btn--lg"
                  href="{{ page.header_cta_link }}">{{ page.header_cta_label }}</a>
             {% endif %}
           </div>

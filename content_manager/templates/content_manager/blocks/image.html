@@ -2,14 +2,14 @@
 {% if value.title %}
   <{{ value.heading_tag|default:"h3" }}>{{ value.title }}</{{ value.heading_tag|default:"h3" }}>
 {% endif %}
-<div class="{% if value.url %} dsfacile-enlarge-link{% endif %}">
+<div class="{% if value.url %} webfastoche-enlarge-link{% endif %}">
   {% if value.url %}
     <a href="{{ value.url }}">
-      {% image value.image original class="dsfacile-responsive-img" alt=value.alt %}
-      <span class="dsfacile-sr-only">{% translate "Go to page" %} {{ value.url }}</span>
+      {% image value.image original class="webfastoche-responsive-img" alt=value.alt %}
+      <span class="webfastoche-sr-only">{% translate "Go to page" %} {{ value.url }}</span>
     </a>
   {% else %}
-    {% image value.image original class="dsfacile-responsive-img" alt=value.alt %}
+    {% image value.image original class="webfastoche-responsive-img" alt=value.alt %}
   {% endif %}
-  {% if value.caption %}<div class="dsfacile-content-media__caption">{{ value.caption }}</div>{% endif %}
+  {% if value.caption %}<div class="webfastoche-content-media__caption">{{ value.caption }}</div>{% endif %}
 </div>

@@ -1,29 +1,29 @@
-{% load django_dsfacile_tags wagtailcore_tags wagtailimages_tags %}
+{% load webfastoche_tags wagtailcore_tags wagtailimages_tags %}
 {% image value.bg_image original as bg_img %}
-<div class="dsfacile-py-5w dsfacile-my-5w"
+<div class="webfastoche-py-5w webfastoche-my-5w"
      {% if value.bg_color_class or bg_img or value.bg_color %}style="background:{% endif %}
      {% if bg_img %}no-repeat center url({{ bg_img.url }}){% endif %}
      {% if value.bg_color_class %} var(--background-alt-{{ value.bg_color_class }}) {% elif value.bg_color %}{{ value.bg_color }}{% endif %}
      {% if value.bg_color_class or bg_img or value.bg_color %};"{% endif %}>
-  <div class="dsfacile-container">
+  <div class="webfastoche-container">
     {% if value.title %}
-      <div class="dsfacile-grid-row dsfacile-grid-row--gutters">
-        <div class="dsfacile-col-12 dsfacile-mt-3w">
+      <div class="webfastoche-grid-row webfastoche-grid-row--gutters">
+        <div class="webfastoche-col-12 webfastoche-mt-3w">
           <{{ value.heading_tag|default:"h2" }}>{{ value.title }}</{{ value.heading_tag|default:"h2" }}>
         </div>
       </div>
     {% endif %}
-    <div class="dsfacile-grid-row dsfacile-grid-row--gutters dsfacile-py-3w">
+    <div class="webfastoche-grid-row webfastoche-grid-row--gutters webfastoche-py-3w">
       {% for subblock in value.columns %}
         {% if subblock.block_type == 'text' %}
-          <div class="dsfacile-col-12 dsfacile-col-sm">{{ subblock.value|richtext }}</div>
+          <div class="webfastoche-col-12 webfastoche-col-sm">{{ subblock.value|richtext }}</div>
         {% elif subblock.block_type == 'video' %}
-          <div class="dsfacile-col-12 dsfacile-col-sm">
+          <div class="webfastoche-col-12 webfastoche-col-sm">
             <h2>{{ subblock.value.title }}</h2>
             {% include_block subblock %}
           </div>
         {% else %}
-          <div class="dsfacile-col-12 dsfacile-col-sm">{% include_block subblock %}</div>
+          <div class="webfastoche-col-12 webfastoche-col-sm">{% include_block subblock %}</div>
         {% endif %}
       {% endfor %}
     </div>

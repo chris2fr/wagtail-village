@@ -1,20 +1,20 @@
-{% load django_dsfacile_tags wagtailcore_tags %}
-<div class="dsfacile-container dsfacile-py-3w">
-    <div class="dsfacile-grid-row dsfacile-grid-row--gutters">
-        <div class="dsfacile-col-12 dsfacile-col-offset-md-2 dsfacile-col-md-8">
+{% load webfastoche_tags wagtailcore_tags %}
+<div class="webfastoche-container webfastoche-py-3w">
+    <div class="webfastoche-grid-row webfastoche-grid-row--gutters">
+        <div class="webfastoche-col-12 webfastoche-col-offset-md-2 webfastoche-col-md-8">
             {% for subblock in block.value %}
                 {% if subblock.block_type == 'title' %}
-                    <div class="dsfacile-col-12">
+                    <div class="webfastoche-col-12">
                         <h2>{{ subblock.value }}</h2>
                     </div>
                 {% endif %}
             {% endfor %}
-            <div class="dsfacile-accordions-group">
+            <div class="webfastoche-accordions-group">
                 {% for subblock in block.value %}
                     {% if subblock.block_type == 'accordion' %}
                         {% with forloop.counter0|lower as str_counter %}
                             {% with "accordion-"|add:accordions_id|add:"-"|add:str_counter as accordion_id %}  
-                                {% dsfacile_accordion id=accordion_id title=subblock.value.title content=subblock.value.content|richtext %}
+                                {% webfastoche_accordion id=accordion_id title=subblock.value.title content=subblock.value.content|richtext %}
                             {% endwith %}
                         {% endwith %}
                     {% endif %}

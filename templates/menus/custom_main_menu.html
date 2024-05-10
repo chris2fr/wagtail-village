@@ -1,22 +1,22 @@
-{% load menu_tags wagtail_dsfacile_tags %}
-<ul class="fr-nav__list">
+{% load menu_tags wagtail_webfastoche_tags %}
+<ul class="webfastoche-nav__list">
     {% for item in menu_items %}
-        <li class="fr-nav__item">
+        <li class="webfastoche-nav__item">
             {% if item.id in mega_menus %}
-                <button class="fr-nav__btn"
+                <button class="webfastoche-nav__btn"
                         aria-expanded="false"
                         {% if item.active_class %}aria-current="true"{% endif %}
                         aria-controls="mega-menu-{{ item.id }}">{{ item.text }}</button>
                 {% mega_menu item.id %}
             {% elif item.has_children_in_menu %}
-                <button class="fr-nav__btn"
+                <button class="webfastoche-nav__btn"
                         aria-expanded="false"
                         {% if item.active_class %}aria-current="true"{% endif %}
                         aria-controls="menu-{{ item.link_page.pk }}">{{ item.text }}</button>
                 {% sub_menu item template="menus/custom_sub_menu.html" %}
             {% else %}
                 <a href="{{ item.href }}"
-                   class="fr-nav__link"
+                   class="webfastoche-nav__link"
                    {% if item.active_class %}aria-current="page"{% endif %}
                    target="_self">{{ item.text }}</a>
             {% endif %}

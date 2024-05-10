@@ -1,10 +1,10 @@
-{% load django_dsfacile_tags wagtailcore_tags wagtailimages_tags %}
+{% load webfastoche_tags wagtailcore_tags wagtailimages_tags %}
 {% image value.image original as img %}
 
 {% if value.color %}
-  {% with "dsfacile-quote--"|concatenate:value.color as extra_classes %}
-    {% dsfacile_quote text=value.quote author=value.author_name source=value.author_title image_url=img.url extra_classes=extra_classes %}
+  {% with "webfastoche-quote--"|concatenate:value.color as extra_classes %}
+    {% webfastoche_quote text=value.quote author=value.author_name source=value.author_title image_url=img.url extra_classes=extra_classes %}
   {% endwith %}
 {% else %}
-  {% dsfacile_quote text=value.quote author=value.author_name source=value.author_title image_url=img.url %}
+  {% webfastoche_quote text=value.quote author=value.author_name source=value.author_title image_url=img.url %}
 {% endif %}

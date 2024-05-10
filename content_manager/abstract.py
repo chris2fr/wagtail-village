@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django_webfastoche.constants import COLOR_CHOICES
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 from wagtail.fields import StreamField
 from wagtail.images import get_image_model_string
@@ -8,7 +9,6 @@ from wagtail.search import index
 
 from content_manager.blocks import STREAMFIELD_COMMON_BLOCKS
 from content_manager.utils import get_streamfield_raw_text
-from django_dsfacile.constants import COLOR_CHOICES
 
 
 class SitesFacilesBasePage(Page):

@@ -1,34 +1,34 @@
 {% extends "base.html" %}
-{% load widget_tweaks i18n static django_dsfacile_tags %}
+{% load widget_tweaks i18n static webfastoche_tags %}
 {% block content %}
-    <div class="fr-container fr-container--fluid fr-my-md-14v">
-        <div class="fr-grid-row fr-grid-row-gutters fr-grid-row--center">
-            <div class="fr-col-12 fr-col-md-8 fr-col-lg-6">
-                <div class="fr-container fr-background-alt--grey fr-px-md-0 fr-py-10v fr-py-md-14v">
-                    <div class="fr-grid-row fr-grid-row-gutters fr-grid-row--center">
-                        <div class="fr-col-12 fr-col-md-9 fr-col-lg-8">
+    <div class="webfastoche-container webfastoche-container--fluid webfastoche-my-md-14v">
+        <div class="webfastoche-grid-row webfastoche-grid-row-gutters webfastoche-grid-row--center">
+            <div class="webfastoche-col-12 webfastoche-col-md-8 webfastoche-col-lg-6">
+                <div class="webfastoche-container webfastoche-background-alt--grey webfastoche-px-md-0 webfastoche-py-10v webfastoche-py-md-14v">
+                    <div class="webfastoche-grid-row webfastoche-grid-row-gutters webfastoche-grid-row--center">
+                        <div class="webfastoche-col-12 webfastoche-col-md-9 webfastoche-col-lg-8">
                             <h1>Connexion</h1>
                             <div>
                                 <form id="login-form" action="{% url 'wagtailadmin_login' %}" method="post">
-                                    <fieldset class="fr-fieldset"
+                                    <fieldset class="webfastoche-fieldset"
                                               id="login-form-fieldset"
                                               aria-labelledby="login-form-fieldset-legend login-form-fieldset-messages">
-                                        <legend class="fr-fieldset__legend" id="login-form-fieldset-legend">
+                                        <legend class="webfastoche-fieldset__legend" id="login-form-fieldset-legend">
                                             <h2>Se connecter avec son compte</h2>
                                         </legend>
-                                        <div class="fr-fieldset__element">
-                                            <p class="fr-text--sm">Sauf mention contraire, tous les champs sont obligatoires.</p>
-                                            <div class="fr-messages-group"
+                                        <div class="webfastoche-fieldset__element">
+                                            <p class="webfastoche-text--sm">Sauf mention contraire, tous les champs sont obligatoires.</p>
+                                            <div class="webfastoche-messages-group"
                                                  id="login-form-fieldset-messages"
                                                  aria-live="assertive">
                                                 {% if form.errors %}
-                                                    <div class="fr-alert fr-alert--error fr-alert--sm">
+                                                    <div class="webfastoche-alert webfastoche-alert--error webfastoche-alert--sm">
                                                         <p>Erreur : Votre identifiant et mot de passe ne correspondent pas, merci de réessayer.</p>
                                                     </div>
                                                 {% endif %}
                                                 {% if next %}
                                                     {% if user.is_authenticated %}
-                                                        <div class="fr-alert fr-alert--error fr-alert--sm">
+                                                        <div class="webfastoche-alert webfastoche-alert--error webfastoche-alert--sm">
                                                             <p>
                                                                 Erreur : Votre compte n’a pas accès à cette page. Pour continuer, merci de vous connecter
                                                                 avec un compte autorisé.
@@ -36,49 +36,49 @@
                                                         </div>
                                                     {% endif %}
                                                 {% endif %}
-                                                {% dsfacile_django_messages %}
+                                                {% webfastoche_django_messages %}
                                             </div>
                                         </div>
-                                        <div class="fr-fieldset__element">
+                                        <div class="webfastoche-fieldset__element">
                                             {% csrf_token %}
                                             {% url 'wagtailadmin_home' as home_url %}
                                             <input type="hidden" name="next" value="{{ next|default:home_url }}" />
-                                            <div class="fr-input-group">
-                                                <label class="fr-label" for="id_username">Identifiant&nbsp;:</label>
-                                                {{ form.username |add_class:"fr-input" }}
+                                            <div class="webfastoche-input-group">
+                                                <label class="webfastoche-label" for="id_username">Identifiant&nbsp;:</label>
+                                                {{ form.username |add_class:"webfastoche-input" }}
                                             </div>
                                         </div>
-                                        <div class="fr-fieldset__element">
-                                            <div class="fr-password">
-                                                <label class="fr-label" for="id_password">Mot de passe&nbsp;:</label>
-                                                {{ form.password |add_class:"fr-password__input fr-input" }}
-                                                <div class="fr-password__checkbox fr-checkbox-group fr-checkbox-group--sm">
+                                        <div class="webfastoche-fieldset__element">
+                                            <div class="webfastoche-password">
+                                                <label class="webfastoche-label" for="id_password">Mot de passe&nbsp;:</label>
+                                                {{ form.password |add_class:"webfastoche-password__input webfastoche-input" }}
+                                                <div class="webfastoche-password__checkbox webfastoche-checkbox-group webfastoche-checkbox-group--sm">
                                                     <input aria-label="Afficher le mot de passe"
                                                            id="id_password-show"
                                                            type="checkbox"
                                                            aria-describedby="id_password-show-messages">
-                                                    <label class="fr-password__checkbox fr-label" for="id_password-show">Afficher</label>
-                                                    <div class="fr-messages-group"
+                                                    <label class="webfastoche-password__checkbox webfastoche-label" for="id_password-show">Afficher</label>
+                                                    <div class="webfastoche-messages-group"
                                                          id="id_password-show-messages"
                                                          aria-live="assertive"></div>
                                                 </div>
                                                 {% if show_password_reset %}
-                                                    <a class="fr-link" href="{% url 'wagtailadmin_password_reset' %}">Mot de passe oublié ?</a>
+                                                    <a class="webfastoche-link" href="{% url 'wagtailadmin_password_reset' %}">Mot de passe oublié ?</a>
                                                 {% endif %}
                                             </div>
                                         </div>
-                                        <div class="fr-fieldset__element">
-                                            <div class="fr-checkbox-group fr-checkbox-group--sm">
-                                                <div class="fr-checkbox-group}">
+                                        <div class="webfastoche-fieldset__element">
+                                            <div class="webfastoche-checkbox-group webfastoche-checkbox-group--sm">
+                                                <div class="webfastoche-checkbox-group}">
                                                     {{ form.remember }}
-                                                    <label for="{{ form.remember.id_for_label }}" class="fr-label">Se souvenir de moi</label>
+                                                    <label for="{{ form.remember.id_for_label }}" class="webfastoche-label">Se souvenir de moi</label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="fr-fieldset__element">
-                                            <ul class="fr-btns-group">
+                                        <div class="webfastoche-fieldset__element">
+                                            <ul class="webfastoche-btns-group">
                                                 <li>
-                                                    <input class="fr-btn" type="submit" value="Se connecter" />
+                                                    <input class="webfastoche-btn" type="submit" value="Se connecter" />
                                                 </li>
                                             </ul>
                                         </div>
@@ -94,5 +94,5 @@
 {% endblock content %}
 {% block extra_css %}
     <link rel="stylesheet"
-          href="{% static 'dist/dsfacile/utility/utility.min.css' %}">
+          href="{% static 'dist/webfastoche/utility/utility.min.css' %}">
 {% endblock extra_css %}

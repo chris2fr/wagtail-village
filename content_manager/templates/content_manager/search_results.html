@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static django_dsfacile_tags wagtailcore_tags wagtailimages_tags %}
+{% load static webfastoche_tags wagtailcore_tags wagtailimages_tags %}
 
 {% block title %}
     <title>
@@ -20,7 +20,7 @@
 {% endif %}
 
 {% block content %}
-    <div class="dsfacile-container dsfacile-my-4w">
+    <div class="webfastoche-container webfastoche-my-4w">
         <h1>
             {% if object_list.count %}
                 {{ object_list.count }} résultat{{ object_list.count|pluralize }}
@@ -33,7 +33,7 @@
             <ol>
                 {% for result in object_list %}
                     <li>
-                        <h2 class="dsfacile-h4">
+                        <h2 class="webfastoche-h4">
                             <a href="{% pageurl result %}">{{ result }}</a>
                         </h2>
                         {% if result.search_description %}<p>{{ result.search_description|safe }}</p>{% endif %}
@@ -42,19 +42,19 @@
                 {% endfor %}
             </ol>
         {% else %}
-            <div class="dsfacile-my-7w dsfacile-mt-md-12w dsfacile-mb-md-10w dsfacile-grid-row dsfacile-grid-row--gutters dsfacile-grid-row--middle dsfacile-grid-row--center">
-                <div class="dsfacile-py-0 dsfacile-col-12 dsfacile-col-md-6">
-                    <h2 class="dsfacile-mb-3w">Nous n’avons trouvé aucun contenu correspondant à votre recherche.</h2>
+            <div class="webfastoche-my-7w webfastoche-mt-md-12w webfastoche-mb-md-10w webfastoche-grid-row webfastoche-grid-row--gutters webfastoche-grid-row--middle webfastoche-grid-row--center">
+                <div class="webfastoche-py-0 webfastoche-col-12 webfastoche-col-md-6">
+                    <h2 class="webfastoche-mb-3w">Nous n’avons trouvé aucun contenu correspondant à votre recherche.</h2>
                     <p>Pour continuer votre visite, vous pouvez consulter notre page d’accueil.</p>
-                    <ul class="dsfacile-btns-group dsfacile-btns-group--inline-md">
+                    <ul class="webfastoche-btns-group webfastoche-btns-group--inline-md">
                         <li>
-                            <a class="dsfacile-btn" href="/">Page d’accueil</a>
+                            <a class="webfastoche-btn" href="/">Page d’accueil</a>
                         </li>
                     </ul>
                 </div>
-                <div class="dsfacile-col-12 dsfacile-col-md-3 dsfacile-col-offset-md-1 dsfacile-px-6w dsfacile-px-md-0 dsfacile-py-0">
-                    <img src="{% static 'dist/dsfacile/artwork/pictograms/digital/search.svg' %}"
-                         class="dsfacile-responsive-img"
+                <div class="webfastoche-col-12 webfastoche-col-md-3 webfastoche-col-offset-md-1 webfastoche-px-6w webfastoche-px-md-0 webfastoche-py-0">
+                    <img src="{% static 'dist/webfastoche/artwork/pictograms/digital/search.svg' %}"
+                         class="webfastoche-responsive-img"
                          alt=""
                          width="300"
                          height="300" />

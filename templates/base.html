@@ -1,9 +1,9 @@
-{% load i18n static django_dsfacile_tags wagtailuserbar wagtailsettings_tags sass_tags %}
+{% load i18n static webfastoche_tags wagtailuserbar wagtailsettings_tags sass_tags %}
 {% get_settings %}
 <!DOCTYPE html>
 <html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
-      data-dsfacile-scheme="system"
-      {% if settings.content_manager.CmsDsfrConfig.mourning %}data-dsfacile-mourning{% endif %}>
+      data-webfastoche-scheme="system"
+      {% if settings.content_manager.CmsDsfrConfig.mourning %}data-webfastoche-mourning{% endif %}>
 
   <head>
     <meta charset="utf-8" />
@@ -20,9 +20,9 @@
 
     {% include "favicon.html" %}
 
-    {% dsfacile_css %}
+    {% webfastoche_css %}
 
-    <link href="{% static 'dist/dsfacile/dsfacile.min.css' %}" rel="stylesheet">
+    <link href="{% static 'dist/webfastoche/webfastoche.min.css' %}" rel="stylesheet">
 
 
     <link href="{% sass_src 'css/style.sass' %}"
@@ -46,15 +46,15 @@
 
   <body>
     {% block skiplinks %}
-      {% dsfacile_skiplinks skiplinks %}
+      {% webfastoche_skiplinks skiplinks %}
     {% endblock skiplinks %}
 
     {% include "blocks/header.html" %}
-    {% dsfacile_theme_modale %}
+    {% webfastoche_theme_modale %}
     {% wagtailuserbar %}
 
     {% if settings.content_manager.CmsDsfrConfig.notice %}
-      {% dsfacile_notice title=settings.content_manager.CmsDsfrConfig.notice %}
+      {% webfastoche_notice title=settings.content_manager.CmsDsfrConfig.notice %}
     {% endif %}
 
     <main id="content" role="main">
@@ -71,11 +71,11 @@
     {% include "blocks/footer.html" %}
 
     {% comment %}
-    {% dsfacile_js nonce=request.csp_nonce %}
+    {% webfastoche_js nonce=request.csp_nonce %}
     {% endcomment %}
     {% block extra_js %}
-    <script type="module" src="{% static 'dist/dsfacile/dsfacile.module.min.js' %}" nonce></script>
-    <script type="text/javascript" src="{% static 'dist/dsfacile/dsfacile.nomodule.min.js' %}" nomodule></script>
+    <script type="module" src="{% static 'dist/webfastoche/webfastoche.module.min.js' %}" nonce></script>
+    <script type="text/javascript" src="{% static 'dist/webfastoche/webfastoche.nomodule.min.js' %}" nomodule></script>
     {% endblock extra_js %}
 
     {% block body_tracking_scripts %}

@@ -1,0 +1,29 @@
+{% load static %}
+<div class="icon-picker-widget">
+  {% include "django/forms/widgets/text.html" %}
+
+  {% with widget.attrs.id as widget_id %}
+    <span id="{{ widget_id }}-icon" aria-hidden="true"></span>
+    <script>
+      (async () => {
+        let widgetInput = document.getElementById('{{ widget_id }}');
+        let widgetIcon = document.getElementById('{{ widget_id }}-icon');
+
+        const options = {
+          iconLibraries: ['webfastoche-buildings.json', 'webfastoche-business.json', 'webfastoche-communication.json', 'webfastoche-design.json', 'webfastoche-development.json', 'webfastoche-device.json', 'webfastoche-document.json', 'webfastoche-editor.json', 'webfastoche-finance.json', 'webfastoche-health.json', 'webfastoche-logo.json', 'webfastoche-map.json', 'webfastoche-media.json', 'webfastoche-others.json', 'webfastoche-system.json', 'webfastoche-user.json', 'webfastoche-weather.json'],
+          allowEmpty: true,
+          onSelect: function (jsonIconData) {
+            widgetInput.value = jsonIconData.iconClass;
+            widgetIcon.classList.add(jsonIconData.iconClass, "webfastoche-icon--lg", "webfastoche-mt-1w");
+            },
+          onReset: function () {
+            widgetInput.innerHTML = "";
+            widgetIcon.className = "";
+          }
+        }
+
+        let _uip = new UniversalIconPicker('#{{ widget_id }}', options);
+      })();
+    </script>
+  {% endwith %}
+</div>

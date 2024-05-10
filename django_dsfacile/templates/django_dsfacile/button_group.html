@@ -1,8 +1,0 @@
-{% load django_dsfacile_tags %}
-<ul class="dsfacile-btns-group{% if self.extra_classes %} {{ self.extra_classes }}{% endif %}">
-  {% for item in self.items %}
-    <li>
-      {% dsfacile_button item %}
-    </li>
-  {% endfor %}
-</ul>

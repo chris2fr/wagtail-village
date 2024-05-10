@@ -1,4 +1,4 @@
-{% extends "django_dsfacile/header.html" %}
+{% extends "webfastoche/header.html" %}
 {% load i18n static wagtailcore_tags wagtailimages_tags menu_tags %}
 
 {% block brand %}
@@ -14,14 +14,14 @@
   <a href="/"
      title="{{ home_page }} — {{ settings.content_manager.CmsDsfrConfig.site_title }}">
 
-    <p class="fr-header__service-title">
+    <p class="webfastoche-header__service-title">
       {% if settings.content_manager.CmsDsfrConfig.site_title|slice:"-2:" == "fr" %}
         {{ settings.content_manager.CmsDsfrConfig.site_title|slice:":-2" }}<em>fr</em>
       {% else %}
         {{ settings.content_manager.CmsDsfrConfig.site_title }}
       {% endif %}
       {% if settings.content_manager.CmsDsfrConfig.beta_tag %}
-        <span class="fr-badge fr-badge--sm fr-badge--green-emeraude">BETA</span>
+        <span class="webfastoche-badge webfastoche-badge--sm webfastoche-badge--green-emeraude">BETA</span>
       {% endif %}
 
     </p>
@@ -36,8 +36,8 @@
   {% if settings.content_manager.CmsDsfrConfig.operator_logo_file and settings.content_manager.CmsDsfrConfig.operator_logo_alt %}
     {% image settings.content_manager.CmsDsfrConfig.operator_logo_file original as logo_img %}
 
-    <div class="fr-header__operator">
-      <img class="fr-responsive-img"
+    <div class="webfastoche-header__operator">
+      <img class="webfastoche-responsive-img"
            src="{{ logo_img.url }}"
            alt="{{ settings.content_manager.CmsDsfrConfig.operator_logo_alt }}"
            {% if settings.content_manager.CmsDsfrConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.content_manager.CmsDsfrConfig.operator_logo_width|floatformat:"0" }}rem;"{% endif %} />
@@ -52,21 +52,21 @@
 {% block header_search %}
   {% translate "Search" as search_label %}
   {% if settings.content_manager.CmsDsfrConfig.search_bar %}
-    <div class="fr-header__search fr-modal" id="modal-search">
-      <div class="fr-container fr-container-lg--fluid">
+    <div class="webfastoche-header__search webfastoche-modal" id="modal-search">
+      <div class="webfastoche-container webfastoche-container-lg--fluid">
         {% translate "Close" as close_label %}
-        <button class="fr-btn--close fr-btn"
+        <button class="webfastoche-btn--close webfastoche-btn"
                 aria-controls="modal-search"
                 title="{{ close_label }}">{{ close_label }}</button>
         <form action="{% url 'cms_search' %}" method="get">
-          <div class="fr-search-bar" id="search-bar" role="search">
-            <label class="fr-label" for="search-bar-input">{{ search_label }}</label>
-            <input class="fr-input"
+          <div class="webfastoche-search-bar" id="search-bar" role="search">
+            <label class="webfastoche-label" for="search-bar-input">{{ search_label }}</label>
+            <input class="webfastoche-input"
                    placeholder="{{ search_label }}"
                    type="search"
                    id="query"
                    name="q">
-            <button class="fr-btn" title="{{ search_label }}">{{ search_label }}</button>
+            <button class="webfastoche-btn" title="{{ search_label }}">{{ search_label }}</button>
           </div>
         </form>
       </div>
@@ -79,17 +79,17 @@
 {# endblock burger_menu #}
 
 {% block main_menu %}
-  <div class="fr-header__menu fr-modal"
-       id="fr-menu-mobile"
-       aria-labelledby="fr-btn-menu-mobile">
-    <div class="fr-container">
+  <div class="webfastoche-header__menu webfastoche-modal"
+       id="webfastoche-menu-mobile"
+       aria-labelledby="webfastoche-btn-menu-mobile">
+    <div class="webfastoche-container">
       {% translate "Close" as close_label %}
       <button type="button"
-              class="fr-btn--close fr-btn"
-              aria-controls="fr-menu-mobile">{{ close_label }}</button>
-      <div class="fr-header__menu-links"></div>
+              class="webfastoche-btn--close webfastoche-btn"
+              aria-controls="webfastoche-menu-mobile">{{ close_label }}</button>
+      <div class="webfastoche-header__menu-links"></div>
       {% translate "Main menu" as main_menu_label %}
-      <nav class="fr-nav" id="fr-navigation" aria-label="{{ main_menu_label }}">
+      <nav class="webfastoche-nav" id="webfastoche-navigation" aria-label="{{ main_menu_label }}">
         {% main_menu max_levels=2 template="menus/custom_main_menu.html" sub_menu_template="menus/custom_sub_menu.html" %}
       </nav>
     </div>

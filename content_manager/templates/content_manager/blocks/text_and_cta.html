@@ -1,10 +1,10 @@
 {% load wagtailcore_tags %}
-<div class="dsfacile-col-12 dsfacile-col-sm">
+<div class="webfastoche-col-12 webfastoche-col-sm">
   {{ value.text|richtext }}
   {% if value.cta_url and value.cta_label %}
-    <p class="dsfacile-mb-5w">
-      {# It doesn't use dsfacile_link or dsfacile_button because it's a link with a button style #}
-      <a href="{{ value.cta_url }}" class="dsfacile-btn dsfacile-btn--primary">{{ value.cta_label }}</a>
+    <p class="webfastoche-mb-5w">
+      {# It doesn't use webfastoche_link or webfastoche_button because it's a link with a button style #}
+      <a href="{{ value.cta_url }}" class="webfastoche-btn webfastoche-btn--primary">{{ value.cta_label }}</a>
     </p>
   {% endif %}
 </div>

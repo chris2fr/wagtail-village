@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static django_dsfacile_tags wagtailcore_tags wagtailimages_tags i18n %}
+{% load static webfastoche_tags wagtailcore_tags wagtailimages_tags i18n %}
 
 {% block title %}
     <title>{{ title }} — {{ settings.content_manager.CmsDsfrConfig.site_title }}</title>
@@ -26,13 +26,13 @@
 {% block content %}
     {% include "content_manager/blocks/messages.html" %}
 
-    <div class="dsfacile-container dsfacile-my-6w">
-        {% dsfacile_breadcrumb breadcrumb %}
+    <div class="webfastoche-container webfastoche-my-6w">
+        {% webfastoche_breadcrumb breadcrumb %}
         <h1>{% translate "Tags" %}</h1>
 
-        <div class="dsfacile-mb-2w">
+        <div class="webfastoche-mb-2w">
             {% for first_letter in sorted_tags.keys|dictsort:0 %}
-                <a href="#{{ first_letter }}" class="dsfacile-tag">{{ first_letter }}</a>
+                <a href="#{{ first_letter }}" class="webfastoche-tag">{{ first_letter }}</a>
             {% endfor %}
         </div>
 

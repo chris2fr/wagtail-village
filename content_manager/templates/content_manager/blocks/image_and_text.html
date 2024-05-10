@@ -1,42 +1,42 @@
 {% load static %}
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
-<div class="dsfacile-container dsfacile-my-6w">
-  <div class="dsfacile-grid-row dsfacile-grid-row--gutters">
+<div class="webfastoche-container webfastoche-my-6w">
+  <div class="webfastoche-grid-row webfastoche-grid-row--gutters">
     {% if value.image_side == "left" %}
-      <div class="dsfacile-col-12 dsfacile-col-sm-{{ value.image_ratio }}">
-        <div class="bordered dsfacile-px-2w">{% image value.image original class="dsfacile-responsive-img" alt="" %}</div>
+      <div class="webfastoche-col-12 webfastoche-col-sm-{{ value.image_ratio }}">
+        <div class="bordered webfastoche-px-2w">{% image value.image original class="webfastoche-responsive-img" alt="" %}</div>
       </div>
-      <div class="dsfacile-col-12 dsfacile-col-sm{{ -12|add:value.image_ratio }}">
+      <div class="webfastoche-col-12 webfastoche-col-sm{{ -12|add:value.image_ratio }}">
         {{ value.text|richtext }}
 
         {% if value.link is not None and value.link.url %}
-          <a class="dsfacile-link dsfacile-fi-arrow-right-line dsfacile-link--icon-right"
+          <a class="webfastoche-link webfastoche-fi-arrow-right-line webfastoche-link--icon-right"
              href="{{ value.link.url }}">{{ value.link.text }}</a>
         {% elif value.page and value.link_label %}
-          <a class="dsfacile-link dsfacile-fi-arrow-right-line dsfacile-link--icon-right"
+          <a class="webfastoche-link webfastoche-fi-arrow-right-line webfastoche-link--icon-right"
              href="{{ value.page.url }}">{{ value.link_label }}</a>
         {% elif value.link_url and value.link_label %}
-          <a class="dsfacile-link dsfacile-fi-arrow-right-line dsfacile-link--icon-right"
+          <a class="webfastoche-link webfastoche-fi-arrow-right-line webfastoche-link--icon-right"
              href="{{ value.link_url }}">{{ value.link_label }}</a>
         {% endif %}
       </div>
     {% else %}
-      <div class="dsfacile-col-12 dsfacile-col-sm{{ -12|add:value.image_ratio }}">
+      <div class="webfastoche-col-12 webfastoche-col-sm{{ -12|add:value.image_ratio }}">
         {{ value.text|richtext }}
         {% if value.link is not None and value.link.url %}
-          <a class="dsfacile-link dsfacile-fi-arrow-right-line dsfacile-link--icon-right"
+          <a class="webfastoche-link webfastoche-fi-arrow-right-line webfastoche-link--icon-right"
              href="{{ value.link.url }}">{{ value.link.text }}</a>
         {% elif value.page and value.link_label %}
-          <a class="dsfacile-link dsfacile-fi-arrow-right-line dsfacile-link--icon-right"
+          <a class="webfastoche-link webfastoche-fi-arrow-right-line webfastoche-link--icon-right"
              href="{{ value.page.url }}">{{ value.link_label }}</a>
         {% elif value.link_url and value.link_label %}
-          <a class="dsfacile-link dsfacile-fi-arrow-right-line dsfacile-link--icon-right"
+          <a class="webfastoche-link webfastoche-fi-arrow-right-line webfastoche-link--icon-right"
              href="{{ value.link_url }}">{{ value.link_label }}</a>
         {% endif %}
       </div>
-      <div class="dsfacile-col-12 dsfacile-col-sm-{{ value.image_ratio }}">
-        <div class="bordered dsfacile-px-2w">{% image value.image original class="dsfacile-responsive-img" alt="" %}</div>
+      <div class="webfastoche-col-12 webfastoche-col-sm-{{ value.image_ratio }}">
+        <div class="bordered webfastoche-px-2w">{% image value.image original class="webfastoche-responsive-img" alt="" %}</div>
       </div>
     {% endif %}
   </div>
