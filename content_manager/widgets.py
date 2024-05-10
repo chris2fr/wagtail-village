@@ -13,6 +13,6 @@ class DsfacileIconPickerWidget(widgets.TextInput):
     @property
     def media(self):
         return Media(
-            css={"all": ["css/icon-picker.css", "dist/webfastoche/utility/utility.min.css"]},
+            css={"all": ["css/icon-picker.css", "webfastoche/dist/utility/utility.min.css"]},
             js=["django-webfastoche/icon-picker/assets/js/universal-icon-picker.min.js"],
         )

@@ -22,7 +22,7 @@
 
     {% webfastoche_css %}
 
-    <link href="{% static 'dist/webfastoche/webfastoche.min.css' %}" rel="stylesheet">
+    <link href="{% static 'webfastoche/dist/webfastoche.min.css' %}" rel="stylesheet">
 
 
     <link href="{% sass_src 'css/style.sass' %}"
@@ -74,8 +74,8 @@
     {% webfastoche_js nonce=request.csp_nonce %}
     {% endcomment %}
     {% block extra_js %}
-    <script type="module" src="{% static 'dist/webfastoche/webfastoche.module.min.js' %}" nonce></script>
-    <script type="text/javascript" src="{% static 'dist/webfastoche/webfastoche.nomodule.min.js' %}" nomodule></script>
+    <script type="module" src="{% static 'webfastoche/dist/webfastoche.module.min.js' %}" nonce></script>
+    <script type="text/javascript" src="{% static 'webfastoche/dist/webfastoche.nomodule.min.js' %}" nomodule></script>
     {% endblock extra_js %}
 
     {% block body_tracking_scripts %}
