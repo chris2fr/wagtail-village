@@ -94,7 +94,7 @@ Les tests unitaires peuvent être lancés avec `make test-unit`.
 
 Vous pouvez également générer un rapport sur la couverture de tests :
 ```sh
-coverage run manage.py test --settings config.settings_test
+coverage run manage.py test --settings wagtail_fastoche.config.settings_test
 ```
 
 ## Indexation des contenus

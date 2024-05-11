@@ -93,7 +93,7 @@ MIDDLEWARE = [
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
-ROOT_URLCONF = "config.urls"
+ROOT_URLCONF = "wagtail_fastoche.config.urls"
 
 TEMPLATES = [
     {
@@ -118,7 +118,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "config.wsgi.application"
+WSGI_APPLICATION = "wagtail_fastoche.config.wsgi.application"
 
 
 # Database
