@@ -1,4 +1,9 @@
-# Gestionnaire de contenu DSFR et Accessible
+# Gestionnaire de contenu Fastoche
+
+Sur la base de sites-facile de la DINUM, France, Fastoche.org propose de capitaliser sur le travail de fond pour le traitement d'information et de la communication en rendant les composants génériques. 
+
+
+## Texte reproduite de la DINUM
 
 **Créez et gérez votre site internet simplement**
 
@@ -15,10 +20,6 @@ Construisez vos pages à l'aide de composants prêts à l'emploi issus du Systè
 **Accessible et responsive**
 
 Le contenu des pages générées par le CMS est partiellement conforme selon la norme RGAA 4.1 et responsive
-
-
-
-
 
 ## Prérequis
 
