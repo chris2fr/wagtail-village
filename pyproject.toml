@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "content-manager"
+name = "wagtail-fastoche"
 version = "1.4.2"
 description = "Gestionnaire de contenu permettant de créer et gérer un site internet basé sur le Système de design de l'État, accessible et responsive"
 authors = [
