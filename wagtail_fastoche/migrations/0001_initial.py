@@ -15,6 +15,7 @@ class Migration(migrations.Migration):
         ("wagtailcore", "0078_referenceindex"),
     ]
 
+    db_cursor = connection.cursor()
     db_cursor.execute("SELECT relname FROM pg_class WHERE relname='content_manager_contentpage';")
     result = db_cursor.fetchone()
     if result:
