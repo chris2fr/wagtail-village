@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static webfastoche_tags wagtailcore_tags wagtailimages_tags i18n %}
+{% load static fastoche_tags wagtailcore_tags wagtailimages_tags i18n %}
 
 {% block title %}
     <title>{{ page.seo_title|default:page.title }} — {{ settings.content_manager.CmsDsfrConfig.site_title }}</title>
@@ -15,8 +15,8 @@
 {% block content %}
     {% include "content_manager/blocks/messages.html" %}
 
-    <div class="webfastoche-container webfastoche-my-6w">
-        {% webfastoche_breadcrumb breadcrumb %}
+    <div class="fastoche-container fastoche-my-6w">
+        {% fastoche_breadcrumb breadcrumb %}
         <h1>{% translate "Categories" %}</h1>
         <ul>
             {% for category in categories|dictsort:"cat_name" %}

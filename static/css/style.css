@@ -1,32 +1,32 @@
-/* Prefix the classes defined here with cmswebfastoche- */
-.cmswebfastoche-hero {
+/* Prefix the classes defined here with cmsfastoche- */
+.cmsfastoche-hero {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.cmswebfastoche-hero-large {
+.cmsfastoche-hero-large {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.cmswebfastoche-background-dark h1,
-.cmswebfastoche-background-dark p {
+.cmsfastoche-background-dark h1,
+.cmsfastoche-background-dark p {
   color: white;
 }
 
-.webfastoche-header__service-title em {
+.fastoche-header__service-title em {
   font-weight: lighter;
 }
 
-.cmswebfastoche-author_card__header {
+.cmsfastoche-author_card__header {
   flex: 0 0 6rem !important;
   width: 6rem !important;
 }
 
-.cmswebfastoche-author-img {
+.cmsfastoche-author-img {
   border-radius: 50%;
   height: 4.5rem !important;
   margin: 1.5rem;
@@ -43,14 +43,14 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'lack', 'system-ui', 'sans-serif';
 }
 
-.webfastoche-logo:after {
+.fastoche-logo:after {
   background-image: unset;
 }
 
-.webfastoche-logo:before {
+.fastoche-logo:before {
   background-image: unset;
 }
 
-div.webfastoche-footer__brand {
+div.fastoche-footer__brand {
   column-gap: 1rem;
 }

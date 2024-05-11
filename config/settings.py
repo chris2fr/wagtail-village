@@ -66,9 +66,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "widget_tweaks",
-    "django_webfastoche.webfastoche_lesgrandsvoisins",
-    "django_webfastoche.webfastoche_designsystem",
-    "django_webfastoche",
+    "django_fastoche.fastoche_lesgrandsvoisins",
+    "django_fastoche.fastoche_designsystem",
+    "django_fastoche",
     "sass_processor",
     "content_manager",
     "blog",
@@ -99,7 +99,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(BASE_DIR, "django_webfastoche/templates"),
+            os.path.join(BASE_DIR, "django_fastoche/templates"),
             os.path.join(BASE_DIR, "templates"),
         ],
         "APP_DIRS": True,

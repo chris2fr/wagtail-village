@@ -1,20 +1,20 @@
 {# Display Django message info from previous form #}
 {% if messages %}
-    <div class="webfastoche-container webfastoche-mt-6w">
-        <div class="webfastoche-grid-row webfastoche-grid-row--gutters">
-            <div class="webfastoche-col-12">
+    <div class="fastoche-container fastoche-mt-6w">
+        <div class="fastoche-grid-row fastoche-grid-row--gutters">
+            <div class="fastoche-col-12">
                 {% for message in messages %}
                     {% if message.tags == "success" %}
-                        <div class="webfastoche-alert webfastoche-alert--success webfastoche-alert--sm webfastoche-mb-5w"
+                        <div class="fastoche-alert fastoche-alert--success fastoche-alert--sm fastoche-mb-5w"
                              role="status">
                             <p>{{ message }}</p>
                         </div>
                     {% elif message.tags == "info" %}
-                        <div class="webfastoche-alert webfastoche-alert--info webfastoche-alert--sm webfastoche-mb-5w" role="status">
+                        <div class="fastoche-alert fastoche-alert--info fastoche-alert--sm fastoche-mb-5w" role="status">
                             <p>{{ message }}</p>
                         </div>
                     {% elif message.tags == "error" %}
-                        <div class="webfastoche-alert webfastoche-alert--error webfastoche-alert--sm webfastoche-mb-5w" role="alert">
+                        <div class="fastoche-alert fastoche-alert--error fastoche-alert--sm fastoche-mb-5w" role="alert">
                             <p>{{ message }}</p>
                         </div>
                     {% endif %}

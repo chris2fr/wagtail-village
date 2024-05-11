@@ -1,34 +1,34 @@
 {% extends "base.html" %}
-{% load widget_tweaks i18n static webfastoche_tags %}
+{% load widget_tweaks i18n static fastoche_tags %}
 {% block content %}
-    <div class="webfastoche-container webfastoche-container--fluid webfastoche-my-md-14v">
-        <div class="webfastoche-grid-row webfastoche-grid-row-gutters webfastoche-grid-row--center">
-            <div class="webfastoche-col-12 webfastoche-col-md-8 webfastoche-col-lg-6">
-                <div class="webfastoche-container webfastoche-background-alt--grey webfastoche-px-md-0 webfastoche-py-10v webfastoche-py-md-14v">
-                    <div class="webfastoche-grid-row webfastoche-grid-row-gutters webfastoche-grid-row--center">
-                        <div class="webfastoche-col-12 webfastoche-col-md-9 webfastoche-col-lg-8">
+    <div class="fastoche-container fastoche-container--fluid fastoche-my-md-14v">
+        <div class="fastoche-grid-row fastoche-grid-row-gutters fastoche-grid-row--center">
+            <div class="fastoche-col-12 fastoche-col-md-8 fastoche-col-lg-6">
+                <div class="fastoche-container fastoche-background-alt--grey fastoche-px-md-0 fastoche-py-10v fastoche-py-md-14v">
+                    <div class="fastoche-grid-row fastoche-grid-row-gutters fastoche-grid-row--center">
+                        <div class="fastoche-col-12 fastoche-col-md-9 fastoche-col-lg-8">
                             <h1>Connexion</h1>
                             <div>
                                 <form id="login-form" action="{% url 'wagtailadmin_login' %}" method="post">
-                                    <fieldset class="webfastoche-fieldset"
+                                    <fieldset class="fastoche-fieldset"
                                               id="login-form-fieldset"
                                               aria-labelledby="login-form-fieldset-legend login-form-fieldset-messages">
-                                        <legend class="webfastoche-fieldset__legend" id="login-form-fieldset-legend">
+                                        <legend class="fastoche-fieldset__legend" id="login-form-fieldset-legend">
                                             <h2>Se connecter avec son compte</h2>
                                         </legend>
-                                        <div class="webfastoche-fieldset__element">
-                                            <p class="webfastoche-text--sm">Sauf mention contraire, tous les champs sont obligatoires.</p>
-                                            <div class="webfastoche-messages-group"
+                                        <div class="fastoche-fieldset__element">
+                                            <p class="fastoche-text--sm">Sauf mention contraire, tous les champs sont obligatoires.</p>
+                                            <div class="fastoche-messages-group"
                                                  id="login-form-fieldset-messages"
                                                  aria-live="assertive">
                                                 {% if form.errors %}
-                                                    <div class="webfastoche-alert webfastoche-alert--error webfastoche-alert--sm">
+                                                    <div class="fastoche-alert fastoche-alert--error fastoche-alert--sm">
                                                         <p>Erreur : Votre identifiant et mot de passe ne correspondent pas, merci de réessayer.</p>
                                                     </div>
                                                 {% endif %}
                                                 {% if next %}
                                                     {% if user.is_authenticated %}
-                                                        <div class="webfastoche-alert webfastoche-alert--error webfastoche-alert--sm">
+                                                        <div class="fastoche-alert fastoche-alert--error fastoche-alert--sm">
                                                             <p>
                                                                 Erreur : Votre compte n’a pas accès à cette page. Pour continuer, merci de vous connecter
                                                                 avec un compte autorisé.
@@ -36,49 +36,49 @@
                                                         </div>
                                                     {% endif %}
                                                 {% endif %}
-                                                {% webfastoche_django_messages %}
+                                                {% fastoche_django_messages %}
                                             </div>
                                         </div>
-                                        <div class="webfastoche-fieldset__element">
+                                        <div class="fastoche-fieldset__element">
                                             {% csrf_token %}
                                             {% url 'wagtailadmin_home' as home_url %}
                                             <input type="hidden" name="next" value="{{ next|default:home_url }}" />
-                                            <div class="webfastoche-input-group">
-                                                <label class="webfastoche-label" for="id_username">Identifiant&nbsp;:</label>
-                                                {{ form.username |add_class:"webfastoche-input" }}
+                                            <div class="fastoche-input-group">
+                                                <label class="fastoche-label" for="id_username">Identifiant&nbsp;:</label>
+                                                {{ form.username |add_class:"fastoche-input" }}
                                             </div>
                                         </div>
-                                        <div class="webfastoche-fieldset__element">
-                                            <div class="webfastoche-password">
-                                                <label class="webfastoche-label" for="id_password">Mot de passe&nbsp;:</label>
-                                                {{ form.password |add_class:"webfastoche-password__input webfastoche-input" }}
-                                                <div class="webfastoche-password__checkbox webfastoche-checkbox-group webfastoche-checkbox-group--sm">
+                                        <div class="fastoche-fieldset__element">
+                                            <div class="fastoche-password">
+                                                <label class="fastoche-label" for="id_password">Mot de passe&nbsp;:</label>
+                                                {{ form.password |add_class:"fastoche-password__input fastoche-input" }}
+                                                <div class="fastoche-password__checkbox fastoche-checkbox-group fastoche-checkbox-group--sm">
                                                     <input aria-label="Afficher le mot de passe"
                                                            id="id_password-show"
                                                            type="checkbox"
                                                            aria-describedby="id_password-show-messages">
-                                                    <label class="webfastoche-password__checkbox webfastoche-label" for="id_password-show">Afficher</label>
-                                                    <div class="webfastoche-messages-group"
+                                                    <label class="fastoche-password__checkbox fastoche-label" for="id_password-show">Afficher</label>
+                                                    <div class="fastoche-messages-group"
                                                          id="id_password-show-messages"
                                                          aria-live="assertive"></div>
                                                 </div>
                                                 {% if show_password_reset %}
-                                                    <a class="webfastoche-link" href="{% url 'wagtailadmin_password_reset' %}">Mot de passe oublié ?</a>
+                                                    <a class="fastoche-link" href="{% url 'wagtailadmin_password_reset' %}">Mot de passe oublié ?</a>
                                                 {% endif %}
                                             </div>
                                         </div>
-                                        <div class="webfastoche-fieldset__element">
-                                            <div class="webfastoche-checkbox-group webfastoche-checkbox-group--sm">
-                                                <div class="webfastoche-checkbox-group}">
+                                        <div class="fastoche-fieldset__element">
+                                            <div class="fastoche-checkbox-group fastoche-checkbox-group--sm">
+                                                <div class="fastoche-checkbox-group}">
                                                     {{ form.remember }}
-                                                    <label for="{{ form.remember.id_for_label }}" class="webfastoche-label">Se souvenir de moi</label>
+                                                    <label for="{{ form.remember.id_for_label }}" class="fastoche-label">Se souvenir de moi</label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="webfastoche-fieldset__element">
-                                            <ul class="webfastoche-btns-group">
+                                        <div class="fastoche-fieldset__element">
+                                            <ul class="fastoche-btns-group">
                                                 <li>
-                                                    <input class="webfastoche-btn" type="submit" value="Se connecter" />
+                                                    <input class="fastoche-btn" type="submit" value="Se connecter" />
                                                 </li>
                                             </ul>
                                         </div>
@@ -94,5 +94,5 @@
 {% endblock content %}
 {% block extra_css %}
     <link rel="stylesheet"
-          href="{% static 'webfastoche/dist/utility/utility.min.css' %}">
+          href="{% static 'fastoche/dist/utility/utility.min.css' %}">
 {% endblock extra_css %}

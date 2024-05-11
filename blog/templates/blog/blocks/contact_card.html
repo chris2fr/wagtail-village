@@ -1,24 +1,24 @@
 {% load wagtailimages_tags %}
 {# Uses value instead of block.value because it is also used #}
 {# to display Person items #}
-<div class="webfastoche-container webfastoche-my-3w">
-    <div class="webfastoche-grid-row webfastoche-grid-row--gutters">
-        <div class="webfastoche-card webfastoche-card--horizontal webfastoche-col-12 webfastoche-col-md-6">
-            <div class="webfastoche-card__body">
-                <div class="webfastoche-card__content">
-                    <h3 class="webfastoche-card__title">{{ value.name }}</h3>
-                    <p class="webfastoche-card__desc">{{ value.role }} – {{ value.organization }}</p>
+<div class="fastoche-container fastoche-my-3w">
+    <div class="fastoche-grid-row fastoche-grid-row--gutters">
+        <div class="fastoche-card fastoche-card--horizontal fastoche-col-12 fastoche-col-md-6">
+            <div class="fastoche-card__body">
+                <div class="fastoche-card__content">
+                    <h3 class="fastoche-card__title">{{ value.name }}</h3>
+                    <p class="fastoche-card__desc">{{ value.role }} – {{ value.organization }}</p>
                     {% if value.contact_info %}
-                        <div class="webfastoche-card__end">
-                            <p class="webfastoche-card__detail">{{ value.contact_info }}</p>
+                        <div class="fastoche-card__end">
+                            <p class="fastoche-card__detail">{{ value.contact_info }}</p>
                         </div>
                     {% endif %}
                 </div>
             </div>
-            <div class="cmswebfastoche-author_card__header webfastoche-card__header">
-                <div class="webfastoche-card__img">
+            <div class="cmsfastoche-author_card__header fastoche-card__header">
+                <div class="fastoche-card__img">
                     {% image value.image fill-200x200 as contact_image %}
-                    <img class="webfastoche-responsive-img cmswebfastoche-author-img"
+                    <img class="fastoche-responsive-img cmsfastoche-author-img"
                          src="{{ contact_image.url }}"
                          width="4.5em"
                          height="4.5em"

@@ -148,7 +148,7 @@ msgid "Icon"
 msgstr "Icône"
 
 #: content_manager/blocks.py:124
-msgctxt "webfastoche Tag"
+msgctxt "fastoche Tag"
 msgid "Tag"
 msgstr "Tag"
 

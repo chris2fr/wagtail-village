@@ -5,15 +5,15 @@
   {% translate "Back to home page" as back_to_home_label %}
   {% if settings.content_manager.CmsDsfrConfig.operator_logo_file and settings.content_manager.CmsDsfrConfig.operator_logo_alt %}
     {% image settings.content_manager.CmsDsfrConfig.operator_logo_file original as logo_img %}
-    <div class="webfastoche-footer__brand webfastoche-enlarge-link">
+    <div class="fastoche-footer__brand fastoche-enlarge-link">
       <p class="gv-logo"
          title="{{ settings.content_manager.CmsDsfrConfig.footer_brand|default:'république française' }}">
         {{ settings.content_manager.CmsDsfrConfig.footer_brand_html| default_if_none:'république<br />française' | safe }}
       </p>
-      <a class="webfastoche-footer__brand-link"
+      <a class="fastoche-footer__brand-link"
          href="/"
          title="{{ back_to_home_label }} - {{ settings.content_manager.CmsDsfrConfig.operator_logo_alt }} - {{ settings.content_manager.CmsDsfrConfig.footer_brand|default:'république française' }}">
-        <img class="webfastoche-footer__logo"
+        <img class="fastoche-footer__logo"
              src="{{ logo_img.url }}"
              alt="{{ settings.content_manager.CmsDsfrConfig.operator_logo_alt }}"
              {% if settings.content_manager.CmsDsfrConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.content_manager.CmsDsfrConfig.operator_logo_width|floatformat:"0" }}rem;"{% endif %} />
@@ -21,7 +21,7 @@
       </a>
     </div>
   {% else %}
-    <div class="webfastoche-footer__brand webfastoche-enlarge-link">
+    <div class="fastoche-footer__brand fastoche-enlarge-link">
       <a id="footer-operator"
          href="/"
          title="{{ back_to_home_label }} - {{ settings.content_manager.CmsDsfrConfig.site_title }} - {{ settings.content_manager.CmsDsfrConfig.footer_brand|default:'république française' }}">
@@ -42,12 +42,12 @@
 {% block footer_links %}
   {% flat_menu handle="footer" template="menus/custom_flat_menu_footer.html" %}
   {% if settings.content_manager.CmsDsfrConfig.theme_modale_button %}
-    <li class="webfastoche-footer__bottom-item">
+    <li class="fastoche-footer__bottom-item">
       <button id="footer__bottom-link__parametres-affichage"
-              aria-controls="webfastoche-theme-modal"
-              data-webfastoche-opened="false"
-              class="webfastoche-icon-theme-fill webfastoche-link--icon-left webfastoche-footer__bottom-link"
-              data-webfastoche-js-modal-button="true">{% translate "Display settings" %}</button>
+              aria-controls="fastoche-theme-modal"
+              data-fastoche-opened="false"
+              class="fastoche-icon-theme-fill fastoche-link--icon-left fastoche-footer__bottom-link"
+              data-fastoche-js-modal-button="true">{% translate "Display settings" %}</button>
     </li>
   {% endif %}
 {% endblock footer_links %}

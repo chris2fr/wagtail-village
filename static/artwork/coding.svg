@@ -1,20 +1,20 @@
 <svg width="80px" height="80px" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
  	<style>
-		.webfastoche-artwork-decorative {
+		.fastoche-artwork-decorative {
 			fill: #ECECFF;
 		}
-		.webfastoche-artwork-minor {
+		.fastoche-artwork-minor {
 			fill: #E1000F;
 		}
-		.webfastoche-artwork-major {
+		.fastoche-artwork-major {
 			fill: #000091;
 		}
 	</style>
-	<g class="webfastoche-artwork-decorative" id="artwork-decorative">
+	<g class="fastoche-artwork-decorative" id="artwork-decorative">
     <path d="M59,76c-0.5514,0-1-0.4486-1-1s0.4486-1,1-1s1,0.4486,1,1S59.5514,76,59,76z M67,12c-0.5514,0-1-0.4486-1-1
 	s0.4486-1,1-1s1,0.4486,1,1S67.5514,12,67,12z M9,16c-0.5514,0-1-0.4486-1-1s0.4486-1,1-1s1,0.4486,1,1S9.5514,16,9,16z"/>
   </g>
-  <g class="webfastoche-artwork-minor" id="artwork-minor">
+  <g class="fastoche-artwork-minor" id="artwork-minor">
     <path d="M45,40h10c0.55231,0,1-0.44769,1-1v-8c0-0.55231-0.44769-1-1-1H45c-0.55231,0-1,0.44769-1,1v8
 	C44,39.55231,44.44769,40,45,40z M46,32h8v6h-8V32z M61,44H51c-0.55231,0-1,0.44769-1,1v8c0,0.55231,0.44769,1,1,1h10
 	c0.55231,0,1-0.44769,1-1v-8C62,44.44769,61.55231,44,61,44z M60,52h-8v-6h8V52z M58,31c0-0.51282,0.38599-0.93549,0.88342-0.99329
@@ -28,7 +28,7 @@
 	c0,0.51282-0.38599,0.93549-0.88342,0.99329L47,54h-2c-0.55231,0-1-0.44769-1-1c0-0.51282,0.38599-0.93549,0.88342-0.99329L45,52h2
 	C47.55231,52,48,52.44769,48,53z"/>
   </g>
-  <g class="webfastoche-artwork-major" id="artwork-major">
+  <g class="fastoche-artwork-major" id="artwork-major">
     <path d="M16,21c0-0.55139,0.44861-1,1-1s1,0.44861,1,1s-0.44861,1-1,1S16,21.55139,16,21z M21,22
 	c0.55139,0,1-0.44861,1-1s-0.44861-1-1-1s-1,0.44861-1,1S20.44861,22,21,22z M25,22c0.55139,0,1-0.44861,1-1s-0.44861-1-1-1
 	s-1,0.44861-1,1S24.44861,22,25,22z M35.83081,31.5799l-4.27728-1.49213l0.43988-1.79889L32,28.23407

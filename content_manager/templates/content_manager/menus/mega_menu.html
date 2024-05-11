@@ -1,25 +1,25 @@
 {% load menu_tags %}
-<div class="webfastoche-collapse webfastoche-mega-menu"
+<div class="fastoche-collapse fastoche-mega-menu"
      id="mega-menu-{{ menu.parent_menu_item.id }}"
      tabindex="-1">
-    <div class="webfastoche-container webfastoche-container--fluid webfastoche-container-lg">
-        <button class="webfastoche-link--close webfastoche-link"
+    <div class="fastoche-container fastoche-container--fluid fastoche-container-lg">
+        <button class="fastoche-link--close fastoche-link"
                 aria-controls="mega-menu-{{ menu.parent_menu_item.id }}">Fermer</button>
-        <div class="webfastoche-grid-row webfastoche-grid-row-lg--gutters">
-            <div class="webfastoche-col-12 webfastoche-col-lg-8 webfastoche-col-offset-lg-4--right">
-                <div class="webfastoche-mega-menu__leader">
-                    <h4 class="webfastoche-h4 webfastoche-mb-2v">{{ menu.title }}</h4>
-                    {% if menu.description %}<p class="webfastoche-hidden webfastoche-displayed-lg">{{ menu.description|safe }}</p>{% endif %}
+        <div class="fastoche-grid-row fastoche-grid-row-lg--gutters">
+            <div class="fastoche-col-12 fastoche-col-lg-8 fastoche-col-offset-lg-4--right">
+                <div class="fastoche-mega-menu__leader">
+                    <h4 class="fastoche-h4 fastoche-mb-2v">{{ menu.title }}</h4>
+                    {% if menu.description %}<p class="fastoche-hidden fastoche-displayed-lg">{{ menu.description|safe }}</p>{% endif %}
                     {% if menu.main_link %}
-                        <a class="webfastoche-link webfastoche-fi-arrow-right-line webfastoche-link--icon-right webfastoche-link--align-on-content"
+                        <a class="fastoche-link fastoche-fi-arrow-right-line fastoche-link--icon-right fastoche-link--align-on-content"
                            href="{{ menu.main_link }}">Voir toute la rubrique</a>
                     {% endif %}
                 </div>
             </div>
             {% for category in menu.get_categories %}
-                <div class="webfastoche-col-12 webfastoche-col-lg-3">
-                    <h5 class="webfastoche-mega-menu__category">
-                        <a class="webfastoche-nav__link" href="#" target="_self">
+                <div class="fastoche-col-12 fastoche-col-lg-3">
+                    <h5 class="fastoche-mega-menu__category">
+                        <a class="fastoche-nav__link" href="#" target="_self">
                             {% if category.category.heading %}
                                 {{ category.category.heading }}
                             {% else %}

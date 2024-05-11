@@ -1,8 +1,8 @@
 {% load wagtailimages_tags wagtailcore_tags %}
-<div class="webfastoche-card{% if value.url or value.document %} webfastoche-enlarge-link{% endif %}">
-  <div class="webfastoche-card__body">
-    <div class="webfastoche-card__content">
-      <h3 class="webfastoche-card__title">
+<div class="fastoche-card{% if value.url or value.document %} fastoche-enlarge-link{% endif %}">
+  <div class="fastoche-card__body">
+    <div class="fastoche-card__content">
+      <h3 class="fastoche-card__title">
         {% if value.url %}
           <a href="{{ value.url }}">{{ value.title }}</a>
         {% elif value.document %}
@@ -11,17 +11,17 @@
           {{ value.title }}
         {% endif %}
       </h3>
-      <p class="webfastoche-card__desc">{{ value.description|linebreaksbr }}</p>
+      <p class="fastoche-card__desc">{{ value.description|linebreaksbr }}</p>
     </div>
   </div>
-  <div class="webfastoche-card__header">
+  <div class="fastoche-card__header">
     {% if value.image %}
-      <div class="webfastoche-card__img">{% image value.image original class="webfastoche-responsive-img" %}</div>
+      <div class="fastoche-card__img">{% image value.image original class="fastoche-responsive-img" %}</div>
     {% endif %}
     {% if value.badge_text %}
-      <ul class="webfastoche-badges-group">
+      <ul class="fastoche-badges-group">
         <li>
-          <p class="webfastoche-badge webfastoche-badge--{{ value.badge_level }}{% if value.badge_icon %} webfastoche-badge--no-icon{% endif %}">
+          <p class="fastoche-badge fastoche-badge--{{ value.badge_level }}{% if value.badge_icon %} fastoche-badge--no-icon{% endif %}">
             {{ value.badge_text }}
           </p>
         </li>

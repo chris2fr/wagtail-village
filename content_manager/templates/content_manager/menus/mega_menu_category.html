@@ -1,9 +1,9 @@
 {% load menu_tags %}
 {% if menu_items %}
-    <ul class="webfastoche-menu__list">
+    <ul class="fastoche-menu__list">
         {% for item in menu_items %}
             <li>
-                <a class="webfastoche-nav__link"
+                <a class="fastoche-nav__link"
                    href="{{ item.href }}"
                    {% if item.href == request.path %}aria-current="page"{% endif %}
                    target="_self">{{ item.text }}</a>

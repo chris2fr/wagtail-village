@@ -2,7 +2,7 @@ from django.forms import Media, widgets
 
 
 class DsfacileIconPickerWidget(widgets.TextInput):
-    template_name = "content_manager/widgets/webfastoche-icon-picker-widget.html"
+    template_name = "content_manager/widgets/fastoche-icon-picker-widget.html"
 
     def __init__(self, attrs=None):
         default_attrs = {}
@@ -13,6 +13,6 @@ class DsfacileIconPickerWidget(widgets.TextInput):
     @property
     def media(self):
         return Media(
-            css={"all": ["css/icon-picker.css", "webfastoche/dist/utility/utility.min.css"]},
-            js=["django-webfastoche/icon-picker/assets/js/universal-icon-picker.min.js"],
+            css={"all": ["css/icon-picker.css", "fastoche/dist/utility/utility.min.css"]},
+            js=["django-fastoche/icon-picker/assets/js/universal-icon-picker.min.js"],
         )

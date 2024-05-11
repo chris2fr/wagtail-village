@@ -1,13 +1,13 @@
-<div class="webfastoche-container webfastoche-my-3w">
-    <div class="webfastoche-stepper">
-        <h2 class="webfastoche-stepper__title">{{ block.value.title }}</h2>
-        <div class="webfastoche-stepper__steps"
-             data-webfastoche-current-step="{{ block.value.current }}"
-             data-webfastoche-steps="{{ block.value.total }}">
+<div class="fastoche-container fastoche-my-3w">
+    <div class="fastoche-stepper">
+        <h2 class="fastoche-stepper__title">{{ block.value.title }}</h2>
+        <div class="fastoche-stepper__steps"
+             data-fastoche-current-step="{{ block.value.current }}"
+             data-fastoche-steps="{{ block.value.total }}">
         </div>
-        <div class="webfastoche-grid-row webfastoche-grid-row--gutters">
+        <div class="fastoche-grid-row fastoche-grid-row--gutters">
             {% for subblock in block.value.steps %}
-                <div class="webfastoche-col-12 webfastoche-col-sm">
+                <div class="fastoche-col-12 fastoche-col-sm">
                     <p>
                         <strong>{{ subblock.value.title }}</strong>
                     </p>

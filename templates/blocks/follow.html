@@ -1,17 +1,17 @@
-{% extends "webfastoche/follow.html" %}
+{% extends "fastoche/follow.html" %}
 {% load i18n %}
 
 {% block follow_newsletter %}
   {% if settings.content_manager.CmsDsfrConfig.show_newsletter_block %}
-    <div class="webfastoche-col-12{% if settings.content_manager.CmsDsfrConfig.show_social_block %} webfastoche-col-md-8{% endif %}">
-      <div class="webfastoche-follow__newsletter">
+    <div class="fastoche-col-12{% if settings.content_manager.CmsDsfrConfig.show_social_block %} fastoche-col-md-8{% endif %}">
+      <div class="fastoche-follow__newsletter">
         <div>
-          <h2 class="webfastoche-h5">{% translate "Subscribe to our newsletter" context "Section title" %}</h2>
-          <p class="webfastoche-text--sm">{{ settings.content_manager.CmsDsfrConfig.newsletter_description | safe }}</p>
+          <h2 class="fastoche-h5">{% translate "Subscribe to our newsletter" context "Section title" %}</h2>
+          <p class="fastoche-text--sm">{{ settings.content_manager.CmsDsfrConfig.newsletter_description | safe }}</p>
         </div>
-        <div class="webfastoche-btns-group webfastoche-btns-group--inline-md">
+        <div class="fastoche-btns-group fastoche-btns-group--inline-md">
           {% translate "Subscribe to our newsletter" context "Button title" as subcribe_button_title %}
-          <a class="webfastoche-btn"
+          <a class="fastoche-btn"
              href="{{ settings.content_manager.CmsDsfrConfig.newsletter_url }}"
              target="_blank"
              rel="noopener external"
@@ -24,19 +24,19 @@
 
 {% block follow_social %}
   {% if settings.content_manager.CmsDsfrConfig.show_social_block %}
-    <div class="webfastoche-col-12{% if settings.content_manager.CmsDsfrConfig.show_newsletter_block %} webfastoche-col-md-4{% endif %}">
-      <div class="webfastoche-follow__social">
-        <h2 class="webfastoche-h5">
+    <div class="fastoche-col-12{% if settings.content_manager.CmsDsfrConfig.show_newsletter_block %} fastoche-col-md-4{% endif %}">
+      <div class="fastoche-follow__social">
+        <h2 class="fastoche-h5">
           {% blocktranslate trimmed %}
             Follow us
             <br />
             on social media
           {% endblocktranslate %}
         </h2>
-        <ul class="webfastoche-btns-group">
+        <ul class="fastoche-btns-group">
           {% for link in settings.content_manager.CmsDsfrConfig.social_media_items.all %}
             <li>
-              <a class="{{ link.icon_class }} webfastoche-btn"
+              <a class="{{ link.icon_class }} fastoche-btn"
                  href="{{ link.url }}"
                  target="_blank"
                  title="{{ link.title }} - {{ new_window_label }}"

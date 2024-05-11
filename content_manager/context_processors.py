@@ -5,7 +5,7 @@ def skiplinks(request) -> dict:
     return {
         "skiplinks": [
             {"link": "#content", "label": "Contenu"},
-            {"link": "#webfastoche-navigation", "label": "Menu"},
+            {"link": "#fastoche-navigation", "label": "Menu"},
         ]
     }
 

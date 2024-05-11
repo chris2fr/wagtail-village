@@ -1,7 +1,7 @@
-[class*=" webfastoche-icon-"]::after,
-[class*=" webfastoche-icon-"]::before,
-[class^="webfastoche-icon-"]::after,
-[class^="webfastoche-icon-"]::before {
+[class*=" fastoche-icon-"]::after,
+[class*=" fastoche-icon-"]::before,
+[class^="fastoche-icon-"]::after,
+[class^="fastoche-icon-"]::before {
     --icon-size: 1.5rem;
     background-color: currentColor;
     display: inline-block;
@@ -13,7 +13,7 @@
     width: var(--icon-size);
 }
 
-[class*=" webfastoche-icon-"]::before,
-[class^="webfastoche-icon-"]::before {
+[class*=" fastoche-icon-"]::before,
+[class^="fastoche-icon-"]::before {
     content: "";
 }
