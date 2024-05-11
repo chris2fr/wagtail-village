@@ -470,6 +470,23 @@ files = [
 django = ">=4.2"
 
 [[package]]
+name = "django-dsfr"
+version = "1.1.2"
+description = "Integrate the French government Design System into a Django app"
+optional = false
+python-versions = "<4.0,>=3.8"
+files = [
+    {file = "django_dsfr-1.1.2-py3-none-any.whl", hash = "sha256:32ddc48a5aebe9550cd80a2beea01b432cce00de9dec110ba3deff18ab063b5a"},
+    {file = "django_dsfr-1.1.2.tar.gz", hash = "sha256:3b0192fad0a85770a5daaff57a87be544a593c6dfe2e031560ee49296a2e267d"},
+]
+
+[package.dependencies]
+Django = ">3.2.5"
+django-crispy-forms = ">=2.0,<3.0"
+django-widget-tweaks = ">=1.4.12,<2.0.0"
+requests = ">=2.26.0,<3.0.0"
+
+[[package]]
 name = "django-extensions"
 version = "3.2.3"
 description = "Extensions for Django"
@@ -597,23 +614,6 @@ files = [
 
 [package.dependencies]
 Django = ">=3.2"
-
-[[package]]
-name = "django-webfastoche"
-version = "1.1.2"
-description = "Render the Design System of France into a generic Django app"
-optional = false
-python-versions = "<4.0,>=3.8"
-files = [
-    {file = "django_webfastoche-1.1.2-py3-none-any.whl", hash = "sha256:85e8f52a252ea2b49d882cdb2c96e5acf45297d7dd34db15837b44e32fb893b2"},
-    {file = "django_webfastoche-1.1.2.tar.gz", hash = "sha256:a5b26cfce0786ab300426bb66e1a0ce7a9e51dc4cf994fcc42ba058b84f8db9e"},
-]
-
-[package.dependencies]
-Django = ">3.2.5"
-django-crispy-forms = ">=2.0,<3.0"
-django-widget-tweaks = ">=1.4.12,<2.0.0"
-requests = ">=2.26.0,<3.0.0"
 
 [[package]]
 name = "django-widget-tweaks"
@@ -2202,4 +2202,4 @@ wand = ["Wand (>=0.6,<1.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "861609a18d66d9fce27c09e20cd765948e95380fb351128006fd1666d3dd8f33"
+content-hash = "bb0638dd1c532df71b53395cae0b7ed4babdc38b4b023bb7a855bd5948446c40"

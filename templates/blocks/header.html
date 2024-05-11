@@ -52,7 +52,7 @@
 {% block header_search %}
   {% translate "Search" as search_label %}
   {% if settings.content_manager.CmsDsfrConfig.search_bar %}
-    <div class="webfastoche-header__search webfastoche-modal" id="modal-search">
+    <div class="header__search webfastoche-modal" id="modal-search">
       <div class="webfastoche-container webfastoche-container-lg--fluid">
         {% translate "Close" as close_label %}
         <button class="webfastoche-btn--close webfastoche-btn"
@@ -79,7 +79,7 @@
 {# endblock burger_menu #}
 
 {% block main_menu %}
-  <div class="webfastoche-header__menu webfastoche-modal"
+  <div class="header__menu webfastoche-modal"
        id="webfastoche-menu-mobile"
        aria-labelledby="webfastoche-btn-menu-mobile">
     <div class="webfastoche-container">
@@ -87,7 +87,7 @@
       <button type="button"
               class="webfastoche-btn--close webfastoche-btn"
               aria-controls="webfastoche-menu-mobile">{{ close_label }}</button>
-      <div class="webfastoche-header__menu-links"></div>
+      <div class="header__menu-links"></div>
       {% translate "Main menu" as main_menu_label %}
       <nav class="webfastoche-nav" id="webfastoche-navigation" aria-label="{{ main_menu_label }}">
         {% main_menu max_levels=2 template="menus/custom_main_menu.html" sub_menu_template="menus/custom_sub_menu.html" %}
