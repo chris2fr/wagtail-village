@@ -245,6 +245,8 @@ class Category(TranslatableMixin, index.Indexed, models.Model):
                 raise ValidationError(_("Parent category cannot be self."))
             if parent.parent and parent.parent == self:
                 raise ValidationError(_("Cannot have circular Parents."))
+            if parent.parent.parent and parent.parent.parent == self:
+                raise ValidationError(_("Cannot have circular Grand Parents."))
 
     def save(self, *args, **kwargs):
         if not self.slug:
