@@ -18,12 +18,13 @@
     {% block description %}
     {% endblock description %}
 
-    {% include "favicon.html" %}
+    {% fastoche_favicon %}
 
     {% fastoche_css %}
 
-    <link href="{% static 'fastoche/dist/fastoche.min.css' %}" rel="stylesheet">
-
+    <link href="{% static 'fastoche/dist/utility/utility.min.css' %}"
+          rel="stylesheet"
+          type="text/css" />
 
     <link href="{% sass_src 'css/style.sass' %}"
           rel="stylesheet"
@@ -70,12 +71,9 @@
 
     {% include "blocks/footer.html" %}
 
-    {% comment %}
     {% fastoche_js nonce=request.csp_nonce %}
-    {% endcomment %}
+
     {% block extra_js %}
-    <script type="module" src="{% static 'fastoche/dist/fastoche.module.min.js' %}" nonce></script>
-    <script type="text/javascript" src="{% static 'fastoche/dist/fastoche.nomodule.min.js' %}" nomodule></script>
     {% endblock extra_js %}
 
     {% block body_tracking_scripts %}

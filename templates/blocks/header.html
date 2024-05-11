@@ -52,7 +52,7 @@
 {% block header_search %}
   {% translate "Search" as search_label %}
   {% if settings.content_manager.CmsDsfrConfig.search_bar %}
-    <div class="header__search fastoche-modal" id="modal-search">
+    <div class="fastoche-header__search fastoche-modal" id="modal-search">
       <div class="fastoche-container fastoche-container-lg--fluid">
         {% translate "Close" as close_label %}
         <button class="fastoche-btn--close fastoche-btn"
@@ -79,19 +79,24 @@
 {# endblock burger_menu #}
 
 {% block main_menu %}
-  <div class="header__menu fastoche-modal"
-       id="fastoche-menu-mobile"
-       aria-labelledby="fastoche-btn-menu-mobile">
-    <div class="fastoche-container">
-      {% translate "Close" as close_label %}
-      <button type="button"
-              class="fastoche-btn--close fastoche-btn"
-              aria-controls="fastoche-menu-mobile">{{ close_label }}</button>
-      <div class="header__menu-links"></div>
-      {% translate "Main menu" as main_menu_label %}
-      <nav class="fastoche-nav" id="fastoche-navigation" aria-label="{{ main_menu_label }}">
-        {% main_menu max_levels=2 template="menus/custom_main_menu.html" sub_menu_template="menus/custom_sub_menu.html" %}
-      </nav>
-    </div>
-  </div>
+<div class="fastoche-header__menu fastoche-modal"
+id="fastoche-menu-mobile"
+aria-labelledby="fastoche-btn-menu-mobile">
+<div class="fastoche-container">
+<button class="fastoche-btn--close fastoche-btn"
+       aria-controls="fastoche-menu-mobile">
+ {% translate "Close" %}
+</button>
+<div class="fastoche-header__menu-links">
+</div>
+{% translate "Main menu" as main_menu_label %}
+<nav role="navigation"
+class="fastoche-nav"
+id="fastoche-navigation"
+aria-label="{{ main_menu_label }}">
+{% main_menu max_levels=2 template="menus/custom_main_menu.html" sub_menu_template="menus/custom_sub_menu.html" %}
+</nav>
+</div>
+</div>
+
 {% endblock main_menu %}
