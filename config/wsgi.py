@@ -1,5 +1,5 @@
 """
-WSGI config for content_manager project.
+WSGI config for wagtail_fastoche project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

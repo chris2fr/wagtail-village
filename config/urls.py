@@ -12,8 +12,8 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    path("", include("blog.urls", namespace="blog")),
-    path("", include("content_manager.urls")),
+    path("", include("wagtail_fastoche.blog.urls", namespace="blog")),
+    path("", include("wagtail_fastoche.urls")),
     prefix_default_language=False,
 )
 if settings.DEBUG:

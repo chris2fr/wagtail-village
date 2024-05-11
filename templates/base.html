@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
       data-fastoche-scheme="system"
-      {% if settings.content_manager.CmsDsfrConfig.mourning %}data-fastoche-mourning{% endif %}>
+      {% if settings.wagtail_fastoche.CmsDsfrConfig.mourning %}data-fastoche-mourning{% endif %}>
 
   <head>
     <meta charset="utf-8" />
@@ -12,7 +12,7 @@
     {% block title %}
       <title>
         {% if title %}{{ title }} —{% endif %}
-      {{ settings.content_manager.CmsDsfrConfig.site_title }}</title>
+      {{ settings.wagtail_fastoche.CmsDsfrConfig.site_title }}</title>
     {% endblock title %}
 
     {% block description %}
@@ -35,8 +35,8 @@
     {% endblock extra_css %}
 
     {% block tracking %}
-      {% if settings.content_manager.AnalyticsSettings.head_scripts %}
-        {{ settings.content_manager.AnalyticsSettings.head_scripts|safe }}
+      {% if settings.wagtail_fastoche.AnalyticsSettings.head_scripts %}
+        {{ settings.wagtail_fastoche.AnalyticsSettings.head_scripts|safe }}
       {% endif %}
     {% endblock tracking %}
 
@@ -54,8 +54,8 @@
     {% fastoche_theme_modale %}
     {% wagtailuserbar %}
 
-    {% if settings.content_manager.CmsDsfrConfig.notice %}
-      {% fastoche_notice title=settings.content_manager.CmsDsfrConfig.notice %}
+    {% if settings.wagtail_fastoche.CmsDsfrConfig.notice %}
+      {% fastoche_notice title=settings.wagtail_fastoche.CmsDsfrConfig.notice %}
     {% endif %}
 
     <main id="content" role="main">
@@ -64,7 +64,7 @@
     </main>
 
     {% block follow_newsletter_social_media %}
-      {% if settings.content_manager.CmsDsfrConfig.show_newsletter_and_social_block %}
+      {% if settings.wagtail_fastoche.CmsDsfrConfig.show_newsletter_and_social_block %}
         {% include "blocks/follow.html" %}
       {% endif %}
     {% endblock follow_newsletter_social_media %}
@@ -77,8 +77,8 @@
     {% endblock extra_js %}
 
     {% block body_tracking_scripts %}
-      {% if settings.content_manager.AnalyticsSettings.body_scripts %}
-        {{ settings.content_manager.AnalyticsSettings.body_scripts|safe }}
+      {% if settings.wagtail_fastoche.AnalyticsSettings.body_scripts %}
+        {{ settings.wagtail_fastoche.AnalyticsSettings.body_scripts|safe }}
       {% endif %}
     {% endblock body_tracking_scripts %}
   </body>
