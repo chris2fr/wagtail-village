@@ -5,7 +5,7 @@ import wagtail.blocks
 import wagtail.documents.blocks
 import wagtail.fields
 import wagtail.images.blocks
-from django.db import migrations, models
+from django.db import connection, migrations, models
 
 
 class Migration(migrations.Migration):
@@ -15,447 +15,496 @@ class Migration(migrations.Migration):
         ("wagtailcore", "0078_referenceindex"),
     ]
 
-    operations = [
-        migrations.CreateModel(
-            name="ContentPage",
-            fields=[
-                (
-                    "page_ptr",
-                    models.OneToOneField(
-                        auto_created=True,
-                        on_delete=django.db.models.deletion.CASCADE,
-                        parent_link=True,
-                        primary_key=True,
-                        serialize=False,
-                        to="wagtailcore.page",
+    db_cursor.execute("SELECT relname FROM pg_class WHERE relname='content_manager_contentpage';")
+    result = db_cursor.fetchone()
+    if result:
+        sql_query = (
+            "UPDATE django_content_type SET app_label='wagtail_fastoche' WHERE app_label='content_manager';"
+            "ALTER TABLE content_manager_analyticssettings RENAME TO wagtail_fastoche_analyticssettings;"
+            "ALTER TABLE content_manager_cmsdsfrconfig RENAME TO wagtail_fastoche_cmsdsfrconfig;"
+            "ALTER TABLE content_manager_megamenucategory RENAME TO wagtail_fastoche_megamenucategory;"
+            "ALTER TABLE content_manager_megamenu RENAME TO wagtail_fastoche_megamenu;"
+            "ALTER TABLE content_manager_tagcontentpage RENAME TO wagtail_fastoche_tagcontentpage;"
+            "ALTER TABLE content_manager_contentpage RENAME TO wagtail_fastoche_contentpage;"
+            "ALTER TABLE content_manager_socialmediaitem RENAME TO wagtail_fastoche_socialmediaitem;"
+            "ALTER SEQUENCE content_manager_analyticssettings_id_seq RENAME TO wagtail_fastoche_analyticssettings_id_seq;"
+            "ALTER SEQUENCE content_manager_cmsdsfrconfig_id_seq RENAME TO wagtail_fastoche_cmsdsfrconfig_id_seq;"
+            "ALTER SEQUENCE content_manager_megamenu_id_seq RENAME TO wagtail_fastoche_megamenu_id_seq;"
+            "ALTER SEQUENCE content_manager_megamenucategory_id_seq RENAME TO wagtail_fastoche_megamenucategory_id_seq;"
+            "ALTER SEQUENCE content_manager_socialmediaitem_id_seq RENAME TO wagtail_fastoche_socialmediaitem_id_seq;"
+            "ALTER SEQUENCE content_manager_tagcontentpage_id_seq RENAME TO wagtail_fastoche_tagcontentpage_id_seq;"
+            "UPDATE django_migrations SET app='wagtail_fastoche' WHERE app='content_manager';"
+        )
+        reverse_sql_query = (
+            "UPDATE django_content_type SET app_label=content_manager' WHERE app_label='wagtail_fastoche';"
+            "ALTER TABLE wagtail_fastoche_analyticssettings RENAME TO content_manager_analyticssettings;"
+            "ALTER TABLE wagtail_fastoche_cmsdsfrconfig RENAME TO content_manager_cmsdsfrconfig;"
+            "ALTER TABLE wagtail_fastoche_megamenucategory RENAME TO content_manager_megamenucategory;"
+            "ALTER TABLE wagtail_fastoche_megamenu RENAME TO content_manager_megamenu;"
+            "ALTER TABLE wagtail_fastoche_tagcontentpage RENAME TO content_manager_tagcontentpage;"
+            "ALTER TABLE wagtail_fastoche_contentpage RENAME TO content_manager_contentpage;"
+            "ALTER TABLE wagtail_fastoche_socialmediaitem RENAME TO content_manager_socialmediaitem;"
+            "ALTER SEQUENCE wagtail_fastoche_analyticssettings_id_seq RENAME TO content_manager_analyticssettings_id_seq;"
+            "ALTER SEQUENCE wagtail_fastoche_cmsdsfrconfig_id_seq RENAME TO content_manager_cmsdsfrconfig_id_seq;"
+            "ALTER SEQUENCE wagtail_fastoche_megamenu_id_seq RENAME TO content_manager_megamenu_id_seq;"
+            "ALTER SEQUENCE wagtail_fastoche_megamenucategory_id_seq RENAME TO content_manager_megamenucategory_id_seq;"
+            "ALTER SEQUENCE wagtail_fastoche_socialmediaitem_id_seq RENAME TO content_manager_socialmediaitem_id_seq;"
+            "ALTER SEQUENCE wagtail_fastoche_tagcontentpage_id_seq RENAME TO content_manager_tagcontentpage_id_seq;"
+            "UPDATE django_migrations SET app='content_manager' WHERE app='wagtail_fastoche';"
+        )
+        operations = [
+            migrations.RunSQL(sql=sql_query, reverse_sql=reverse_sql_query),
+        ]
+    else:
+        operations = [
+            migrations.CreateModel(
+                name="ContentPage",
+                fields=[
+                    (
+                        "page_ptr",
+                        models.OneToOneField(
+                            auto_created=True,
+                            on_delete=django.db.models.deletion.CASCADE,
+                            parent_link=True,
+                            primary_key=True,
+                            serialize=False,
+                            to="wagtailcore.page",
+                        ),
                     ),
-                ),
-                (
-                    "body",
-                    wagtail.fields.StreamField(
-                        [
-                            (
-                                "title",
-                                wagtail.blocks.StructBlock(
-                                    [
-                                        (
-                                            "title",
-                                            wagtail.blocks.CharBlock(label="Titre"),
-                                        ),
-                                        (
-                                            "large",
-                                            wagtail.blocks.BooleanBlock(label="Large", required=False),
-                                        ),
-                                    ],
-                                    label="Titre de page",
+                    (
+                        "body",
+                        wagtail.fields.StreamField(
+                            [
+                                (
+                                    "title",
+                                    wagtail.blocks.StructBlock(
+                                        [
+                                            (
+                                                "title",
+                                                wagtail.blocks.CharBlock(label="Titre"),
+                                            ),
+                                            (
+                                                "large",
+                                                wagtail.blocks.BooleanBlock(label="Large", required=False),
+                                            ),
+                                        ],
+                                        label="Titre de page",
+                                    ),
                                 ),
-                            ),
-                            (
-                                "paragraph",
-                                wagtail.blocks.RichTextBlock(label="Texte avec mise en forme"),
-                            ),
-                            (
-                                "paragraphlarge",
-                                wagtail.blocks.RichTextBlock(label="Texte avec mise en forme (large)"),
-                            ),
-                            (
-                                "image",
-                                wagtail.blocks.StructBlock(
-                                    [
-                                        (
-                                            "title",
-                                            wagtail.blocks.CharBlock(label="Titre", required=False),
-                                        ),
-                                        (
-                                            "image",
-                                            wagtail.images.blocks.ImageChooserBlock(label="Illustration"),
-                                        ),
-                                        (
-                                            "alt",
-                                            wagtail.blocks.CharBlock(
-                                                label="Texte alternatif (description textuelle de l'image)",
-                                                required=False,
-                                            ),
-                                        ),
-                                        (
-                                            "caption",
-                                            wagtail.blocks.CharBlock(label="Légende", required=False),
-                                        ),
-                                        (
-                                            "url",
-                                            wagtail.blocks.URLBlock(label="Lien", required=False),
-                                        ),
-                                    ]
+                                (
+                                    "paragraph",
+                                    wagtail.blocks.RichTextBlock(label="Texte avec mise en forme"),
                                 ),
-                            ),
-                            (
-                                "imageandtext",
-                                wagtail.blocks.StructBlock(
-                                    [
-                                        (
-                                            "image",
-                                            wagtail.images.blocks.ImageChooserBlock(label="Illustration (à gauche)"),
-                                        ),
-                                        (
-                                            "image_ratio",
-                                            wagtail.blocks.ChoiceBlock(
-                                                choices=[
-                                                    ("3", "3/12"),
-                                                    ("5", "5/12"),
-                                                    ("6", "6/12"),
-                                                ],
-                                                label="Largeur de l'image",
-                                            ),
-                                        ),
-                                        (
-                                            "text",
-                                            wagtail.blocks.RichTextBlock(label="Texte avec mise en forme (à droite)"),
-                                        ),
-                                        (
-                                            "link_label",
-                                            wagtail.blocks.CharBlock(
-                                                help_text="Le lien apparait en bas du bloc de droite, avec une flèche",
-                                                label="Titre du lien",
-                                                required=False,
-                                            ),
-                                        ),
-                                        (
-                                            "link_url",
-                                            wagtail.blocks.URLBlock(label="Lien", required=False),
-                                        ),
-                                    ],
-                                    label="Bloc image à gauche et texte à droite",
+                                (
+                                    "paragraphlarge",
+                                    wagtail.blocks.RichTextBlock(label="Texte avec mise en forme (large)"),
                                 ),
-                            ),
-                            (
-                                "alert",
-                                wagtail.blocks.StructBlock(
-                                    [
-                                        (
-                                            "title",
-                                            wagtail.blocks.CharBlock(label="Titre du message", required=False),
-                                        ),
-                                        (
-                                            "description",
-                                            wagtail.blocks.TextBlock(label="Texte du message", required=False),
-                                        ),
-                                        (
-                                            "level",
-                                            wagtail.blocks.ChoiceBlock(
-                                                choices=[
-                                                    ("error", "Erreur"),
-                                                    ("success", "Succès"),
-                                                    ("info", "Information"),
-                                                    ("warning", "Attention"),
-                                                ],
-                                                label="Type de message",
+                                (
+                                    "image",
+                                    wagtail.blocks.StructBlock(
+                                        [
+                                            (
+                                                "title",
+                                                wagtail.blocks.CharBlock(label="Titre", required=False),
                                             ),
-                                        ),
-                                    ],
-                                    label="Message d'alerte",
-                                ),
-                            ),
-                            (
-                                "callout",
-                                wagtail.blocks.StructBlock(
-                                    [
-                                        (
-                                            "title",
-                                            wagtail.blocks.CharBlock(
-                                                label="Titre de la mise en vant",
-                                                required=False,
+                                            (
+                                                "image",
+                                                wagtail.images.blocks.ImageChooserBlock(label="Illustration"),
                                             ),
-                                        ),
-                                        (
-                                            "text",
-                                            wagtail.blocks.TextBlock(
-                                                label="Texte mis en avant",
-                                                required=False,
-                                            ),
-                                        ),
-                                    ],
-                                    label="Texte mise en avant",
-                                ),
-                            ),
-                            (
-                                "quote",
-                                wagtail.blocks.StructBlock(
-                                    [
-                                        (
-                                            "image",
-                                            wagtail.images.blocks.ImageChooserBlock(
-                                                label="Illustration (à gauche)",
-                                                required=False,
-                                            ),
-                                        ),
-                                        (
-                                            "quote",
-                                            wagtail.blocks.CharBlock(label="Citation"),
-                                        ),
-                                        (
-                                            "author_name",
-                                            wagtail.blocks.CharBlock(label="Nom de l'auteur"),
-                                        ),
-                                        (
-                                            "author_title",
-                                            wagtail.blocks.CharBlock(label="Titre de l'auteur"),
-                                        ),
-                                    ],
-                                    label="Citation",
-                                ),
-                            ),
-                            (
-                                "video",
-                                wagtail.blocks.StructBlock(
-                                    [
-                                        (
-                                            "title",
-                                            wagtail.blocks.CharBlock(label="Titre", required=False),
-                                        ),
-                                        (
-                                            "caption",
-                                            wagtail.blocks.CharBlock(label="Légende"),
-                                        ),
-                                        (
-                                            "url",
-                                            wagtail.blocks.URLBlock(
-                                                help_text=(
-                                                    "URL au format 'embed' (Ex. : "
-                                                    "https://www.youtube.com/embed/gLzXOViPX-0)"
+                                            (
+                                                "alt",
+                                                wagtail.blocks.CharBlock(
+                                                    label="Texte alternatif (description textuelle de l'image)",
+                                                    required=False,
                                                 ),
-                                                label="Lien de la vidéo",
                                             ),
-                                        ),
-                                    ],
-                                    label="Vidéo",
+                                            (
+                                                "caption",
+                                                wagtail.blocks.CharBlock(label="Légende", required=False),
+                                            ),
+                                            (
+                                                "url",
+                                                wagtail.blocks.URLBlock(label="Lien", required=False),
+                                            ),
+                                        ]
+                                    ),
                                 ),
-                            ),
-                            (
-                                "multicolumns",
-                                wagtail.blocks.StreamBlock(
-                                    [
-                                        (
-                                            "text",
-                                            wagtail.blocks.RichTextBlock(label="Texte avec mise en forme"),
-                                        ),
-                                        (
-                                            "image",
-                                            wagtail.blocks.StructBlock(
-                                                [
-                                                    (
-                                                        "title",
-                                                        wagtail.blocks.CharBlock(
-                                                            label="Titre",
-                                                            required=False,
-                                                        ),
-                                                    ),
-                                                    (
-                                                        "image",
-                                                        wagtail.images.blocks.ImageChooserBlock(label="Illustration"),
-                                                    ),
-                                                    (
-                                                        "alt",
-                                                        wagtail.blocks.CharBlock(
-                                                            label=(
-                                                                "Texte alternatif (description textuelle de l'image)"
-                                                            ),
-                                                            required=False,
-                                                        ),
-                                                    ),
-                                                    (
-                                                        "caption",
-                                                        wagtail.blocks.CharBlock(
-                                                            label="Légende",
-                                                            required=False,
-                                                        ),
-                                                    ),
-                                                    (
-                                                        "url",
-                                                        wagtail.blocks.URLBlock(label="Lien", required=False),
-                                                    ),
-                                                ],
-                                                label="Image",
+                                (
+                                    "imageandtext",
+                                    wagtail.blocks.StructBlock(
+                                        [
+                                            (
+                                                "image",
+                                                wagtail.images.blocks.ImageChooserBlock(
+                                                    label="Illustration (à gauche)"
+                                                ),
                                             ),
-                                        ),
-                                        (
-                                            "video",
-                                            wagtail.blocks.StructBlock(
-                                                [
-                                                    (
-                                                        "title",
-                                                        wagtail.blocks.CharBlock(
-                                                            label="Titre",
-                                                            required=False,
-                                                        ),
-                                                    ),
-                                                    (
-                                                        "caption",
-                                                        wagtail.blocks.CharBlock(label="Légende"),
-                                                    ),
-                                                    (
-                                                        "url",
-                                                        wagtail.blocks.URLBlock(
-                                                            help_text=(
-                                                                "URL au format 'embed' (Ex. : "
-                                                                "https://www.youtube.com/embed/gLzXOViPX-0)"
-                                                            ),
-                                                            label="Lien de la vidéo",
-                                                        ),
-                                                    ),
-                                                ],
-                                                label="Vidéo",
+                                            (
+                                                "image_ratio",
+                                                wagtail.blocks.ChoiceBlock(
+                                                    choices=[
+                                                        ("3", "3/12"),
+                                                        ("5", "5/12"),
+                                                        ("6", "6/12"),
+                                                    ],
+                                                    label="Largeur de l'image",
+                                                ),
                                             ),
-                                        ),
-                                        (
-                                            "card",
-                                            wagtail.blocks.StructBlock(
-                                                [
-                                                    (
-                                                        "title",
-                                                        wagtail.blocks.CharBlock(label="Titre"),
-                                                    ),
-                                                    (
-                                                        "description",
-                                                        wagtail.blocks.TextBlock(label="Texte"),
-                                                    ),
-                                                    (
-                                                        "image",
-                                                        wagtail.images.blocks.ImageChooserBlock(label="Image"),
-                                                    ),
-                                                    (
-                                                        "url",
-                                                        wagtail.blocks.URLBlock(label="Lien", required=False),
-                                                    ),
-                                                    (
-                                                        "document",
-                                                        wagtail.documents.blocks.DocumentChooserBlock(
-                                                            help_text=(
-                                                                "Sélectionnez un document pour rendre la carte "
-                                                                "cliquable vers celui ci (si le champ `Lien` "
-                                                                "n'est pas renseigné)."
-                                                            ),
-                                                            label="ou Document",
-                                                            required=False,
-                                                        ),
-                                                    ),
-                                                ],
-                                                label="Carte",
+                                            (
+                                                "text",
+                                                wagtail.blocks.RichTextBlock(
+                                                    label="Texte avec mise en forme (à droite)"
+                                                ),
                                             ),
-                                        ),
-                                        (
-                                            "quote",
-                                            wagtail.blocks.StructBlock(
-                                                [
-                                                    (
-                                                        "image",
-                                                        wagtail.images.blocks.ImageChooserBlock(
-                                                            label="Illustration (à gauche)",
-                                                            required=False,
-                                                        ),
-                                                    ),
-                                                    (
-                                                        "quote",
-                                                        wagtail.blocks.CharBlock(label="Citation"),
-                                                    ),
-                                                    (
-                                                        "author_name",
-                                                        wagtail.blocks.CharBlock(label="Nom de l'auteur"),
-                                                    ),
-                                                    (
-                                                        "author_title",
-                                                        wagtail.blocks.CharBlock(label="Titre de l'auteur"),
-                                                    ),
-                                                ],
-                                                label="Citation",
+                                            (
+                                                "link_label",
+                                                wagtail.blocks.CharBlock(
+                                                    help_text="Le lien apparait en bas du bloc de droite, avec une flèche",
+                                                    label="Titre du lien",
+                                                    required=False,
+                                                ),
                                             ),
-                                        ),
-                                    ],
-                                    label="Multi-colonnes",
+                                            (
+                                                "link_url",
+                                                wagtail.blocks.URLBlock(label="Lien", required=False),
+                                            ),
+                                        ],
+                                        label="Bloc image à gauche et texte à droite",
+                                    ),
                                 ),
-                            ),
-                            (
-                                "accordions",
-                                wagtail.blocks.StreamBlock(
-                                    [
-                                        (
-                                            "title",
-                                            wagtail.blocks.CharBlock(label="Titre"),
-                                        ),
-                                        (
-                                            "accordion",
-                                            wagtail.blocks.StructBlock(
-                                                [
-                                                    (
-                                                        "title",
-                                                        wagtail.blocks.CharBlock(label="Titre"),
-                                                    ),
-                                                    (
-                                                        "content",
-                                                        wagtail.blocks.RichTextBlock(label="Contenu"),
-                                                    ),
-                                                ],
-                                                label="Accordéon",
-                                                max_num=15,
-                                                min_num=1,
+                                (
+                                    "alert",
+                                    wagtail.blocks.StructBlock(
+                                        [
+                                            (
+                                                "title",
+                                                wagtail.blocks.CharBlock(label="Titre du message", required=False),
                                             ),
-                                        ),
-                                    ],
-                                    label="Accordéons",
+                                            (
+                                                "description",
+                                                wagtail.blocks.TextBlock(label="Texte du message", required=False),
+                                            ),
+                                            (
+                                                "level",
+                                                wagtail.blocks.ChoiceBlock(
+                                                    choices=[
+                                                        ("error", "Erreur"),
+                                                        ("success", "Succès"),
+                                                        ("info", "Information"),
+                                                        ("warning", "Attention"),
+                                                    ],
+                                                    label="Type de message",
+                                                ),
+                                            ),
+                                        ],
+                                        label="Message d'alerte",
+                                    ),
                                 ),
-                            ),
-                            (
-                                "stepper",
-                                wagtail.blocks.StructBlock(
-                                    [
-                                        (
-                                            "title",
-                                            wagtail.blocks.CharBlock(label="Titre"),
-                                        ),
-                                        (
-                                            "total",
-                                            wagtail.blocks.IntegerBlock(label="Nombre d'étape"),
-                                        ),
-                                        (
-                                            "current",
-                                            wagtail.blocks.IntegerBlock(label="Étape en cours"),
-                                        ),
-                                        (
-                                            "steps",
-                                            wagtail.blocks.StreamBlock(
-                                                [
-                                                    (
-                                                        "step",
-                                                        wagtail.blocks.StructBlock(
-                                                            [
-                                                                (
-                                                                    "title",
-                                                                    wagtail.blocks.CharBlock(label="Titre de l'étape"),
+                                (
+                                    "callout",
+                                    wagtail.blocks.StructBlock(
+                                        [
+                                            (
+                                                "title",
+                                                wagtail.blocks.CharBlock(
+                                                    label="Titre de la mise en vant",
+                                                    required=False,
+                                                ),
+                                            ),
+                                            (
+                                                "text",
+                                                wagtail.blocks.TextBlock(
+                                                    label="Texte mis en avant",
+                                                    required=False,
+                                                ),
+                                            ),
+                                        ],
+                                        label="Texte mise en avant",
+                                    ),
+                                ),
+                                (
+                                    "quote",
+                                    wagtail.blocks.StructBlock(
+                                        [
+                                            (
+                                                "image",
+                                                wagtail.images.blocks.ImageChooserBlock(
+                                                    label="Illustration (à gauche)",
+                                                    required=False,
+                                                ),
+                                            ),
+                                            (
+                                                "quote",
+                                                wagtail.blocks.CharBlock(label="Citation"),
+                                            ),
+                                            (
+                                                "author_name",
+                                                wagtail.blocks.CharBlock(label="Nom de l'auteur"),
+                                            ),
+                                            (
+                                                "author_title",
+                                                wagtail.blocks.CharBlock(label="Titre de l'auteur"),
+                                            ),
+                                        ],
+                                        label="Citation",
+                                    ),
+                                ),
+                                (
+                                    "video",
+                                    wagtail.blocks.StructBlock(
+                                        [
+                                            (
+                                                "title",
+                                                wagtail.blocks.CharBlock(label="Titre", required=False),
+                                            ),
+                                            (
+                                                "caption",
+                                                wagtail.blocks.CharBlock(label="Légende"),
+                                            ),
+                                            (
+                                                "url",
+                                                wagtail.blocks.URLBlock(
+                                                    help_text=(
+                                                        "URL au format 'embed' (Ex. : "
+                                                        "https://www.youtube.com/embed/gLzXOViPX-0)"
+                                                    ),
+                                                    label="Lien de la vidéo",
+                                                ),
+                                            ),
+                                        ],
+                                        label="Vidéo",
+                                    ),
+                                ),
+                                (
+                                    "multicolumns",
+                                    wagtail.blocks.StreamBlock(
+                                        [
+                                            (
+                                                "text",
+                                                wagtail.blocks.RichTextBlock(label="Texte avec mise en forme"),
+                                            ),
+                                            (
+                                                "image",
+                                                wagtail.blocks.StructBlock(
+                                                    [
+                                                        (
+                                                            "title",
+                                                            wagtail.blocks.CharBlock(
+                                                                label="Titre",
+                                                                required=False,
+                                                            ),
+                                                        ),
+                                                        (
+                                                            "image",
+                                                            wagtail.images.blocks.ImageChooserBlock(
+                                                                label="Illustration"
+                                                            ),
+                                                        ),
+                                                        (
+                                                            "alt",
+                                                            wagtail.blocks.CharBlock(
+                                                                label=(
+                                                                    "Texte alternatif (description textuelle de l'image)"
                                                                 ),
-                                                                (
-                                                                    "detail",
-                                                                    wagtail.blocks.TextBlock(label="Détail"),
-                                                                ),
-                                                            ],
-                                                            label="Étape",
+                                                                required=False,
+                                                            ),
                                                         ),
-                                                    )
-                                                ],
-                                                label="Les étapes",
+                                                        (
+                                                            "caption",
+                                                            wagtail.blocks.CharBlock(
+                                                                label="Légende",
+                                                                required=False,
+                                                            ),
+                                                        ),
+                                                        (
+                                                            "url",
+                                                            wagtail.blocks.URLBlock(label="Lien", required=False),
+                                                        ),
+                                                    ],
+                                                    label="Image",
+                                                ),
                                             ),
-                                        ),
-                                    ],
-                                    label="Étapes",
+                                            (
+                                                "video",
+                                                wagtail.blocks.StructBlock(
+                                                    [
+                                                        (
+                                                            "title",
+                                                            wagtail.blocks.CharBlock(
+                                                                label="Titre",
+                                                                required=False,
+                                                            ),
+                                                        ),
+                                                        (
+                                                            "caption",
+                                                            wagtail.blocks.CharBlock(label="Légende"),
+                                                        ),
+                                                        (
+                                                            "url",
+                                                            wagtail.blocks.URLBlock(
+                                                                help_text=(
+                                                                    "URL au format 'embed' (Ex. : "
+                                                                    "https://www.youtube.com/embed/gLzXOViPX-0)"
+                                                                ),
+                                                                label="Lien de la vidéo",
+                                                            ),
+                                                        ),
+                                                    ],
+                                                    label="Vidéo",
+                                                ),
+                                            ),
+                                            (
+                                                "card",
+                                                wagtail.blocks.StructBlock(
+                                                    [
+                                                        (
+                                                            "title",
+                                                            wagtail.blocks.CharBlock(label="Titre"),
+                                                        ),
+                                                        (
+                                                            "description",
+                                                            wagtail.blocks.TextBlock(label="Texte"),
+                                                        ),
+                                                        (
+                                                            "image",
+                                                            wagtail.images.blocks.ImageChooserBlock(label="Image"),
+                                                        ),
+                                                        (
+                                                            "url",
+                                                            wagtail.blocks.URLBlock(label="Lien", required=False),
+                                                        ),
+                                                        (
+                                                            "document",
+                                                            wagtail.documents.blocks.DocumentChooserBlock(
+                                                                help_text=(
+                                                                    "Sélectionnez un document pour rendre la carte "
+                                                                    "cliquable vers celui ci (si le champ `Lien` "
+                                                                    "n'est pas renseigné)."
+                                                                ),
+                                                                label="ou Document",
+                                                                required=False,
+                                                            ),
+                                                        ),
+                                                    ],
+                                                    label="Carte",
+                                                ),
+                                            ),
+                                            (
+                                                "quote",
+                                                wagtail.blocks.StructBlock(
+                                                    [
+                                                        (
+                                                            "image",
+                                                            wagtail.images.blocks.ImageChooserBlock(
+                                                                label="Illustration (à gauche)",
+                                                                required=False,
+                                                            ),
+                                                        ),
+                                                        (
+                                                            "quote",
+                                                            wagtail.blocks.CharBlock(label="Citation"),
+                                                        ),
+                                                        (
+                                                            "author_name",
+                                                            wagtail.blocks.CharBlock(label="Nom de l'auteur"),
+                                                        ),
+                                                        (
+                                                            "author_title",
+                                                            wagtail.blocks.CharBlock(label="Titre de l'auteur"),
+                                                        ),
+                                                    ],
+                                                    label="Citation",
+                                                ),
+                                            ),
+                                        ],
+                                        label="Multi-colonnes",
+                                    ),
                                 ),
-                            ),
-                        ],
-                        blank=True,
-                        use_json_field=True,
+                                (
+                                    "accordions",
+                                    wagtail.blocks.StreamBlock(
+                                        [
+                                            (
+                                                "title",
+                                                wagtail.blocks.CharBlock(label="Titre"),
+                                            ),
+                                            (
+                                                "accordion",
+                                                wagtail.blocks.StructBlock(
+                                                    [
+                                                        (
+                                                            "title",
+                                                            wagtail.blocks.CharBlock(label="Titre"),
+                                                        ),
+                                                        (
+                                                            "content",
+                                                            wagtail.blocks.RichTextBlock(label="Contenu"),
+                                                        ),
+                                                    ],
+                                                    label="Accordéon",
+                                                    max_num=15,
+                                                    min_num=1,
+                                                ),
+                                            ),
+                                        ],
+                                        label="Accordéons",
+                                    ),
+                                ),
+                                (
+                                    "stepper",
+                                    wagtail.blocks.StructBlock(
+                                        [
+                                            (
+                                                "title",
+                                                wagtail.blocks.CharBlock(label="Titre"),
+                                            ),
+                                            (
+                                                "total",
+                                                wagtail.blocks.IntegerBlock(label="Nombre d'étape"),
+                                            ),
+                                            (
+                                                "current",
+                                                wagtail.blocks.IntegerBlock(label="Étape en cours"),
+                                            ),
+                                            (
+                                                "steps",
+                                                wagtail.blocks.StreamBlock(
+                                                    [
+                                                        (
+                                                            "step",
+                                                            wagtail.blocks.StructBlock(
+                                                                [
+                                                                    (
+                                                                        "title",
+                                                                        wagtail.blocks.CharBlock(
+                                                                            label="Titre de l'étape"
+                                                                        ),
+                                                                    ),
+                                                                    (
+                                                                        "detail",
+                                                                        wagtail.blocks.TextBlock(label="Détail"),
+                                                                    ),
+                                                                ],
+                                                                label="Étape",
+                                                            ),
+                                                        )
+                                                    ],
+                                                    label="Les étapes",
+                                                ),
+                                            ),
+                                        ],
+                                        label="Étapes",
+                                    ),
+                                ),
+                            ],
+                            blank=True,
+                            use_json_field=True,
+                        ),
                     ),
-                ),
-            ],
-            options={
-                "abstract": False,
-            },
-            bases=("wagtailcore.page",),
-        ),
-    ]
+                ],
+                options={
+                    "abstract": False,
+                },
+                bases=("wagtailcore.page",),
+            ),
+        ]
