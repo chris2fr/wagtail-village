@@ -3,10 +3,13 @@
 
 {% block brand %}
   {% translate "Home page" as home_page %}
+  {% if not settings.wagtail_fastoche.CmsDsfrConfig.operator_logo_file and not settings.wagtail_fastoche.CmsDsfrConfig.operator_logo_alt %}
+
   <a href="/"
      title="{{ home_page }} — {{ settings.wagtail_fastoche.CmsDsfrConfig.header_brand }}">
      <img src="{% static 'fastoche/dist/artwork/logo/logo.svg' %}" class="fastoche-logo" alt="logo" />
   </a>
+  {% endif %}
 {% endblock brand %}
 
 {% block service_title %}
@@ -37,11 +40,14 @@
     {% image settings.wagtail_fastoche.CmsDsfrConfig.operator_logo_file original as logo_img %}
 
     <div class="fastoche-header__operator">
+      <a href="/"
+     title="{{ home_page }} — {{ settings.wagtail_fastoche.CmsDsfrConfig.header_brand }}">
       <img class="fastoche-responsive-img"
            src="{{ logo_img.url }}"
            alt="{{ settings.wagtail_fastoche.CmsDsfrConfig.operator_logo_alt }}"
            {% if settings.wagtail_fastoche.CmsDsfrConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.wagtail_fastoche.CmsDsfrConfig.operator_logo_width }}rem;"{% endif %} />
-    </div>
+      </a>
+          </div>
   {% endif %}
 {% endblock operator_logo %}
 
