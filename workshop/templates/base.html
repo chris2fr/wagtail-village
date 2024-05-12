@@ -21,12 +21,15 @@
     {% fastoche_favicon %}
 
     {% fastoche_css %}
+
     <link href="{% static 'fastoche/dist/utility/utility.min.css' %}"
           rel="stylesheet"
           type="text/css" />
+
     <link href="{% sass_src 'css/style.sass' %}"
           rel="stylesheet"
           type="text/css" />
+
 
     {% block extra_css %}
     {% endblock extra_css %}
@@ -39,6 +42,7 @@
 
     {% block social_media %}
     {% endblock social_media %}
+    
   </head>
 
   <body>
@@ -68,6 +72,7 @@
     {% include "blocks/footer.html" %}
 
     {% fastoche_js nonce=request.csp_nonce %}
+
     {% block extra_js %}
     {% endblock extra_js %}
 
