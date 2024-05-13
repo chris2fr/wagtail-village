@@ -59,3 +59,15 @@ ul.fastoche-nav__list {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
+.fastoche-artwork-major {
+  fill: var(--text-default-info);
+}
+
+.fastoche-artwork-minor {
+  fill: var(--text-default-success);
+}
+
+.fastoche-artwork-decorative {
+  fill: var(--text-default-grey);
+}

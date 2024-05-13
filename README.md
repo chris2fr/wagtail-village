@@ -24,6 +24,19 @@ make collectstatic
 poetry run python manage.py createsuperuser
 ```
 
+```
+SECRET_KEY=<VALUE>
+DEBUG=False
+HOST_PROTO=http
+# HOST_URL and ALLOWED_HOSTS: use 0.0.0.0 for Docker
+HOST_URL=0.0.0.0
+ALLOWED_HOSTS=localhost, 127.0.0.1, wagtail.fastoche.org
+HOST_PORT=8890
+SITE_NAME=Wagtail Fastoche
+MEDIA_ROOT=medias
+
+
+```
 
 ## Texte reproduite de la DINUM
 
