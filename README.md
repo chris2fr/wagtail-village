@@ -10,7 +10,7 @@ Les [conditions d’utilisation de DSFR pour des acteurs privés](https://github
 > 
 > Il est expressément rappelé aux Autres Utilisateurs que toute utilisation des Composants en dehors des limites visées aux présentes ou dans le but de les détourner et de s’approprier d’une manière ou d’une autre la Marque de l’État est punissable de sanctions civiles et/ou pénales.
 
-Les conditions de l'utilisation de dango-dsfr and sites-faciles (content_manager) sont encore moins problématiques un fois que la question fondamentale du DSFR est traité de manière responsable. Le défi est de proposer un deal équitable et sympa pour l'Etat. Cela serait aidé, je pense, par la contribution fondamentale de proposer des thèmes graphiques très différents de la charte du DSFR. Il y a encore un peu de travail à faire dans ce sens, mais c'est bien parti.
+Les conditions de l'utilisation de dango-dsfr and sites-faciles (content_manager) sont encore moins problématiques un fois que la question fondamentale du DSFR est traitée de manière responsable. Le défi est de proposer un deal équitable et sympa pour l'Etat. Cela serait aidé, je pense, par la contribution fondamentale de proposer des thèmes graphiques très différents de la charte du DSFR. Il y a encore un peu de travail à faire dans ce sens, mais c'est bien parti.
 
 Maîtriser l'ensemble de la chaîne de dsfr à django-dsfr à sites-faciles a été une joie parce-que les développements sont propres et faits de manière responsable.  
 
