@@ -62,9 +62,9 @@ class SitesFacilesBasePage(Page):
         blank=True,
     )
 
-    # content_panels = Page.content_panels + [
-    #     FieldPanel("body", heading=_("Body")),
-    # ]
+    content_panels = Page.content_panels + [
+        FieldPanel("body", heading=_("Body")),
+    ]
 
     panels = Page.content_panels + [
         FieldPanel("body", heading=_("Body")),
