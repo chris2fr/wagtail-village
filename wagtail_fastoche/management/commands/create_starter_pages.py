@@ -1,6 +1,7 @@
-from django.conf import settings
+# from django.conf import settings
 from django.core.management.base import BaseCommand
-from django.urls import reverse
+
+# from django.urls import reverse
 from wagtail.models import Page, Site
 from wagtail.rich_text import RichText
 from wagtailmenus.models.menuitems import FlatMenuItem
@@ -101,16 +102,16 @@ class Command(BaseCommand):
 
         <p>Vous venez de créer un site utilisant le gestionnaire de contenus de l’État.</p>
 
-        <p>Vous pouvez maintenant vous connecter dans l’administration et personnaliser le site.</p>
-        """
+        <p>Vous pouvez maintenant vous
+        <a href-='/cms-admin/'>connecter dans l’administration</a> et personnaliser le site.</p>
 
-        admin_url = f"{settings.WAGTAILADMIN_BASE_URL}{reverse('wagtailadmin_home')}"
+        """
 
         image_and_text_block = {
             "image": image,
             "image_ratio": "3",
             "text": RichText(text_raw),
-            "link": {"external_url": admin_url, "text": "Gérer le site"},
+            "link": {"external_url": "https://www.fastoche.org", "text": "Fastoche !"},
         }
 
         body.append(("imageandtext", image_and_text_block))

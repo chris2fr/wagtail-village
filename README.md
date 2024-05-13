@@ -2,6 +2,28 @@
 
 Sur la base de sites-facile de la DINUM, France, Fastoche.org propose de capitaliser sur le travail de fond pour le traitement d'information et de la communication en rendant les composants génériques. 
 
+Voici des notes aléatoires:
+
+```sql
+CREATE DATABASE "wagtailfastoche" WITH OWNER "wagtailfastoche" ENCODING 'UTF8';
+ALTER database wagtailfastoche owner to wagtailfastoche;
+GRANT ALL privileges ON DATABASE wagtailfastoche TO wagtailfastoche;
+```
+
+```bash
+git clone git@github.com:chris2fr/wagtail-fastoche.git -b lesgrandsvoisins
+python -m venv venv
+source venv/bin/activate
+pip install pre-commit django
+cp .env.example .env
+vi .env
+pre-commit install
+pre-commit run --all-files
+make init
+make collectstatic
+poetry run python manage.py createsuperuser
+```
+
 
 ## Texte reproduite de la DINUM
 
