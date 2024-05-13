@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
       data-fastoche-scheme="system"
-      {% if settings.wagtail_fastoche.CmsDsfrConfig.mourning %}data-fastoche-mourning{% endif %}>
+      {% if settings.wagtail_fastoche.WagtailFastocheConfig.mourning %}data-fastoche-mourning{% endif %}>
 
   <head>
     <meta charset="utf-8" />
@@ -12,7 +12,7 @@
     {% block title %}
       <title>
         {% if title %}{{ title }} —{% endif %}
-      {{ settings.wagtail_fastoche.CmsDsfrConfig.site_title }}</title>
+      {{ settings.wagtail_fastoche.WagtailFastocheConfig.site_title }}</title>
     {% endblock title %}
 
     {% block description %}
@@ -50,8 +50,8 @@
     {% fastoche_theme_modale %}
     {% wagtailuserbar %}
 
-    {% if settings.wagtail_fastoche.CmsDsfrConfig.notice %}
-      {% fastoche_notice title=settings.wagtail_fastoche.CmsDsfrConfig.notice %}
+    {% if settings.wagtail_fastoche.WagtailFastocheConfig.notice %}
+      {% fastoche_notice title=settings.wagtail_fastoche.WagtailFastocheConfig.notice %}
     {% endif %}
 
     <main id="content" role="main">
@@ -60,7 +60,7 @@
     </main>
 
     {% block follow_newsletter_social_media %}
-      {% if settings.wagtail_fastoche.CmsDsfrConfig.show_newsletter_and_social_block %}
+      {% if settings.wagtail_fastoche.WagtailFastocheConfig.show_newsletter_and_social_block %}
         {% include "blocks/follow.html" %}
       {% endif %}
     {% endblock follow_newsletter_social_media %}

@@ -6,7 +6,7 @@ from wagtail.test.utils import WagtailPageTestCase
 from wagtailmenus.models.menuitems import FlatMenuItem, MainMenuItem
 from wagtailmenus.models.menus import FlatMenu, MainMenu
 
-from wagtail_fastoche.models import CmsDsfrConfig, ContentPage, MegaMenu, MegaMenuCategory
+from wagtail_fastoche.models import ContentPage, MegaMenu, MegaMenuCategory, WagtailFastocheConfig
 
 
 class ContentPageTestCase(WagtailPageTestCase):
@@ -51,7 +51,7 @@ class ConfigTestCase(WagtailPageTestCase):
         )
         self.content_page.save()
 
-        self.config, _created = CmsDsfrConfig.objects.update_or_create(
+        self.config, _created = WagtailFastocheConfig.objects.update_or_create(
             site_id=1,
             defaults={
                 "site_title": "Site title",

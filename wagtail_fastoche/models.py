@@ -88,7 +88,7 @@ class AnalyticsSettings(BaseSiteSetting):
 
 
 @register_setting(icon="cog")
-class CmsDsfrConfig(ClusterableModel, BaseSiteSetting):
+class WagtailFastocheConfig(ClusterableModel, BaseSiteSetting):
     class Meta:
         verbose_name = _("Site configuration")
         verbose_name_plural = _("Site configurations")
@@ -271,7 +271,7 @@ class CmsDsfrConfig(ClusterableModel, BaseSiteSetting):
 
 
 class SocialMediaItem(Orderable):
-    site_config = ParentalKey(CmsDsfrConfig, related_name="social_media_items")
+    site_config = ParentalKey(WagtailFastocheConfig, related_name="social_media_items")
     title = models.CharField(_("Title"), max_length=200, default="", blank=True)
 
     url = models.URLField(

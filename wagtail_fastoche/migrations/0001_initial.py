@@ -21,21 +21,28 @@ class Migration(migrations.Migration):
     if result:
         sql_query = (
             "UPDATE django_content_type SET app_label='wagtail_fastoche' WHERE app_label='content_manager';"
+            "UPDATE django_content_type SET app_label='wagtail_fastoche' WHERE app_label='dsfr';"
             "ALTER TABLE content_manager_analyticssettings RENAME TO wagtail_fastoche_analyticssettings;"
-            "ALTER TABLE content_manager_cmsdsfrconfig RENAME TO wagtail_fastoche_cmsdsfrconfig;"
+            "ALTER TABLE content_manager_cmsdsfrconfig RENAME TO wagtail_fastoche_wagtailfastocheconfig;"
             "ALTER TABLE content_manager_megamenucategory RENAME TO wagtail_fastoche_megamenucategory;"
             "ALTER TABLE content_manager_megamenu RENAME TO wagtail_fastoche_megamenu;"
             "ALTER TABLE content_manager_tagcontentpage RENAME TO wagtail_fastoche_tagcontentpage;"
-            "ALTER TABLE content_manager_contentpage RENAME TO wagtail_fastoche_contentpage;"
             "ALTER TABLE content_manager_socialmediaitem RENAME TO wagtail_fastoche_socialmediaitem;"
+            "ALTER TABLE content_manager_contentpage RENAME TO wagtail_fastoche_contentpage;"
+            "ALTER TABLE dsfr_dsfrconfig RENAME TO wagtail_fastoche_wagtailfastocheconfig;"
+            "ALTER TABLE dsfr_dsfrsocialmedia RENAME TO wagtail_fastoche_wagtailfastochesocialmedia;"
             "ALTER SEQUENCE content_manager_analyticssettings_id_seq RENAME TO wagtail_fastoche_analyticssettings_id_seq;"
-            "ALTER SEQUENCE content_manager_cmsdsfrconfig_id_seq RENAME TO wagtail_fastoche_cmsdsfrconfig_id_seq;"
+            "ALTER SEQUENCE content_manager_cmsdsfrconfig_id_seq RENAME TO wagtail_fastoche_wagtailfastocheconfig_id_seq;"
             "ALTER SEQUENCE content_manager_megamenu_id_seq RENAME TO wagtail_fastoche_megamenu_id_seq;"
             "ALTER SEQUENCE content_manager_megamenucategory_id_seq RENAME TO wagtail_fastoche_megamenucategory_id_seq;"
             "ALTER SEQUENCE content_manager_socialmediaitem_id_seq RENAME TO wagtail_fastoche_socialmediaitem_id_seq;"
             "ALTER SEQUENCE content_manager_tagcontentpage_id_seq RENAME TO wagtail_fastoche_tagcontentpage_id_seq;"
+            "ALTER SEQUENCE dsfr_dsfrconfig_id_seq RENAME TO wagtail_fastoche_wagtailfastocheconfig_id_seq;"
+            "ALTER SEQUENCE dsfr_dsfrsocialmedia_id_seq RENAME TO wagtail_fastoche_wagtailfastochesocialmedia_id_seq;"
             "UPDATE django_migrations SET app='wagtail_fastoche' WHERE app='content_manager';"
+            "UPDATE django_migrations SET app='wagtail_fastoche' WHERE app='dsfr';"
         )
+        # TODO UPDQTE REVERSE
         reverse_sql_query = (
             "UPDATE django_content_type SET app_label=content_manager' WHERE app_label='wagtail_fastoche';"
             "ALTER TABLE wagtail_fastoche_analyticssettings RENAME TO content_manager_analyticssettings;"

@@ -5,7 +5,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 from wagtail.models import Site
 
-from wagtail_fastoche.models import CmsDsfrConfig
+from wagtail_fastoche.models import WagtailFastocheConfig
 
 
 class Command(BaseCommand):
@@ -21,7 +21,7 @@ class Command(BaseCommand):
 
                 config_data["site_id"] = site.id
 
-                _config, created = CmsDsfrConfig.objects.get_or_create(id=1, defaults=config_data)
+                _config, created = WagtailFastocheConfig.objects.get_or_create(id=1, defaults=config_data)
                 if created:
                     self.stdout.write(self.style.SUCCESS(f"Config imported for {config_data.get('site_title', '')}"))
                 else:

@@ -3,20 +3,20 @@
 
 {% block footer_brand %}
   {% translate "Back to home page" as back_to_home_label %}
-  {% if settings.wagtail_fastoche.CmsDsfrConfig.operator_logo_file and settings.wagtail_fastoche.CmsDsfrConfig.operator_logo_alt %}
-    {% image settings.wagtail_fastoche.CmsDsfrConfig.operator_logo_file original as logo_img %}
+  {% if settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_file and settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_alt %}
+    {% image settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_file original as logo_img %}
     <div class="fastoche-footer__brand fastoche-enlarge-link">
       <p class="gv-logo"
-         title="{{ settings.wagtail_fastoche.CmsDsfrConfig.footer_brand|default:'république française' }}">
-        {{ settings.wagtail_fastoche.CmsDsfrConfig.footer_brand_html| default_if_none:'république<br />française' | safe }}
+         title="{{ settings.wagtail_fastoche.WagtailFastocheConfig.footer_brand|default:'république française' }}">
+        {{ settings.wagtail_fastoche.WagtailFastocheConfig.footer_brand_html| default_if_none:'république<br />française' | safe }}
       </p>
       <a class="fastoche-footer__brand-link"
          href="/"
-         title="{{ back_to_home_label }} - {{ settings.wagtail_fastoche.CmsDsfrConfig.operator_logo_alt }} - {{ settings.wagtail_fastoche.CmsDsfrConfig.footer_brand|default:'république française' }}">
+         title="{{ back_to_home_label }} - {{ settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_alt }} - {{ settings.wagtail_fastoche.WagtailFastocheConfig.footer_brand|default:'république française' }}">
         <img class="fastoche-footer__logo"
              src="{{ logo_img.url }}"
-             alt="{{ settings.wagtail_fastoche.CmsDsfrConfig.operator_logo_alt }}"
-             {% if settings.wagtail_fastoche.CmsDsfrConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.wagtail_fastoche.CmsDsfrConfig.operator_logo_width|floatformat:"0" }}rem;"{% endif %} />
+             alt="{{ settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_alt }}"
+             {% if settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_width|floatformat:"0" }}rem;"{% endif %} />
         {# L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image #}
       </a>
     </div>
@@ -24,10 +24,10 @@
     <div class="fastoche-footer__brand fastoche-enlarge-link">
       <a id="footer-operator"
          href="/"
-         title="{{ back_to_home_label }} - {{ settings.wagtail_fastoche.CmsDsfrConfig.site_title }} - {{ settings.wagtail_fastoche.CmsDsfrConfig.footer_brand|default:'république française' }}">
+         title="{{ back_to_home_label }} - {{ settings.wagtail_fastoche.WagtailFastocheConfig.site_title }} - {{ settings.wagtail_fastoche.WagtailFastocheConfig.footer_brand|default:'république française' }}">
         {% block brand %}
           <p class="gv-logo">
-            {{ settings.wagtail_fastoche.CmsDsfrConfig.footer_brand_html| default_if_none:'république<br />française' | safe }}
+            {{ settings.wagtail_fastoche.WagtailFastocheConfig.footer_brand_html| default_if_none:'république<br />française' | safe }}
           </p>
         {% endblock brand %}
       </a>
@@ -36,12 +36,12 @@
 {% endblock footer_brand %}
 
 {% block footer_content %}
-  {{ settings.wagtail_fastoche.CmsDsfrConfig.footer_description | safe }}
+  {{ settings.wagtail_fastoche.WagtailFastocheConfig.footer_description | safe }}
 {% endblock footer_content %}
 
 {% block footer_links %}
   {% flat_menu handle="footer" template="menus/custom_flat_menu_footer.html" %}
-  {% if settings.wagtail_fastoche.CmsDsfrConfig.theme_modale_button %}
+  {% if settings.wagtail_fastoche.WagtailFastocheConfig.theme_modale_button %}
     <li class="fastoche-footer__bottom-item">
       <button id="footer__bottom-link__parametres-affichage"
               aria-controls="fastoche-theme-modal"

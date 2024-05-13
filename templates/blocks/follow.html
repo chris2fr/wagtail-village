@@ -2,17 +2,17 @@
 {% load i18n %}
 
 {% block follow_newsletter %}
-  {% if settings.wagtail_fastoche.CmsDsfrConfig.show_newsletter_block %}
-    <div class="fastoche-col-12{% if settings.wagtail_fastoche.CmsDsfrConfig.show_social_block %} fastoche-col-md-8{% endif %}">
+  {% if settings.wagtail_fastoche.WagtailFastocheConfig.show_newsletter_block %}
+    <div class="fastoche-col-12{% if settings.wagtail_fastoche.WagtailFastocheConfig.show_social_block %} fastoche-col-md-8{% endif %}">
       <div class="fastoche-follow__newsletter">
         <div>
           <h2 class="fastoche-h5">{% translate "Subscribe to our newsletter" context "Section title" %}</h2>
-          <p class="fastoche-text--sm">{{ settings.wagtail_fastoche.CmsDsfrConfig.newsletter_description | safe }}</p>
+          <p class="fastoche-text--sm">{{ settings.wagtail_fastoche.WagtailFastocheConfig.newsletter_description | safe }}</p>
         </div>
         <div class="fastoche-btns-group fastoche-btns-group--inline-md">
           {% translate "Subscribe to our newsletter" context "Button title" as subcribe_button_title %}
           <a class="fastoche-btn"
-             href="{{ settings.wagtail_fastoche.CmsDsfrConfig.newsletter_url }}"
+             href="{{ settings.wagtail_fastoche.WagtailFastocheConfig.newsletter_url }}"
              target="_blank"
              rel="noopener external"
              title="{{ subcribe_button_title }} - {{ new_window_label }}">{% translate "Subscribe" %}</a>
@@ -23,8 +23,8 @@
 {% endblock follow_newsletter %}
 
 {% block follow_social %}
-  {% if settings.wagtail_fastoche.CmsDsfrConfig.show_social_block %}
-    <div class="fastoche-col-12{% if settings.wagtail_fastoche.CmsDsfrConfig.show_newsletter_block %} fastoche-col-md-4{% endif %}">
+  {% if settings.wagtail_fastoche.WagtailFastocheConfig.show_social_block %}
+    <div class="fastoche-col-12{% if settings.wagtail_fastoche.WagtailFastocheConfig.show_newsletter_block %} fastoche-col-md-4{% endif %}">
       <div class="fastoche-follow__social">
         <h2 class="fastoche-h5">
           {% blocktranslate trimmed %}
@@ -34,7 +34,7 @@
           {% endblocktranslate %}
         </h2>
         <ul class="fastoche-btns-group">
-          {% for link in settings.wagtail_fastoche.CmsDsfrConfig.social_media_items.all %}
+          {% for link in settings.wagtail_fastoche.WagtailFastocheConfig.social_media_items.all %}
             <li>
               <a class="{{ link.icon_class }} fastoche-btn"
                  href="{{ link.url }}"

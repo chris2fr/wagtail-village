@@ -3,7 +3,7 @@
 {% load static fastoche_tags wagtailcore_tags wagtailimages_tags i18n %}
 
 {% block title %}
-    <title>{{ page.seo_title|default:page.title }} — {{ settings.wagtail_fastoche.CmsDsfrConfig.site_title }}</title>
+    <title>{{ page.seo_title|default:page.title }} — {{ settings.wagtail_fastoche.WagtailFastocheConfig.site_title }}</title>
 {% endblock title %}
 
 {% block description %}
