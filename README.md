@@ -2,6 +2,48 @@
 
 Sur la base de sites-facile de la DINUM, France, Fastoche.org propose de capitaliser sur le travail de fond pour le traitement d'information et de la communication en rendant les composants génériques. 
 
+Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable Wagtail-SiFacile.
+
+
+```mermaid
+flowchart TD
+
+subgraph GouvernementFR
+	DSFR
+end
+subgraph numerique-gouv
+	django-dsfr
+	sites-faciles
+end
+subgraph Fastoche 
+	web-fastoche
+	django-fastoche
+	wagtail-fastoche
+end
+
+
+django-dsfr -.-> Django 
+ sites-faciles-.-> Wagtail 
+ django-fastoche -.-> Django
+wagtail-fastoche -.-> Wagtail 
+DSFR -.-> NodeJS 
+web-fastoche  -.-> NodeJS 
+
+DSFR --> django-dsfr
+django-dsfr --> sites-faciles
+DSFR --> uniquement-generique{{Reprise uniquement\ndes éléments\ngénériques}}
+uniquement-generique --> web-fastoche
+web-fastoche --> django-fastoche
+
+django-dsfr --> intro-submodules{{Introduction\nde submodules\npar desgin de site}}
+intro-submodules --> django-fastoche
+django-fastoche --> wagtail-fastoche
+sites-faciles --> wagtail-fastoche
+
+Django --> Wagtail
+```
+
+
 Voici des notes aléatoires:
 
 ```sql
