@@ -2,8 +2,8 @@
 
 Sur la base de sites-facile de la DINUM, France, Fastoche.org propose de capitaliser sur le travail de fond pour le traitement d'information et de la communication en rendant les composants génériques. 
 
-Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable Wagtail-SiFacile.
-
+Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable [Wagtail-Fastoche](https://github.com/chris2fr/wwagtail-fastoche) avec [Django-Fastoche](https://github.com/chris2fr/web-fastoche) [Module Python Django-Fastoche](https://pypi.org/project/django-fastoche/
+) et [Web-Fastoche](https://github.com/chris2fr/web-fastoche).
 
 ```mermaid
 flowchart TD
@@ -42,6 +42,25 @@ sites-faciles --> wagtail-fastoche
 
 Django --> Wagtail
 ```
+
+
+
+Je n'ai pas fini de modifier la documentation encore. 
+
+C'est peut-être « Fastoche » mais ce n'est pas si facile. J'ai commencé, en plus du site [fastoche.org](https://www.fastoche.org), deux sites de test grandeur nature : [francemali.org](https://www.francemali.org) et [facile.lesgrandsvoisins.com](https://facile.lesgrandsvoisins.com).
+
+Les [conditions d’utilisation de DSFR pour des acteurs privés](https://github.com/GouvernementFR/dsfr/blob/main/doc/legal/cgu.md#2-conditions-dutilisation-des-composants-par-les-autres-utilisateurs) sont claires : 
+
+> 2° Conditions d’utilisation des Composants par les Autres Utilisateurs
+> 
+> Tous les Autres Utilisateurs sont autorisés à utiliser le code source selon les conditions de la licence MIT.
+> 
+> Il est expressément rappelé aux Autres Utilisateurs que toute utilisation des Composants en dehors des limites visées aux présentes ou dans le but de les détourner et de s’approprier d’une manière ou d’une autre la Marque de l’État est punissable de sanctions civiles et/ou pénales.
+
+Est les conditions de l'utilisation de dango-dsfr and sites-faciles (content_manager) sont encore moins problématiques un fois que la question fondamentale du DSFR est traité de manière responsable. Le défi est de proposer un deal équitable et sympa pour l'Etat. Cela serait aidé, je pense, par la contribution fondamentale de proposer des thèmes graphiques très différents de la charte du DSFR. Il y a encore un peu de travail à faire dans ce sens, mais c'est bien parti.
+
+Maîtriser l'ensemble de la chaîne de dsfr à django-dsfr à sites-faciles a été une joie parce-que les développements sont propres et faits de manière responsable.  
+ 
 
 
 Voici des notes aléatoires:
