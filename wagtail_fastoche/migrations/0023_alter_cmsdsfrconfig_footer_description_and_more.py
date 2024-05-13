@@ -8,17 +8,17 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("wagtail_fastoche", "0022_alter_cmsdsfrconfig_options_cmsdsfrconfig_beta_tag_and_more"),
+        ("wagtail_fastoche", "0022_alter_wagtailfastocheconfig_options_wagtailfastocheconfig_beta_tag_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="footer_description",
             field=wagtail.fields.RichTextField(blank=True, default="", verbose_name="Description"),
         ),
         migrations.AlterField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="notice",
             field=wagtail.fields.RichTextField(
                 blank=True,
@@ -40,7 +40,7 @@ class Migration(migrations.Migration):
                     modelcluster.fields.ParentalKey(
                         on_delete=django.db.models.deletion.CASCADE,
                         related_name="social_media_items",
-                        to="wagtail_fastoche.cmsdsfrconfig",
+                        to="wagtail_fastoche.wagtailfastocheconfig",
                     ),
                 ),
             ],

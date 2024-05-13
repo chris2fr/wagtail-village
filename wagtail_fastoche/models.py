@@ -15,7 +15,7 @@ from wagtail.snippets.models import register_snippet
 from wagtail_fastoche.abstract import SitesFacilesBasePage
 from wagtail_fastoche.constants import LIMITED_RICHTEXTFIELD_FEATURES
 from wagtail_fastoche.managers import TagManager
-from wagtail_fastoche.widgets import DsfacileIconPickerWidget
+from wagtail_fastoche.widgets import WagtailFastocheIconPickerWidget
 
 
 class ContentPage(SitesFacilesBasePage):
@@ -284,7 +284,7 @@ class SocialMediaItem(Orderable):
     panels = [
         FieldPanel("title"),
         FieldPanel("url"),
-        FieldPanel("icon_class", widget=DsfacileIconPickerWidget),
+        FieldPanel("icon_class", widget=WagtailFastocheIconPickerWidget),
     ]
 
     class Meta:

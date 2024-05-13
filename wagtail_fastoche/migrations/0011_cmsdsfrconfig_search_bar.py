@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="search_bar",
             field=models.BooleanField(default=False, verbose_name="Barre de recherche dans l’en-tête"),
         ),

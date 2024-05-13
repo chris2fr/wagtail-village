@@ -9,7 +9,7 @@ from wagtail.images.blocks import ImageChooserBlock
 from wagtailmarkdown.blocks import MarkdownBlock
 
 from wagtail_fastoche.constants import HEADING_CHOICES, LEVEL_CHOICES
-from wagtail_fastoche.widgets import DsfacileIconPickerWidget
+from wagtail_fastoche.widgets import WagtailFastocheIconPickerWidget
 
 
 # Wagtail Block Documentation : https://docs.wagtail.org/en/stable/reference/streamfield/blocks.html
@@ -68,7 +68,7 @@ class IconPickerBlock(blocks.FieldBlock):
 
     @cached_property
     def field(self):
-        field_kwargs = {"widget": DsfacileIconPickerWidget()}
+        field_kwargs = {"widget": WagtailFastocheIconPickerWidget()}
         field_kwargs.update(self.field_options)
         return forms.CharField(**field_kwargs)
 

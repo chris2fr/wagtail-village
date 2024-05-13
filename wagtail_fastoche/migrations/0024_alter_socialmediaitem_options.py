@@ -5,7 +5,7 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("wagtail_fastoche", "0023_alter_cmsdsfrconfig_footer_description_and_more"),
+        ("wagtail_fastoche", "0023_alter_wagtailfastocheconfig_footer_description_and_more"),
     ]
 
     operations = [

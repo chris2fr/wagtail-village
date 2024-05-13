@@ -9,7 +9,7 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("wagtail_fastoche", "0008_cmsdsfrconfig_theme_modale_button_and_more"),
+        ("wagtail_fastoche", "0008_wagtailfastocheconfig_theme_modale_button_and_more"),
     ]
 
     operations = [

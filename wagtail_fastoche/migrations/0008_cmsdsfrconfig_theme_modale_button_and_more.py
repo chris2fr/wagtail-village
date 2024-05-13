@@ -9,12 +9,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("wagtail_fastoche", "0007_cmsdsfrconfig"),
+        ("wagtail_fastoche", "0007_wagtailfastocheconfig"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="theme_modale_button",
             field=models.BooleanField(default=False, verbose_name="Choix du thème clair/sombre"),
         ),

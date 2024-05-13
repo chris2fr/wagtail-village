@@ -1,7 +1,7 @@
 from django.forms import Media, widgets
 
 
-class DsfacileIconPickerWidget(widgets.TextInput):
+class WagtailFastocheIconPickerWidget(widgets.TextInput):
     template_name = "wagtail_fastoche/widgets/fastoche-icon-picker-widget.html"
 
     def __init__(self, attrs=None):

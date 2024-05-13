@@ -12,26 +12,26 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterModelOptions(
-            name="cmsdsfrconfig",
+            name="wagtailfastocheconfig",
             options={"verbose_name": "Site configuration", "verbose_name_plural": "Site configurations"},
         ),
         migrations.AddField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="beta_tag",
             field=models.BooleanField(default=False, verbose_name="Show the BETA tag next to the title"),
         ),
         migrations.AddField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="newsletter_description",
             field=models.TextField(blank=True, default="", verbose_name="Newsletter description"),
         ),
         migrations.AddField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="newsletter_url",
             field=models.URLField(blank=True, default="", verbose_name="Newsletter registration URL"),
         ),
         migrations.AddField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="notice",
             field=models.TextField(
                 blank=True,
@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
             ),
         ),
         migrations.AddField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="operator_logo_alt",
             field=models.CharField(
                 blank=True,
@@ -51,7 +51,7 @@ class Migration(migrations.Migration):
             ),
         ),
         migrations.AddField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="operator_logo_file",
             field=models.ForeignKey(
                 blank=True,
@@ -63,7 +63,7 @@ class Migration(migrations.Migration):
             ),
         ),
         migrations.AddField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="operator_logo_width",
             field=models.DecimalField(
                 decimal_places=1,
@@ -75,14 +75,14 @@ class Migration(migrations.Migration):
             ),
         ),
         migrations.AlterField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="footer_brand",
             field=models.CharField(
                 blank=True, default="Intitulé officiel", max_length=200, verbose_name="Institution (footer)"
             ),
         ),
         migrations.AlterField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="footer_brand_html",
             field=models.CharField(
                 blank=True,
@@ -92,7 +92,7 @@ class Migration(migrations.Migration):
             ),
         ),
         migrations.AlterField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="header_brand",
             field=models.CharField(
                 blank=True,
@@ -103,7 +103,7 @@ class Migration(migrations.Migration):
             ),
         ),
         migrations.AlterField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="header_brand_html",
             field=models.CharField(
                 blank=True,
@@ -114,12 +114,12 @@ class Migration(migrations.Migration):
             ),
         ),
         migrations.AlterField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="site_tagline",
             field=models.CharField(blank=True, default="Site tagline", max_length=200, verbose_name="Site tagline"),
         ),
         migrations.AlterField(
-            model_name="cmsdsfrconfig",
+            model_name="wagtailfastocheconfig",
             name="site_title",
             field=models.CharField(blank=True, default="Site title", max_length=200, verbose_name="Site title"),
         ),

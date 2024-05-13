@@ -10,7 +10,7 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("wagtail_fastoche", "0011_cmsdsfrconfig_search_bar"),
+        ("wagtail_fastoche", "0011_wagtailfastocheconfig_search_bar"),
     ]
 
     operations = [
