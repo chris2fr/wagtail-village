@@ -11,7 +11,7 @@ GRANT ALL privileges ON DATABASE wagtailfastoche TO wagtailfastoche;
 ```
 
 ```bash
-git clone git@github.com:chris2fr/wagtail-fastoche.git -b lesgrandsvoisins
+git clone git@github.com:chris2fr/wagtail-fastoche.git
 python -m venv venv
 source venv/bin/activate
 pip install pre-commit django
