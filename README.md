@@ -1,4 +1,4 @@
-# Gestionnaire de contenu Fastoche
+# Gestionnaire de contenu Wagtail Fastoche
 
 Sur la base de sites-facile de la DINUM, France, Fastoche.org propose de capitaliser sur le travail de fond pour le traitement d'information et de la communication en rendant les composants génériques. 
 
