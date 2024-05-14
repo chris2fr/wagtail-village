@@ -45,30 +45,31 @@ subgraph numerique-gouv
               Django qui intègre DSFR</small>"]
 %%  publié sur pypi.org sous licence Libre.</small>"]
 end
- subgraph resdigita.org 
-wagtail-resdigita["<big><b>Wagtail ResDigita</big></b>
-               <hr/><small>Application Libre Wagtail 
-                           qui intègre Django ResDigita </small>"]
-%%  dans le serveur Libre 
-%%  de gestionnaire de contenu Wagtail 
-%%  publié par github.com en Libre."]
 
-  django-resdigita["<big><b>Django ResDigita</big></b>
-  <hr/><small>Module Libre Django,
-              un serveur d'applications
-              qui intègre Design ResDigita</small>"]
-%%  	dans le serveur Libre 
-%%	d'applications Django
-%%	publié par Pypi.org
-%%	et par github.com en Libre</small>"]
+subgraph fastoche.resdigita.org 
+    wagtail-fastoche["<big><b>Wagtail Fastoche</big></b>
+                   <hr/><small>Application Libre du système 
+                               de gestion de contenu Wagtail
+                               qui intègre Django Fastoche</small>"]
+    %%  dans le serveur Libre 
+    %%  de gestionnaire de contenu Wagtail 
+    %%  publié par github.com en Libre."]
 
-  design-resdigita["<big><b>Design ResDigita</big></b>
-  <hr/><small>Outillage et gabarits génériques
-         Libres pour un système de design 
-         et des composants ergonomiques, 
-         accessibles, et personalisables</small>"]
-%%	en technologie Libre NodeJS 
-%%	publié par github.com en Libre</small>"]
+    django-fastoche["<big><b>Django Fastoche</big></b>
+    <hr/><small>Module Libre du serveur 
+                d'applications Django 
+                qui intègre Design Fastoche</small>"]
+    %%  	dans le serveur Libre 
+    %%	d'applications Django
+    %%	publié par Pypi.org
+    %%	et par github.com en Libre</small>"]
+
+    design-fastoche["<big><b>Design Fastoche</big></b>
+    <hr/><small>Système Libre de génération
+                d'interface utilisateur par NodeJS
+                qui produit HTML, CSS et Javascript</small>"]
+    %%	en technologie Libre NodeJS 
+    %%	publié par github.com en Libre</small>"]
  end
 
 
@@ -81,60 +82,59 @@ wagtail-resdigita["<big><b>Wagtail ResDigita</big></b>
 
 %%  django-dsfr <-.- Django 
 %%  sites-faciles <-.- Wagtail 
-%%  django-resdigita <-.- Django
-%%  wagtail-resdigita <-.- Wagtail 
-%%  design-resdigita  <-.- NodeJS 
+%%  django-fastoche <-.- Django
+%%  wagtail-fastoche <-.- Wagtail 
+%%  design-fastoche  <-.- NodeJS 
 %%  dsfr <-.- NodeJS 
 
 
-wagtail-resdigita
+wagtail-fastoche
 -->
-django-resdigita
+django-fastoche
 -->
-design-resdigita
+design-fastoche
 
 
 
-master-design{{"<i>Maîtrise 
-  des composants Libres
-  ergonomiques, stylés, 
-  et accessibles  
-  avec un outillage 
-  et des gabarits en NodeJS</i>"}}:::dashedOutline
+master-design{{"<i>Charte graphique et composants webs 
+                   accessibles, ergonomiques, chics
+                   et personalisables Libres
+                   par un système de génération 
+                   HTML, CSS et Javascript en NodeJS</i>"}}:::dashedOutline
 %% (dans NodeJS)</i>"}}:::dashedOutline
 -.-
 dsfr
 
 master-design
 -.-
-design-resdigita
+design-fastoche
 
 
-master-django{{"<i>Maitrise 
-                    des composants dynamiques 
-                    Libres avec Django,
-                    serveur d'applications</i>"}}:::dashedOutline
+master-django{{"<i>Sites et composants 
+                   dynamiques Libres 
+                   avec le serveur 
+                   d'applications Django</i>"}}:::dashedOutline
 %%  (dans Django)</i>"}}:::dashedOutline
 -.-
 django-dsfr 
 
 master-django
 -.-
-django-resdigita
+django-fastoche
 
 
 
 
-master-wagtail{{"<i>Gestion de contenus
-  de sites webs Libres
-  avec Wagtail CMS</i>"}}:::dashedOutline
+master-wagtail{{"<i>Châine d'édition web Libre 
+                    avec le système de gestion 
+                    de contenus Wagtail</i>"}}:::dashedOutline
 %%  (en Wagtail)</i>"}}:::dashedOutline
 -.-
 sites-faciles
 
 master-wagtail
 -.-
-wagtail-resdigita
+wagtail-fastoche
 
 
 
@@ -156,9 +156,9 @@ classDef dashedOutline stroke-dasharray:4 5
 
 %%  Django --> Wagtail
 
-click wagtail-resdigita href "https://github.com/chris2fr/wagtail-resdigita"
-click django-resdigita href "https://github.com/chris2fr/django-resdigita"
-click design-resdigita href "https://github.com/chris2fr/design-resdigita"
+click wagtail-fastoche href "https://github.com/chris2fr/wagtail-fastoche"
+click django-fastoche href "https://github.com/chris2fr/django-fastoche"
+click design-fastoche href "https://github.com/chris2fr/design-fastoche"
 click sites-faciles href "https://github.com/numerique-gouv/sites-faciles"
 click django-dsfr href "https://github.com/numerique-gouv/django-dsfr"
 click dsfr href "https://github.com/GouvernementFR/dsfr/"
