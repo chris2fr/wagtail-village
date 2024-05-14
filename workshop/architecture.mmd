@@ -18,8 +18,8 @@ flowchart TD
 
 
 subgraph GouvernementFR
-  dsfr["<big><b>dsfr</big></b>
-<u>DSFR - Système de design de l'Etat</u>
+  dsfr["<big><b>DSFR</big></b>
+<u>Système de design de l'Etat</u>
   <small>Outillage et gabarits de création de composants 
   prêts à l'emploi, accessibles et ergonomiques
   dans la charte graphique de l'Etat</small>"]
@@ -31,42 +31,48 @@ subgraph GouvernementFR
 end
 subgraph numerique-gouv
 
-  sites-faciles["<big><b>sites-faciles</big></b>
-  <u>Sites Faciles</u><small>
-  Intégration de Django DSFR 
-  dans le gestionnaire de contenus Wagtail</small>"]
+  sites-faciles["<big><b>Sites Faciles</big></b>
+
+  <small>Intégration Libre
+         de Django DSFR 
+         dans le gestionnaire 
+         de contenus Wagtail</small>"]
 %%  Libre Wagtail publié dans github.com 
 %%  sous licence Libre GNU Affero 3</small>"]
 
-  django-dsfr["<big><b>django-dsfr</big></b>
-  <u>Django DSFR</u>
-  <small>Module Python public d'intégration de DSFR
-  dans le serveur d'applications Libre Django</small>"]
+  django-dsfr["<big><b>Django DSFR</big></b>
+
+  <small>Module public Libre
+         du serveur d'applications
+         Django qui intègre DSFR</small>"]
 %%  publié sur pypi.org sous licence Libre.</small>"]
 end
  subgraph fastoche.org 
-wagtail-fastoche["<big><b>wagtail-fastoche</big></b>
-  <u>Wagtail Fastoche</u>
-  <small>Application Django Wagtail 
+wagtail-fastoche["<big><b>Wagtail Fastoche</big></b>
+
+  <small>Application Libre Wagtail 
   qui intègre Django Fastoche </small>"]
 %%  dans le serveur Libre 
 %%  de gestionnaire de contenu Wagtail 
 %%  publié par github.com en Libre."]
 
-  django-fastoche["<big><b>django-fastoche</big></b>
-  	<u>Django Fastoche</u>
-  	<small>Module Python public  
-	qui intègre Design Fastoche </small>"]
+  django-fastoche["<big><b>Django Fastoche</big></b>
+
+  	<small>Module Libre
+           du serveur d'applications
+           Django qui intègre
+           Design Fastoche</small>"]
 %%  	dans le serveur Libre 
 %%	d'applications Django
 %%	publié par Pypi.org
 %%	et par github.com en Libre</small>"]
 
-  design-fastoche["<big><b>design-fastoche</big></b>
-  <u>Design Fastoche</u>
+  design-fastoche["<big><b>Design Fastoche</big></b>
+
   <small>Outillage et gabarits génériques
-    pour un système de design et des composants
-    ergonomiques, accessibles, stylés, et personalisables</small>"]
+         Libres pour un système de design 
+         et des composants ergonomiques, 
+         accessibles, et personalisables</small>"]
 %%	en technologie Libre NodeJS 
 %%	publié par github.com en Libre</small>"]
  end
@@ -95,9 +101,7 @@ design-fastoche
 
 
 
-design-fastoche
--.-
-uniquement-generique{{"<i>Maîtrise 
+master-design{{"<i>Maîtrise 
   des composants Libres
   ergonomiques, stylés, 
   et accessibles  
@@ -107,9 +111,12 @@ uniquement-generique{{"<i>Maîtrise
 -.-
 dsfr
 
-django-fastoche
+master-design
 -.-
-intro-submodules{{"<i>Maitrise 
+design-fastoche
+
+
+master-django{{"<i>Maitrise 
                     des composants dynamiques 
                     Libres avec Django,
                     serveur d'applications</i>"}}:::dashedOutline
@@ -117,16 +124,23 @@ intro-submodules{{"<i>Maitrise
 -.-
 django-dsfr 
 
-
-
-wagtail-fastoche
+master-django
 -.-
-intro-cms{{"<i>Gestion de contenus
+django-fastoche
+
+
+
+
+master-wagtail{{"<i>Gestion de contenus
   de sites webs Libres
   avec Wagtail CMS</i>"}}:::dashedOutline
 %%  (en Wagtail)</i>"}}:::dashedOutline
 -.-
 sites-faciles
+
+master-wagtail
+-.-
+wagtail-fastoche
 
 
 
@@ -136,11 +150,11 @@ django-dsfr
 -->
 dsfr
 
-intro-cms
+master-wagtail
 -->
-intro-submodules
+master-django
 -->
-uniquement-generique
+master-design
 
 
 classDef dashedOutline stroke-dasharray:4 5
