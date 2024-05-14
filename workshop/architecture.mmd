@@ -1,13 +1,13 @@
 %%{
   init: {
-    'theme': 'neutral',     
-    'notthemeVariables': {
-      'primaryColor': '#BB2528',
-      'primaryTextColor': '#fff',
-      'primaryBorderColor': '#7C0000',
-      'lineColor': '#F8B229',
-      'secondaryColor': '#006100',
-      'tertiaryColor': '#fff'
+    'theme': 'base',     
+    'themeVariables': {
+      'primaryColor': '#bbb',
+      'primaryTextColor': '#000',
+      'primaryBorderColor': '#555',
+      'lineColor': '#333',
+      'secondaryColor': '#eee',
+      'tertiaryColor': '#eee'
     }
   }
 }%%
@@ -26,27 +26,30 @@ subgraph GouvernementFR
 %%  </small>"]
 end
 subgraph numerique-gouv
-  django-dsfr["<big><b>django-dsfr</big></b>
-  <u>Django DSFR</u>
-  <small>Module Python public d'intégration de DSFR
-  dans le serveur d'applications Libre Django</small>"]
-%%  publié sur pypi.org sous licence Libre.</small>"]
-  --> sites-faciles["<big><b>sites-faciles</big></b>
+
+  sites-faciles["<big><b>sites-faciles</big></b>
   <u>Sites Faciles</u><small>
   Intégration de Django DSFR 
   dans le gestionnaire de contenus Wagtail</small>"]
 %%  Libre Wagtail publié dans github.com 
 %%  sous licence Libre GNU Affero 3</small>"]
+
+  django-dsfr["<big><b>django-dsfr</big></b>
+  <u>Django DSFR</u>
+  <small>Module Python public d'intégration de DSFR
+  dans le serveur d'applications Libre Django</small>"]
+%%  publié sur pypi.org sous licence Libre.</small>"]
 end
 %% subgraph chris2fr 
-  design-fastoche["<big><b>design-fastoche</big></b>
-  <u>Design Fastoche</u>
-  <small>Outillage et gabarits génériques
-    pour un système de design et des composants
-    ergonomiques, accessibles, stylés, et personalisables</small>"]
-%%	en technologie Libre NodeJS 
-%%	publié par github.com en Libre</small>"]
-  --> django-fastoche["<big><b>django-fastoche</big></b>
+wagtail-fastoche["<big><b>wagtail-fastoche</big></b>
+  <u>Wagtail Fastoche</u>
+  <small>Application Django Wagtail 
+  qui intègre Django Fastoche </small>"]
+%%  dans le serveur Libre 
+%%  de gestionnaire de contenu Wagtail 
+%%  publié par github.com en Libre."]
+
+  django-fastoche["<big><b>django-fastoche</big></b>
   	<u>Django Fastoche</u>
   	<small>Module Python public  
 	qui intègre Design Fastoche </small>"]
@@ -54,16 +57,17 @@ end
 %%	d'applications Django
 %%	publié par Pypi.org
 %%	et par github.com en Libre</small>"]
-  --> wagtail-fastoche["<big><b>wagtail-fastoche</big></b>
-  <u>Wagtail Fastoche</u>
-  <small>Application Django Wagtail 
-  qui intègre Django Fastoche </small>"]
-%%  dans le serveur Libre 
-%%  de gestionnaire de contenu Wagtail 
-%%  publié par github.com en Libre."]
+
+  design-fastoche["<big><b>design-fastoche</big></b>
+  <u>Design Fastoche</u>
+  <small>Outillage et gabarits génériques
+    pour un système de design et des composants
+    ergonomiques, accessibles, stylés, et personalisables</small>"]
+%%	en technologie Libre NodeJS 
+%%	publié par github.com en Libre</small>"]
+
 %% end
 
-dsfr --> django-dsfr
 
 %%  subgraph LogicielsLibres
 %%      Django
@@ -80,24 +84,53 @@ dsfr --> django-dsfr
 %%  dsfr <-.- NodeJS 
 
 
-dsfr 
--.- uniquement-generique{{"<i>Reprise uniquement
+wagtail-fastoche
+-->
+django-fastoche
+-->
+design-fastoche
+
+
+uniquement-generique{{"<i>Reprise uniquement
 des éléments génériques</i>"}}:::dashedOutline
 %% (dans NodeJS)</i>"}}:::dashedOutline
--.- design-fastoche
+-.- 
+dsfr 
 
-django-dsfr 
--.- intro-submodules{{"<i>Introduction 
+uniquement-generique
+-.- 
+design-fastoche
+
+intro-submodules{{"<i>Introduction 
   de submodules
   par design de site</i>"}}:::dashedOutline
 %%  (dans Django)</i>"}}:::dashedOutline
- -.- django-fastoche
+-.- 
+django-dsfr 
 
-sites-faciles
--.- intro-cms{{"<i>Maîtrise de la gestion
+intro-submodules
+-.- 
+django-fastoche
+
+
+intro-cms{{"<i>Maîtrise de la gestion
   des contenus webs</i>"}}:::dashedOutline
 %%  (en Wagtail)</i>"}}:::dashedOutline
- -.- wagtail-fastoche
+-.-
+wagtail-fastoche
+
+
+intro-cms
+-.-
+sites-faciles
+
+sites-faciles
+-->
+django-dsfr
+-->
+dsfr
+
+
 
 classDef dashedOutline stroke-dasharray:4 5
 
