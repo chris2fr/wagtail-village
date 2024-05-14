@@ -3,22 +3,26 @@
     'theme': 'base',     
     'themeVariables': {
       'primaryColor': '#bbb',
-      'primaryTextColor': '#000',
+      'primaryTextColor': '#222',
       'primaryBorderColor': '#555',
-      'lineColor': '#333',
+      'tertiaryTextColor': '#fff',
+      'lineColor': '#777',
       'secondaryColor': '#eee',
-      'tertiaryColor': '#eee'
+      'tertiaryColor': '#555'
     }
   }
 }%%
 
+
 flowchart TD
+
 
 subgraph GouvernementFR
   dsfr["<big><b>dsfr</big></b>
 <u>DSFR - Système de design de l'Etat</u>
   <small>Outillage et gabarits de création de composants 
-  prêts à l'emploi, accessibles et ergonomiques</small>"]
+  prêts à l'emploi, accessibles et ergonomiques
+  dans la charte graphique de l'Etat</small>"]
 %%  en technologie Libre NodeJS 
 %%   publié dans github principalement sous licence Libre MIT
 %%   avec des mises en garde 
@@ -40,7 +44,7 @@ subgraph numerique-gouv
   dans le serveur d'applications Libre Django</small>"]
 %%  publié sur pypi.org sous licence Libre.</small>"]
 end
-%% subgraph chris2fr 
+ subgraph fastoche.org 
 wagtail-fastoche["<big><b>wagtail-fastoche</big></b>
   <u>Wagtail Fastoche</u>
   <small>Application Django Wagtail 
@@ -65,8 +69,7 @@ wagtail-fastoche["<big><b>wagtail-fastoche</big></b>
     ergonomiques, accessibles, stylés, et personalisables</small>"]
 %%	en technologie Libre NodeJS 
 %%	publié par github.com en Libre</small>"]
-
-%% end
+ end
 
 
 %%  subgraph LogicielsLibres
@@ -91,38 +94,41 @@ django-fastoche
 design-fastoche
 
 
-uniquement-generique{{"<i>Reprise uniquement
-des éléments génériques</i>"}}:::dashedOutline
-%% (dans NodeJS)</i>"}}:::dashedOutline
--.- 
-dsfr 
 
-uniquement-generique
--.- 
 design-fastoche
+-.-
+uniquement-generique{{"<i>Maîtrise 
+  des composants Libres
+  ergonomiques, stylés, 
+  et accessibles  
+  avec un outillage 
+  et des gabarits en NodeJS</i>"}}:::dashedOutline
+%% (dans NodeJS)</i>"}}:::dashedOutline
+-.-
+dsfr
 
-intro-submodules{{"<i>Introduction 
-  de submodules
-  par design de site</i>"}}:::dashedOutline
+django-fastoche
+-.-
+intro-submodules{{"<i>Maitrise 
+                    des composants dynamiques 
+                    Libres avec Django,
+                    serveur d'applications</i>"}}:::dashedOutline
 %%  (dans Django)</i>"}}:::dashedOutline
--.- 
+-.-
 django-dsfr 
 
-intro-submodules
--.- 
-django-fastoche
 
 
-intro-cms{{"<i>Maîtrise de la gestion
-  des contenus webs</i>"}}:::dashedOutline
+wagtail-fastoche
+-.-
+intro-cms{{"<i>Gestion de contenus
+  de sites webs Libres
+  avec Wagtail CMS</i>"}}:::dashedOutline
 %%  (en Wagtail)</i>"}}:::dashedOutline
 -.-
-wagtail-fastoche
-
-
-intro-cms
--.-
 sites-faciles
+
+
 
 sites-faciles
 -->
@@ -130,6 +136,11 @@ django-dsfr
 -->
 dsfr
 
+intro-cms
+-->
+intro-submodules
+-->
+uniquement-generique
 
 
 classDef dashedOutline stroke-dasharray:4 5
