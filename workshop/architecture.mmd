@@ -18,48 +18,49 @@ subgraph GouvernementFR
   dsfr["<big><b>dsfr</big></b>
 <u>DSFR - Système de design de l'Etat</u>
   <small>Outillage et gabarits de création de composants 
-  prêts à l'emploi, accessibles et ergonomiques
-  en technologie Libre NodeJS 
-  publié dans github principalement sous licence Libre MIT
-  avec des mises en garde 
-  contre l'usurpation de la marque de l'Etat</small>"]
+  prêts à l'emploi, accessibles et ergonomiques</small>"]
+%%  en technologie Libre NodeJS 
+%%   publié dans github principalement sous licence Libre MIT
+%%   avec des mises en garde 
+%%   contre l'usurpation de la marque de l'Etat
+%%  </small>"]
 end
 subgraph numerique-gouv
   django-dsfr["<big><b>django-dsfr</big></b>
   <u>Django DSFR</u>
   <small>Module Python public d'intégration de DSFR
-  dans le serveur d'applications Libre Django
-  publié sur pypi.org sous licence Libre.</small>"]
+  dans le serveur d'applications Libre Django</small>"]
+%%  publié sur pypi.org sous licence Libre.</small>"]
   --> sites-faciles["<big><b>sites-faciles</big></b>
   <u>Sites Faciles</u><small>
   Intégration de Django DSFR 
-  dans le gestionnaire de contenus 
-  Libre Wagtail publié dans github.com 
-  sous licence Libre GNU Affero 3</small>"]
+  dans le gestionnaire de contenus Wagtail</small>"]
+%%  Libre Wagtail publié dans github.com 
+%%  sous licence Libre GNU Affero 3</small>"]
 end
 %% subgraph chris2fr 
-  stylefastoche["<big><b>style-fastoche</big></b>
-  <u>Style Fastoche</u>
+  design-fastoche["<big><b>design-fastoche</big></b>
+  <u>Design Fastoche</u>
   <small>Outillage et gabarits génériques
     pour un système de design et des composants
-    ergonomiques, accessibles, stylés, et personalisables
-	en technologie Libre NodeJS 
-	publié par github.com en Libre</small>"]
+    ergonomiques, accessibles, stylés, et personalisables</small>"]
+%%	en technologie Libre NodeJS 
+%%	publié par github.com en Libre</small>"]
   --> django-fastoche["<big><b>django-fastoche</big></b>
   	<u>Django Fastoche</u>
   	<small>Module Python public  
-	qui intègre Style Fastoche 
-  	dans le serveur Libre 
-	d'applications Django
-	publié par Pypi.org
-	et par github.com en Libre</small>"]
+	qui intègre Design Fastoche </small>"]
+%%  	dans le serveur Libre 
+%%	d'applications Django
+%%	publié par Pypi.org
+%%	et par github.com en Libre</small>"]
   --> wagtail-fastoche["<big><b>wagtail-fastoche</big></b>
   <u>Wagtail Fastoche</u>
   <small>Application Django Wagtail 
-  qui intègre Django Fastoche 
-  dans le serveur Libre 
-  de gestionnaire de contenu Wagtail 
-  publié par github.com en Libre."]
+  qui intègre Django Fastoche </small>"]
+%%  dans le serveur Libre 
+%%  de gestionnaire de contenu Wagtail 
+%%  publié par github.com en Libre."]
 %% end
 
 dsfr --> django-dsfr
@@ -75,29 +76,27 @@ dsfr --> django-dsfr
 %%  sites-faciles <-.- Wagtail 
 %%  django-fastoche <-.- Django
 %%  wagtail-fastoche <-.- Wagtail 
-%%  stylefastoche  <-.- NodeJS 
+%%  design-fastoche  <-.- NodeJS 
 %%  dsfr <-.- NodeJS 
 
 
 dsfr 
 -.- uniquement-generique{{"<i>Reprise uniquement
-des éléments génériques
-(dans NodeJS)</i>"}}:::dashedOutline
--.- stylefastoche
+des éléments génériques</i>"}}:::dashedOutline
+%% (dans NodeJS)</i>"}}:::dashedOutline
+-.- design-fastoche
 
 django-dsfr 
 -.- intro-submodules{{"<i>Introduction 
   de submodules
-  par design de site
-  (dans Django)</i>"}}:::dashedOutline
+  par design de site</i>"}}:::dashedOutline
+%%  (dans Django)</i>"}}:::dashedOutline
  -.- django-fastoche
 
 sites-faciles
--.- intro-cms{{"<i>Partage
-  des bonnes pratiques
-  de la gestion
-  de contenus webs
-  (en Wagtail)</i>"}}:::dashedOutline
+-.- intro-cms{{"<i>Maîtrise de la gestion
+  des contenus webs</i>"}}:::dashedOutline
+%%  (en Wagtail)</i>"}}:::dashedOutline
  -.- wagtail-fastoche
 
 classDef dashedOutline stroke-dasharray:4 5
@@ -107,7 +106,7 @@ classDef dashedOutline stroke-dasharray:4 5
 
 click wagtail-fastoche href "https://github.com/chris2fr/wagtail-fastoche"
 click django-fastoche href "https://github.com/chris2fr/django-fastoche"
-click stylefastoche href "https://github.com/chris2fr/style-fastoche"
+click design-fastoche href "https://github.com/chris2fr/design-fastoche"
 click sites-faciles href "https://github.com/numerique-gouv/sites-faciles"
 click django-dsfr href "https://github.com/numerique-gouv/django-dsfr"
 click dsfr href "https://github.com/GouvernementFR/dsfr/"
