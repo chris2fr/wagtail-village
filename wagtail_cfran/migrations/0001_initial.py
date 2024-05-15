@@ -79,8 +79,8 @@ class Migration(migrations.Migration):
     db_cursor = connection.cursor()
     db_cursor.execute("SELECT relname FROM pg_class WHERE relname='content_manager_contentpage';")
     result_content_manager = bool(db_cursor.fetchone())
-    db_cursor.execute("SELECT relname FROM pg_class WHERE relname='wagtail_cfran_contentpage';")
-    result_wagtail_cfran = bool(db_cursor.fetchone())
+    db_cursor.execute("SELECT relname FROM pg_class WHERE relname='wagtail_fastoche_contentpage';")
+    result_wagtail_fastoche = bool(db_cursor.fetchone())
     if result_content_manager:
         sql_query = getSQLRenameContentManagerQuery("content_manager", "wagtail_cfran") + getSQLRenameDSFRQuery(
             "content_manager", "wagtail_cfran"
@@ -92,13 +92,13 @@ class Migration(migrations.Migration):
             migrations.RunSQL(sql=sql_query, reverse_sql=reverse_sql_query),
         ]
 
-    elif result_wagtail_cfran:
-        sql_query = getSQLRenameContentManagerQuery("wagtail_cfran", "wagtail_cfran") + getSQLRenameDSFRQuery(
-            "wagtail_cfran", "wagtail_cfran"
+    elif result_wagtail_fastoche:
+        sql_query = getSQLRenameContentManagerQuery("wagtail_fastoche", "wagtail_cfran") + getSQLRenameDSFRQuery(
+            "wagtail_fastoche", "wagtail_cfran"
         )
-        reverse_sql_query = getSQLRenameContentManagerQuery("wagtail_cfran", "wagtail_cfran") + getSQLRenameDSFRQuery(
-            "wagtail_cfran", "wagtail_cfran"
-        )
+        reverse_sql_query = getSQLRenameContentManagerQuery(
+            "wagtail_cfran", "wagtail_fastoche"
+        ) + getSQLRenameDSFRQuery("wagtail_cfran", "wagtail_fastoche")
         operations = [
             migrations.RunSQL(sql=sql_query, reverse_sql=reverse_sql_query),
         ]
