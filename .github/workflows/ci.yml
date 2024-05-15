@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      DJANGO_SETTINGS_MODULE: wagtail_fastoche.config.settings_test
+      DJANGO_SETTINGS_MODULE: wagtail_cfran.config.settings_test
       PYTHONPATH: .
     strategy:
       matrix:

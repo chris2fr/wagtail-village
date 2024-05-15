@@ -2,8 +2,8 @@
 {% get_settings %}
 <!DOCTYPE html>
 <html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
-      data-fastoche-scheme="system"
-      {% if settings.wagtail_fastoche.WagtailFastocheConfig.mourning %}data-fastoche-mourning{% endif %}>
+      data-cfran-scheme="system"
+      {% if settings.wagtail_cfran.WagtailCfranConfig.mourning %}data-cfran-mourning{% endif %}>
 
   <head>
     <meta charset="utf-8" />
@@ -12,7 +12,7 @@
     {% block title %}
       <title>
         {% if title %}{{ title }} —{% endif %}
-      {{ settings.wagtail_fastoche.WagtailFastocheConfig.site_title }}</title>
+      {{ settings.wagtail_cfran.WagtailCfranConfig.site_title }}</title>
     {% endblock title %}
 
     {% block description %}
@@ -21,7 +21,7 @@
     {% fastoche_favicon %}
 
     {% fastoche_css %}
-    <link href="{% static 'fastoche/dist/utility/utility.min.css' %}"
+    <link href="{% static 'cfran/dist/utility/utility.min.css' %}"
           rel="stylesheet"
           type="text/css" />
     <link href="{% sass_src 'css/style.sass' %}"
@@ -32,8 +32,8 @@
     {% endblock extra_css %}
 
     {% block tracking %}
-      {% if settings.wagtail_fastoche.AnalyticsSettings.head_scripts %}
-        {{ settings.wagtail_fastoche.AnalyticsSettings.head_scripts|safe }}
+      {% if settings.wagtail_cfran.AnalyticsSettings.head_scripts %}
+        {{ settings.wagtail_cfran.AnalyticsSettings.head_scripts|safe }}
       {% endif %}
     {% endblock tracking %}
 
@@ -50,8 +50,8 @@
     {% fastoche_theme_modale %}
     {% wagtailuserbar %}
 
-    {% if settings.wagtail_fastoche.WagtailFastocheConfig.notice %}
-      {% fastoche_notice title=settings.wagtail_fastoche.WagtailFastocheConfig.notice %}
+    {% if settings.wagtail_cfran.WagtailCfranConfig.notice %}
+      {% fastoche_notice title=settings.wagtail_cfran.WagtailCfranConfig.notice %}
     {% endif %}
 
     <main id="content" role="main">
@@ -60,7 +60,7 @@
     </main>
 
     {% block follow_newsletter_social_media %}
-      {% if settings.wagtail_fastoche.WagtailFastocheConfig.show_newsletter_and_social_block %}
+      {% if settings.wagtail_cfran.WagtailCfranConfig.show_newsletter_and_social_block %}
         {% include "blocks/follow.html" %}
       {% endif %}
     {% endblock follow_newsletter_social_media %}
@@ -72,8 +72,8 @@
     {% endblock extra_js %}
 
     {% block body_tracking_scripts %}
-      {% if settings.wagtail_fastoche.AnalyticsSettings.body_scripts %}
-        {{ settings.wagtail_fastoche.AnalyticsSettings.body_scripts|safe }}
+      {% if settings.wagtail_cfran.AnalyticsSettings.body_scripts %}
+        {{ settings.wagtail_cfran.AnalyticsSettings.body_scripts|safe }}
       {% endif %}
     {% endblock body_tracking_scripts %}
   </body>

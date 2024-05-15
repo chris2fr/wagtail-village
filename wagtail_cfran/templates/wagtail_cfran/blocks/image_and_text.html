@@ -1,0 +1,43 @@
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+<div class="cfran-container cfran-my-6w">
+  <div class="cfran-grid-row cfran-grid-row--gutters">
+    {% if value.image_side == "left" %}
+      <div class="cfran-col-12 cfran-col-sm-{{ value.image_ratio }}">
+        <div class="bordered cfran-px-2w">{% image value.image original class="cfran-responsive-img" alt="" %}</div>
+      </div>
+      <div class="cfran-col-12 cfran-col-sm{{ -12|add:value.image_ratio }}">
+        {{ value.text|richtext }}
+
+        {% if value.link is not None and value.link.url %}
+          <a class="cfran-link cfran-fi-arrow-right-line cfran-link--icon-right"
+             href="{{ value.link.url }}">{{ value.link.text }}</a>
+        {% elif value.page and value.link_label %}
+          <a class="cfran-link cfran-fi-arrow-right-line cfran-link--icon-right"
+             href="{{ value.page.url }}">{{ value.link_label }}</a>
+        {% elif value.link_url and value.link_label %}
+          <a class="cfran-link cfran-fi-arrow-right-line cfran-link--icon-right"
+             href="{{ value.link_url }}">{{ value.link_label }}</a>
+        {% endif %}
+      </div>
+    {% else %}
+      <div class="cfran-col-12 cfran-col-sm{{ -12|add:value.image_ratio }}">
+        {{ value.text|richtext }}
+        {% if value.link is not None and value.link.url %}
+          <a class="cfran-link cfran-fi-arrow-right-line cfran-link--icon-right"
+             href="{{ value.link.url }}">{{ value.link.text }}</a>
+        {% elif value.page and value.link_label %}
+          <a class="cfran-link cfran-fi-arrow-right-line cfran-link--icon-right"
+             href="{{ value.page.url }}">{{ value.link_label }}</a>
+        {% elif value.link_url and value.link_label %}
+          <a class="cfran-link cfran-fi-arrow-right-line cfran-link--icon-right"
+             href="{{ value.link_url }}">{{ value.link_label }}</a>
+        {% endif %}
+      </div>
+      <div class="cfran-col-12 cfran-col-sm-{{ value.image_ratio }}">
+        <div class="bordered cfran-px-2w">{% image value.image original class="cfran-responsive-img" alt="" %}</div>
+      </div>
+    {% endif %}
+  </div>
+</div>

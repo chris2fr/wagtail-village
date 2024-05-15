@@ -1,0 +1,35 @@
+{% load menu_tags %}
+<div class="cfran-collapse cfran-mega-menu"
+     id="mega-menu-{{ menu.parent_menu_item.id }}"
+     tabindex="-1">
+    <div class="cfran-container cfran-container--fluid cfran-container-lg">
+        <button class="cfran-link--close cfran-link"
+                aria-controls="mega-menu-{{ menu.parent_menu_item.id }}">Fermer</button>
+        <div class="cfran-grid-row cfran-grid-row-lg--gutters">
+            <div class="cfran-col-12 cfran-col-lg-8 cfran-col-offset-lg-4--right">
+                <div class="cfran-mega-menu__leader">
+                    <h4 class="cfran-h4 cfran-mb-2v">{{ menu.title }}</h4>
+                    {% if menu.description %}<p class="cfran-hidden cfran-displayed-lg">{{ menu.description|safe }}</p>{% endif %}
+                    {% if menu.main_link %}
+                        <a class="cfran-link cfran-fi-arrow-right-line cfran-link--icon-right cfran-link--align-on-content"
+                           href="{{ menu.main_link }}">Voir toute la rubrique</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% for category in menu.get_categories %}
+                <div class="cfran-col-12 cfran-col-lg-3">
+                    <h5 class="cfran-mega-menu__category">
+                        <a class="cfran-nav__link" href="#" target="_self">
+                            {% if category.category.heading %}
+                                {{ category.category.heading }}
+                            {% else %}
+                                {{ category.category.title }}
+                            {% endif %}
+                        </a>
+                    </h5>
+                    {% flat_menu category.category.handle template="wagtail_cfran/menus/mega_menu_category.html" %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

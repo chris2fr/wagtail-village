@@ -2,17 +2,17 @@
 {% load i18n %}
 
 {% block follow_newsletter %}
-  {% if settings.wagtail_fastoche.WagtailFastocheConfig.show_newsletter_block %}
-    <div class="fastoche-col-12{% if settings.wagtail_fastoche.WagtailFastocheConfig.show_social_block %} fastoche-col-md-8{% endif %}">
-      <div class="fastoche-follow__newsletter">
+  {% if settings.wagtail_cfran.WagtailCfranConfig.show_newsletter_block %}
+    <div class="cfran-col-12{% if settings.wagtail_cfran.WagtailCfranConfig.show_social_block %} cfran-col-md-8{% endif %}">
+      <div class="cfran-follow__newsletter">
         <div>
-          <h2 class="fastoche-h5">{% translate "Subscribe to our newsletter" context "Section title" %}</h2>
-          <p class="fastoche-text--sm">{{ settings.wagtail_fastoche.WagtailFastocheConfig.newsletter_description | safe }}</p>
+          <h2 class="cfran-h5">{% translate "Subscribe to our newsletter" context "Section title" %}</h2>
+          <p class="cfran-text--sm">{{ settings.wagtail_cfran.WagtailCfranConfig.newsletter_description | safe }}</p>
         </div>
-        <div class="fastoche-btns-group fastoche-btns-group--inline-md">
+        <div class="cfran-btns-group cfran-btns-group--inline-md">
           {% translate "Subscribe to our newsletter" context "Button title" as subcribe_button_title %}
-          <a class="fastoche-btn"
-             href="{{ settings.wagtail_fastoche.WagtailFastocheConfig.newsletter_url }}"
+          <a class="cfran-btn"
+             href="{{ settings.wagtail_cfran.WagtailCfranConfig.newsletter_url }}"
              target="_blank"
              rel="noopener external"
              title="{{ subcribe_button_title }} - {{ new_window_label }}">{% translate "Subscribe" %}</a>
@@ -23,20 +23,20 @@
 {% endblock follow_newsletter %}
 
 {% block follow_social %}
-  {% if settings.wagtail_fastoche.WagtailFastocheConfig.show_social_block %}
-    <div class="fastoche-col-12{% if settings.wagtail_fastoche.WagtailFastocheConfig.show_newsletter_block %} fastoche-col-md-4{% endif %}">
-      <div class="fastoche-follow__social">
-        <h2 class="fastoche-h5">
+  {% if settings.wagtail_cfran.WagtailCfranConfig.show_social_block %}
+    <div class="cfran-col-12{% if settings.wagtail_cfran.WagtailCfranConfig.show_newsletter_block %} cfran-col-md-4{% endif %}">
+      <div class="cfran-follow__social">
+        <h2 class="cfran-h5">
           {% blocktranslate trimmed %}
             Follow us
             <br />
             on social media
           {% endblocktranslate %}
         </h2>
-        <ul class="fastoche-btns-group">
-          {% for link in settings.wagtail_fastoche.WagtailFastocheConfig.social_media_items.all %}
+        <ul class="cfran-btns-group">
+          {% for link in settings.wagtail_cfran.WagtailCfranConfig.social_media_items.all %}
             <li>
-              <a class="{{ link.icon_class }} fastoche-btn"
+              <a class="{{ link.icon_class }} cfran-btn"
                  href="{{ link.url }}"
                  target="_blank"
                  title="{{ link.title }} - {{ new_window_label }}"

@@ -1,0 +1,8 @@
+{% load fastoche_tags %}
+<div class="cfran-container cfran-py-3w">
+    <div class="cfran-grid-row cfran-grid-row--gutters">
+        <div class="cfran-col-12 cfran-col-offset-md-2 cfran-col-md-8">
+            {% fastoche_alert title=block.value.title type=block.value.level content=block.value.description heading_tag=block.value.heading_tag %}
+        </div>
+    </div>
+</div>

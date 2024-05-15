@@ -1,0 +1,19 @@
+<div class="cfran-container cfran-my-3w">
+    <div class="cfran-stepper">
+        <h2 class="cfran-stepper__title">{{ block.value.title }}</h2>
+        <div class="cfran-stepper__steps"
+             data-cfran-current-step="{{ block.value.current }}"
+             data-cfran-steps="{{ block.value.total }}">
+        </div>
+        <div class="cfran-grid-row cfran-grid-row--gutters">
+            {% for subblock in block.value.steps %}
+                <div class="cfran-col-12 cfran-col-sm">
+                    <p>
+                        <strong>{{ subblock.value.title }}</strong>
+                    </p>
+                    <p>{{ subblock.value.detail|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

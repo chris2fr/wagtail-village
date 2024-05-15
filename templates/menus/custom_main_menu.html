@@ -1,17 +1,17 @@
-{% load menu_tags wagtail_fastoche_tags %}
-<ul class="fastoche-nav__list">
+{% load menu_tags wagtail_cfran_tags %}
+<ul class="cfran-nav__list">
   {% for item in menu_items %}
-  <li class="fastoche-nav__item">
+  <li class="cfran-nav__item">
     {% if item.id in mega_menus %}
-    <button class="fastoche-nav__btn" aria-expanded="false" {% if item.active_class %}aria-current="true" {% endif %}
+    <button class="cfran-nav__btn" aria-expanded="false" {% if item.active_class %}aria-current="true" {% endif %}
       aria-controls="mega-menu-{{ item.id }}">{{ item.text }}</button>
     {% mega_menu item.id %}
     {% elif item.has_children_in_menu %}
-    <button class="fastoche-nav__btn" aria-expanded="false" {% if item.active_class %}aria-current="true" {% endif %}
+    <button class="cfran-nav__btn" aria-expanded="false" {% if item.active_class %}aria-current="true" {% endif %}
       aria-controls="menu-{{ item.link_page.pk }}">{{ item.text }}</button>
     {% sub_menu item template="menus/custom_sub_menu.html" %}
     {% else %}
-    <a href="{{ item.href }}" class="fastoche-nav__link" {% if item.active_class %}aria-current="page" {% endif %}
+    <a href="{{ item.href }}" class="cfran-nav__link" {% if item.active_class %}aria-current="page" {% endif %}
       target="_self">{{ item.text }}</a>
     {% endif %}
     {% endfor %}

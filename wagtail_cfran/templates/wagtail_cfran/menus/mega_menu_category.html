@@ -1,0 +1,13 @@
+{% load menu_tags %}
+{% if menu_items %}
+    <ul class="cfran-menu__list">
+        {% for item in menu_items %}
+            <li>
+                <a class="cfran-nav__link"
+                   href="{{ item.href }}"
+                   {% if item.href == request.path %}aria-current="page"{% endif %}
+                   target="_self">{{ item.text }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
