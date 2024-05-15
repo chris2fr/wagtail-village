@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static fastoche_tags wagtailcore_tags wagtailimages_tags i18n %}
+{% load static cfran_tags wagtailcore_tags wagtailimages_tags i18n %}
 
 {% block title %}
     <title>{{ title }} — {{ settings.wagtail_cfran.WagtailCfranConfig.site_title }}</title>
@@ -27,7 +27,7 @@
     {% include "wagtail_cfran/blocks/messages.html" %}
 
     <div class="cfran-container cfran-mt-6w">
-        {% fastoche_breadcrumb breadcrumb %}
+        {% cfran_breadcrumb breadcrumb %}
         <h1>{{ title }}</h1>
     </div>
 
@@ -61,7 +61,7 @@
     </div>
 
     {% if posts.paginator.num_pages > 1 %}
-        <div class="cfran-container cfran-grid-row cfran-grid-row--center cfran-mt-6w">{% fastoche_pagination posts %}</div>
+        <div class="cfran-container cfran-grid-row cfran-grid-row--center cfran-mt-6w">{% cfran_pagination posts %}</div>
     {% endif %}
 
 {% endblock content %}

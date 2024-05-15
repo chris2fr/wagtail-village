@@ -66,9 +66,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "widget_tweaks",
-    "django_fastoche.fastoche_lesgrandsvoisins",
-    "django_fastoche.fastoche_designsystem",
-    "django_fastoche",
+    "django_cfran.cfran_lesgrandsvoisins",
+    "django_cfran.cfran_designsystem",
+    "django_cfran",
     "sass_processor",
     "wagtail_cfran",
     "wagtail_cfran.blog",
@@ -99,7 +99,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(BASE_DIR, "django_fastoche/templates"),
+            os.path.join(BASE_DIR, "django_cfran/templates"),
             os.path.join(BASE_DIR, "templates"),
         ],
         "APP_DIRS": True,

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static fastoche_tags wagtailcore_tags wagtailimages_tags i18n %}
+{% load static cfran_tags wagtailcore_tags wagtailimages_tags i18n %}
 
 {% block title %}
     <title>{{ page.seo_title|default:page.title }} — {{ settings.wagtail_cfran.WagtailCfranConfig.site_title }}</title>
@@ -16,7 +16,7 @@
     {% include "wagtail_cfran/blocks/messages.html" %}
 
     <div class="cfran-container cfran-my-6w">
-        {% fastoche_breadcrumb breadcrumb %}
+        {% cfran_breadcrumb breadcrumb %}
         <h1>{% translate "Categories" %}</h1>
         <ul>
             {% for category in categories|dictsort:"cat_name" %}

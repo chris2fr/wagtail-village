@@ -16,9 +16,9 @@ class Migration(migrations.Migration):
     ]
 
     def getSQLRenameContentManagerQuery(name_from, name_to):
-        # "UPDATE django_content_type SET model='config' WHERE app_label='%s' and model='wagtailfastocheconfig';" % (name_to + '')
-        # "ALTER TABLE IF EXISTS '%s' RENAME TO '%s';" % (name_to + '_wagtailfastocheconfig', name_to + '_config')
-        # "ALTER SEQUENCE IF EXISTS '%s' RENAME TO '%s';" % (name_to + '_wagtailfastocheconfig_id_seq', name_to + '_config_id_seq')
+        # "UPDATE django_content_type SET model='config' WHERE app_label='%s' and model='wagtailcfranconfig';" % (name_to + '')
+        # "ALTER TABLE IF EXISTS '%s' RENAME TO '%s';" % (name_to + '_wagtailcfranconfig', name_to + '_config')
+        # "ALTER SEQUENCE IF EXISTS '%s' RENAME TO '%s';" % (name_to + '_wagtailcfranconfig_id_seq', name_to + '_config_id_seq')
         sql_query = (
             "UPDATE django_content_type SET app_label='{}' WHERE app_label='{}';".format(name_to, name_from),
             "ALTER TABLE {}_analyticssettings RENAME TO {}_analyticssettings;".format(name_from, name_to),
@@ -79,8 +79,8 @@ class Migration(migrations.Migration):
     db_cursor = connection.cursor()
     db_cursor.execute("SELECT relname FROM pg_class WHERE relname='content_manager_contentpage';")
     result_content_manager = bool(db_cursor.fetchone())
-    db_cursor.execute("SELECT relname FROM pg_class WHERE relname='wagtail_fastoche_contentpage';")
-    result_wagtail_fastoche = bool(db_cursor.fetchone())
+    db_cursor.execute("SELECT relname FROM pg_class WHERE relname='wagtail_cfran_contentpage';")
+    result_wagtail_cfran = bool(db_cursor.fetchone())
     if result_content_manager:
         sql_query = getSQLRenameContentManagerQuery("content_manager", "wagtail_cfran") + getSQLRenameDSFRQuery(
             "content_manager", "wagtail_cfran"
@@ -92,13 +92,13 @@ class Migration(migrations.Migration):
             migrations.RunSQL(sql=sql_query, reverse_sql=reverse_sql_query),
         ]
 
-    elif result_wagtail_fastoche:
-        sql_query = getSQLRenameContentManagerQuery("wagtail_fastoche", "wagtail_cfran") + getSQLRenameDSFRQuery(
-            "wagtail_fastoche", "wagtail_cfran"
+    elif result_wagtail_cfran:
+        sql_query = getSQLRenameContentManagerQuery("wagtail_cfran", "wagtail_cfran") + getSQLRenameDSFRQuery(
+            "wagtail_cfran", "wagtail_cfran"
         )
-        reverse_sql_query = getSQLRenameContentManagerQuery(
-            "wagtail_cfran", "wagtail_fastoche"
-        ) + getSQLRenameDSFRQuery("wagtail_cfran", "wagtail_fastoche")
+        reverse_sql_query = getSQLRenameContentManagerQuery("wagtail_cfran", "wagtail_cfran") + getSQLRenameDSFRQuery(
+            "wagtail_cfran", "wagtail_cfran"
+        )
         operations = [
             migrations.RunSQL(sql=sql_query, reverse_sql=reverse_sql_query),
         ]

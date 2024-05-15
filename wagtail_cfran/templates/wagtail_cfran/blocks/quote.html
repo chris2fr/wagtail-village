@@ -1,10 +1,10 @@
-{% load fastoche_tags wagtailcore_tags wagtailimages_tags %}
+{% load cfran_tags wagtailcore_tags wagtailimages_tags %}
 {% image value.image original as img %}
 
 {% if value.color %}
   {% with "cfran-quote--"|concatenate:value.color as extra_classes %}
-    {% fastoche_quote text=value.quote author=value.author_name source=value.author_title image_url=img.url extra_classes=extra_classes %}
+    {% cfran_quote text=value.quote author=value.author_name source=value.author_title image_url=img.url extra_classes=extra_classes %}
   {% endwith %}
 {% else %}
-  {% fastoche_quote text=value.quote author=value.author_name source=value.author_title image_url=img.url %}
+  {% cfran_quote text=value.quote author=value.author_name source=value.author_title image_url=img.url %}
 {% endif %}

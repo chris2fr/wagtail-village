@@ -3,7 +3,7 @@
   {{ value.text|richtext }}
   {% if value.cta_url and value.cta_label %}
     <p class="cfran-mb-5w">
-      {# It doesn't use fastoche_link or fastoche_button because it's a link with a button style #}
+      {# It doesn't use cfran_link or cfran_button because it's a link with a button style #}
       <a href="{{ value.cta_url }}" class="cfran-btn cfran-btn--primary">{{ value.cta_label }}</a>
     </p>
   {% endif %}

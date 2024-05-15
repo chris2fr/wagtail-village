@@ -1,4 +1,4 @@
-{% load fastoche_tags wagtailcore_tags %}
+{% load cfran_tags wagtailcore_tags %}
 <div class="cfran-container cfran-py-3w">
     <div class="cfran-grid-row cfran-grid-row--gutters">
         <div class="cfran-col-12 cfran-col-offset-md-2 cfran-col-md-8">
@@ -14,7 +14,7 @@
                     {% if subblock.block_type == 'accordion' %}
                         {% with forloop.counter0|lower as str_counter %}
                             {% with "accordion-"|add:accordions_id|add:"-"|add:str_counter as accordion_id %}  
-                                {% fastoche_accordion id=accordion_id title=subblock.value.title content=subblock.value.content|richtext %}
+                                {% cfran_accordion id=accordion_id title=subblock.value.title content=subblock.value.content|richtext %}
                             {% endwith %}
                         {% endwith %}
                     {% endif %}

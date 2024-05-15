@@ -1,4 +1,4 @@
-{% load i18n static fastoche_tags wagtailuserbar wagtailsettings_tags sass_tags %}
+{% load i18n static cfran_tags wagtailuserbar wagtailsettings_tags sass_tags %}
 {% get_settings %}
 <!DOCTYPE html>
 <html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
@@ -18,9 +18,9 @@
     {% block description %}
     {% endblock description %}
 
-    {% fastoche_favicon %}
+    {% cfran_favicon %}
 
-    {% fastoche_css %}
+    {% cfran_css %}
 
     <link href="{% static 'cfran/dist/utility/utility.min.css' %}"
           rel="stylesheet"
@@ -47,15 +47,15 @@
 
   <body>
     {% block skiplinks %}
-      {% fastoche_skiplinks skiplinks %}
+      {% cfran_skiplinks skiplinks %}
     {% endblock skiplinks %}
 
     {% include "blocks/header.html" %}
-    {% fastoche_theme_modale %}
+    {% cfran_theme_modale %}
     {% wagtailuserbar %}
 
     {% if settings.wagtail_cfran.WagtailCfranConfig.notice %}
-      {% fastoche_notice title=settings.wagtail_cfran.WagtailCfranConfig.notice %}
+      {% cfran_notice title=settings.wagtail_cfran.WagtailCfranConfig.notice %}
     {% endif %}
 
     <main id="content" role="main">
@@ -71,7 +71,7 @@
 
     {% include "blocks/footer.html" %}
 
-    {% fastoche_js nonce=request.csp_nonce %}
+    {% cfran_js nonce=request.csp_nonce %}
 
     {% block extra_js %}
     {% endblock extra_js %}
