@@ -424,6 +424,23 @@ files = [
 django = "*"
 
 [[package]]
+name = "django-cfran"
+version = "11.2.1"
+description = "Render the Design System of France into a generic Django app"
+optional = false
+python-versions = "<4.0,>=3.8"
+files = [
+    {file = "django_cfran-11.2.1-py3-none-any.whl", hash = "sha256:424dd13fbcc7ca59cd4ceb5185a868b685cebb06a4741aab64a0e68f4bc94ec6"},
+    {file = "django_cfran-11.2.1.tar.gz", hash = "sha256:84a2ab7773aae55184bb8a9f44882bc548b42f2c4efded3aef7297a9933750dc"},
+]
+
+[package.dependencies]
+Django = ">3.2.5"
+django-crispy-forms = ">=2.0,<3.0"
+django-widget-tweaks = ">=1.4.12,<2.0.0"
+requests = ">=2.26.0,<3.0.0"
+
+[[package]]
 name = "django-cogwheels"
 version = "0.3"
 description = "A consistent, user-friendly solution for adding app-specific settings your Django package, reusable app or framework."
@@ -482,23 +499,6 @@ files = [
 
 [package.dependencies]
 Django = ">=3.2"
-
-[[package]]
-name = "django-cfran"
-version = "11.2.1"
-description = "Render the Design System of France into a generic Django app"
-optional = false
-python-versions = "<4.0,>=3.8"
-files = [
-    {file = "django_cfran-11.2.1-py3-none-any.whl", hash = "sha256:0e66e54a15bd69ff140c631f834cf7897238ca39e64b4744e211d1721420f0a4"},
-    {file = "django_cfran-11.2.1.tar.gz", hash = "sha256:53d014d62e73d28c020cc4fd8ca27d1bb5d3e276dcbe7baf6b54f5f7d0282256"},
-]
-
-[package.dependencies]
-Django = ">3.2.5"
-django-crispy-forms = ">=2.0,<3.0"
-django-widget-tweaks = ">=1.4.12,<2.0.0"
-requests = ">=2.26.0,<3.0.0"
 
 [[package]]
 name = "django-filter"
@@ -2179,4 +2179,4 @@ wand = ["Wand (>=0.6,<1.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "c76f7cabcd41f39245b278f1e0462815668b157f085b1c5ad1400f681255bb1f"
+content-hash = "96c17a944f156484190f2d2f8624899c6a2f5bed4981f09694631604d9c4195b"
