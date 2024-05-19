@@ -1,8 +1,8 @@
 # Gestionnaire de contenu Wagtail CFRAN
 
-Sur la base de l'application gestionnaire de contenu CMS et blog sous technologie Wagtail [sites-facile de la DINUM, France](https://github.com/numerique-gouv/sites-faciles), elle-même à base de l'application de mise en page de site dynamique Django [django-wagtailfaW](https://github.com/numerique-gouv/django-wagtailcfran), elle même basé sur le [Design Système de l'Etat ou DSFR du gouvernement français](https://github.com/GouvernementFR/wagtailcfran/), cette application gestionnaire de contenu dit CMS et blog [CFRAN](https://www.cfran.org) propose de capitaliser sur le travail de fond pour le traitement d'information et de la communication en rendant les composants génériques. 
+Sur la base de l'application gestionnaire de contenu CMS et blog sous technologie Wagtail [sites-facile de la DINUM, France](https://github.com/numerique-gouv/sites-faciles), elle-même à base de l'application de mise en page de site dynamique Django [django-wagtailfaW](https://github.com/numerique-gouv/django-wagtailcfran), elle même basé sur le [Design Système de l'Etat ou DSFR du gouvernement français](https://github.com/GouvernementFR/wagtaildjango_cfran/), cette application gestionnaire de contenu dit CMS et blog [CFRAN](https://www.cfran.org) propose de capitaliser sur le travail de fond pour le traitement d'information et de la communication en rendant les composants génériques. 
 
-Les [conditions d’utilisation de DSFR pour des acteurs privés](https://github.com/GouvernementFR/wagtailcfran/blob/main/doc/legal/cgu.md#2-conditions-dutilisation-des-composants-par-les-autres-utilisateurs) sont claires : 
+Les [conditions d’utilisation de DSFR pour des acteurs privés](https://github.com/GouvernementFR/wagtaildjango_cfran/blob/main/doc/legal/cgu.md#2-conditions-dutilisation-des-composants-par-les-autres-utilisateurs) sont claires : 
 
 > 2° Conditions d’utilisation des Composants par les Autres Utilisateurs
 > 
@@ -15,7 +15,7 @@ Les conditions de l'utilisation de dango-wagtailcfran and sites-faciles (content
 Maîtriser l'ensemble de la chaîne de wagtailcfran à django-wagtailcfran à sites-faciles a été une joie parce-que les développements sont propres et faits de manière responsable.  
 
 
-Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable [Wagtail-CFRAN](https://github.com/chris2fr/wwagtail-cfran) avec [Django-CFRAN](https://github.com/chris2fr/web-cfran) [Module Python Django-CFRAN](https://pypi.org/project/django-cfran/
+Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable [Wagtail-CFRAN](https://github.com/chris2fr/wwagtail-cfran) avec [Django-CFRAN](https://github.com/chris2fr/web-cfran) [Module Python Django-CFRAN](https://pypi.org/project/django-django_cfran/
 ) et [Web-CFRAN](https://github.com/chris2fr/web-cfran).
 
 ```mermaid

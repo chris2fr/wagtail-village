@@ -1,4 +1,4 @@
-{% extends "cfran/header.html" %}
+{% extends "django_cfran/header.html" %}
 {% load i18n static wagtailcore_tags wagtailimages_tags menu_tags static %}
 
 {% block brand %}
@@ -7,7 +7,7 @@
 
   <a href="/"
      title="{{ home_page }} — {{ settings.wagtail_cfran.WagtailCfranConfig.header_brand }}">
-     <img src="{% static 'cfran/dist/artwork/logo/logo.svg' %}" class="cfran-logo" alt="logo" />
+     <img src="{% static 'django_cfran/dist/artwork/logo/logo.svg' %}" class="cfran-logo" alt="logo" />
   </a>
   {% endif %}
 {% endblock brand %}

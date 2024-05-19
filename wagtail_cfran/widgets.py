@@ -13,6 +13,6 @@ class WagtailCfranIconPickerWidget(widgets.TextInput):
     @property
     def media(self):
         return Media(
-            css={"all": ["css/icon-picker.css", "cfran/dist/utility/utility.min.css"]},
-            js=["django-cfran/icon-picker/assets/js/universal-icon-picker.min.js"],
+            css={"all": ["css/icon-picker.css", "django_cfran/dist/utility/utility.min.css"]},
+            js=["django-django_cfran/icon-picker/assets/js/universal-icon-picker.min.js"],
         )

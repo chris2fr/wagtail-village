@@ -425,13 +425,13 @@ django = "*"
 
 [[package]]
 name = "django-cfran"
-version = "11.2.2"
+version = "11.2.3"
 description = "Render Fabrique CFRAN into a generic Django app"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "django_cfran-11.2.2-py3-none-any.whl", hash = "sha256:2fa7aa21460304178a4d808498bbdc0e86e623dea86dd8868651d685936733f9"},
-    {file = "django_cfran-11.2.2.tar.gz", hash = "sha256:f88e6343aa2ee3202b5995745531458b1c51a0d051b41eff7d6560e679946b9f"},
+    {file = "django_cfran-11.2.3-py3-none-any.whl", hash = "sha256:440f07cea3d5fbacfbc4cec12b5bea9154cb8ad8d877813ca78766829eb8fd4c"},
+    {file = "django_cfran-11.2.3.tar.gz", hash = "sha256:e27abd90f71772a0d0e2adfc6d243bab1b27fb5e04cf98d90110e17a7b3c964a"},
 ]
 
 [package.dependencies]
@@ -2179,4 +2179,4 @@ wand = ["Wand (>=0.6,<1.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "6108a2349f5a8f1188652bcd91a0bedbf79e9e6e464b09835d0ed3e609fce93b"
+content-hash = "b2f07f19a5cc5072447c3cc5d6a000f2c8e3313e61c683e37547eb1d9641b41d"
