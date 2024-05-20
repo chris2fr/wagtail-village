@@ -12,6 +12,7 @@ from wagtail.images import get_image_model_string
 from wagtail.models import Orderable
 from wagtail.snippets.models import register_snippet
 
+from django_cfran.models import CfranConfig
 from wagtail_cfran.abstract import SitesFacilesBasePage
 from wagtail_cfran.constants import LIMITED_RICHTEXTFIELD_FEATURES
 from wagtail_cfran.managers import TagManager
@@ -88,74 +89,13 @@ class AnalyticsSettings(BaseSiteSetting):
 
 
 @register_setting(icon="cog")
-class WagtailCfranConfig(ClusterableModel, BaseSiteSetting):
+class WagtailCfranConfig(ClusterableModel, BaseSiteSetting, CfranConfig):
     class Meta:
         verbose_name = _("Site configuration")
         verbose_name_plural = _("Site configurations")
 
-    header_brand = models.CharField(
-        _("Institution (header)"),
-        max_length=200,
-        default="Intitulé officiel",
-        help_text=_("Institution brand as defined on page https://www.info.gouv.fr/marque-de-letat/le-bloc-marque"),
-        blank=True,
-    )
-    header_brand_html = models.CharField(
-        _("Institution with line break (header)"),
-        max_length=200,
-        default="Intitulé<br />officiel",
-        blank=True,
-        help_text=_("Institution brand with <br /> tags for line breaks"),
-    )
-    footer_brand = models.CharField(
-        _("Institution (footer)"),
-        max_length=200,
-        default="Intitulé officiel",
-        blank=True,
-    )
-
-    footer_brand_html = models.CharField(
-        _("Institution with line break (footer)"),
-        max_length=200,
-        default="Intitulé<br />officiel",
-        blank=True,
-    )
-
-    site_title = models.CharField(
-        _("Site title"),
-        max_length=200,
-        default=_("Site title"),
-        blank=True,
-    )
-    site_tagline = models.CharField(
-        _("Site tagline"),
-        max_length=200,
-        default=_("Site tagline"),
-        blank=True,
-    )
-
-    notice = RichTextField(
-        _("Important notice"),
-        default="",
-        blank=True,
-        features=LIMITED_RICHTEXTFIELD_FEATURES,
-        help_text=_(
-            "The important notice banner should only be used for essential and temporary information. \
-            (Excessive or continuous use risks “drowning” the message.)"
-        ),
-    )
-
-    beta_tag = models.BooleanField(_("Show the BETA tag next to the title"), default=False)  # type: ignore
-
-    footer_description = RichTextField(
-        _("Description"),
-        default="",
-        blank=True,
-        features=LIMITED_RICHTEXTFIELD_FEATURES,
-    )
-
     # Operator logo
-    operator_logo_file = models.ForeignKey(
+    operator_logo_file_wagtail = models.ForeignKey(
         get_image_model_string(),
         null=True,
         blank=True,
@@ -163,45 +103,42 @@ class WagtailCfranConfig(ClusterableModel, BaseSiteSetting):
         related_name="+",
         verbose_name=_("Operator logo"),
     )
-
-    operator_logo_alt = models.CharField(
-        _("Logo alt text"),
-        max_length=200,
+    footer_description_wagtail = RichTextField(
+        _("Description"),
+        default="",
         blank=True,
-        help_text=_("Must contain the text present in the image."),
+        features=LIMITED_RICHTEXTFIELD_FEATURES,
     )
-    operator_logo_width = models.DecimalField(
-        _("Width (em)"),
-        max_digits=3,
-        decimal_places=1,
-        null=True,
-        default="0.0",
-        help_text=_(
-            "To be adjusted according to the width of the logo.\
-            Example for a vertical logo: 3.5, Example for a horizontal logo: 8."
-        ),
-    )
+
+    # operator_logo_alt = models.CharField(
+    #     _("Logo alt text"),
+    #     max_length=200,
+    #     blank=True,
+    #     help_text=_("Must contain the text present in the image."),
+    # )
+    # operator_logo_width = models.DecimalField(
+    #     _("Width (em)"),
+    #     max_digits=3,
+    #     decimal_places=1,
+    #     null=True,
+    #     default="0.0",
+    #     help_text=_(
+    #         "To be adjusted according to the width of the logo.\
+    #         Example for a vertical logo: 3.5, Example for a horizontal logo: 8."
+    #     ),
+    # )
 
     search_bar = models.BooleanField("Barre de recherche dans l’en-tête", default=False)  # type: ignore
     theme_modale_button = models.BooleanField("Choix du thème clair/sombre", default=False)  # type: ignore
-    mourning = models.BooleanField("Mise en berne", default=False)  # type: ignore
-
-    newsletter_description = models.TextField(_("Newsletter description"), default="", blank=True)
-
-    newsletter_url = models.URLField(
-        _("Newsletter registration URL"),
-        default="",
-        blank=True,
-    )
 
     site_panels = [
         FieldPanel("site_title"),
         FieldPanel("site_tagline"),
-        FieldPanel("footer_description"),
+        FieldPanel("footer_description_wagtail"),
         FieldPanel("notice"),
         MultiFieldPanel(
             [
-                FieldPanel("operator_logo_file"),
+                FieldPanel("operator_logo_file_wagtail"),
                 FieldPanel("operator_logo_alt"),
                 FieldPanel("operator_logo_width"),
             ],

@@ -1,14 +1,15 @@
+{% extends "django_cfran/base.html" %}
 {% load i18n static cfran_tags wagtailuserbar wagtailsettings_tags sass_tags %}
 {% get_settings %}
 <!DOCTYPE html>
 <html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
       data-cfran-scheme="system"
       {% if settings.wagtail_cfran.WagtailCfranConfig.mourning %}data-cfran-mourning{% endif %}>
-
   <head>
     <meta charset="utf-8" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
     {% block title %}
       <title>
         {% if title %}{{ title }} —{% endif %}
@@ -21,6 +22,7 @@
     {% cfran_favicon %}
 
     {% cfran_css %}
+
     <link href="{% static 'django_cfran/dist/utility/utility.min.css' %}"
           rel="stylesheet"
           type="text/css" />
