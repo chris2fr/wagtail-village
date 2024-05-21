@@ -40,7 +40,7 @@
       <img class="cfran-responsive-img"
            src="{{ logo_img.url }}"
            alt="{{ settings.wagtail_cfran.WagtailCfranConfig.operator_logo_alt }}"
-           {% if settings.wagtail_cfran.WagtailCfranConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.wagtail_cfran.WagtailCfranConfig.operator_logo_width|floatformat:"0" }}rem;"{% endif %} />
+           {% if settings.wagtail_cfran.WagtailCfranConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.wagtail_cfran.WagtailCfranConfig.operator_logo_width|unlocalize }}rem;"{% endif %} />
     </div>
   {% endif %}
 {% endblock operator_logo %}
