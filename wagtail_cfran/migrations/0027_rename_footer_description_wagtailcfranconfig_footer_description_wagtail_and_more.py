@@ -10,14 +10,14 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     dependencies = [
         ("django_cfran", "0010_alter_cfranconfig_footer_brand_and_more"),
-        ("wagtail_cfran", "0025_alter_contentpage_body"),
+        ("wagtail_cfran", "0026_rename_app"),
     ]
 
     operations = [
         migrations.RenameField(
             model_name="wagtailcfranconfig",
             old_name="footer_description",
-            new_name="footer_description_wagtail",
+            new_name="footer_description",
         ),
         migrations.RenameField(
             model_name="wagtailcfranconfig",

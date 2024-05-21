@@ -101,6 +101,11 @@ class SitesFacilesBasePage(Page):
                 self.search_description = search_description
         return super().save(*args, **kwargs)
 
+    # def get_context(self, request):
+    #     context = super(SitesFacilesBasePage, self).get_context(request)
+    #     context['SITE_CONFIG']['operator_logo_file'] = context['SITE_CONFIG']['operator_logo_file_wagtail']
+    #     return context
+
     class Meta:
         abstract = True
         verbose_name = _("Base page")

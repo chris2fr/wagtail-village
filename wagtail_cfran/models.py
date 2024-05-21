@@ -1,6 +1,7 @@
 from django.db import models
 from django.forms.widgets import Textarea
 from django.utils.translation import gettext_lazy as _
+from django_cfran.models import CfranConfig
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
 from modelcluster.tags import ClusterTaggableManager
@@ -8,11 +9,11 @@ from taggit.models import Tag as TaggitTag, TaggedItemBase
 from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel, ObjectList, TabbedInterface
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.fields import RichTextField
-from wagtail.images import get_image_model_string
+
+# from wagtail.images import get_image_model_string
 from wagtail.models import Orderable
 from wagtail.snippets.models import register_snippet
 
-from django_cfran.models import CfranConfig
 from wagtail_cfran.abstract import SitesFacilesBasePage
 from wagtail_cfran.constants import LIMITED_RICHTEXTFIELD_FEATURES
 from wagtail_cfran.managers import TagManager
@@ -94,15 +95,15 @@ class WagtailCfranConfig(ClusterableModel, BaseSiteSetting, CfranConfig):
         verbose_name = _("Site configuration")
         verbose_name_plural = _("Site configurations")
 
-    # Operator logo
-    operator_logo_file_wagtail = models.ForeignKey(
-        get_image_model_string(),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name="+",
-        verbose_name=_("Operator logo"),
-    )
+    # # Operator logo
+    # operator_logo_file_wagtail = models.ForeignKey(
+    #     get_image_model_string(),
+    #     null=True,
+    #     blank=True,
+    #     on_delete=models.SET_NULL,
+    #     related_name="+",
+    #     verbose_name=_("Operator logo"),
+    # )
     footer_description_wagtail = RichTextField(
         _("Description"),
         default="",
@@ -135,10 +136,11 @@ class WagtailCfranConfig(ClusterableModel, BaseSiteSetting, CfranConfig):
         FieldPanel("site_title"),
         FieldPanel("site_tagline"),
         FieldPanel("footer_description_wagtail"),
+        FieldPanel("footer_description"),
         FieldPanel("notice"),
         MultiFieldPanel(
             [
-                FieldPanel("operator_logo_file_wagtail"),
+                FieldPanel("operator_logo_file"),
                 FieldPanel("operator_logo_alt"),
                 FieldPanel("operator_logo_width"),
             ],

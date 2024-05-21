@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load i18n l10n %}
 {% translate "Opens a new window" as new_window_label %}
 <footer class="cfran-footer" role="contentinfo" id="footer">
   {% block footer_top %}
@@ -41,7 +41,7 @@
         {% block footer_description %}
           <p class="cfran-footer__content-desc">
             {% block footer_content %}
-              {{ SITE_CONFIG.footer_description | safe }}
+              {{ SITE_CONFIG.footer_description_wagtail | safe }}
             {% endblock footer_content %}
           </p>
         {% endblock footer_description %}

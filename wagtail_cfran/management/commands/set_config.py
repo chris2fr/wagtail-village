@@ -22,6 +22,8 @@ class Command(BaseCommand):
                 config_data["site_id"] = site.id
 
                 _config, created = WagtailCfranConfig.objects.get_or_create(id=1, defaults=config_data)
+                # if _config.operator_logo_file_wagtail:
+                #     _config.operator_logo_file = _config.operator_logo_file_wagtail
                 if created:
                     self.stdout.write(self.style.SUCCESS(f"Config imported for {config_data.get('site_title', '')}"))
                 else:

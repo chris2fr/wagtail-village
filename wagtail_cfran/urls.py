@@ -1,10 +1,10 @@
 from django.urls import include, path
 from django.utils.translation import gettext_lazy as _
+from django_cfran.cfran_components import ALL_TAGS
 from django_distill import distill_path
 from wagtail import urls as wagtail_urls
 
 from django_cfran import views
-from django_cfran.cfran_components import ALL_TAGS
 from wagtail_cfran.views import SearchResultsView, TagsListView, TagView
 
 
