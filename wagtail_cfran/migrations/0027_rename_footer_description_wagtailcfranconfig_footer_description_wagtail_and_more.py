@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         ("wagtail_cfran", "0026_rename_app"),
     ]
 
-    sql_query = "insert into django_cfran_cfranconfig (header_brand, header_brand_html, footer_brand, footer_brand_html, site_title, site_tagline, footer_description, mourning, beta_tag, newsletter_description, newsletter_url, notice, operator_logo_alt, operator_logo_width, accessibility_status,language) select header_brand, header_brand_html, footer_brand, footer_brand_html, site_title, site_tagline, footer_description, mourning, beta_tag, newsletter_description, newsletter_url, notice, operator_logo_alt, operator_logo_width, 'NOT', 'FR' from wagtail_cfran_wagtailcfranconfig;';"
+    sql_query = "insert into django_cfran_cfranconfig (header_brand, header_brand_html, footer_brand, footer_brand_html, site_title, site_tagline, footer_description, mourning, beta_tag, newsletter_description, newsletter_url, notice, operator_logo_alt, operator_logo_width, accessibility_status,language) select header_brand, header_brand_html, footer_brand, footer_brand_html, site_title, site_tagline, footer_description, mourning, beta_tag, newsletter_description, newsletter_url, notice, operator_logo_alt, operator_logo_width, 'NOT', 'FR' from wagtail_cfran_wagtailcfranconfig;'"
     reverse_sql_query = ""
     operations = [
         migrations.RunSQL(sql=sql_query, reverse_sql=reverse_sql_query),
