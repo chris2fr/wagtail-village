@@ -5,5 +5,5 @@
     "footer_brand_html": "Intitulé<br />officiel",
     "site_title": "Titre du site",
     "site_tagline": "Sous-titre du site",
-    "footer_description": "Description"
+    "footer_description_wagtail": "Description"
 }

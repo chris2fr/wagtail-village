@@ -15,7 +15,7 @@ Les conditions de l'utilisation de dango-wagtailcfran and sites-faciles (content
 Maîtriser l'ensemble de la chaîne de wagtailcfran à django-wagtailcfran à sites-faciles a été une joie parce-que les développements sont propres et faits de manière responsable.  
 
 
-Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable [Wagtail-CFRAN](https://github.com/chris2fr/wwagtail-cfran) avec [Django-CFRAN](https://github.com/chris2fr/web-cfran) [Module Python Django-CFRAN](https://pypi.org/project/django-django_cfran/
+Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable [Wagtail-CFRAN](https://github.com/chris2fr/wwagtail-cfran) avec [Django-CFRAN](https://github.com/chris2fr/web-cfran) [Module Python Django-CFRAN](https://pypi.org/project/django_cfran/
 ) et [Web-CFRAN](https://github.com/chris2fr/web-cfran).
 
 ```mermaid
