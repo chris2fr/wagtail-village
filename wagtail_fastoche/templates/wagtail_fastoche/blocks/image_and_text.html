@@ -1,0 +1,43 @@
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+<div class="fastoche-container fastoche-my-6w">
+  <div class="fastoche-grid-row fastoche-grid-row--gutters">
+    {% if value.image_side == "left" %}
+      <div class="fastoche-col-12 fastoche-col-sm-{{ value.image_ratio }}">
+        <div class="bordered fastoche-px-2w">{% image value.image original class="fastoche-responsive-img" alt="" %}</div>
+      </div>
+      <div class="fastoche-col-12 fastoche-col-sm{{ -12|add:value.image_ratio }}">
+        {{ value.text|richtext }}
+
+        {% if value.link is not None and value.link.url %}
+          <a class="fastoche-link fastoche-fi-arrow-right-line fastoche-link--icon-right"
+             href="{{ value.link.url }}">{{ value.link.text }}</a>
+        {% elif value.page and value.link_label %}
+          <a class="fastoche-link fastoche-fi-arrow-right-line fastoche-link--icon-right"
+             href="{{ value.page.url }}">{{ value.link_label }}</a>
+        {% elif value.link_url and value.link_label %}
+          <a class="fastoche-link fastoche-fi-arrow-right-line fastoche-link--icon-right"
+             href="{{ value.link_url }}">{{ value.link_label }}</a>
+        {% endif %}
+      </div>
+    {% else %}
+      <div class="fastoche-col-12 fastoche-col-sm{{ -12|add:value.image_ratio }}">
+        {{ value.text|richtext }}
+        {% if value.link is not None and value.link.url %}
+          <a class="fastoche-link fastoche-fi-arrow-right-line fastoche-link--icon-right"
+             href="{{ value.link.url }}">{{ value.link.text }}</a>
+        {% elif value.page and value.link_label %}
+          <a class="fastoche-link fastoche-fi-arrow-right-line fastoche-link--icon-right"
+             href="{{ value.page.url }}">{{ value.link_label }}</a>
+        {% elif value.link_url and value.link_label %}
+          <a class="fastoche-link fastoche-fi-arrow-right-line fastoche-link--icon-right"
+             href="{{ value.link_url }}">{{ value.link_label }}</a>
+        {% endif %}
+      </div>
+      <div class="fastoche-col-12 fastoche-col-sm-{{ value.image_ratio }}">
+        <div class="bordered fastoche-px-2w">{% image value.image original class="fastoche-responsive-img" alt="" %}</div>
+      </div>
+    {% endif %}
+  </div>
+</div>

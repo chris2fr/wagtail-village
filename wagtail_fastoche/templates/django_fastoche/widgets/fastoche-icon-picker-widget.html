@@ -1,0 +1,29 @@
+{% load static %}
+<div class="icon-picker-widget">
+  {% include "django/forms/widgets/text.html" %}
+
+  {% with widget.attrs.id as widget_id %}
+    <span id="{{ widget_id }}-icon" aria-hidden="true"></span>
+    <script>
+      (async () => {
+        let widgetInput = document.getElementById('{{ widget_id }}');
+        let widgetIcon = document.getElementById('{{ widget_id }}-icon');
+
+        const options = {
+          iconLibraries: ['fastoche-buildings.json', 'fastoche-business.json', 'fastoche-communication.json', 'fastoche-design.json', 'fastoche-development.json', 'fastoche-device.json', 'fastoche-document.json', 'fastoche-editor.json', 'fastoche-finance.json', 'fastoche-health.json', 'fastoche-logo.json', 'fastoche-map.json', 'fastoche-media.json', 'fastoche-others.json', 'fastoche-system.json', 'fastoche-user.json', 'fastoche-weather.json'],
+          allowEmpty: true,
+          onSelect: function (jsonIconData) {
+            widgetInput.value = jsonIconData.iconClass;
+            widgetIcon.classList.add(jsonIconData.iconClass, "fastoche-icon--lg", "fastoche-mt-1w");
+            },
+          onReset: function () {
+            widgetInput.innerHTML = "";
+            widgetIcon.className = "";
+          }
+        }
+
+        let _uip = new UniversalIconPicker('#{{ widget_id }}', options);
+      })();
+    </script>
+  {% endwith %}
+</div>

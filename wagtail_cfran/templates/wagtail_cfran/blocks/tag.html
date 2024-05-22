@@ -1,4 +1,0 @@
-{% load i18n %}
-{# djlint:off #}
-<{% if value.link is not None and value.link.url %}a href="{{ value.link.url }}"{% else %}p{% endif %} class="cfran-tag{% if value.is_small %} cfran-tag--sm{% endif %}{% if value.color %} cfran-tag--{{ value.color }}{% endif %}{% if value.icon_class %} {{ value.icon_class }} cfran-tag--icon-left{% endif %}">{{ value.label }}</{% if value.link is not None and value.link.url %}a{% else %}p{% endif %}>
-{# djlint:on #}

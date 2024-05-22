@@ -1,0 +1,19 @@
+<div class="fastoche-container fastoche-my-3w">
+    <div class="fastoche-stepper">
+        <h2 class="fastoche-stepper__title">{{ block.value.title }}</h2>
+        <div class="fastoche-stepper__steps"
+             data-fastoche-current-step="{{ block.value.current }}"
+             data-fastoche-steps="{{ block.value.total }}">
+        </div>
+        <div class="fastoche-grid-row fastoche-grid-row--gutters">
+            {% for subblock in block.value.steps %}
+                <div class="fastoche-col-12 fastoche-col-sm">
+                    <p>
+                        <strong>{{ subblock.value.title }}</strong>
+                    </p>
+                    <p>{{ subblock.value.detail|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+{% extends "django_fastoche/footer.html" %}
+{% load i18n wagtailimages_tags menu_tags l10n %}
+
+{% block footer_brand %}
+  {% translate "Back to home page" as back_to_home_label %}
+  {% if settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_file and settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_alt %}
+    {% image settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_file original as logo_img %}
+    <div class="fastoche-footer__brand fastoche-enlarge-link">
+      <p class="gv-logo"
+         title="{{ settings.wagtail_fastoche.WagtailFastocheConfig.footer_brand|default:'république française' }}">
+        {{ settings.wagtail_fastoche.WagtailFastocheConfig.footer_brand_html| default_if_none:'république<br />française' | safe }}
+      </p>
+      <a class="fastoche-footer__brand-link"
+         href="/"
+         title="{{ back_to_home_label }} - {{ settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_alt }} - {{ settings.wagtail_fastoche.WagtailFastocheConfig.footer_brand|default:'république française' }}">
+        <img class="fastoche-footer__logo"
+             src="{{ logo_img.url }}"
+             alt="{{ settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_alt }}"
+             {% if settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_width|unlocalize }}rem;"{% endif %} />
+        {# L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image #}
+      </a>
+    </div>
+  {% else %}
+    <div class="fastoche-footer__brand fastoche-enlarge-link">
+      <a id="footer-operator"
+         href="/"
+         title="{{ back_to_home_label }} - {{ settings.wagtail_fastoche.WagtailFastocheConfig.site_title }} - {{ settings.wagtail_fastoche.WagtailFastocheConfig.footer_brand|default:'république française' }}">
+        {% block brand %}
+          <p class="gv-logo">
+            {{ settings.wagtail_fastoche.WagtailFastocheConfig.footer_brand_html| default_if_none:'république<br />française' | safe }}
+          </p>
+        {% endblock brand %}
+      </a>
+    </div>
+  {% endif %}
+{% endblock footer_brand %}
+
+{% block footer_content %}
+  {{ settings.wagtail_fastoche.WagtailFastocheConfig.footer_description_wagtail | safe }}
+{% endblock footer_content %}
+
+{% block footer_links %}
+  {% flat_menu handle="footer" template="menus/custom_flat_menu_footer.html" %}
+  {% if settings.wagtail_fastoche.WagtailFastocheConfig.theme_modale_button %}
+    <li class="fastoche-footer__bottom-item">
+      <button id="footer__bottom-link__parametres-affichage"
+              aria-controls="fastoche-theme-modal"
+              data-fastoche-opened="false"
+              class="fastoche-icon-theme-fill fastoche-link--icon-left fastoche-footer__bottom-link"
+              data-fastoche-js-modal-button="true">{% translate "Display settings" %}</button>
+    </li>
+  {% endif %}
+{% endblock footer_links %}

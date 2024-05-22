@@ -1,34 +1,34 @@
 {% extends "base.html" %}
-{% load widget_tweaks i18n static cfran_tags %}
+{% load widget_tweaks i18n static fastoche_tags %}
 {% block content %}
-    <div class="cfran-container cfran-container--fluid cfran-my-md-14v">
-        <div class="cfran-grid-row cfran-grid-row-gutters cfran-grid-row--center">
-            <div class="cfran-col-12 cfran-col-md-8 cfran-col-lg-6">
-                <div class="cfran-container cfran-background-alt--grey cfran-px-md-0 cfran-py-10v cfran-py-md-14v">
-                    <div class="cfran-grid-row cfran-grid-row-gutters cfran-grid-row--center">
-                        <div class="cfran-col-12 cfran-col-md-9 cfran-col-lg-8">
+    <div class="fastoche-container fastoche-container--fluid fastoche-my-md-14v">
+        <div class="fastoche-grid-row fastoche-grid-row-gutters fastoche-grid-row--center">
+            <div class="fastoche-col-12 fastoche-col-md-8 fastoche-col-lg-6">
+                <div class="fastoche-container fastoche-background-alt--grey fastoche-px-md-0 fastoche-py-10v fastoche-py-md-14v">
+                    <div class="fastoche-grid-row fastoche-grid-row-gutters fastoche-grid-row--center">
+                        <div class="fastoche-col-12 fastoche-col-md-9 fastoche-col-lg-8">
                             <h1>Connexion</h1>
                             <div>
                                 <form id="login-form" action="{% url 'wagtailadmin_login' %}" method="post">
-                                    <fieldset class="cfran-fieldset"
+                                    <fieldset class="fastoche-fieldset"
                                               id="login-form-fieldset"
                                               aria-labelledby="login-form-fieldset-legend login-form-fieldset-messages">
-                                        <legend class="cfran-fieldset__legend" id="login-form-fieldset-legend">
+                                        <legend class="fastoche-fieldset__legend" id="login-form-fieldset-legend">
                                             <h2>Se connecter avec son compte</h2>
                                         </legend>
-                                        <div class="cfran-fieldset__element">
-                                            <p class="cfran-text--sm">Sauf mention contraire, tous les champs sont obligatoires.</p>
-                                            <div class="cfran-messages-group"
+                                        <div class="fastoche-fieldset__element">
+                                            <p class="fastoche-text--sm">Sauf mention contraire, tous les champs sont obligatoires.</p>
+                                            <div class="fastoche-messages-group"
                                                  id="login-form-fieldset-messages"
                                                  aria-live="assertive">
                                                 {% if form.errors %}
-                                                    <div class="cfran-alert cfran-alert--error cfran-alert--sm">
+                                                    <div class="fastoche-alert fastoche-alert--error fastoche-alert--sm">
                                                         <p>Erreur : Votre identifiant et mot de passe ne correspondent pas, merci de réessayer.</p>
                                                     </div>
                                                 {% endif %}
                                                 {% if next %}
                                                     {% if user.is_authenticated %}
-                                                        <div class="cfran-alert cfran-alert--error cfran-alert--sm">
+                                                        <div class="fastoche-alert fastoche-alert--error fastoche-alert--sm">
                                                             <p>
                                                                 Erreur : Votre compte n’a pas accès à cette page. Pour continuer, merci de vous connecter
                                                                 avec un compte autorisé.
@@ -36,49 +36,49 @@
                                                         </div>
                                                     {% endif %}
                                                 {% endif %}
-                                                {% cfran_django_messages %}
+                                                {% fastoche_django_messages %}
                                             </div>
                                         </div>
-                                        <div class="cfran-fieldset__element">
+                                        <div class="fastoche-fieldset__element">
                                             {% csrf_token %}
                                             {% url 'wagtailadmin_home' as home_url %}
                                             <input type="hidden" name="next" value="{{ next|default:home_url }}" />
-                                            <div class="cfran-input-group">
-                                                <label class="cfran-label" for="id_username">Identifiant&nbsp;:</label>
-                                                {{ form.username |add_class:"cfran-input" }}
+                                            <div class="fastoche-input-group">
+                                                <label class="fastoche-label" for="id_username">Identifiant&nbsp;:</label>
+                                                {{ form.username |add_class:"fastoche-input" }}
                                             </div>
                                         </div>
-                                        <div class="cfran-fieldset__element">
-                                            <div class="cfran-password">
-                                                <label class="cfran-label" for="id_password">Mot de passe&nbsp;:</label>
-                                                {{ form.password |add_class:"cfran-password__input cfran-input" }}
-                                                <div class="cfran-password__checkbox cfran-checkbox-group cfran-checkbox-group--sm">
+                                        <div class="fastoche-fieldset__element">
+                                            <div class="fastoche-password">
+                                                <label class="fastoche-label" for="id_password">Mot de passe&nbsp;:</label>
+                                                {{ form.password |add_class:"fastoche-password__input fastoche-input" }}
+                                                <div class="fastoche-password__checkbox fastoche-checkbox-group fastoche-checkbox-group--sm">
                                                     <input aria-label="Afficher le mot de passe"
                                                            id="id_password-show"
                                                            type="checkbox"
                                                            aria-describedby="id_password-show-messages">
-                                                    <label class="cfran-password__checkbox cfran-label" for="id_password-show">Afficher</label>
-                                                    <div class="cfran-messages-group"
+                                                    <label class="fastoche-password__checkbox fastoche-label" for="id_password-show">Afficher</label>
+                                                    <div class="fastoche-messages-group"
                                                          id="id_password-show-messages"
                                                          aria-live="assertive"></div>
                                                 </div>
                                                 {% if show_password_reset %}
-                                                    <a class="cfran-link" href="{% url 'wagtailadmin_password_reset' %}">Mot de passe oublié ?</a>
+                                                    <a class="fastoche-link" href="{% url 'wagtailadmin_password_reset' %}">Mot de passe oublié ?</a>
                                                 {% endif %}
                                             </div>
                                         </div>
-                                        <div class="cfran-fieldset__element">
-                                            <div class="cfran-checkbox-group cfran-checkbox-group--sm">
-                                                <div class="cfran-checkbox-group}">
+                                        <div class="fastoche-fieldset__element">
+                                            <div class="fastoche-checkbox-group fastoche-checkbox-group--sm">
+                                                <div class="fastoche-checkbox-group}">
                                                     {{ form.remember }}
-                                                    <label for="{{ form.remember.id_for_label }}" class="cfran-label">Se souvenir de moi</label>
+                                                    <label for="{{ form.remember.id_for_label }}" class="fastoche-label">Se souvenir de moi</label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="cfran-fieldset__element">
-                                            <ul class="cfran-btns-group">
+                                        <div class="fastoche-fieldset__element">
+                                            <ul class="fastoche-btns-group">
                                                 <li>
-                                                    <input class="cfran-btn" type="submit" value="Se connecter" />
+                                                    <input class="fastoche-btn" type="submit" value="Se connecter" />
                                                 </li>
                                             </ul>
                                         </div>
@@ -94,5 +94,5 @@
 {% endblock content %}
 {% block extra_css %}
     <link rel="stylesheet"
-          href="{% static 'django_cfran/dist/utility/utility.min.css' %}">
+          href="{% static 'django_fastoche/dist/utility/utility.min.css' %}">
 {% endblock extra_css %}

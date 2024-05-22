@@ -1,0 +1,8 @@
+{% load fastoche_tags %}
+<div class="fastoche-container fastoche-py-3w">
+    <div class="fastoche-grid-row fastoche-grid-row--gutters">
+        <div class="fastoche-col-12 fastoche-col-offset-md-2 fastoche-col-md-8">
+            {% fastoche_alert title=block.value.title type=block.value.level content=block.value.description heading_tag=block.value.heading_tag %}
+        </div>
+    </div>
+</div>

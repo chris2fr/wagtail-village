@@ -47,25 +47,25 @@ subgraph numerique-gouv
 %%  publié sur pypi.org sous licence Libre.</small>"]
 end
 
-subgraph cfran.org 
-    wagtail-cfran["<big><b>Wagtail Cfran</big></b>
+subgraph fastoche.org 
+    wagtail-fastoche["<big><b>Wagtail Fastoche</big></b>
                    <hr/><small>Application Libre du système 
                                de gestion de contenu Wagtail
-                               qui intègre Django Cfran</small>"]
+                               qui intègre Django Fastoche</small>"]
     %%  dans le serveur Libre 
     %%  de gestionnaire de contenu Wagtail 
     %%  publié par github.com en Libre."]
 
-    django-cfran["<big><b>Django Cfran</big></b>
+    django-fastoche["<big><b>Django Fastoche</big></b>
     <hr/><small>Module Libre du serveur 
                 d'applications Django 
-                qui intègre Génération Cfran</small>"]
+                qui intègre Génération Fastoche</small>"]
     %%  	dans le serveur Libre 
     %%	d'applications Django
     %%	publié par Pypi.org
     %%	et par github.com en Libre</small>"]
 
-    design-system-cfran["<big><b>DS Cfran</big></b>
+    design-system-fastoche["<big><b>DS Fastoche</big></b>
     <hr/><small>Génération de composants 
                 HTML, CSS et Javascript
                 par le système de design
@@ -84,17 +84,17 @@ subgraph cfran.org
 
 %%  django-dsfr <-.- Django 
 %%  sites-faciles <-.- Wagtail 
-%%  django-cfran <-.- Django
-%%  wagtail-cfran <-.- Wagtail 
-%%  design-system-cfran  <-.- NodeJS 
+%%  django-fastoche <-.- Django
+%%  wagtail-fastoche <-.- Wagtail 
+%%  design-system-fastoche  <-.- NodeJS 
 %%  dsfr <-.- NodeJS 
 
 
-wagtail-cfran
+wagtail-fastoche
 -->
-django-cfran
+django-fastoche
 -->
-design-system-cfran
+design-system-fastoche
 
 
 
@@ -106,7 +106,7 @@ dsfr
 
 master-design
 -.-
-design-system-cfran
+design-system-fastoche
 
 
 master-django{{"<i>Sites et composants 
@@ -117,7 +117,7 @@ django-dsfr
 
 master-django
 -.-
-django-cfran
+django-fastoche
 
 
 
@@ -129,7 +129,7 @@ sites-faciles
 
 master-wagtail
 -.-
-wagtail-cfran
+wagtail-fastoche
 
 
 
@@ -151,9 +151,9 @@ classDef dashedOutline stroke-dasharray:4 5
 
 %%  Django --> Wagtail
 
-click wagtail-cfran href "https://github.com/chris2fr/wagtail-cfran"
-click django-cfran href "https://github.com/chris2fr/django-cfran"
-click design-system-cfran href "https://github.com/chris2fr/design-system-cfran"
+click wagtail-fastoche href "https://github.com/chris2fr/wagtail-fastoche"
+click django-fastoche href "https://github.com/chris2fr/django-fastoche"
+click design-system-fastoche href "https://github.com/chris2fr/design-system-fastoche"
 click sites-faciles href "https://github.com/numerique-gouv/sites-faciles"
 click django-dsfr href "https://github.com/numerique-gouv/django-dsfr"
 click dsfr href "https://github.com/GouvernementFR/dsfr/"
