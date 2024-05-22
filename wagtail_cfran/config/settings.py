@@ -75,8 +75,10 @@ INSTALLED_APPS = [
 ]
 
 # Only add these on a dev machine
-if DEBUG and "localhost" in HOST_URL:
+# if DEBUG and "localhost" in HOST_URL:
+if DEBUG:
     INSTALLED_APPS += [
+        "debug_toolbar",
         "django_extensions",
         "wagtail.contrib.styleguide",
     ]
@@ -92,6 +94,12 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
+
+# if DEBUG and "localhost" in HOST_URL:
+if DEBUG:
+    MIDDLEWARE += [
+        "debug_toolbar.middleware.DebugToolbarMiddleware",
+    ]
 
 ROOT_URLCONF = "wagtail_cfran.config.urls"
 
@@ -290,3 +298,10 @@ for host in ALLOWED_HOSTS:
     CSRF_TRUSTED_ORIGINS.append("https://" + host)
 
 SF_ALLOW_RAW_HTML_BLOCKS = os.getenv("SF_ALLOW_RAW_HTML_BLOCKS", "False").lower() == "true"
+
+# if DEBUG and "localhost" in HOST_URL:
+if DEBUG:
+    INTERNAL_IPS = [
+        "127.0.0.1",
+        "0.0.0.0",
+    ]

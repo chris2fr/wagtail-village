@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "wagtail_cfran/base.html" %}
 
 {% load static cfran_tags wagtailcore_tags wagtailimages_tags i18n %}
 
@@ -9,6 +9,11 @@
 {% block description %}
     {% if page.search_description %}<meta name="description" content="{{ page.search_description }}" />{% endif %}
 {% endblock description %}
+
+
+{% block header %}
+{% include "wagtail_cfran/blocks/header.html" %}
+{% endblock header %}
 
 {% block social_media %}
     <meta property="og:site_name" content="{{ request.get_host }}" />
