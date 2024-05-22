@@ -12,7 +12,7 @@ import wagtail_fastoche.blocks
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("wagtail_fastoche", "0025_alter_contentpage_body"),
+        ("wagtail_fastoche", "0024_alter_socialmediaitem_options"),
     ]
 
     operations = [

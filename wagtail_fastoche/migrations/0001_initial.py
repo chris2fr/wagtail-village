@@ -9,8 +9,10 @@ from django.db import connection, migrations, models
 
 
 class Migration(migrations.Migration):
+    initial = True
+
     dependencies = [
-        ("wagtail_fastoche", "0001_rename_app"),
+        ("wagtailcore", "0078_referenceindex"),
     ]
 
     operations = [
