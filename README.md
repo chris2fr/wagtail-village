@@ -66,6 +66,7 @@ Django --> Wagtail
 Voici des notes aléatoires:
 
 ```sql
+CREATE USER wagtailfastoche  with ENCRYPTED PASSWORD '';
 CREATE DATABASE "wagtailfastoche" WITH OWNER "wagtailfastoche" ENCODING 'UTF8';
 ALTER database wagtailfastoche owner to wagtailfastoche;
 GRANT ALL privileges ON DATABASE wagtailfastoche TO wagtailfastoche;

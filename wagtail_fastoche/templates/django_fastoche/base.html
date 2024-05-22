@@ -1,0 +1,73 @@
+{% load static fastoche_tags i18n %}
+<!DOCTYPE html>
+<html lang="{% block langcode %}fr{% endblock langcode %}"
+      data-fastoche-scheme="system"
+      {% if SITE_CONFIG.mourning %}data-fastoche-mourning{% endif %}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    {% fastoche_css %}
+    {% fastoche_favicon %}
+
+    {% block extra_css %}
+    {% endblock extra_css %}
+
+    {% block title %}
+      <title>
+        {% if title %}
+          {{ title }} — {{ SITE_CONFIG.site_title }}
+        {% else %}
+          {{ SITE_CONFIG.site_title }}
+        {% endif %}
+      </title>
+    {% endblock title %}
+    <meta name="format-detection"
+          content="telephone=no,date=no,address=no,email=no,url=no">
+
+    {% block opengraph %}
+    {% endblock opengraph %}
+  </head>
+  <body>
+    {% block skiplinks %}
+      {% fastoche_skiplinks skiplinks %}
+    {% endblock skiplinks %}
+
+    {% block header %}
+    {% include "django_fastoche/blocks/header.html" %}
+    {% endblock header %}
+
+    {% fastoche_theme_modale %}
+
+    {% if SITE_CONFIG.notice %}
+      {% fastoche_notice title=SITE_CONFIG.notice %}
+    {% endif %}
+
+    <div class="fastoche-container fastoche-mt-4w fastoche-mb-6w">
+      {% block breadcrumb %}
+        {% fastoche_breadcrumb %}
+      {% endblock breadcrumb %}
+      <main id="content" role="main">
+        {% block content %}
+        {% endblock content %}
+      </main>
+    </div>
+
+    {% block follow_newsletter_social_media %}
+    {% endblock follow_newsletter_social_media %}
+
+    {% block footer %}
+      {% include "django_fastoche/footer.html" %}
+    {% endblock footer %}
+
+    {% fastoche_js nonce=request.csp_nonce %}
+
+    {% block extra_js %}
+    <script src="{% static 'js/common.js' %}">
+    </script>
+    {% endblock extra_js %}
+    {# djlint:off #}
+    {% block lang %}{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}{% endblock lang %}
+    {# djlint:on #}
+  </body>
+</html>
