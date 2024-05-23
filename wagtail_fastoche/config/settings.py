@@ -42,8 +42,8 @@ HOST_URL = os.getenv("HOST_URL", "localhost")
 # Application definition
 
 INSTALLED_APPS = [
-    "storages",
     "dashboard",
+    "storages",
     "wagtail.contrib.redirects",
     "wagtail.contrib.settings",
     "wagtail.embeds",
