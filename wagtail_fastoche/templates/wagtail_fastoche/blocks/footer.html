@@ -13,12 +13,12 @@
       <a class="fastoche-footer__brand-link"
          href="/"
          title="{{ back_to_home_label }} - {{ settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_alt }} - {{ settings.wagtail_fastoche.WagtailFastocheConfig.footer_brand|default:'république française' }}">
-        <img class="fastoche-footer__logo"
-             src="{{ logo_img.url }}"
-             alt="{{ settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_alt }}"
-             {% if settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_width|unlocalize }}rem;"{% endif %} />
-        {# L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image #}
-      </a>
+         <img class="fastoche-footer__logo"
+         src="{{ SITE_CONFIG.operator_logo_file.url }}"
+         alt="{{ SITE_CONFIG.operator_logo_alt }}"
+         {% if SITE_CONFIG.operator_logo_width >= 1 %}style="max-width:{{ SITE_CONFIG.operator_logo_width|unlocalize }}rem;"{% endif %} />
+    {# L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image #}
+  </a>
     </div>
   {% else %}
     <div class="fastoche-footer__brand fastoche-enlarge-link">
