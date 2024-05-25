@@ -46,7 +46,7 @@
 {% endblock operator_logo %}
 
 {% block header_tools %}
-  {% flat_menu handle="header_tools" template="menus/custom_flat_menu.html" %}
+  {% flat_menu handle="header_tools" template="custom_flat_menu.html" %}
 {% endblock header_tools %}
 
 {% block header_search %}
@@ -94,7 +94,7 @@ aria-labelledby="fastoche-btn-menu-mobile">
 class="fastoche-nav"
 id="fastoche-navigation"
 aria-label="{{ main_menu_label }}">
-{% main_menu max_levels=2 template="menus/custom_main_menu.html" sub_menu_template="menus/custom_sub_menu.html" %}
+{% main_menu max_levels=2 template="custom_main_menu.html" sub_menu_template="custom_sub_menu.html" %}
 </nav>
 </div>
 </div>

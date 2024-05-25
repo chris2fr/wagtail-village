@@ -3,23 +3,22 @@
 {% load i18n static wagtailcore_tags wagtailimages_tags menu_tags static %}
 
 {% block header_tools %}
-  {% flat_menu handle="header_tools" template="menus/custom_flat_menu.html" %}
+  {% flat_menu handle="header_tools" template="custom_flat_menu.html" %}
 {% endblock header_tools %}
-
+<div class="fastoche-header__menu fastoche-modal"
+id="fastoche-menu-mobile"
+aria-labelledby="fastoche-btn-menu-mobile">
+<div class="fastoche-container">
+{% translate "Close" as close_label %}
+<button type="button"
+       class="fastoche-btn--close fastoche-btn"
+       aria-controls="fastoche-menu-mobile">{{ close_label }}</button>
+<div class="fastoche-header__menu-links"></div>
+{% translate "Main menu" as main_menu_label %}
 {% block main_menu %}
-  <div class="fastoche-header__menu fastoche-modal"
-       id="fastoche-menu-mobile"
-       aria-labelledby="fastoche-btn-menu-mobile">
-    <div class="fastoche-container">
-      {% translate "Close" as close_label %}
-      <button type="button"
-              class="fastoche-btn--close fastoche-btn"
-              aria-controls="fastoche-menu-mobile">{{ close_label }}</button>
-      <div class="fastoche-header__menu-links"></div>
-      {% translate "Main menu" as main_menu_label %}
       <nav class="fastoche-nav" id="fastoche-navigation" aria-label="{{ main_menu_label }}">
-        {% main_menu max_levels=2 template="menus/custom_main_menu.html" sub_menu_template="menus/custom_sub_menu.html" %}
+        {% main_menu max_levels=2 template="custom_main_menu.html" sub_menu_template="custom_sub_menu.html" %}
       </nav>
-    </div>
-  </div>
 {% endblock main_menu %}
+</div>
+</div>

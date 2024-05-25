@@ -9,7 +9,7 @@
     {% elif item.has_children_in_menu %}
     <button class="fastoche-nav__btn" aria-expanded="false" {% if item.active_class %}aria-current="true" {% endif %}
       aria-controls="menu-{{ item.link_page.pk }}">{{ item.text }}</button>
-    {% sub_menu item template="menus/custom_sub_menu.html" %}
+    {% sub_menu item template="custom_sub_menu.html" %}
     {% else %}
     <a href="{{ item.href }}" class="fastoche-nav__link" {% if item.active_class %}aria-current="page" {% endif %}
       target="_self">{{ item.text }}</a>

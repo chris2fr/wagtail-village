@@ -519,13 +519,13 @@ Django = ">=3.2"
 
 [[package]]
 name = "django-fastoche"
-version = "0.1.2"
+version = "0.1.3"
 description = "Render Fabrique FASTOCHE into a generic Django app"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "django_fastoche-0.1.2-py3-none-any.whl", hash = "sha256:fd7eaba643d919c3cfe814a5e5aa4db1bdec6cce34c1ce6be2149990ec4457df"},
-    {file = "django_fastoche-0.1.2.tar.gz", hash = "sha256:a43441f0377802daf9f0a26e7160856402a3126275a6e363b9de1638993799c4"},
+    {file = "django_fastoche-0.1.3-py3-none-any.whl", hash = "sha256:31e7af76312fa752d2772fc5d61f86e3aa63652cf87858878826f2bffc7de955"},
+    {file = "django_fastoche-0.1.3.tar.gz", hash = "sha256:61aa65d05be8a746ea9bb155e7bc454f33667ecd34213ef95ac1cb2938e0b6ad"},
 ]
 
 [package.dependencies]
@@ -2212,4 +2212,4 @@ wand = ["Wand (>=0.6,<1.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "1a50b6791ed359945204d2b686288510c41f4ee5d6b88b4fadd308315ea6a194"
+content-hash = "e8c5aeae2f8a0d0b41f405d87b930b91dca73afcf686bec2cc8598533d66ca6c"
