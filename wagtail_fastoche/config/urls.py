@@ -27,7 +27,7 @@ urlpatterns += wagtail_fastoche_urls.urlpatterns
 
 urlpatterns += i18n_patterns(
     path("", include("wagtail_fastoche.blog.urls", namespace="blog")),
-    path(_("search/"), SearchResultsView.as_view(), name="cms_search"),
+    path(_("search/"), SearchResultsView.as_view(), name="page_search"),
     path("tags/<str:tag>/", TagView.as_view(), name="global_tag"),
     path("tags/", TagsListView.as_view(), name="global_tags_list"),
     prefix_default_language=False,

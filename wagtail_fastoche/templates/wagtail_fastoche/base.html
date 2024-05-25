@@ -2,18 +2,8 @@
 {% load  static fastoche_tags wagtailcore_tags wagtailimages_tags i18n wagtailuserbar wagtailsettings_tags sass_tags %}
 {% get_settings %}
 
-{% block langcode %}{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}{% endblock langcode %}
-
-{% block mourning %}{% if settings.wagtail_fastoche.WagtailFastocheConfig.mourning %}data-fastoche-mourning{% endif %}{% endblock mourning %}
-
-{% block title %}
-  <title>
-    {% if title %}{{ title }} —{% endif %}
-  {{ settings.wagtail_fastoche.WagtailFastocheConfig.site_title }}</title>
-{% endblock title %}
-
 {% block description %}
-    {% if page.search_description %}<meta name="description" content="{{ page.search_description }}" />{% endif %}
+    {% if search_description %}<meta name="description" content="{{ search_description }}" />{% endif %}
 {% endblock description %}
 
 {% block extra_css %}

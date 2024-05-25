@@ -235,6 +235,9 @@ class SitesFacilesBasePage(Page):
         context["full_title"] = settings.site_title
         if context["page"].title:
             context["full_title"] = context["page"].title + " - " + context["full_title"]
+        context["search_description"] = False
+        if hasattr(context["page"], "search_description") and context["page"].search_description:
+            context["search_description"] = context["page"].search_description
         return context
 
     class Meta:
