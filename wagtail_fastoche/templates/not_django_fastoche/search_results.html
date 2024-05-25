@@ -9,7 +9,7 @@
         {% else %}
             Aucun résultat
         {% endif %}
-    pour la recherche « {{ query }} » — {{ settings.wagtail_fastoche.WagtailFastocheConfig.site_title }}</title>
+    pour la recherche « {{ query }} » — {{ settings('wagtail_fastoche.WagtailFastocheConfig', use_default_site=True).site_title }}</title>
 {% endblock title %}
 
 {% if page.search_description %}
