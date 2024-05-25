@@ -1,16 +1,15 @@
 {% extends "django_fastoche/header.html" %}
 {% load i18n static wagtailcore_tags wagtailimages_tags menu_tags static %}
 
-{% block brand %}
+{% block not_brand %}
   {% translate "Home page" as home_page %}
   {% if not settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_file and not settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_alt %}
-
   <a href="/"
      title="{{ home_page }} — {{ settings.wagtail_fastoche.WagtailFastocheConfig.header_brand }}">
      <img src="{% static 'django_fastoche/dist/artwork/logo/logo.svg' %}" class="fastoche-logo" alt="logo" />
   </a>
   {% endif %}
-{% endblock brand %}
+{% endblock not_brand %}
 
 {% block service_title %}
   {% translate "Home page" as home_page %}

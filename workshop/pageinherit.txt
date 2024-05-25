@@ -1,0 +1,30 @@
+- wagtail_fastoche/blog/templates/blog/blog_entry_page.html
+  - base.html
+- wagtail_fastoche/blog/templates/blog/blog_index_page.html
+  - base.html
+- wagtail_fastoche/blog/templates/blog/tags_list_page.html
+  - base.html
+- wagtail_fastoche/blog/templates/blog/categories_list_page.html
+  - base.html
+- wagtail_fastoche/templates/404.html
+  - base.html
+- wagtail_fastoche/templates/base.html
+  - django_fastoche/base.html
+- wagtail_fastoche/templates/wagtail_fastoche/base.html
+  - django_fastoche/base.html
+- wagtail_fastoche/templates/wagtail_fastoche/blocks/follow.html
+  - django_fastoche/follow.html
+- wagtail_fastoche/templates/wagtail_fastoche/blocks/footer.html
+  - django_fastoche/footer.html
+- wagtail_fastoche/templates/wagtail_fastoche/blocks/header.html
+  - django_fastoche/header.html
+- wagtail_fastoche/templates/wagtail_fastoche/content_page.html
+  - wagtail_fastoche/base.html
+- wagtail_fastoche/templates/django_fastoche/tag_page.html
+  - base.html
+- wagtail_fastoche/templates/django_fastoche/search_results.html
+  - base.html
+- wagtail_fastoche/templates/django_fastoche/tags_list_page.html
+  - base.html
+- wagtail_fastoche/templates/500.html
+  - base.html

@@ -7,6 +7,9 @@ from unidecode import unidecode
 from wagtail_fastoche.models import ContentPage, Tag
 
 
+# from django_fastoche import views
+
+
 class SearchResultsView(ListView):
     model = ContentPage
     template_name = "wagtail_fastoche/search_results.html"

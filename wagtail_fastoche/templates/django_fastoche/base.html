@@ -1,12 +1,18 @@
-{% load static fastoche_tags i18n %}
+{% extends "base.html" %}
+{% load static fastoche_tags i18n  %}
 <!DOCTYPE html>
-<html lang="{% block langcode %}fr{% endblock langcode %}"
+
+<html lang="{{ langcode }}"
       data-fastoche-scheme="system"
-      {% if SITE_CONFIG.mourning %}data-fastoche-mourning{% endif %}>
+      {{ data_fastoche_mourning }}>
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="format-detection"
+          content="telephone=no,date=no,address=no,email=no,url=no">
+
     {% fastoche_css %}
     {% fastoche_favicon %}
 
@@ -22,11 +28,16 @@
         {% endif %}
       </title>
     {% endblock title %}
-    <meta name="format-detection"
-          content="telephone=no,date=no,address=no,email=no,url=no">
+
+    {% block description %}
+    {% endblock description %}
 
     {% block opengraph %}
     {% endblock opengraph %}
+
+    {% block tracking %}
+    {% endblock tracking %}
+
   </head>
   <body>
     {% block skiplinks %}
@@ -63,9 +74,11 @@
     {% fastoche_js nonce=request.csp_nonce %}
 
     {% block extra_js %}
+    {% endblock extra_js %}
+
     <script src="{% static 'js/common.js' %}">
     </script>
-    {% endblock extra_js %}
+
     {# djlint:off #}
     {% block lang %}{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}{% endblock lang %}
     {# djlint:on #}

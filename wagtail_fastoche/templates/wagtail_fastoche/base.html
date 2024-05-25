@@ -1,73 +1,94 @@
 {% extends "django_fastoche/base.html" %}
-{% load i18n static fastoche_tags wagtailuserbar wagtailsettings_tags sass_tags %}
+{% load  static fastoche_tags wagtailcore_tags wagtailimages_tags i18n wagtailuserbar wagtailsettings_tags sass_tags %}
 {% get_settings %}
-<!DOCTYPE html>
-<html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
-      data-fastoche-scheme="system"
-      {% if settings.wagtail_fastoche.WagtailFastocheConfig.mourning %}data-fastoche-mourning{% endif %}>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    {% block title %}
-      <title>
-        {% if title %}{{ title }} —{% endif %}
-      {{ settings.wagtail_fastoche.WagtailFastocheConfig.site_title }}</title>
-    {% endblock title %}
+{% block langcode %}{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}{% endblock langcode %}
 
-          {% block extra_css %}
-          <link href="{% sass_src 'css/style.sass' %}"
-          rel="stylesheet"
-          type="text/css" />
-          {% endblock extra_css %}
+{% block mourning %}{% if settings.wagtail_fastoche.WagtailFastocheConfig.mourning %}data-fastoche-mourning{% endif %}{% endblock mourning %}
 
+{% block title %}
+  <title>
+    {% if title %}{{ title }} —{% endif %}
+  {{ settings.wagtail_fastoche.WagtailFastocheConfig.site_title }}</title>
+{% endblock title %}
 
-    {% block tracking %}
-      {% if settings.wagtail_fastoche.AnalyticsSettings.head_scripts %}
-        {{ settings.wagtail_fastoche.AnalyticsSettings.head_scripts|safe }}
-      {% endif %}
-    {% endblock tracking %}
+{% block description %}
+    {% if page.search_description %}<meta name="description" content="{{ page.search_description }}" />{% endif %}
+{% endblock description %}
 
+{% block extra_css %}
+<link href="{% sass_src 'css/style.sass' %}"
+rel="stylesheet"
+type="text/css" />
+{% endblock extra_css %}
 
-  </head>
+{% block opengraph %}
+    <meta property="og:site_name" content="{{ request.get_host }}" />
+    <meta property="og:title"
+          content="{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ page.full_url }}" />
+    <meta property="og:description" content="{{ page.search_description }}" />
+    <meta property="og:locale" content="{{ LANGUAGE_CODE }}" />
 
-  <body>
-
-    {% block not_header %}
-    {% include "wagtail_fastoche/blocks/header.html" %}
-    
-    {% endblock not_header %}
-
-    {% block header_after %}
-    {% wagtailuserbar %}
-    {% if settings.wagtail_fastoche.WagtailFastocheConfig.notice %}
-      {% fastoche_notice title=settings.wagtail_fastoche.WagtailFastocheConfig.notice %}
+    {% if page.get_translations.live %}
+        {% for translation in page.get_translations.live %}
+            <meta property="og:locale:alternate"
+                  content="{{ translation.locale.language_code }}" />
+        {% endfor %}
     {% endif %}
-    {% endblock header_after %}
+{% endblock opengraph %}
 
+{% block social_media %}
+    <meta name="twitter:title"
+          content="{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}" />
+    <meta name="twitter:description" content="{{ page.search_description }}" />
 
+    {% if page.header_image %}
+        <meta name="twitter:card" content="summary_large_image" />
+        {% image page.header_image fill-1200x627 as header_image %}
+        <meta property="og:image" content="{{ header_image.full_url }}" />
+        <meta name="twitter:image" content="{{ header_image.full_url }}" />
+    {% else %}
+        <meta name="twitter:card" content="summary" />
+    {% endif %}
+{% endblock social_media %}
 
+{% block tracking %}
+  {% if settings.wagtail_fastoche.AnalyticsSettings.head_scripts %}
+    {{ settings.wagtail_fastoche.AnalyticsSettings.head_scripts|safe }}
+  {% endif %}
+{% endblock tracking %}
 
-    {% block follow_newsletter_social_media %}
-      {% if settings.wagtail_fastoche.WagtailFastocheConfig.show_newsletter_and_social_block %}
-        {% include "wagtail_fastoche/blocks/follow.html" %}
-      {% endif %}
-    {% endblock follow_newsletter_social_media %}
+{% block header %}
+  {% include "wagtail_fastoche/header.html" %}
+  {% wagtailuserbar %}
+  {% if settings.wagtail_fastoche.WagtailFastocheConfig.notice %}
+    {% fastoche_notice title=settings.wagtail_fastoche.WagtailFastocheConfig.notice %}
+  {% endif %}
+{% endblock header %}
 
+{% block follow_newsletter_social_media %}
+  {% if settings.wagtail_fastoche.WagtailFastocheConfig.show_newsletter_and_social_block %}
+    {% include "wagtail_fastoche/follow.html" %}
+  {% endif %}
+{% endblock follow_newsletter_social_media %}
 
-    {% block footer %}
-      {% include "wagtail_fastoche/blocks/footer.html" %}
-    {% endblock footer %}
+{% block footer %}
+  {% include "wagtail_fastoche/footer.html" %}
+{% endblock footer %}
 
-    {% block extra_js %}
-    {% endblock extra_js %}
+{% block extra_js %}
+  <script src="{% static 'js/common.js' %}">
+  </script>
+{% endblock extra_js %}
 
-    {% block body_tracking_scripts %}
-      {% if settings.wagtail_fastoche.AnalyticsSettings.body_scripts %}
-        {{ settings.wagtail_fastoche.AnalyticsSettings.body_scripts|safe }}
-      {% endif %}
-    {% endblock body_tracking_scripts %}
-  </body>
+{% block body_tracking_scripts %}
+  {% if settings.wagtail_fastoche.AnalyticsSettings.body_scripts %}
+    {{ settings.wagtail_fastoche.AnalyticsSettings.body_scripts|safe }}
+  {% endif %}
+{% endblock body_tracking_scripts %}
 
-</html>
+{# djlint:off #}
+{% block lang %}{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}{% endblock lang %}
+{# djlint:on #}
