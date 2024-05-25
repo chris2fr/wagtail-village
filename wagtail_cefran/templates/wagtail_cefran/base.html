@@ -1,0 +1,85 @@
+{% extends "django_cefran/base.html" %}
+{% load  static cefran_tags wagtailcore_tags wagtailimages_tags i18n wagtailuserbar wagtailsettings_tags sass_tags %}
+
+{% get_settings %}
+
+{% block description %}
+    {% if search_description %}<meta name="description" content="{{ search_description }}" />{% endif %}
+{% endblock description %}
+
+{% block extra_css %}
+{% comment %}
+<link href="{% static 'css/style.css' %}"
+rel="stylesheet"
+type="text/css" />
+{% endcomment %}
+{% endblock extra_css %}
+
+{% block opengraph %}
+    <meta property="og:site_name" content="{{ request.get_host }}" />
+    <meta property="og:title"
+          content="{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ page.full_url }}" />
+    <meta property="og:description" content="{{ page.search_description }}" />
+    <meta property="og:locale" content="{{ LANGUAGE_CODE }}" />
+
+    {% if page.get_translations.live %}
+        {% for translation in page.get_translations.live %}
+            <meta property="og:locale:alternate"
+                  content="{{ translation.locale.language_code }}" />
+        {% endfor %}
+    {% endif %}
+{% endblock opengraph %}
+
+{% block social_media %}
+    <meta name="twitter:title"
+          content="{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}" />
+    <meta name="twitter:description" content="{{ page.search_description }}" />
+
+    {% if page.header_image %}
+        <meta name="twitter:card" content="summary_large_image" />
+        {% image page.header_image fill-1200x627 as header_image %}
+        <meta property="og:image" content="{{ header_image.full_url }}" />
+        <meta name="twitter:image" content="{{ header_image.full_url }}" />
+    {% else %}
+        <meta name="twitter:card" content="summary" />
+    {% endif %}
+{% endblock social_media %}
+
+{% block tracking %}
+  {% if settings.wagtail_cefran.AnalyticsSettings.head_scripts %}
+    {{ settings.wagtail_cefran.AnalyticsSettings.head_scripts|safe }}
+  {% endif %}
+{% endblock tracking %}
+
+{% block header %}
+  {% include "wagtail_cefran/header.html" %}
+  {% wagtailuserbar %}
+  {% if settings.wagtail_cefran.WagtailCefranConfig.notice %}
+    {% cefran_notice title=settings.wagtail_cefran.WagtailCefranConfig.notice %}
+  {% endif %}
+{% endblock header %}
+
+{% block follow_newsletter_social_media %}
+  {% if settings.wagtail_cefran.WagtailCefranConfig.show_newsletter_and_social_block %}
+    {% include "wagtail_cefran/follow.html" %}
+  {% endif %}
+{% endblock follow_newsletter_social_media %}
+
+{% block footer %}
+  {% include "wagtail_cefran/footer.html" %}
+{% endblock footer %}
+
+{% block extra_js %}
+{% endblock extra_js %}
+
+{% block body_tracking_scripts %}
+  {% if settings.wagtail_cefran.AnalyticsSettings.body_scripts %}
+    {{ settings.wagtail_cefran.AnalyticsSettings.body_scripts|safe }}
+  {% endif %}
+{% endblock body_tracking_scripts %}
+
+{# djlint:off #}
+{% block lang %}{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}{% endblock lang %}
+{# djlint:on #}

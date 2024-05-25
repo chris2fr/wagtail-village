@@ -16,7 +16,7 @@ web-prompt:
 
 .PHONY: test-unit
 test-unit:
-	$(EXEC_CMD) poetry run python manage.py test --settings wagtail_fastoche.config.settings_test
+	$(EXEC_CMD) poetry run python manage.py test --settings wagtail_cefran.config.settings_test
 
 .PHONY: collectstatic
 collectstatic:

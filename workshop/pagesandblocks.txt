@@ -1,26 +1,26 @@
-- wagtail_fastoche/blog/templates/blog/blog_entry_page.html
+- wagtail_cefran/blog/templates/blog/blog_entry_page.html
   - description
   - content
   - social_media
   - title
-- wagtail_fastoche/blog/templates/blog/blog_index_page.html
+- wagtail_cefran/blog/templates/blog/blog_index_page.html
   - description
   - content
   - social_media
   - title
-- wagtail_fastoche/blog/templates/blog/categories_list_page.html
+- wagtail_cefran/blog/templates/blog/categories_list_page.html
   - description
   - content
   - title
-- wagtail_fastoche/blog/templates/blog/tags_list_page.html
+- wagtail_cefran/blog/templates/blog/tags_list_page.html
   - description
   - content
   - title
-- wagtail_fastoche/templates/404.html
+- wagtail_cefran/templates/404.html
   - content
-- wagtail_fastoche/templates/500.html
+- wagtail_cefran/templates/500.html
   - content
-- wagtail_fastoche/templates/base.html
+- wagtail_cefran/templates/base.html
   - body_tracking_scripts
   - extra_js
   - follow_newsletter_social_media
@@ -30,7 +30,7 @@
   - title
   - tracking
   - extra_css
-- wagtail_fastoche/templates/django_fastoche/base.html
+- wagtail_cefran/templates/django_cefran/base.html
   - extra_css
   - extra_js
   - follow_newsletter_social_media
@@ -43,21 +43,21 @@
   - breadcrumb
   - content
 <html lang="  - langcodefr{% endblock langcode"
-- wagtail_fastoche/templates/django_fastoche/search_results.html
+- wagtail_cefran/templates/django_cefran/search_results.html
   - description
   - content
   - title
-- wagtail_fastoche/templates/django_fastoche/tag_page.html
-  - content
-  - description
-  - social_media
-  - title
-- wagtail_fastoche/templates/django_fastoche/tags_list_page.html
+- wagtail_cefran/templates/django_cefran/tag_page.html
   - content
   - description
   - social_media
   - title
-- wagtail_fastoche/templates/wagtail_fastoche/base.html
+- wagtail_cefran/templates/django_cefran/tags_list_page.html
+  - content
+  - description
+  - social_media
+  - title
+- wagtail_cefran/templates/wagtail_cefran/base.html
   - body_tracking_scripts
   - extra_js
   - follow_newsletter_social_media
@@ -67,15 +67,15 @@
   - title
   - tracking
   - extra_css
-- wagtail_fastoche/templates/wagtail_fastoche/blocks/follow.html
+- wagtail_cefran/templates/wagtail_cefran/blocks/follow.html
   - follow_newsletter
   - follow_social
-- wagtail_fastoche/templates/wagtail_fastoche/blocks/footer.html
+- wagtail_cefran/templates/wagtail_cefran/blocks/footer.html
   - brand
   - footer_content
   - footer_links
   - not_footer_brand
-- wagtail_fastoche/templates/wagtail_fastoche/blocks/header.html
+- wagtail_cefran/templates/wagtail_cefran/blocks/header.html
   - header_search
   - header_tools
   - main_menu
@@ -83,7 +83,7 @@
   - operator_logo
   - service_tagline
   - service_title
-- wagtail_fastoche/templates/wagtail_fastoche/content_page.html
+- wagtail_cefran/templates/wagtail_cefran/content_page.html
   - content
   - description
   - header

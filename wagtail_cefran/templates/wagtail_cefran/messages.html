@@ -1,0 +1,25 @@
+{# Display Django message info from previous form #}
+{% if messages %}
+    <div class="cefran-container cefran-mt-6w">
+        <div class="cefran-grid-row cefran-grid-row--gutters">
+            <div class="cefran-col-12">
+                {% for message in messages %}
+                    {% if message.tags == "success" %}
+                        <div class="cefran-alert cefran-alert--success cefran-alert--sm cefran-mb-5w"
+                             role="status">
+                            <p>{{ message }}</p>
+                        </div>
+                    {% elif message.tags == "info" %}
+                        <div class="cefran-alert cefran-alert--info cefran-alert--sm cefran-mb-5w" role="status">
+                            <p>{{ message }}</p>
+                        </div>
+                    {% elif message.tags == "error" %}
+                        <div class="cefran-alert cefran-alert--error cefran-alert--sm cefran-mb-5w" role="alert">
+                            <p>{{ message }}</p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}

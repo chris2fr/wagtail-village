@@ -1,0 +1,25 @@
+{% load cefran_tags wagtailcore_tags %}
+<div class="cefran-container cefran-py-3w">
+    <div class="cefran-grid-row cefran-grid-row--gutters">
+        <div class="cefran-col-12 cefran-col-offset-md-2 cefran-col-md-8">
+            {% for subblock in block.value %}
+                {% if subblock.block_type == 'title' %}
+                    <div class="cefran-col-12">
+                        <h2>{{ subblock.value }}</h2>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <div class="cefran-accordions-group">
+                {% for subblock in block.value %}
+                    {% if subblock.block_type == 'accordion' %}
+                        {% with forloop.counter0|lower as str_counter %}
+                            {% with "accordion-"|add:accordions_id|add:"-"|add:str_counter as accordion_id %}  
+                                {% cefran_accordion id=accordion_id title=subblock.value.title content=subblock.value.content|richtext %}
+                            {% endwith %}
+                        {% endwith %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

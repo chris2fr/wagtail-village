@@ -1,0 +1,114 @@
+{% load static cefran_tags wagtailcore_tags wagtailimages_tags i18n wagtailuserbar wagtailsettings_tags sass_tags %}
+
+{% get_settings %}
+
+<!DOCTYPE html>
+
+<html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
+      data-cefran-scheme="system"
+      {% block mourning %}{% if settings.wagtail_cefran.WagtailCefranConfig.mourning %}data-cefran-mourning{% endif %}{% endblock mourning %}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="format-detection"
+          content="telephone=no,date=no,address=no,email=no,url=no">
+
+    {% block title %}
+      <title>
+      {% if title %}
+        {{ title }} — {{ SITE_CONFIG.site_title }}
+      {% else %}
+        {{ settings.wagtail_cefran.WagtailCefranConfig.site_title }}
+      {% endif %}
+      </title>
+    {% endblock title %}
+
+    {% cefran_css %}
+    
+    {% cefran_favicon %}
+
+    {% block extra_css %}
+    {% endblock extra_css %}
+
+    {% comment %}
+    <link href="{% sass_src 'css/style.sass' %}"
+    rel="stylesheet"
+    type="text/css" />
+    {% endcomment %}
+
+
+    {% block tracking %}
+      {% if settings.wagtail_cefran.AnalyticsSettings.head_scripts %}
+        {{ settings.wagtail_cefran.AnalyticsSettings.head_scripts|safe }}
+      {% endif %}
+    {% endblock tracking %}
+
+    {% block opengraph %}
+    {% endblock opengraph %}
+
+  </head>
+
+  <body>
+
+    {% block skiplinks %}
+      {% cefran_skiplinks skiplinks %}
+    {% endblock skiplinks %}
+
+    {% block header %}
+      {% include "wagtail_cefran/header.html" %}
+    {% endblock header %}
+
+    <div class="cefran-container cefran-mt-4w cefran-mb-6w">
+      {% block breadcrumb %}
+        {% cefran_breadcrumb %}
+      {% endblock breadcrumb %}
+      <main id="content" role="main">
+        {% block content %}
+        {% endblock content %}
+      </main>
+    </div>
+
+    {% cefran_theme_modale %}
+
+    {% if SITE_CONFIG.notice %}
+      {% cefran_notice title=SITE_CONFIG.notice %}
+    {% endif %}
+
+    {% block header_after %}
+      {% wagtailuserbar %}
+      {% if settings.wagtail_cefran.WagtailCefranConfig.notice %}
+        {% cefran_notice title=settings.wagtail_cefran.WagtailCefranConfig.notice %}
+      {% endif %}
+    {% endblock header_after %}
+
+    {% block follow_newsletter_social_media %}
+      {% if settings.wagtail_cefran.WagtailCefranConfig.show_newsletter_and_social_block %}
+        {% include "wagtail_cefran/follow.html" %}
+      {% endif %}
+    {% endblock follow_newsletter_social_media %}
+
+    {% block footer %}
+      {% include "wagtail_cefran/footer.html" %}
+    {% endblock footer %}
+
+    {% cefran_js nonce=request.csp_nonce %}
+
+    {% block extra_js %}
+    {% endblock extra_js %}
+
+
+
+    {% block body_tracking_scripts %}
+      {% if settings.wagtail_cefran.AnalyticsSettings.body_scripts %}
+        {{ settings.wagtail_cefran.AnalyticsSettings.body_scripts|safe }}
+      {% endif %}
+    {% endblock body_tracking_scripts %}
+
+    {# djlint:off #}
+    {% block lang %}{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}{% endblock lang %}
+    {# djlint:on #}
+
+  </body>
+
+</html>

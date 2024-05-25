@@ -1,4 +1,0 @@
-{% load i18n %}
-{# djlint:off #}
-<{% if value.link is not None and value.link.url %}a href="{{ value.link.url }}"{% else %}p{% endif %} class="fastoche-tag{% if value.is_small %} fastoche-tag--sm{% endif %}{% if value.color %} fastoche-tag--{{ value.color }}{% endif %}{% if value.icon_class %} {{ value.icon_class }} fastoche-tag--icon-left{% endif %}">{{ value.label }}</{% if value.link is not None and value.link.url %}a{% else %}p{% endif %}>
-{# djlint:on #}

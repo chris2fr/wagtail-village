@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="cefran-container">
+        <div class="cefran-my-7w cefran-mt-md-12w cefran-mb-md-10w cefran-grid-row cefran-grid-row--gutters cefran-grid-row--middle cefran-grid-row--center">
+            <div class="cefran-py-0 cefran-col-12 cefran-col-md-6">
+                <h1>Page non trouvée</h1>
+                <p class="cefran-text--sm cefran-mb-3w">Erreur 404</p>
+                <p class="cefran-text--lead cefran-mb-3w">
+                    La page que vous cherchez est introuvable. Veuillez nous excuser pour la gène occasionnée.
+                </p>
+                <p class="cefran-text--sm cefran-mb-5w">
+                    Si vous avez tapé l’adresse web dans le navigateur, vérifiez qu’elle est correcte. La page n’est peut-être plus disponible.
+                    <br />
+                    Dans ce cas, pour continuer votre visite, vous pouvez consulter notre page d’accueil.
+                </p>
+                <ul class="cefran-btns-group cefran-btns-group--inline-md">
+                    <li>
+                        <a class="cefran-btn" href="/">Page d’accueil</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cefran-col-12 cefran-col-md-3 cefran-col-offset-md-1 cefran-px-6w cefran-px-md-0 cefran-py-0">
+                <img src="{% static 'artwork/technical-error.svg' %}"
+                     class="cefran-responsive-img"
+                     alt=""
+                     width="300"
+                     height="300" />
+            </div>
+        </div>
+    </div>
+{% endblock content %}

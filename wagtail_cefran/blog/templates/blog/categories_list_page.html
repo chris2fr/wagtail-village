@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static cefran_tags wagtailcore_tags wagtailimages_tags i18n %}
+
+{% block title %}
+    <title>{{ page.seo_title|default:page.title }} — {{ settings('wagtail_cefran.WagtailCefranConfig', use_default_site=True).site_title }}</title>
+{% endblock title %}
+
+{% if page.search_description %}
+    {% block description %}
+        <meta name="description" content="{{ page.search_description }}" />
+    {% endblock description %}
+{% endif %}
+
+{% block content %}
+    {% include "wagtail_cefran/blocks/messages.html" %}
+
+    <div class="cefran-container cefran-my-6w">
+        {% cefran_breadcrumb breadcrumb %}
+        <h1>{% translate "Categories" %}</h1>
+        <ul>
+            {% for category in categories|dictsort:"cat_name" %}
+                <li>
+                    <a href="{% url 'blog:category' page.slug category.cat_slug %}"><strong>{{ category.cat_name }}</strong> ({{ category.cat_count }})</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock content %}

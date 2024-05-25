@@ -1,0 +1,31 @@
+{% load wagtailimages_tags wagtailcore_tags %}
+<div class="cefran-card{% if value.url or value.document %} cefran-enlarge-link{% endif %}">
+  <div class="cefran-card__body">
+    <div class="cefran-card__content">
+      <h3 class="cefran-card__title">
+        {% if value.url %}
+          <a href="{{ value.url }}">{{ value.title }}</a>
+        {% elif value.document %}
+          <a href="{{ value.document.url }}">{{ value.title }}</a>
+        {% else %}
+          {{ value.title }}
+        {% endif %}
+      </h3>
+      <p class="cefran-card__desc">{{ value.description|linebreaksbr }}</p>
+    </div>
+  </div>
+  <div class="cefran-card__header">
+    {% if value.image %}
+      <div class="cefran-card__img">{% image value.image original class="cefran-responsive-img" %}</div>
+    {% endif %}
+    {% if value.badge_text %}
+      <ul class="cefran-badges-group">
+        <li>
+          <p class="cefran-badge cefran-badge--{{ value.badge_level }}{% if value.badge_icon %} cefran-badge--no-icon{% endif %}">
+            {{ value.badge_text }}
+          </p>
+        </li>
+      </ul>
+    {% endif %}
+  </div>
+</div>

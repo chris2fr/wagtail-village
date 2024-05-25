@@ -1,27 +1,27 @@
-{% extends "django_fastoche/header.html" %}
+{% extends "django_cefran/header.html" %}
 {% load i18n static wagtailcore_tags wagtailimages_tags menu_tags l10n %}
 
 {% block brand %}
   {% translate "Home page" as home_page %}
   <a href="/"
-     title="{{ home_page }} — {{ settings.wagtail_fastoche.WagtailFastocheConfig.header_brand }}">
-    <p class="gv-logo">{{ settings.wagtail_fastoche.WagtailFastocheConfig.header_brand_html|safe }}</p>
+     title="{{ home_page }} — {{ settings.wagtail_cefran.WagtailCefranConfig.header_brand }}">
+    <p class="gv-logo">{{ settings.wagtail_cefran.WagtailCefranConfig.header_brand_html|safe }}</p>
   </a>
 {% endblock brand %}
 
 {% block service_title %}
   {% translate "Home page" as home_page %}
   <a href="/"
-     title="{{ home_page }} — {{ settings.wagtail_fastoche.WagtailFastocheConfig.site_title }}">
+     title="{{ home_page }} — {{ settings.wagtail_cefran.WagtailCefranConfig.site_title }}">
 
-    <p class="fastoche-header__service-title">
-      {% if settings.wagtail_fastoche.WagtailFastocheConfig.site_title|slice:"-2:" == "fr" %}
-        {{ settings.wagtail_fastoche.WagtailFastocheConfig.site_title|slice:":-2" }}<em>fr</em>
+    <p class="cefran-header__service-title">
+      {% if settings.wagtail_cefran.WagtailCefranConfig.site_title|slice:"-2:" == "fr" %}
+        {{ settings.wagtail_cefran.WagtailCefranConfig.site_title|slice:":-2" }}<em>fr</em>
       {% else %}
-        {{ settings.wagtail_fastoche.WagtailFastocheConfig.site_title }}
+        {{ settings.wagtail_cefran.WagtailCefranConfig.site_title }}
       {% endif %}
-      {% if settings.wagtail_fastoche.WagtailFastocheConfig.beta_tag %}
-        <span class="fastoche-badge fastoche-badge--sm fastoche-badge--green-emeraude">BETA</span>
+      {% if settings.wagtail_cefran.WagtailCefranConfig.beta_tag %}
+        <span class="cefran-badge cefran-badge--sm cefran-badge--green-emeraude">BETA</span>
       {% endif %}
 
     </p>
@@ -29,18 +29,18 @@
 {% endblock service_title %}
 
 {% block service_tagline %}
-  {{ settings.wagtail_fastoche.WagtailFastocheConfig.site_tagline }}
+  {{ settings.wagtail_cefran.WagtailCefranConfig.site_tagline }}
 {% endblock service_tagline %}
 
 {% block operator_logo %}
-  {% if settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_file and settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_alt %}
-    {% image settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_file original as logo_img %}
+  {% if settings.wagtail_cefran.WagtailCefranConfig.operator_logo_file and settings.wagtail_cefran.WagtailCefranConfig.operator_logo_alt %}
+    {% image settings.wagtail_cefran.WagtailCefranConfig.operator_logo_file original as logo_img %}
 
-    <div class="fastoche-header__operator">
-      <img class="fastoche-responsive-img"
+    <div class="cefran-header__operator">
+      <img class="cefran-responsive-img"
            src="{{ logo_img.url }}"
-           alt="{{ settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_alt }}"
-           {% if settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.wagtail_fastoche.WagtailFastocheConfig.operator_logo_width|unlocalize }}rem;"{% endif %} />
+           alt="{{ settings.wagtail_cefran.WagtailCefranConfig.operator_logo_alt }}"
+           {% if settings.wagtail_cefran.WagtailCefranConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.wagtail_cefran.WagtailCefranConfig.operator_logo_width|unlocalize }}rem;"{% endif %} />
     </div>
   {% endif %}
 {% endblock operator_logo %}
@@ -51,22 +51,22 @@
 
 {% block header_search %}
   {% translate "Search" as search_label %}
-  {% if settings.wagtail_fastoche.WagtailFastocheConfig.search_bar %}
-    <div class="fastoche-header__search fastoche-modal" id="modal-search">
-      <div class="fastoche-container fastoche-container-lg--fluid">
+  {% if settings.wagtail_cefran.WagtailCefranConfig.search_bar %}
+    <div class="cefran-header__search cefran-modal" id="modal-search">
+      <div class="cefran-container cefran-container-lg--fluid">
         {% translate "Close" as close_label %}
-        <button class="fastoche-btn--close fastoche-btn"
+        <button class="cefran-btn--close cefran-btn"
                 aria-controls="modal-search"
                 title="{{ close_label }}">{{ close_label }}</button>
         <form action="{% url 'cms_search' %}" method="get">
-          <div class="fastoche-search-bar" id="search-bar" role="search">
-            <label class="fastoche-label" for="search-bar-input">{{ search_label }}</label>
-            <input class="fastoche-input"
+          <div class="cefran-search-bar" id="search-bar" role="search">
+            <label class="cefran-label" for="search-bar-input">{{ search_label }}</label>
+            <input class="cefran-input"
                    placeholder="{{ search_label }}"
                    type="search"
                    id="query"
                    name="q">
-            <button class="fastoche-btn" title="{{ search_label }}">{{ search_label }}</button>
+            <button class="cefran-btn" title="{{ search_label }}">{{ search_label }}</button>
           </div>
         </form>
       </div>
@@ -79,20 +79,20 @@
 {# endblock burger_menu #}
 
 {% block main_menu %}
-<div class="fastoche-header__menu fastoche-modal"
-id="fastoche-menu-mobile"
-aria-labelledby="fastoche-btn-menu-mobile">
-<div class="fastoche-container">
-<button class="fastoche-btn--close fastoche-btn"
-       aria-controls="fastoche-menu-mobile">
+<div class="cefran-header__menu cefran-modal"
+id="cefran-menu-mobile"
+aria-labelledby="cefran-btn-menu-mobile">
+<div class="cefran-container">
+<button class="cefran-btn--close cefran-btn"
+       aria-controls="cefran-menu-mobile">
  {% translate "Close" %}
 </button>
-<div class="fastoche-header__menu-links">
+<div class="cefran-header__menu-links">
 </div>
 {% translate "Main menu" as main_menu_label %}
 <nav role="navigation"
-class="fastoche-nav"
-id="fastoche-navigation"
+class="cefran-nav"
+id="cefran-navigation"
 aria-label="{{ main_menu_label }}">
 {% main_menu max_levels=2 template="custom_main_menu.html" sub_menu_template="custom_sub_menu.html" %}
 </nav>

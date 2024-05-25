@@ -424,6 +424,23 @@ files = [
 django = "*"
 
 [[package]]
+name = "django-cefran"
+version = "0.0.1"
+description = "Render Fabrique CEFRAN into a generic Django app"
+optional = false
+python-versions = "<4.0,>=3.8"
+files = [
+    {file = "django_cefran-0.0.1-py3-none-any.whl", hash = "sha256:313274b4da2c5985044ab6c48810fc063a3091ad0f385a78922c7b7e6e7fec42"},
+    {file = "django_cefran-0.0.1.tar.gz", hash = "sha256:b598817eb2322f4904eb051269c0ea554e685a017214123573e038d5c4243f5d"},
+]
+
+[package.dependencies]
+Django = ">3.2.5"
+django-crispy-forms = ">=2.0,<3.0"
+django-widget-tweaks = ">=1.4.12,<2.0.0"
+requests = ">=2.26.0,<3.0.0"
+
+[[package]]
 name = "django-cogwheels"
 version = "0.3"
 description = "A consistent, user-friendly solution for adding app-specific settings your Django package, reusable app or framework."
@@ -516,23 +533,6 @@ files = [
 
 [package.dependencies]
 Django = ">=3.2"
-
-[[package]]
-name = "django-fastoche"
-version = "0.1.5"
-description = "Render Fabrique FASTOCHE into a generic Django app"
-optional = false
-python-versions = "<4.0,>=3.8"
-files = [
-    {file = "django_fastoche-0.1.5-py3-none-any.whl", hash = "sha256:09937878f24110b7d2b826c8538519678a93a151a7639ab9d4e89decbad0dea1"},
-    {file = "django_fastoche-0.1.5.tar.gz", hash = "sha256:45199c1754b703e12508c35c3a097f059e62a82874afe1e9ba71f49a12d793fa"},
-]
-
-[package.dependencies]
-Django = ">3.2.5"
-django-crispy-forms = ">=2.0,<3.0"
-django-widget-tweaks = ">=1.4.12,<2.0.0"
-requests = ">=2.26.0,<3.0.0"
 
 [[package]]
 name = "django-filter"
@@ -2212,4 +2212,4 @@ wand = ["Wand (>=0.6,<1.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "3a2975a0efe455e7dc13a94ae8092d46072f0a9cf459bec444b58045889c6ba1"
+content-hash = "8a18d30dafd7995b80649d7f0bda04ad12410df5bade685c0489e15a6c2dd85f"

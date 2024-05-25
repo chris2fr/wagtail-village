@@ -1,0 +1,21 @@
+{% extends "wagtail_cefran/base.html" %}
+
+{% load static cefran_tags wagtailcore_tags wagtailimages_tags i18n %}
+
+{% block content %}
+    {% include "wagtail_cefran/heading.html" %}
+    <div class="cefran-container cefran-pt-4w">
+        {% include "wagtail_cefran/breadcrumbs.html" %}
+        {% if not page.header_with_title %}<h1>{{ page.title }}</h1>{% endif %}
+    </div>
+
+    {% include "wagtail_cefran/messages.html" %}
+
+    {% include "wagtail_cefran/blocks_stream.html" with stream=page.body %}
+
+    <div class="cefran-container cefran-my-6w">
+        {% for tag in page.tags.all|dictsort:"slug" %}
+            <a class="cefran-tag" target="_self" href="{% url 'global_tag' tag.slug %}">{{ tag }}</a>
+        {% endfor %}
+    </div>
+{% endblock content %}

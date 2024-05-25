@@ -1,0 +1,29 @@
+{% load static %}
+<div class="icon-picker-widget">
+  {% include "django/forms/widgets/text.html" %}
+
+  {% with widget.attrs.id as widget_id %}
+    <span id="{{ widget_id }}-icon" aria-hidden="true"></span>
+    <script>
+      (async () => {
+        let widgetInput = document.getElementById('{{ widget_id }}');
+        let widgetIcon = document.getElementById('{{ widget_id }}-icon');
+
+        const options = {
+          iconLibraries: ['cefran-buildings.json', 'cefran-business.json', 'cefran-communication.json', 'cefran-design.json', 'cefran-development.json', 'cefran-device.json', 'cefran-document.json', 'cefran-editor.json', 'cefran-finance.json', 'cefran-health.json', 'cefran-logo.json', 'cefran-map.json', 'cefran-media.json', 'cefran-others.json', 'cefran-system.json', 'cefran-user.json', 'cefran-weather.json'],
+          allowEmpty: true,
+          onSelect: function (jsonIconData) {
+            widgetInput.value = jsonIconData.iconClass;
+            widgetIcon.classList.add(jsonIconData.iconClass, "cefran-icon--lg", "cefran-mt-1w");
+            },
+          onReset: function () {
+            widgetInput.innerHTML = "";
+            widgetIcon.className = "";
+          }
+        }
+
+        let _uip = new UniversalIconPicker('#{{ widget_id }}', options);
+      })();
+    </script>
+  {% endwith %}
+</div>

@@ -1,0 +1,10 @@
+{% load wagtailcore_tags %}
+<div class="cefran-col-12 cefran-col-sm">
+  {{ value.text|richtext }}
+  {% if value.cta_url and value.cta_label %}
+    <p class="cefran-mb-5w">
+      {# It doesn't use cefran_link or cefran_button because it's a link with a button style #}
+      <a href="{{ value.cta_url }}" class="cefran-btn cefran-btn--primary">{{ value.cta_label }}</a>
+    </p>
+  {% endif %}
+</div>
