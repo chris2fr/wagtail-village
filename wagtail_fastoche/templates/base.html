@@ -56,7 +56,7 @@
     {% endblock skiplinks %}
 
     {% block header %}
-      {% include "wagtail_fastoche/blocks/header.html" %}
+      {% include "wagtail_fastoche/header.html" %}
     {% endblock header %}
 
     <div class="fastoche-container fastoche-mt-4w fastoche-mb-6w">
@@ -84,12 +84,12 @@
 
     {% block follow_newsletter_social_media %}
       {% if settings.wagtail_fastoche.WagtailFastocheConfig.show_newsletter_and_social_block %}
-        {% include "wagtail_fastoche/blocks/follow.html" %}
+        {% include "wagtail_fastoche/follow.html" %}
       {% endif %}
     {% endblock follow_newsletter_social_media %}
 
     {% block footer %}
-      {% include "wagtail_fastoche/blocks/footer.html" %}
+      {% include "wagtail_fastoche/footer.html" %}
     {% endblock footer %}
 
     {% fastoche_js nonce=request.csp_nonce %}
