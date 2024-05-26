@@ -425,13 +425,13 @@ django = "*"
 
 [[package]]
 name = "django-cefran"
-version = "0.0.4"
+version = "0.0.5"
 description = "Render Fabrique CEFRAN into a generic Django app"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "django_cefran-0.0.4-py3-none-any.whl", hash = "sha256:a987c7d157a0933a7d0b06a2c603b0fb222011d6146e7ff9250ab9f7e5233a02"},
-    {file = "django_cefran-0.0.4.tar.gz", hash = "sha256:1ccba859fe9ff4125308297d6450eb13aa7b7244b224da259ae034aa94c4f5da"},
+    {file = "django_cefran-0.0.5-py3-none-any.whl", hash = "sha256:fd7f5814efb9fe73afe26611c28534949284dac1b3db9a4adc123f757af4e0f6"},
+    {file = "django_cefran-0.0.5.tar.gz", hash = "sha256:b70e19626a8701b8e3cc63c1d039317318290c5c21fb26c63bfb026cc562c894"},
 ]
 
 [package.dependencies]
@@ -488,17 +488,17 @@ django = ">=4.2"
 
 [[package]]
 name = "django-debug-toolbar"
-version = "4.3.0"
+version = "4.4.1"
 description = "A configurable set of panels that display various debug information about the current request/response."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "django_debug_toolbar-4.3.0-py3-none-any.whl", hash = "sha256:e09b7dcb8417b743234dfc57c95a7c1d1d87a88844abd13b4c5387f807b31bf6"},
-    {file = "django_debug_toolbar-4.3.0.tar.gz", hash = "sha256:0b0dddee5ea29b9cb678593bc0d7a6d76b21d7799cb68e091a2148341a80f3c4"},
+    {file = "django_debug_toolbar-4.4.1-py3-none-any.whl", hash = "sha256:d89c2c4539192a8bde497d3bbfa35b93001b5381f7dfc26921ca6bad6d95d9de"},
+    {file = "django_debug_toolbar-4.4.1.tar.gz", hash = "sha256:7a62d8696bdba0f0d6eda701e8a5e433f742b8a09ce1fd0b8f8d82af3b7adeb6"},
 ]
 
 [package.dependencies]
-django = ">=3.2.4"
+django = ">=4.2.9"
 sqlparse = ">=0.2"
 
 [[package]]
@@ -2212,4 +2212,4 @@ wand = ["Wand (>=0.6,<1.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "2f053d102a2bc979c599829e9b4cb31c0dc6e75974d736abe3948a7fb91bd93a"
+content-hash = "2d6e586af11bc5e3a80f887e8f9c3b2c211e97f03158c175b9a2aaf99a78748f"
