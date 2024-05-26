@@ -1,7 +1,7 @@
 {% extends "django_cefran/base.html" %}
 {% load  static cefran_tags wagtailcore_tags wagtailimages_tags i18n wagtailuserbar wagtailsettings_tags sass_tags %}
 
-{% get_settings %}
+{% get_settings use_default_site=True %}
 
 {% block description %}
     {% if search_description %}<meta name="description" content="{{ search_description }}" />{% endif %}
