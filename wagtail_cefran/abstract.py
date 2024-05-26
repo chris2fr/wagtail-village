@@ -62,7 +62,8 @@ class WagtailCefranConfig(ClusterableModel, BaseSiteSetting, DjangoCefranConfig)
         FieldPanel("site_title"),
         FieldPanel("site_tagline"),
         FieldPanel("footer_description_wagtail"),
-        FieldPanel("footer_description"),
+        # FieldPanel("footer_description"),
+        FieldPanel("language"),
         FieldPanel("notice"),
         MultiFieldPanel(
             [
