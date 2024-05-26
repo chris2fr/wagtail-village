@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django_cefran.constants import COLOR_CHOICES
-from django_cefran.models import CefranConfig
+from django_cefran.models import DjangoCefranConfig
 from modelcluster.models import ClusterableModel
 from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel, ObjectList, TabbedInterface
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
@@ -16,7 +16,7 @@ from wagtail_cefran.utils import get_streamfield_raw_text
 
 
 @register_setting(icon="cog")
-class WagtailCefranConfig(ClusterableModel, BaseSiteSetting, CefranConfig):
+class WagtailCefranConfig(ClusterableModel, BaseSiteSetting, DjangoCefranConfig):
     class Meta:
         verbose_name = _("Site configuration")
         verbose_name_plural = _("Site configurations")

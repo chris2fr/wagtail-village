@@ -425,13 +425,13 @@ django = "*"
 
 [[package]]
 name = "django-cefran"
-version = "0.0.1"
+version = "0.0.2"
 description = "Render Fabrique CEFRAN into a generic Django app"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "django_cefran-0.0.1-py3-none-any.whl", hash = "sha256:313274b4da2c5985044ab6c48810fc063a3091ad0f385a78922c7b7e6e7fec42"},
-    {file = "django_cefran-0.0.1.tar.gz", hash = "sha256:b598817eb2322f4904eb051269c0ea554e685a017214123573e038d5c4243f5d"},
+    {file = "django_cefran-0.0.2-py3-none-any.whl", hash = "sha256:d6bcf991dc6eb0f5afc0430172af9d3280869eaa5e154b70ed5fd1141cc62dba"},
+    {file = "django_cefran-0.0.2.tar.gz", hash = "sha256:248a0513786cc34d6671662af07eaa6c06e1a5641d3dec63db26a2db77de24b8"},
 ]
 
 [package.dependencies]
@@ -2212,4 +2212,4 @@ wand = ["Wand (>=0.6,<1.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "8a18d30dafd7995b80649d7f0bda04ad12410df5bade685c0489e15a6c2dd85f"
+content-hash = "eb52df1b3129cf0835527798523a7b275b19faff67e7f020728b305923e01d2d"

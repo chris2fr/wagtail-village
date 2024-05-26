@@ -1345,14 +1345,14 @@ class Migration(migrations.Migration):
             name="WagtailCefranConfig",
             fields=[
                 (
-                    "cefranconfig_ptr",
+                    "djangocefranconfig_ptr",
                     models.OneToOneField(
                         auto_created=True,
                         on_delete=django.db.models.deletion.CASCADE,
                         parent_link=True,
                         primary_key=True,
                         serialize=False,
-                        to="django_cefran.cefranconfig",
+                        to="django_cefran.djangocefranconfig",
                     ),
                 ),
                 (
@@ -1375,7 +1375,7 @@ class Migration(migrations.Migration):
                 "verbose_name": "Site configuration",
                 "verbose_name_plural": "Site configurations",
             },
-            bases=("django_cefran.cefranconfig", models.Model),
+            bases=("django_cefran.djangocefranconfig", models.Model),
         ),
         migrations.CreateModel(
             name="SocialMediaItem",
