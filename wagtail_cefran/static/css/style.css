@@ -1,19 +1,30 @@
-/* Prefix the classes defined here with cmscefran- */
-.cmscefran-hero {
+/* Prefix the classes defined here with wagtailcefran- */
+.wagtailcefran-hero {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.cmscefran-hero-large {
+.wagtailcefran-hero h1,
+.wagtailcefran-hero h2,
+.wagtailcefran-hero h3,
+.wagtailcefran-hero p  {
+  color: white;
+}
+
+.wagtailcefran-hero a.cefran-btn--secondary {
+  color: var(--cefran-primary-sun-625);
+}
+
+.wagtailcefran-hero-large {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.cmscefran-background-dark h1,
-.cmscefran-background-dark p {
+.wagtailcefran-background-dark h1,
+.wagtailcefran-background-dark p {
   color: white;
 }
 
@@ -21,12 +32,12 @@
   font-weight: lighter;
 }
 
-.cmscefran-author_card__header {
+.wagtailcefran-author_card__header {
   flex: 0 0 6rem !important;
   width: 6rem !important;
 }
 
-.cmscefran-author-img {
+.wagtailcefran-author-img {
   border-radius: 50%;
   height: 4.5rem !important;
   margin: 1.5rem;
