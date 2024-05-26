@@ -89,6 +89,7 @@ if DEBUG_TOOLBAR:
         "debug_toolbar",
     ]
 
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -128,6 +129,7 @@ TEMPLATES = [
                 "django_cefran.context_processors.site_config",
                 "wagtail_cefran.context_processors.skiplinks",
                 "wagtail_cefran.context_processors.mega_menus",
+                "wagtail_cefran.context_processors.urlangs",
             ],
         },
     },

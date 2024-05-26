@@ -238,10 +238,6 @@ class SitesFacilesBasePage(Page):
         context["search_description"] = False
         if hasattr(context["page"], "search_description") and context["page"].search_description:
             context["search_description"] = context["page"].search_description
-        context["urlangs"] = {
-            "fr": "/",
-            "en": "/en/",
-        }
         return context
 
     class Meta:
