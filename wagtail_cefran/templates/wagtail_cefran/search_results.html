@@ -1,6 +1,7 @@
-{% extends "base.html" %}
+{% extends "wagtail_cefran/base.html" %}
 
-{% load static cefran_tags wagtailcore_tags wagtailimages_tags %}
+{% load static cefran_tags wagtailcore_tags wagtailimages_tags wagtailsettings_tags %}
+
 
 {% block title %}
     <title>
@@ -9,8 +10,10 @@
         {% else %}
             Aucun résultat
         {% endif %}
-    pour la recherche « {{ query }} » — {{ settings('wagtail_cefran.WagtailCefranConfig', use_default_site=True).site_title }}</title>
+    pour la recherche « {{ query }} » {% comment %} — {{ settings('wagtail_cefran.WagtailCefranConfig', use_default_site=True).site_title }}{% endcomment %}
+    </title>
 {% endblock title %}
+
 
 {% if page.search_description %}
     {% block description %}

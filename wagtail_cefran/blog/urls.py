@@ -3,7 +3,10 @@ from django.urls.conf import path
 from wagtail_cefran.blog import views
 
 
-app_name = "blog"
+# from wagtail_cefran.views import SearchResultsView, TagsListView, TagView
+
+
+app_name = "wagtail_cefran.blog"
 
 urlpatterns = [
     path(

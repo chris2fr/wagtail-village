@@ -46,7 +46,10 @@
 {% endblock operator_logo %}
 
 {% block header_tools %}
-  {% flat_menu handle="header_tools" template="custom_flat_menu.html" %}
+<li>
+  {% include "django_cefran/language_selector.html" %}
+</li>
+  {% flat_menu handle="header_tools" template="menus/custom_flat_menu.html" %}
 {% endblock header_tools %}
 
 {% block header_search %}
@@ -58,7 +61,7 @@
         <button class="cefran-btn--close cefran-btn"
                 aria-controls="modal-search"
                 title="{{ close_label }}">{{ close_label }}</button>
-        <form action="{% url 'cms_search' %}" method="get">
+        <form action="{% url 'wagtail_cefran_search' %}" method="get">
           <div class="cefran-search-bar" id="search-bar" role="search">
             <label class="cefran-label" for="search-bar-input">{{ search_label }}</label>
             <input class="cefran-input"
@@ -94,7 +97,7 @@ aria-labelledby="cefran-btn-menu-mobile">
 class="cefran-nav"
 id="cefran-navigation"
 aria-label="{{ main_menu_label }}">
-{% main_menu max_levels=2 template="custom_main_menu.html" sub_menu_template="custom_sub_menu.html" %}
+{% main_menu max_levels=2 template="menus/custom_main_menu.html" sub_menu_template="menus/custom_sub_menu.html" %}
 </nav>
 </div>
 </div>

@@ -34,6 +34,8 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.getenv("DEBUG") == "True" else False
+DEBUG_TOOLBAR = True if os.getenv("DEBUG_TOOLBAR") == "True" else False
+
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1, localhost").replace(" ", "").split(",")
 
@@ -78,9 +80,13 @@ INSTALLED_APPS = [
 # if DEBUG and "localhost" in HOST_URL:
 if DEBUG:
     INSTALLED_APPS += [
-        "debug_toolbar",
         "django_extensions",
         "wagtail.contrib.styleguide",
+    ]
+
+if DEBUG_TOOLBAR:
+    INSTALLED_APPS += [
+        "debug_toolbar",
     ]
 
 MIDDLEWARE = [
@@ -96,7 +102,7 @@ MIDDLEWARE = [
 ]
 
 # if DEBUG and "localhost" in HOST_URL:
-if DEBUG:
+if DEBUG_TOOLBAR:
     MIDDLEWARE += [
         "debug_toolbar.middleware.DebugToolbarMiddleware",
     ]
@@ -300,7 +306,7 @@ for host in ALLOWED_HOSTS:
 SF_ALLOW_RAW_HTML_BLOCKS = os.getenv("SF_ALLOW_RAW_HTML_BLOCKS", "False").lower() == "true"
 
 # if DEBUG and "localhost" in HOST_URL:
-if DEBUG:
+if DEBUG_TOOLBAR:
     INTERNAL_IPS = [
         "127.0.0.1",
         "0.0.0.0",

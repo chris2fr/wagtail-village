@@ -53,6 +53,10 @@ type="text/css" />
   {% endif %}
 {% endblock tracking %}
 
+{% block skiplinks %}
+  {% cefran_skiplinks skiplinks %}
+{% endblock skiplinks %}
+
 {% block header %}
   {% include "wagtail_cefran/header.html" %}
   {% wagtailuserbar %}
@@ -60,6 +64,10 @@ type="text/css" />
     {% cefran_notice title=settings.wagtail_cefran.WagtailCefranConfig.notice %}
   {% endif %}
 {% endblock header %}
+
+{% comment %}
+  {% cefran_theme_modale %}
+{% emdcomment %}
 
 {% block follow_newsletter_social_media %}
   {% if settings.wagtail_cefran.WagtailCefranConfig.show_newsletter_and_social_block %}
@@ -79,6 +87,15 @@ type="text/css" />
     {{ settings.wagtail_cefran.AnalyticsSettings.body_scripts|safe }}
   {% endif %}
 {% endblock body_tracking_scripts %}
+
+{% comment %}
+{% cefran_js nonce=request.csp_nonce %}
+{% endcomment %}
+
+{% block extra_js %}
+<script src="{% static 'js/common.js' %}">
+</script>
+{% endblock extra_js %}
 
 {# djlint:off #}
 {% block lang %}{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}{% endblock lang %}
