@@ -2,9 +2,7 @@
 
 {% load i18n static wagtailcore_tags wagtailimages_tags menu_tags static %}
 
-{% block header_tools %}
-  {% flat_menu handle="header_tools" template="custom_flat_menu.html" %}
-{% endblock header_tools %}
+
 <div class="cefran-header__menu cefran-modal"
 id="cefran-menu-mobile"
 aria-labelledby="cefran-btn-menu-mobile">
@@ -22,3 +20,7 @@ aria-labelledby="cefran-btn-menu-mobile">
 {% endblock main_menu %}
 </div>
 </div>
+
+{% block header_tools %}
+  {% flat_menu handle="header_tools" template="custom_flat_menu.html" %}
+{% endblock header_tools %}
