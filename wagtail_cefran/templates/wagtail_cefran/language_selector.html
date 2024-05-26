@@ -1,6 +1,6 @@
-{% load i18n wagtailsettings_tags %}
+{% load i18n wagtailsettings_tags wagtailcore_tags %}
 {% get_settings use_default_site=True %}
-
+{% if page %}
 <nav role="navigation" class="cefran-translate cefran-nav">
   {% get_current_language as LANGUAGE_CODE %}
   {% get_available_languages as LANGUAGES %}
@@ -15,16 +15,17 @@
     </button>
     <div class="cefran-collapse cefran-translate__menu cefran-menu" id="translate-menu">
       <ul class="cefran-menu__list">
-        {% for language in URLANGS %}
+        {% for translation in page.get_translations.live %}
           <li>
             <a class="cefran-translate__language cefran-nav__link"
-               hreflang="{{ language.code|lower }}"
-               lang="{{ language.code|lower }}"
-               href="{{ language.url }}"
-               {% if language.code == LANGUAGE_CODE %}aria-current="true"{% endif %}>{{ language.code|upper }} - {{ language.name_local }}</a>
+               hreflang="{{ translation.locale.language_code|lower }}"
+               lang="{{ translation.locale.language_code|lower }}"
+               href="{% pageurl translation %}"
+               {% if translation.locale.language_code == LANGUAGE_CODE %}aria-current="true"{% endif %}>{{ translation.locale.language_code|upper }} - {{ translation.locale.language_name_local }}</a>
           </li>
         {% endfor %}
       </ul>
     </div>
   </div>
 </nav>
+{% endif %}

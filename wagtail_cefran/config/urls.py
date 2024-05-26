@@ -33,5 +33,5 @@ if settings.DEBUG:
 urlpatterns += i18n_patterns(
     path("", include("wagtail_cefran.urls")),
     path("", include("wagtail_cefran.blog.urls", namespace="wagtail_cefran.blog")),
-    prefix_default_language=False,
+    prefix_default_language=True,
 )

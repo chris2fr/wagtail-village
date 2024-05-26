@@ -147,6 +147,7 @@ class SitesFacilesBasePage(Page):
         blank=True,
         use_json_field=True,
     )
+
     header_with_title = models.BooleanField(_("Show title in header image?"), default=False)  # type: ignore
 
     header_image = models.ForeignKey(
