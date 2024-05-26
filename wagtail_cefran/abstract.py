@@ -227,15 +227,15 @@ class SitesFacilesBasePage(Page):
 
     def get_context(self, request):
         context = super(SitesFacilesBasePage, self).get_context(request)
-        settings = WagtailCefranConfig.for_request(request)
-        context["langcode"] = settings.language
-        context["data_cefran_mourning"] = ""
-        if settings.mourning:
-            context["data_cefran_mourning"] = "data-cefran-mourning"
-        context["full_title"] = settings.site_title
+        # settings = WagtailCefranConfig.for_request(request)
+        # context["langcode"] = settings.language
+        # context["data_cefran_mourning"] = ""
+        # if settings.mourning:
+        #     context["data_cefran_mourning"] = "data-cefran-mourning"
+        # context["full_title"] = settings.site_title
         if context["page"].title:
-            context["full_title"] = context["page"].title + " - " + context["full_title"]
-        context["search_description"] = False
+            context["full_title"] = context["page"].title + " - "  # + context["full_site_title"]
+        # context["search_description"] = False
         if hasattr(context["page"], "search_description") and context["page"].search_description:
             context["search_description"] = context["page"].search_description
         return context

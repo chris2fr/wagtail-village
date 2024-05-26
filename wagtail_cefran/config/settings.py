@@ -130,6 +130,7 @@ TEMPLATES = [
                 "wagtail_cefran.context_processors.skiplinks",
                 "wagtail_cefran.context_processors.mega_menus",
                 "wagtail_cefran.context_processors.urlangs",
+                "wagtail_cefran.context_processors.sitevars",
             ],
         },
     },
