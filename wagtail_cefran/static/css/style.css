@@ -13,8 +13,10 @@
 }
 
 .wagtailcefran-hero a.cefran-btn--secondary {
-  color: var(--cefran-primary-850-200);
-  border-color: var(--cefran-primary-850-200);
+  /* color: var(--cefran-primary-850-200); */
+  border-color: var(--cefran-primary-sun-625);
+  background-color: white;
+  color: black;
 }
 
 .wagtailcefran-hero a.cefran-btn--secondary:hover {
@@ -89,3 +91,4 @@ ul.cefran-nav__list {
 .cefran-artwork-decorative {
   fill: var(--text-default-grey);
 }
+
