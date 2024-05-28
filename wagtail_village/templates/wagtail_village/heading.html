@@ -1,0 +1,25 @@
+{% load static wagtailimages_tags %}
+{% if page.header_image or page.header_color_class %}
+  {% image page.header_image fill-1200x350 as bg_img %}
+  <div class="wagtailvillage-hero{% if page.header_large %} wagtailvillage-hero-large{% endif %}{% if page.header_darken %} wagtailvillage-background-dark{% endif %}"
+       style="{% if page.header_image %}background-image: {% if page.header_darken %}linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),{% endif %}url({{ bg_img.url }});
+              {% elif page.header_color_class %}background-color: var(--background-alt-{{ page.header_color_class }});
+              {% endif %} min-height: 350px">
+    {% if page.header_with_title or page.header_cta_link and page.header_cta_label %}
+      <div class="village-container village-py-14w">
+        <div class="village-grid-row village-grid-row--gutters">
+          <div class="village-col village-col-12{% if not page.header_large %}village-col-md-6{% endif %}">
+            {% if page.header_with_title %}
+              <h1 {% if block.value.large %}class="village-display--sm"{% endif %}>{{ page.title }}</h1>
+            {% endif %}
+            {% if page.header_cta_text %}<p>{{ page.header_cta_text }}</p>{% endif %}
+            {% if page.header_cta_link and page.header_cta_label %}
+              <a class="village-btn {% if page.header_darken %}village-btn--secondary village-background-alt--blue-france village-btn--lg{% else %}village-btn--primary{% endif %} village-btn--lg"
+                 href="{{ page.header_cta_link }}">{{ page.header_cta_label }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

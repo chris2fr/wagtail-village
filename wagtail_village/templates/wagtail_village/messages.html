@@ -1,0 +1,25 @@
+{# Display Django message info from previous form #}
+{% if messages %}
+    <div class="village-container village-mt-6w">
+        <div class="village-grid-row village-grid-row--gutters">
+            <div class="village-col-12">
+                {% for message in messages %}
+                    {% if message.tags == "success" %}
+                        <div class="village-alert village-alert--success village-alert--sm village-mb-5w"
+                             role="status">
+                            <p>{{ message }}</p>
+                        </div>
+                    {% elif message.tags == "info" %}
+                        <div class="village-alert village-alert--info village-alert--sm village-mb-5w" role="status">
+                            <p>{{ message }}</p>
+                        </div>
+                    {% elif message.tags == "error" %}
+                        <div class="village-alert village-alert--error village-alert--sm village-mb-5w" role="alert">
+                            <p>{{ message }}</p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}

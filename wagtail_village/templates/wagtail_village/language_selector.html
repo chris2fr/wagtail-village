@@ -1,0 +1,31 @@
+{% load i18n wagtailsettings_tags wagtailcore_tags %}
+{% get_settings use_default_site=True %}
+{% if page %}
+<nav role="navigation" class="village-translate village-nav">
+  {% get_current_language as LANGUAGE_CODE %}
+  {% get_available_languages as LANGUAGES %}
+  {% get_language_info_list for LANGUAGES as languages %}
+  <div class="village-nav__item">
+    <button class="village-translate__btn village-btn village-btn--tertiary"
+            aria-controls="translate-menu"
+            aria-expanded="false"
+            title="{% translate 'Select language' %}">
+      {% get_language_info for LANGUAGE_CODE as current_lang %}{{ current_lang.code|upper }}
+      <span class="village-hidden-lg"> - {{ current_lang.name_local |title }}</span>
+    </button>
+    <div class="village-collapse village-translate__menu village-menu" id="translate-menu">
+      <ul class="village-menu__list">
+        {% for translation in page.get_translations.live %}
+          <li>
+            <a class="village-translate__language village-nav__link"
+               hreflang="{{ translation.locale.language_code|lower }}"
+               lang="{{ translation.locale.language_code|lower }}"
+               href="{% pageurl translation %}"
+               {% if translation.locale.language_code == LANGUAGE_CODE %}aria-current="true"{% endif %}>{{ translation.locale.language_code|upper }} - {{ translation.locale.language_name_local }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endif %}

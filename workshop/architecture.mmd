@@ -47,25 +47,25 @@ subgraph numerique-gouv
 %%  publié sur pypi.org sous licence Libre.</small>"]
 end
 
-subgraph cefran.org 
-    wagtail-cefran["<big><b>Wagtail Cefran</big></b>
+subgraph village.org 
+    wagtail-village["<big><b>Wagtail Village</big></b>
                    <hr/><small>Application Libre du système 
                                de gestion de contenu Wagtail
-                               qui intègre Django Cefran</small>"]
+                               qui intègre Django Village</small>"]
     %%  dans le serveur Libre 
     %%  de gestionnaire de contenu Wagtail 
     %%  publié par github.com en Libre."]
 
-    django-cefran["<big><b>Django Cefran</big></b>
+    django-village["<big><b>Django Village</big></b>
     <hr/><small>Module Libre du serveur 
                 d'applications Django 
-                qui intègre Génération Cefran</small>"]
+                qui intègre Génération Village</small>"]
     %%  	dans le serveur Libre 
     %%	d'applications Django
     %%	publié par Pypi.org
     %%	et par github.com en Libre</small>"]
 
-    design-system-cefran["<big><b>DS Cefran</big></b>
+    design-system-village["<big><b>DS Village</big></b>
     <hr/><small>Génération de composants 
                 HTML, CSS et Javascript
                 par le système de design
@@ -84,17 +84,17 @@ subgraph cefran.org
 
 %%  django-dsfr <-.- Django 
 %%  sites-faciles <-.- Wagtail 
-%%  django-cefran <-.- Django
-%%  wagtail-cefran <-.- Wagtail 
-%%  design-system-cefran  <-.- NodeJS 
+%%  django-village <-.- Django
+%%  wagtail-village <-.- Wagtail 
+%%  design-system-village  <-.- NodeJS 
 %%  dsfr <-.- NodeJS 
 
 
-wagtail-cefran
+wagtail-village
 -->
-django-cefran
+django-village
 -->
-design-system-cefran
+design-system-village
 
 
 
@@ -106,7 +106,7 @@ dsfr
 
 master-design
 -.-
-design-system-cefran
+design-system-village
 
 
 master-django{{"<i>Sites et composants 
@@ -117,7 +117,7 @@ django-dsfr
 
 master-django
 -.-
-django-cefran
+django-village
 
 
 
@@ -129,7 +129,7 @@ sites-faciles
 
 master-wagtail
 -.-
-wagtail-cefran
+wagtail-village
 
 
 
@@ -151,9 +151,9 @@ classDef dashedOutline stroke-dasharray:4 5
 
 %%  Django --> Wagtail
 
-click wagtail-cefran href "https://github.com/chris2fr/wagtail-cefran"
-click django-cefran href "https://github.com/chris2fr/django-cefran"
-click design-system-cefran href "https://github.com/chris2fr/design-system-cefran"
+click wagtail-village href "https://github.com/chris2fr/wagtail-village"
+click django-village href "https://github.com/chris2fr/django-village"
+click design-system-village href "https://github.com/chris2fr/design-system-village"
 click sites-faciles href "https://github.com/numerique-gouv/sites-faciles"
 click django-dsfr href "https://github.com/numerique-gouv/django-dsfr"
 click dsfr href "https://github.com/GouvernementFR/dsfr/"

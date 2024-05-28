@@ -1,8 +1,8 @@
-# Gestionnaire de contenu Wagtail CEFRAN
+# Gestionnaire de contenu Wagtail VILLAGE
 
-Sur la base de l'application gestionnaire de contenu CMS et blog sous technologie Wagtail [sites-facile de la DINUM, France](https://github.com/numerique-gouv/sites-faciles), elle-même à base de l'application de mise en page de site dynamique Django [django-wagtailfaW](https://github.com/numerique-gouv/django-wagtailcefran), elle même basé sur le [Design Système de l'Etat ou DSFR du gouvernement français](https://github.com/GouvernementFR/wagtaildjango_cefran/), cette application gestionnaire de contenu dit CMS et blog [CEFRAN](https://www.cefran.org) propose de capitaliser sur le travail de fond pour le traitement d'information et de la communication en rendant les composants génériques. 
+Sur la base de l'application gestionnaire de contenu CMS et blog sous technologie Wagtail [sites-facile de la DINUM, France](https://github.com/numerique-gouv/sites-faciles), elle-même à base de l'application de mise en page de site dynamique Django [django-wagtailfaW](https://github.com/numerique-gouv/django-wagtailvillage), elle même basé sur le [Design Système de l'Etat ou DSFR du gouvernement français](https://github.com/GouvernementFR/wagtaildjango_village/), cette application gestionnaire de contenu dit CMS et blog [VILLAGE](https://www.village.org) propose de capitaliser sur le travail de fond pour le traitement d'information et de la communication en rendant les composants génériques. 
 
-Les [conditions d’utilisation de DSFR pour des acteurs privés](https://github.com/GouvernementFR/wagtaildjango_cefran/blob/main/doc/legal/cgu.md#2-conditions-dutilisation-des-composants-par-les-autres-utilisateurs) sont claires : 
+Les [conditions d’utilisation de DSFR pour des acteurs privés](https://github.com/GouvernementFR/wagtaildjango_village/blob/main/doc/legal/cgu.md#2-conditions-dutilisation-des-composants-par-les-autres-utilisateurs) sont claires : 
 
 > 2° Conditions d’utilisation des Composants par les Autres Utilisateurs
 > 
@@ -10,13 +10,13 @@ Les [conditions d’utilisation de DSFR pour des acteurs privés](https://github
 > 
 > Il est expressément rappelé aux Autres Utilisateurs que toute utilisation des Composants en dehors des limites visées aux présentes ou dans le but de les détourner et de s’approprier d’une manière ou d’une autre la Marque de l’État est punissable de sanctions civiles et/ou pénales.
 
-Les conditions de l'utilisation de dango-wagtailcefran and sites-faciles (content_manager) sont encore moins problématiques un fois que la question fondamentale du DSFR est traitée de manière responsable. Le défi est de proposer un deal équitable et sympa pour l'Etat. Cela serait aidé, je pense, par la contribution fondamentale de proposer des thèmes graphiques très différents de la charte du DSFR. Il y a encore un peu de travail à faire dans ce sens, mais c'est bien parti.
+Les conditions de l'utilisation de dango-wagtailvillage and sites-faciles (content_manager) sont encore moins problématiques un fois que la question fondamentale du DSFR est traitée de manière responsable. Le défi est de proposer un deal équitable et sympa pour l'Etat. Cela serait aidé, je pense, par la contribution fondamentale de proposer des thèmes graphiques très différents de la charte du DSFR. Il y a encore un peu de travail à faire dans ce sens, mais c'est bien parti.
 
-Maîtriser l'ensemble de la chaîne de wagtailcefran à django-wagtailcefran à sites-faciles a été une joie parce-que les développements sont propres et faits de manière responsable.  
+Maîtriser l'ensemble de la chaîne de wagtailvillage à django-wagtailvillage à sites-faciles a été une joie parce-que les développements sont propres et faits de manière responsable.  
 
 
-Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable [Wagtail-CEFRAN](https://github.com/chris2fr/wwagtail-cefran) avec [Django-CEFRAN](https://github.com/chris2fr/web-cefran) [Module Python Django-CEFRAN](https://pypi.org/project/django_cefran/
-) et [Web-CEFRAN](https://github.com/chris2fr/web-cefran).
+Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable [Wagtail-VILLAGE](https://github.com/chris2fr/wwagtail-village) avec [Django-VILLAGE](https://github.com/chris2fr/web-village) [Module Python Django-VILLAGE](https://pypi.org/project/django_village/
+) et [Web-VILLAGE](https://github.com/chris2fr/web-village).
 
 ```mermaid
 flowchart TD
@@ -25,33 +25,33 @@ subgraph GouvernementFR
 	DSFR
 end
 subgraph numerique-gouv
-	django-wagtailcefran
+	django-wagtailvillage
 	sites-faciles
 end
-subgraph CEFRAN 
-	web-cefran
-	django-cefran
-	wagtail-cefran
+subgraph VILLAGE 
+	web-village
+	django-village
+	wagtail-village
 end
 
 
-django-wagtailcefran -.-> Django 
+django-wagtailvillage -.-> Django 
  sites-faciles-.-> Wagtail 
- django-cefran -.-> Django
-wagtail-cefran -.-> Wagtail 
+ django-village -.-> Django
+wagtail-village -.-> Wagtail 
 DSFR -.-> NodeJS 
-web-cefran  -.-> NodeJS 
+web-village  -.-> NodeJS 
 
-DSFR --> django-wagtailcefran
-django-wagtailcefran --> sites-faciles
+DSFR --> django-wagtailvillage
+django-wagtailvillage --> sites-faciles
 DSFR --> uniquement-generique{{Reprise uniquement\ndes éléments\ngénériques}}
-uniquement-generique --> web-cefran
-web-cefran --> django-cefran
+uniquement-generique --> web-village
+web-village --> django-village
 
-django-wagtailcefran --> intro-submodules{{Introduction\nde submodules\npar desgin de site}}
-intro-submodules --> django-cefran
-django-cefran --> wagtail-cefran
-sites-faciles --> wagtail-cefran
+django-wagtailvillage --> intro-submodules{{Introduction\nde submodules\npar desgin de site}}
+intro-submodules --> django-village
+django-village --> wagtail-village
+sites-faciles --> wagtail-village
 
 Django --> Wagtail
 ```
@@ -66,14 +66,14 @@ Django --> Wagtail
 Voici des notes aléatoires:
 
 ```sql
-CREATE USER wagtailcefran  with ENCRYPTED PASSWORD '';
-CREATE DATABASE "wagtailcefran" WITH OWNER "wagtailcefran" ENCODING 'UTF8';
-ALTER database wagtailcefran owner to wagtailcefran;
-GRANT ALL privileges ON DATABASE wagtailcefran TO wagtailcefran;
+CREATE USER wagtailvillage  with ENCRYPTED PASSWORD '';
+CREATE DATABASE "wagtailvillage" WITH OWNER "wagtailvillage" ENCODING 'UTF8';
+ALTER database wagtailvillage owner to wagtailvillage;
+GRANT ALL privileges ON DATABASE wagtailvillage TO wagtailvillage;
 ```
 
 ```bash
-git clone git@github.com:chris2fr/wagtail-cefran.git
+git clone git@github.com:chris2fr/wagtail-village.git
 python -m venv venv
 source venv/bin/activate
 pip install pre-commit django
@@ -92,9 +92,9 @@ DEBUG=False
 HOST_PROTO=http
 # HOST_URL and ALLOWED_HOSTS: use 0.0.0.0 for Docker
 HOST_URL=0.0.0.0
-ALLOWED_HOSTS=localhost, 127.0.0.1, wagtail.cefran.org
+ALLOWED_HOSTS=localhost, 127.0.0.1, wagtail.village.org
 HOST_PORT=8890
-SITE_NAME=Wagtail CEFRAN
+SITE_NAME=Wagtail VILLAGE
 MEDIA_ROOT=medias
 
 
@@ -191,7 +191,7 @@ Les tests unitaires peuvent être lancés avec `make test-unit`.
 
 Vous pouvez également générer un rapport sur la couverture de tests :
 ```sh
-coverage run manage.py test --settings wagtail_cefran.config.settings_test
+coverage run manage.py test --settings wagtail_village.config.settings_test
 ```
 
 ## Indexation des contenus

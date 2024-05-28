@@ -1,0 +1,35 @@
+{% load static village_tags wagtailcore_tags wagtailimages_tags wagtailmarkdown %}
+
+{% for block in stream %}
+  {% if block.block_type == 'alert' %}
+    {% include "wagtail_village/alert.html" %}
+  {% elif block.block_type == 'callout' %}
+    {% include "wagtail_village/callout.html" %}
+  {% elif block.block_type == 'image' %}
+    <div class="village-container village-my-3w">
+      <div class="village-grid-row village-grid-row--gutters">
+        <div class="village-col-12">{% include_block block %}</div>
+      </div>
+    </div>
+  {% elif block.block_type == 'multicolumns' %}
+    {% include_block block %}
+  {% elif block.block_type == 'fullwidthbackground' %}
+    {% include_block block %}
+  {% elif block.block_type == 'paragraph' %}
+    <div class="village-container">{{ block.value|richtext }}</div>
+  {% elif block.block_type == 'accordions' %}
+    {% include "wagtail_village/accordions.html" with accordions_id=forloop.counter0|lower %}
+  {% elif block.block_type == 'stepper' %}
+    {% include "wagtail_village/stepper.html" %}
+  {% elif block.block_type == 'separator' %}
+    <div class="village-container">
+      <hr class="village-mt-{{ block.value.top_margin }}w village-mb-{{ block.value.bottom_margin }}w village-py-1v">
+    </div>
+  {% elif block.block_type == 'markdown' %}
+    <div class="village-container">{{ block.value|markdown }}</div>
+  {% elif block.block_type == 'html' %}
+    <div class="village-container">{{ block.value|safe }}</div>
+  {% else %}
+    <div class="village-container">{% include_block block %}</div>
+  {% endif %}
+{% endfor %}

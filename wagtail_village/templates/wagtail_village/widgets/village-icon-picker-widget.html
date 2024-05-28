@@ -1,0 +1,29 @@
+{% load static %}
+<div class="icon-picker-widget">
+  {% include "django/forms/widgets/text.html" %}
+
+  {% with widget.attrs.id as widget_id %}
+    <span id="{{ widget_id }}-icon" aria-hidden="true"></span>
+    <script>
+      (async () => {
+        let widgetInput = document.getElementById('{{ widget_id }}');
+        let widgetIcon = document.getElementById('{{ widget_id }}-icon');
+
+        const options = {
+          iconLibraries: ['village-buildings.json', 'village-business.json', 'village-communication.json', 'village-design.json', 'village-development.json', 'village-device.json', 'village-document.json', 'village-editor.json', 'village-finance.json', 'village-health.json', 'village-logo.json', 'village-map.json', 'village-media.json', 'village-others.json', 'village-system.json', 'village-user.json', 'village-weather.json'],
+          allowEmpty: true,
+          onSelect: function (jsonIconData) {
+            widgetInput.value = jsonIconData.iconClass;
+            widgetIcon.classList.add(jsonIconData.iconClass, "village-icon--lg", "village-mt-1w");
+            },
+          onReset: function () {
+            widgetInput.innerHTML = "";
+            widgetIcon.className = "";
+          }
+        }
+
+        let _uip = new UniversalIconPicker('#{{ widget_id }}', options);
+      })();
+    </script>
+  {% endwith %}
+</div>

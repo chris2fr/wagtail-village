@@ -1,30 +1,30 @@
-- wagtail_cefran/blog/templates/blog/blog_entry_page.html
+- wagtail_village/blog/templates/blog/blog_entry_page.html
   - base.html
-- wagtail_cefran/blog/templates/blog/blog_index_page.html
+- wagtail_village/blog/templates/blog/blog_index_page.html
   - base.html
-- wagtail_cefran/blog/templates/blog/tags_list_page.html
+- wagtail_village/blog/templates/blog/tags_list_page.html
   - base.html
-- wagtail_cefran/blog/templates/blog/categories_list_page.html
+- wagtail_village/blog/templates/blog/categories_list_page.html
   - base.html
-- wagtail_cefran/templates/404.html
+- wagtail_village/templates/404.html
   - base.html
-- wagtail_cefran/templates/base.html
-  - django_cefran/base.html
-- wagtail_cefran/templates/wagtail_cefran/base.html
-  - django_cefran/base.html
-- wagtail_cefran/templates/wagtail_cefran/blocks/follow.html
-  - django_cefran/follow.html
-- wagtail_cefran/templates/wagtail_cefran/blocks/footer.html
-  - django_cefran/footer.html
-- wagtail_cefran/templates/wagtail_cefran/blocks/header.html
-  - django_cefran/header.html
-- wagtail_cefran/templates/wagtail_cefran/content_page.html
-  - wagtail_cefran/base.html
-- wagtail_cefran/templates/django_cefran/tag_page.html
+- wagtail_village/templates/base.html
+  - django_village/base.html
+- wagtail_village/templates/wagtail_village/base.html
+  - django_village/base.html
+- wagtail_village/templates/wagtail_village/follow.html
+  - django_village/follow.html
+- wagtail_village/templates/wagtail_village/footer.html
+  - django_village/footer.html
+- wagtail_village/templates/wagtail_village/header.html
+  - django_village/header.html
+- wagtail_village/templates/wagtail_village/content_page.html
+  - wagtail_village/base.html
+- wagtail_village/templates/django_village/tag_page.html
   - base.html
-- wagtail_cefran/templates/django_cefran/search_results.html
+- wagtail_village/templates/django_village/search_results.html
   - base.html
-- wagtail_cefran/templates/django_cefran/tags_list_page.html
+- wagtail_village/templates/django_village/tags_list_page.html
   - base.html
-- wagtail_cefran/templates/500.html
+- wagtail_village/templates/500.html
   - base.html
