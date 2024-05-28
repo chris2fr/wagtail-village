@@ -32,6 +32,6 @@ if settings.DEBUG:
 
 urlpatterns += i18n_patterns(
     path("", include("wagtail_village.urls")),
-    path("", include("wagtail_village.blog.urls", namespace="wagtail_village.blog")),
+    path("", include("wagtail_village_blog.urls", namespace="wagtail_village_blog")),
     prefix_default_language=True,
 )

@@ -56,11 +56,11 @@
                 </div>
             </div>
             <p>
-                Publié le <a href="{% url 'wagtail_village.blog:archive_year' page.get_parent.slug page.date.year %}">{{ page.date |date:'l j F Y' }}</a>
+                Publié le <a href="{% url 'wagtail_village_blog:archive_year' page.get_parent.slug page.date.year %}">{{ page.date |date:'l j F Y' }}</a>
                 {% if categories %}
                     |
                     {% for category in categories %}
-                        <a href="{% url 'wagtail_village.blog:category' page.get_parent.slug category.slug %}">{{ category.name }}</a>
+                        <a href="{% url 'wagtail_village_blog:category' page.get_parent.slug category.slug %}">{{ category.name }}</a>
                         {% if not forloop.last %},{% endif %}
                     {% endfor %}
                 {% endif %}
@@ -75,7 +75,7 @@
                     <h2>{% translate "Posted by:" %}</h2>
                     <div class="village-grid-row village-grid-row--gutters">
                         {% for author in authors %}
-                            {% include "blog/contact_card.html" with value=author %}
+                            {% include "wagtail_village/blog/contact_card.html" with value=author %}
                         {% endfor %}
                     </div>
                 </div>
@@ -94,7 +94,7 @@
         {% for tag in page.tags.all|dictsort:"slug" %}
             <a class="village-tag"
                target="_self"
-               href="{% url 'wagtail_village.blog:tag' page.get_parent.slug tag.slug %}">{{ tag }}</a>
+               href="{% url 'wagtail_village_blog:tag' page.get_parent.slug tag.slug %}">{{ tag }}</a>
         {% endfor %}
     </div>
 

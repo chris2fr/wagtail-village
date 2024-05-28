@@ -6,10 +6,11 @@ from django.views.generic import TemplateView
 from unidecode import unidecode
 from wagtail.models.i18n import Locale
 
-from wagtail_village.blog.models import BlogEntryPage, BlogIndexPage, Category
+from wagtail_village_blog.models import BlogEntryPage, BlogIndexPage, Category
 
 
 def get_localized_index(slug):
+    print("views blog")
     locale = Locale.objects.get(language_code=get_language())
     return get_object_or_404(BlogIndexPage, locale=locale, slug=slug)
 
@@ -99,7 +100,7 @@ class LatestCategoryFeed(Feed):
 
 
 class CategoriesListView(TemplateView):
-    template_name = "blog/categories_list_page.html"
+    template_name = "wagtail_village/blog/categories_list_page.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -124,7 +125,7 @@ class CategoriesListView(TemplateView):
 
 
 class TagsListView(TemplateView):
-    template_name = "blog/tags_list_page.html"
+    template_name = "wagtail_village/blog/tags_list_page.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

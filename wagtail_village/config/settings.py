@@ -74,8 +74,8 @@ INSTALLED_APPS = [
     "django_village",
     "sass_processor",
     "wagtail_village",
-    "wagtail_village.dashboard",
-    "wagtail_village.blog",
+    "wagtail_village_dashboard",
+    "wagtail_village_blog",
 ]
 
 # Only add these on a dev machine
@@ -117,6 +117,9 @@ TEMPLATES = [
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
             os.path.join(BASE_DIR, "django_village/templates"),
+            os.path.join(BASE_DIR, "wagtail_village/templates"),
+            os.path.join(BASE_DIR, "wagtail_village_blog/templates"),
+            os.path.join(BASE_DIR, "wagtail_village_dashbord/templates"),
             os.path.join(BASE_DIR, "templates"),
         ],
         "APP_DIRS": True,

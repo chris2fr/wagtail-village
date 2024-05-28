@@ -2,9 +2,6 @@
 
 {% load static village_tags wagtailcore_tags wagtailimages_tags i18n %}
 
-{% block title %}
-    <title>{{ page.seo_title|default:page.title }} — {{ settings('wagtail_village.WagtailVillageConfig', use_default_site=True).site_title }}</title>
-{% endblock title %}
 
 {% if page.search_description %}
     {% block description %}

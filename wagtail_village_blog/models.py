@@ -21,27 +21,27 @@ from wagtail.models.i18n import Locale, TranslatableMixin
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 
-from wagtail_village.abstract import SitesFacilesBasePage
-from wagtail_village.blog.blocks import COLOPHON_BLOCKS
-from wagtail_village.blog.managers import CategoryManager
+# from wagtail_village.abstract import SitesFacilesBasePage
 from wagtail_village.models import ContentPage, Tag
+from wagtail_village_blog.blocks import COLOPHON_BLOCKS
+from wagtail_village_blog.managers import CategoryManager
 
 
 User = get_user_model()
 
 
-class BlogIndexPage(SitesFacilesBasePage):
+class BlogIndexPage(ContentPage):
     posts_per_page = models.PositiveSmallIntegerField(
         default=10,
         validators=[MaxValueValidator(100), MinValueValidator(1)],
         verbose_name=_("Posts per page"),
     )
 
-    settings_panels = SitesFacilesBasePage.settings_panels + [
+    settings_panels = ContentPage.settings_panels + [
         FieldPanel("posts_per_page"),
     ]
 
-    subpage_types = ["blog.BlogEntryPage"]
+    subpage_types = ["wagtail_village_blog.BlogEntryPage"]
 
     class Meta:
         verbose_name = _("Blog index")
@@ -49,15 +49,19 @@ class BlogIndexPage(SitesFacilesBasePage):
     @property
     def posts(self):
         # Get list of blog pages that are descendants of this page
+        print("HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE ")
         posts = BlogEntryPage.objects.descendant_of(self).live()
+        print("HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE ")
         posts = (
             posts.order_by("-date").select_related("owner").prefetch_related("tags", "blog_categories", "date__year")
         )
+        print("HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE ")
         return posts
 
     def get_context(self, request, tag=None, category=None, author=None, year=None, *args, **kwargs):  # NOSONAR
         context = super(BlogIndexPage, self).get_context(request, *args, **kwargs)
         posts = self.posts
+        print("64 HERE 64 HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE ")
         locale = Locale.objects.get(language_code=get_language())
 
         breadcrumb = None
@@ -71,7 +75,7 @@ class BlogIndexPage(SitesFacilesBasePage):
                 "links": [
                     {"url": self.get_url(), "title": self.title},
                     {
-                        "url": reverse("blog:tags_list", kwargs={"blog_slug": self.slug}),
+                        "url": reverse("wagtail_village_blog:tags_list", kwargs={"blog_slug": self.slug}),
                         "title": _("Tags"),
                     },
                 ],
@@ -94,7 +98,7 @@ class BlogIndexPage(SitesFacilesBasePage):
                 "links": [
                     {"url": self.get_url(), "title": self.title},
                     {
-                        "url": reverse("blog:categories_list", kwargs={"blog_slug": self.slug}),
+                        "url": reverse("wagtail_village_blog:categories_list", kwargs={"blog_slug": self.slug}),
                         "title": _("Categories"),
                     },
                 ],
@@ -172,10 +176,10 @@ class BlogEntryPage(ContentPage):
     )
     date = models.DateTimeField(verbose_name=_("Post date"), default=timezone.now)
     authors = ParentalManyToManyField(
-        "blog.Person", blank=True, help_text=_("Author entries can be created in Snippets > Persons")
+        "wagtail_village_blog.Person", blank=True, help_text=_("Author entries can be created in Snippets > Persons")
     )
 
-    parent_page_types = ["blog.BlogIndexPage"]
+    parent_page_types = ["wagtail_village_blog.BlogIndexPage"]
     subpage_types = []
 
     settings_panels = ContentPage.settings_panels + [

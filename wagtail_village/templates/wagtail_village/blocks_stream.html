@@ -2,9 +2,9 @@
 
 {% for block in stream %}
   {% if block.block_type == 'alert' %}
-    {% include "wagtail_village/alert.html" %}
+    {% include "wagtail_village/blocks/alert.html" %}
   {% elif block.block_type == 'callout' %}
-    {% include "wagtail_village/callout.html" %}
+    {% include "wagtail_village/blocks/callout.html" %}
   {% elif block.block_type == 'image' %}
     <div class="village-container village-my-3w">
       <div class="village-grid-row village-grid-row--gutters">
@@ -18,9 +18,9 @@
   {% elif block.block_type == 'paragraph' %}
     <div class="village-container">{{ block.value|richtext }}</div>
   {% elif block.block_type == 'accordions' %}
-    {% include "wagtail_village/accordions.html" with accordions_id=forloop.counter0|lower %}
+    {% include "wagtail_village/blocks/accordions.html" with accordions_id=forloop.counter0|lower %}
   {% elif block.block_type == 'stepper' %}
-    {% include "wagtail_village/stepper.html" %}
+    {% include "wagtail_village/blocks/stepper.html" %}
   {% elif block.block_type == 'separator' %}
     <div class="village-container">
       <hr class="village-mt-{{ block.value.top_margin }}w village-mb-{{ block.value.bottom_margin }}w village-py-1v">

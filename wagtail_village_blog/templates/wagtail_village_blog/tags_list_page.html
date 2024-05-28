@@ -21,7 +21,7 @@
         <ul>
             {% for category in categories|dictsort:"cat_name" %}
                 <li>
-                    <a href="{% url 'wagtail_village.blog:category' page.slug category.cat_slug %}"><strong>{{ category.cat_name }}</strong> ({{ category.cat_count }})</a>
+                    <a href="{% url 'wagtail_village_blog:category' page.slug category.cat_slug %}"><strong>{{ category.cat_name }}</strong> ({{ category.cat_count }})</a>
                 </li>
             {% endfor %}
         </ul>
@@ -37,7 +37,7 @@
             <ul>
                 {% for tag in tags|dictsort:"tag_slug" %}
                     <li>
-                        <a href="{% url 'wagtail_village.blog:tag' page.slug tag.tag_slug %}"><strong>{{ tag.tag_name }}</strong> ({{ tag.tag_count }})</a>
+                        <a href="{% url 'wagtail_village_blog:tag' page.slug tag.tag_slug %}"><strong>{{ tag.tag_name }}</strong> ({{ tag.tag_count }})</a>
                     </li>
                 {% endfor %}
             </ul>

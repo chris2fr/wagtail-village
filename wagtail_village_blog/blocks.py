@@ -14,7 +14,7 @@ class ContactCardBlock(blocks.StructBlock):
 
     class Meta:
         icon = "user"
-        template = ("blog/contact_card.html",)
+        template = ("wagtail_village/blog/contact_card.html",)
 
 
 COLOPHON_BLOCKS = [

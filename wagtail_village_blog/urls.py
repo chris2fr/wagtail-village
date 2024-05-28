@@ -1,12 +1,11 @@
 from django.urls.conf import path
 
-from wagtail_village.blog import views
+from wagtail_village_blog import views
 
 
 # from wagtail_village.views import SearchResultsView, TagsListView, TagView
 
-
-app_name = "wagtail_village.blog"
+app_name = "wagtail_village_blog"
 
 urlpatterns = [
     path(

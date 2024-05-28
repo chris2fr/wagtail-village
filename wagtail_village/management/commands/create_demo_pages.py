@@ -6,8 +6,8 @@ from wagtail.rich_text import RichText
 from wagtailmenus.models.menuitems import FlatMenuItem, MainMenuItem
 from wagtailmenus.models.menus import FlatMenu, MainMenu
 
-from wagtail_village.blog.models import BlogIndexPage
 from wagtail_village.models import ContentPage, MegaMenu, MegaMenuCategory
+from wagtail_village_blog.models import BlogIndexPage
 
 
 ALL_ALLOWED_SLUGS = ["blog_index", "publications"]

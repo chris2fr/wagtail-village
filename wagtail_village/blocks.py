@@ -93,7 +93,7 @@ class BadgeBlock(blocks.StructBlock):
     hide_icon = blocks.BooleanBlock(label=_("Hide badge icon"), required=False)
 
     class Meta:
-        template = ("wagtail_village/badge.html",)
+        template = ("wagtail_village/blocks/badge.html",)
 
 
 class BadgesListBlock(blocks.StreamBlock):
@@ -101,7 +101,7 @@ class BadgesListBlock(blocks.StreamBlock):
 
     class Meta:
         icon = "list-ul"
-        template = "wagtail_village/badges_list.html"
+        template = "wagtail_village/blocks/badges_list.html"
 
 
 class TagBlock(blocks.StructBlock):
@@ -117,7 +117,7 @@ class TagBlock(blocks.StructBlock):
     link = LinkWithoutLabelBlock(required=False)
 
     class Meta:
-        template = "wagtail_village/tag.html"
+        template = "wagtail_village/blocks/tag.html"
 
 
 class TagListBlock(blocks.StreamBlock):
@@ -125,7 +125,7 @@ class TagListBlock(blocks.StreamBlock):
 
     class Meta:
         icon = "list-ul"
-        template = "wagtail_village/tags_list.html"
+        template = "wagtail_village/blocks/tags_list.html"
 
 
 ## Basic blocks
@@ -176,7 +176,7 @@ class CardBlock(blocks.StructBlock):
 
     class Meta:
         icon = "tablet-alt"
-        template = "wagtail_village/card.html"
+        template = "wagtail_village/blocks/card.html"
 
 
 class IframeBlock(blocks.StructBlock):
@@ -192,7 +192,7 @@ class IframeBlock(blocks.StructBlock):
 
     class Meta:
         icon = "globe"
-        template = "wagtail_village/iframe.html"
+        template = "wagtail_village/blocks/iframe.html"
 
 
 class ImageAndTextBlock(blocks.StructBlock):
@@ -247,7 +247,7 @@ class ImageAndTextBlock(blocks.StructBlock):
 
     class Meta:
         icon = "image"
-        template = "wagtail_village/image_and_text.html"
+        template = "wagtail_village/blocks/image_and_text.html"
 
 
 class ImageBlock(blocks.StructBlock):
@@ -269,7 +269,7 @@ class ImageBlock(blocks.StructBlock):
 
     class Meta:
         icon = "image"
-        template = "wagtail_village/image.html"
+        template = "wagtail_village/blocks/image.html"
 
 
 class QuoteBlock(blocks.StructBlock):
@@ -285,7 +285,7 @@ class QuoteBlock(blocks.StructBlock):
 
     class Meta:
         icon = "openquote"
-        template = "wagtail_village/quote.html"
+        template = "wagtail_village/blocks/quote.html"
 
 
 class SeparatorBlock(blocks.StructBlock):
@@ -320,7 +320,7 @@ class TextAndCTA(blocks.StructBlock):
 
     class Meta:
         icon = "link"
-        template = "wagtail_village/text_and_cta.html"
+        template = "wagtail_village/blocks/text_and_cta.html"
 
 
 class VideoBlock(blocks.StructBlock):
@@ -333,7 +333,7 @@ class VideoBlock(blocks.StructBlock):
 
     class Meta:
         icon = "media"
-        template = "wagtail_village/video.html"
+        template = "wagtail_village/blocks/video.html"
 
 
 ## Page structure blocks
@@ -382,7 +382,7 @@ class MultiColumnsWithTitleBlock(blocks.StructBlock):
 
     class Meta:
         icon = "dots-horizontal"
-        template = "wagtail_village/multicolumns.html"
+        template = "wagtail_village/blocks/multicolumns.html"
 
 
 class FullWidthBlock(CommonStreamBlock):
@@ -403,7 +403,7 @@ class FullWidthBackgroundBlock(blocks.StructBlock):
 
     class Meta:
         icon = "minus"
-        template = "wagtail_village/full_width_background.html"
+        template = "wagtail_village/blocks/full_width_background.html"
 
 
 STREAMFIELD_COMMON_BLOCKS = [

@@ -7,7 +7,7 @@ from unidecode import unidecode
 from wagtail_village.models import ContentPage, Tag
 
 
-# from wagtail_village.blog.models import ContentOrBlogPage
+# from wagtail_village_blog.models import ContentOrBlogPage
 
 
 # from django_village import views
