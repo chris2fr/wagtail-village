@@ -100,7 +100,7 @@ class LatestCategoryFeed(Feed):
 
 
 class CategoriesListView(TemplateView):
-    template_name = "wagtail_village/blog/categories_list_page.html"
+    template_name = "wagtail_village_blog/categories_list_page.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -125,7 +125,7 @@ class CategoriesListView(TemplateView):
 
 
 class TagsListView(TemplateView):
-    template_name = "wagtail_village/blog/tags_list_page.html"
+    template_name = "wagtail_village_blog/tags_list_page.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

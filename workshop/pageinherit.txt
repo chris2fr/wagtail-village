@@ -1,10 +1,10 @@
-- wagtail_village/blog/templates/blog/blog_entry_page.html
+- wagtail_village_blog/templates/blog/blog_entry_page.html
   - base.html
-- wagtail_village/blog/templates/blog/blog_index_page.html
+- wagtail_village_blog/templates/blog/blog_index_page.html
   - base.html
-- wagtail_village/blog/templates/blog/tags_list_page.html
+- wagtail_village_blog/templates/blog/tags_list_page.html
   - base.html
-- wagtail_village/blog/templates/blog/categories_list_page.html
+- wagtail_village_blog/templates/blog/categories_list_page.html
   - base.html
 - wagtail_village/templates/404.html
   - base.html
