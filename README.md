@@ -81,7 +81,9 @@ cp .env.example .env
 vi .env
 pre-commit install
 pre-commit run --all-files
-make init
+poetry install
+poetry run python manage.py makemigrations
+make migrations
 make collectstatic
 poetry run python manage.py createsuperuser
 ```
