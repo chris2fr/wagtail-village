@@ -64,6 +64,7 @@ def sitevars(request):
     settings = WagtailVillageConfig.for_request(request)
     return {
         "langcode": settings.language,
+        "home_url": "/{}/".format(settings.language),
         "data_village_mourning": "data-village-mourning" if settings.mourning else "",
         "full_site_title": settings.site_title,
     }

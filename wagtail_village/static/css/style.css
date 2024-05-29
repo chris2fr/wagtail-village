@@ -80,6 +80,10 @@ ul.village-nav__list {
   padding-right: 1rem;
 }
 
+.village-nav__list  > * > .village-nav__link {
+  align-content: center;
+}
+
 .village-artwork-major {
   fill: var(--text-default-info);
 }
