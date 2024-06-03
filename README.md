@@ -1,8 +1,8 @@
-# Gestionnaire de contenu Wagtail VILLAGE
+de# Gestionnaire de contenu Wagtail VILLAGE
 
-Sur la base de l'application gestionnaire de contenu CMS et blog sous technologie Wagtail [sites-facile de la DINUM, France](https://github.com/numerique-gouv/sites-faciles), elle-même à base de l'application de mise en page de site dynamique Django [django-wagtailfaW](https://github.com/numerique-gouv/django-wagtailvillage), elle même basé sur le [Design Système de l'Etat ou DSFR du gouvernement français](https://github.com/GouvernementFR/wagtaildjango_village/), cette application gestionnaire de contenu dit CMS et blog [VILLAGE](https://www.village.org) propose de capitaliser sur le travail de fond pour le traitement d'information et de la communication en rendant les composants génériques. 
+Sur la base de l'application gestionnaire de contenu CMS et blog sous technologie Wagtail [sites-facile de la DINUM, France](https://github.com/numerique-gouv/sites-faciles), elle-même à base de l'application de mise en page de site dynamique Django [django-dsfr](https://github.com/numerique-gouv/django-dsfr), elle même basé sur le [Design Système de l'Etat ou DSFR du gouvernement français](https://github.com/GouvernementFR/dsfr/), cette application gestionnaire de contenu dit CMS et blog [VILLAGE](https://www.village.ngo) propose de capitaliser sur le travail de fond pour le traitement d'information et de la communication en rendant les composants génériques. 
 
-Les [conditions d’utilisation de DSFR pour des acteurs privés](https://github.com/GouvernementFR/wagtaildjango_village/blob/main/doc/legal/cgu.md#2-conditions-dutilisation-des-composants-par-les-autres-utilisateurs) sont claires : 
+Les [conditions d’utilisation de DSFR pour des acteurs privés](https://github.com/GouvernementFR/dsfr/blob/main/doc/legal/cgu.md#2-conditions-dutilisation-des-composants-par-les-autres-utilisateurs) sont claires : 
 
 > 2° Conditions d’utilisation des Composants par les Autres Utilisateurs
 > 
@@ -15,8 +15,8 @@ Les conditions de l'utilisation de dango-wagtailvillage and sites-faciles (conte
 Maîtriser l'ensemble de la chaîne de wagtailvillage à django-wagtailvillage à sites-faciles a été une joie parce-que les développements sont propres et faits de manière responsable.  
 
 
-Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable [Wagtail-VILLAGE](https://github.com/chris2fr/wwagtail-village) avec [Django-VILLAGE](https://github.com/chris2fr/web-village) [Module Python Django-VILLAGE](https://pypi.org/project/django_village/
-) et [Web-VILLAGE](https://github.com/chris2fr/web-village).
+Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable [Wagtail-VILLAGE](https://github.com/chris2fr/wagtail-village) avec [Django-VILLAGE](https://github.com/chris2fr/django-village) [Module Python Django-VILLAGE](https://pypi.org/project/django_village/
+) et [Fabrique-VILLAGE](https://github.com/chris2fr/fabrique-village).
 
 ```mermaid
 flowchart TD
@@ -25,30 +25,30 @@ subgraph GouvernementFR
 	DSFR
 end
 subgraph numerique-gouv
-	django-wagtailvillage
+	django-dsfr
 	sites-faciles
 end
-subgraph VILLAGE 
-	web-village
+subgraph ResDigita 
+	fabrique-village
 	django-village
 	wagtail-village
 end
 
 
-django-wagtailvillage -.-> Django 
- sites-faciles-.-> Wagtail 
- django-village -.-> Django
+django-dsfr -.-> Django 
+sites-faciles-.-> Wagtail 
+django-village -.-> Django
 wagtail-village -.-> Wagtail 
 DSFR -.-> NodeJS 
-web-village  -.-> NodeJS 
+fabrique-village  -.-> NodeJS 
 
-DSFR --> django-wagtailvillage
-django-wagtailvillage --> sites-faciles
+DSFR --> django-dsfr
+django-dsfr --> sites-faciles
 DSFR --> uniquement-generique{{Reprise uniquement\ndes éléments\ngénériques}}
-uniquement-generique --> web-village
-web-village --> django-village
+uniquement-generique --> fabrique-village
+fabrique-village --> django-village
 
-django-wagtailvillage --> intro-submodules{{Introduction\nde submodules\npar desgin de site}}
+django-dsfr --> intro-submodules{{Introduction\nde submodules\npar desgin de site}}
 intro-submodules --> django-village
 django-village --> wagtail-village
 sites-faciles --> wagtail-village
