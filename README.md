@@ -28,7 +28,7 @@ subgraph numerique-gouv
 	django-wagtailvillage
 	sites-faciles
 end
-subgraph VILLAGE 
+subgraph ResDigita 
 	web-village
 	django-village
 	wagtail-village
