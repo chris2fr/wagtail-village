@@ -126,17 +126,17 @@ webencodings = "*"
 
 [[package]]
 name = "boto3"
-version = "1.34.113"
+version = "1.34.117"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "boto3-1.34.113-py3-none-any.whl", hash = "sha256:7e59f0a848be477a4c98a90e7a18a0e284adfb643f7879d2b303c5f493661b7a"},
-    {file = "boto3-1.34.113.tar.gz", hash = "sha256:009cd143509f2ff4c37582c3f45d50f28c95eed68e8a5c36641206bdb597a9ea"},
+    {file = "boto3-1.34.117-py3-none-any.whl", hash = "sha256:1506589e30566bbb2f4997b60968ff7d4ef8a998836c31eedd36437ac3b7408a"},
+    {file = "boto3-1.34.117.tar.gz", hash = "sha256:c8a383b904d6faaf7eed0c06e31b423db128e4c09ce7bd2afc39d1cd07030a51"},
 ]
 
 [package.dependencies]
-botocore = ">=1.34.113,<1.35.0"
+botocore = ">=1.34.117,<1.35.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.10.0,<0.11.0"
 
@@ -145,13 +145,13 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.34.113"
+version = "1.34.117"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "botocore-1.34.113-py3-none-any.whl", hash = "sha256:8ca87776450ef41dd25c327eb6e504294230a5756940d68bcfdedc4a7cdeca97"},
-    {file = "botocore-1.34.113.tar.gz", hash = "sha256:449912ba3c4ded64f21d09d428146dd9c05337b2a112e15511bf2c4888faae79"},
+    {file = "botocore-1.34.117-py3-none-any.whl", hash = "sha256:26a431997f882bcdd1e835f44c24b2a1752b1c4e5183c2ce62999ce95d518d6c"},
+    {file = "botocore-1.34.117.tar.gz", hash = "sha256:4637ca42e6c51aebc4d9a2d92f97bf4bdb042e3f7985ff31a659a11e4c170e73"},
 ]
 
 [package.dependencies]
@@ -164,13 +164,13 @@ crt = ["awscrt (==0.20.9)"]
 
 [[package]]
 name = "certifi"
-version = "2024.2.2"
+version = "2024.6.2"
 description = "Python package for providing Mozilla's CA Bundle."
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "certifi-2024.2.2-py3-none-any.whl", hash = "sha256:dc383c07b76109f368f6106eee2b593b04a011ea4d55f652c6ca24a754d1cdd1"},
-    {file = "certifi-2024.2.2.tar.gz", hash = "sha256:0569859f95fc761b18b45ef421b1290a0f65f147e92a1e5eb3e635f9a5e4e66f"},
+    {file = "certifi-2024.6.2-py3-none-any.whl", hash = "sha256:ddc6c8ce995e6987e7faf5e3f1b02b302836a0e5d98ece18392cb1a36c72ad56"},
+    {file = "certifi-2024.6.2.tar.gz", hash = "sha256:3cd43f1c6fa7dedc5899d69d3ad0398fd018ad1a17fba83ddaf78aa46c747516"},
 ]
 
 [[package]]
@@ -358,18 +358,18 @@ files = [
 
 [[package]]
 name = "dj-database-url"
-version = "2.1.0"
+version = "2.2.0"
 description = "Use Database URLs in your Django Application."
 optional = false
 python-versions = "*"
 files = [
-    {file = "dj-database-url-2.1.0.tar.gz", hash = "sha256:f2042cefe1086e539c9da39fad5ad7f61173bf79665e69bf7e4de55fa88b135f"},
-    {file = "dj_database_url-2.1.0-py3-none-any.whl", hash = "sha256:04bc34b248d4c21aaa13e4ab419ae6575ef5f10f3df735ce7da97722caa356e0"},
+    {file = "dj_database_url-2.2.0-py3-none-any.whl", hash = "sha256:3e792567b0aa9a4884860af05fe2aa4968071ad351e033b6db632f97ac6db9de"},
+    {file = "dj_database_url-2.2.0.tar.gz", hash = "sha256:9f9b05058ddf888f1e6f840048b8d705ff9395e3b52a07165daa3d8b9360551b"},
 ]
 
 [package.dependencies]
 Django = ">=3.2"
-typing-extensions = ">=3.10.0.0"
+typing_extensions = ">=3.10.0.0"
 
 [[package]]
 name = "dj-static"
@@ -563,13 +563,13 @@ testing = ["django-modelcluster"]
 
 [[package]]
 name = "django-sass-processor"
-version = "1.4"
+version = "1.4.1"
 description = "SASS processor to compile SCSS files into *.css, while rendering, or offline."
 optional = false
 python-versions = "*"
 files = [
-    {file = "django-sass-processor-1.4.tar.gz", hash = "sha256:b17f39d07d3a7510aec425c191937e230502deeb7ca6bf6950a1adf8b4b7c1c3"},
-    {file = "django_sass_processor-1.4-py3-none-any.whl", hash = "sha256:344f9d6887684711499e19c9785c78940bd638d220ebdad56e30d4eff1da99cf"},
+    {file = "django_sass_processor-1.4.1-py3-none-any.whl", hash = "sha256:7b76560172f72519cfcda944feeb517b37f40f5562196298245f5569c2d02f91"},
+    {file = "django_sass_processor-1.4.1.tar.gz", hash = "sha256:1e9d04769f76d89bbf77b9b279ba83dfacad9c98c03ca8a58ecfc29d997e6fcf"},
 ]
 
 [package.extras]
@@ -629,13 +629,13 @@ Django = ">=3.2"
 
 [[package]]
 name = "django-village"
-version = "0.0.1"
-description = "Render Fabrique VILLAGE into a generic Django app"
+version = "0.0.2"
+description = "Render Design System VILLAGE into a generic Django app"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "django_village-0.0.1-py3-none-any.whl", hash = "sha256:5f9605dff97d4d7f9c01cd13dc5116193eb1f7c741f1796e6622e1fdf4e1587e"},
-    {file = "django_village-0.0.1.tar.gz", hash = "sha256:8eeb52dc76840e66c17517aa4409267f8b11f92eeeaedc2a296c22cddd255358"},
+    {file = "django_village-0.0.2-py3-none-any.whl", hash = "sha256:ec188c326dffbb3a400fd13160ecee85e1250866763d10b8cdd8288a32dbfe24"},
+    {file = "django_village-0.0.2.tar.gz", hash = "sha256:c9cbfc09ca5d9bdbdd1bff92cc83f29dae7f60e0322870c21d8ebb007f4fdec1"},
 ]
 
 [package.dependencies]
@@ -870,13 +870,13 @@ files = [
 
 [[package]]
 name = "ipython"
-version = "8.24.0"
+version = "8.25.0"
 description = "IPython: Productive Interactive Computing"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "ipython-8.24.0-py3-none-any.whl", hash = "sha256:d7bf2f6c4314984e3e02393213bab8703cf163ede39672ce5918c51fe253a2a3"},
-    {file = "ipython-8.24.0.tar.gz", hash = "sha256:010db3f8a728a578bb641fdd06c063b9fb8e96a9464c63aec6310fbcb5e80501"},
+    {file = "ipython-8.25.0-py3-none-any.whl", hash = "sha256:53eee7ad44df903a06655871cbab66d156a051fd86f3ec6750470ac9604ac1ab"},
+    {file = "ipython-8.25.0.tar.gz", hash = "sha256:c6ed726a140b6e725b911528f80439c534fac915246af3efc39440a6b0f9d716"},
 ]
 
 [package.dependencies]
@@ -894,7 +894,7 @@ typing-extensions = {version = ">=4.6", markers = "python_version < \"3.12\""}
 [package.extras]
 all = ["ipython[black,doc,kernel,matplotlib,nbconvert,nbformat,notebook,parallel,qtconsole]", "ipython[test,test-extra]"]
 black = ["black"]
-doc = ["docrepr", "exceptiongroup", "ipykernel", "ipython[test]", "matplotlib", "setuptools (>=18.5)", "sphinx (>=1.3)", "sphinx-rtd-theme", "sphinxcontrib-jquery", "stack-data", "typing-extensions"]
+doc = ["docrepr", "exceptiongroup", "intersphinx-registry", "ipykernel", "ipython[test]", "matplotlib", "setuptools (>=18.5)", "sphinx (>=1.3)", "sphinx-rtd-theme", "sphinxcontrib-jquery", "tomli", "typing-extensions"]
 kernel = ["ipykernel"]
 matplotlib = ["matplotlib"]
 nbconvert = ["nbconvert"]
@@ -1075,27 +1075,24 @@ files = [
 
 [[package]]
 name = "nodeenv"
-version = "1.8.0"
+version = "1.9.0"
 description = "Node.js virtual environment builder"
 optional = false
-python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*"
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 files = [
-    {file = "nodeenv-1.8.0-py2.py3-none-any.whl", hash = "sha256:df865724bb3c3adc86b3876fa209771517b0cfe596beff01a92700e0e8be4cec"},
-    {file = "nodeenv-1.8.0.tar.gz", hash = "sha256:d51e0c37e64fbf47d017feac3145cdbb58836d7eee8c6f6d3b6880c5456227d2"},
+    {file = "nodeenv-1.9.0-py2.py3-none-any.whl", hash = "sha256:508ecec98f9f3330b636d4448c0f1a56fc68017c68f1e7857ebc52acf0eb879a"},
+    {file = "nodeenv-1.9.0.tar.gz", hash = "sha256:07f144e90dae547bf0d4ee8da0ee42664a42a04e02ed68e06324348dafe4bdb1"},
 ]
-
-[package.dependencies]
-setuptools = "*"
 
 [[package]]
 name = "openpyxl"
-version = "3.1.2"
+version = "3.1.3"
 description = "A Python library to read/write Excel 2010 xlsx/xlsm files"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "openpyxl-3.1.2-py2.py3-none-any.whl", hash = "sha256:f91456ead12ab3c6c2e9491cf33ba6d08357d802192379bb482f1033ade496f5"},
-    {file = "openpyxl-3.1.2.tar.gz", hash = "sha256:a6f5977418eff3b2d5500d54d9db50c8277a368436f4e4f8ddb1be3422870184"},
+    {file = "openpyxl-3.1.3-py2.py3-none-any.whl", hash = "sha256:25071b558db709de9e8782c3d3e058af3b23ffb2fc6f40c8f0c45a154eced2c3"},
+    {file = "openpyxl-3.1.3.tar.gz", hash = "sha256:8dd482e5350125b2388070bb2477927be2e8ebc27df61178709bc8c8751da2f9"},
 ]
 
 [package.dependencies]
@@ -1743,13 +1740,13 @@ files = [
 
 [[package]]
 name = "requests"
-version = "2.32.2"
+version = "2.32.3"
 description = "Python HTTP for Humans."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "requests-2.32.2-py3-none-any.whl", hash = "sha256:fc06670dd0ed212426dfeb94fc1b983d917c4f9847c863f313c9dfaaffb7c23c"},
-    {file = "requests-2.32.2.tar.gz", hash = "sha256:dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"},
+    {file = "requests-2.32.3-py3-none-any.whl", hash = "sha256:70761cfe03c773ceb22aa2f671b4757976145175cdfca038c02654d061d6dcc6"},
+    {file = "requests-2.32.3.tar.gz", hash = "sha256:55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"},
 ]
 
 [package.dependencies]
@@ -1810,21 +1807,6 @@ botocore = ">=1.33.2,<2.0a.0"
 
 [package.extras]
 crt = ["botocore[crt] (>=1.33.2,<2.0a.0)"]
-
-[[package]]
-name = "setuptools"
-version = "70.0.0"
-description = "Easily download, build, install, upgrade, and uninstall Python packages"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "setuptools-70.0.0-py3-none-any.whl", hash = "sha256:54faa7f2e8d2d11bcd2c07bed282eef1046b5c080d1c32add737d7b5817b1ad4"},
-    {file = "setuptools-70.0.0.tar.gz", hash = "sha256:f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"},
-]
-
-[package.extras]
-docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "pygments-github-lexers (==0.0.5)", "pyproject-hooks (!=1.1)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-favicon", "sphinx-inline-tabs", "sphinx-lint", "sphinx-notfound-page (>=1,<2)", "sphinx-reredirects", "sphinxcontrib-towncrier"]
-testing = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "importlib-metadata", "ini2toml[lite] (>=0.14)", "jaraco.develop (>=7.21)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "mypy (==1.9)", "packaging (>=23.2)", "pip (>=19.1)", "pyproject-hooks (!=1.1)", "pytest (>=6,!=8.1.1)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-home (>=0.5)", "pytest-mypy", "pytest-perf", "pytest-ruff (>=0.2.1)", "pytest-subprocess", "pytest-timeout", "pytest-xdist (>=3)", "tomli", "tomli-w (>=1.0.0)", "virtualenv (>=13.0.0)", "wheel"]
 
 [[package]]
 name = "six"
@@ -1947,13 +1929,13 @@ test = ["argcomplete (>=3.0.3)", "mypy (>=1.7.0)", "pre-commit", "pytest (>=7.0,
 
 [[package]]
 name = "typing-extensions"
-version = "4.12.0"
+version = "4.12.1"
 description = "Backported and Experimental Type Hints for Python 3.8+"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "typing_extensions-4.12.0-py3-none-any.whl", hash = "sha256:b349c66bea9016ac22978d800cfff206d5f9816951f12a7d0ec5578b0a819594"},
-    {file = "typing_extensions-4.12.0.tar.gz", hash = "sha256:8cbcdc8606ebcb0d95453ad7dc5065e6237b6aa230a31e81d0f440c30fed5fd8"},
+    {file = "typing_extensions-4.12.1-py3-none-any.whl", hash = "sha256:6024b58b69089e5a89c347397254e35f1bf02a907728ec7fee9bf0fe837d203a"},
+    {file = "typing_extensions-4.12.1.tar.gz", hash = "sha256:915f5e35ff76f56588223f15fdd5938f9a1cf9195c0de25130c627e4d597f6d1"},
 ]
 
 [[package]]
@@ -2017,13 +1999,13 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 
 [[package]]
 name = "wagtail"
-version = "6.1.1"
+version = "6.1.2"
 description = "A Django content management system."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "wagtail-6.1.1-py3-none-any.whl", hash = "sha256:084f5911ddc742d4e7797cc40ea53ec6f696b06b91cd0857c1e28a944eceddda"},
-    {file = "wagtail-6.1.1.tar.gz", hash = "sha256:d7b6e5e09970dd74efb63953c42a26fe6c25902e2a6dca4ad7e74ae00facb394"},
+    {file = "wagtail-6.1.2-py3-none-any.whl", hash = "sha256:6858f89c4a050cbbb1702ce3cb605b8360b736c296c93193c4e72ea87427d431"},
+    {file = "wagtail-6.1.2.tar.gz", hash = "sha256:fdb82c6cd6f6ae5c1f7b2312166969d8601015b65cbb29ad120efac727d399c1"},
 ]
 
 [package.dependencies]
@@ -2180,4 +2162,4 @@ wand = ["Wand (>=0.6,<1.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "861a3040e508d7fee60229baf3717ed0f532e9d0e54d520274a95a051594ca4f"
+content-hash = "07f7835669a4258602eec56041a18ce71bf2150b038b61875a0ed75417ed2821"
