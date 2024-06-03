@@ -7,9 +7,11 @@
       'primaryBorderColor': '#555',
       'tertiaryTextColor': '#fff',
       'lineColor': '#777',
-      'secondaryColor': '#eee',
+      'secondaryColor': '#ffffffff',
       'tertiaryColor': '#555',
-      'background': '#ffffff00'
+      'background': '#ffffff00',
+      'defaultLinkColor': '#ffffffff',
+      'linkColor': '#ffffffff'
     }
   }
 }%%
@@ -18,7 +20,7 @@
 flowchart TD
 
 
-subgraph GouvernementFR
+subgraph GouvernementFR["<strong><a href='https://www.info.gouv.fr' style='color:white'>GouvernementFR</a><strong>"]
   dsfr["<big><b>DSFR</big></b>
         <hr/><u>Système de design de l'Etat</u>
          <small>Outillage et gabarits de création de composants 
@@ -30,7 +32,8 @@ subgraph GouvernementFR
 %%   contre l'usurpation de la marque de l'Etat
 %%  </small>"]
 end
-subgraph numerique-gouv
+
+subgraph numerique-gouv["<strong><a href='https://www.numerique.gouv.fr/' style='color:white'>numerique-gouv</a><strong>"]
 
   sites-faciles["<big><b>Sites Faciles</big></b>
              <hr/><small>Intégration Libre
@@ -47,7 +50,7 @@ subgraph numerique-gouv
 %%  publié sur pypi.org sous licence Libre.</small>"]
 end
 
-subgraph village.ngo
+subgraph ResDigita["<strong><a href='https://www.resdigita.org/' style='color:white'>ResDigita</a><strong>"]
     wagtail-village["<big><b>Wagtail Village</big></b>
                    <hr/><small>Application Libre du système 
                                de gestion de contenu Wagtail
@@ -65,7 +68,7 @@ subgraph village.ngo
     %%	publié par Pypi.org
     %%	et par github.com en Libre</small>"]
 
-    designsystem-village["<big><b>DS Village</big></b>
+    fabrique-village["<big><b>Fabrique Village</big></b>
     <hr/><small>Génération de composants 
                 HTML, CSS et Javascript
                 par le système de design
@@ -86,7 +89,7 @@ subgraph village.ngo
 %%  sites-faciles <-.- Wagtail 
 %%  django-village <-.- Django
 %%  wagtail-village <-.- Wagtail 
-%%  designsystem-village  <-.- NodeJS 
+%%  fabrique-village  <-.- NodeJS 
 %%  dsfr <-.- NodeJS 
 
 
@@ -94,7 +97,7 @@ wagtail-village
 -->
 django-village
 -->
-designsystem-village
+fabrique-village
 
 
 
@@ -106,7 +109,7 @@ dsfr
 
 master-design
 -.-
-designsystem-village
+fabrique-village
 
 
 master-django{{"<i>Sites et composants 
@@ -153,7 +156,10 @@ classDef dashedOutline stroke-dasharray:4 5
 
 click wagtail-village href "https://github.com/chris2fr/wagtail-village"
 click django-village href "https://github.com/chris2fr/django-village"
-click designsystem-village href "https://github.com/chris2fr/designsystem-village"
+click fabrique-village href "https://github.com/chris2fr/fabrique-village"
 click sites-faciles href "https://github.com/numerique-gouv/sites-faciles"
 click django-dsfr href "https://github.com/numerique-gouv/django-dsfr"
 click dsfr href "https://github.com/GouvernementFR/dsfr/"
+click ResDigita href "https://www.resdigita.org"
+click numerique-gouv href "https://www.numerique.gouv.fr/"
+click GouvernementFR href "https://www.info.gouv.fr/"
