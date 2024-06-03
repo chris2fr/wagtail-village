@@ -25,30 +25,30 @@ subgraph GouvernementFR
 	DSFR
 end
 subgraph numerique-gouv
-	django-wagtailvillage
+	django-dsfr
 	sites-faciles
 end
 subgraph ResDigita 
-	web-village
+	fabrique-village
 	django-village
 	wagtail-village
 end
 
 
-django-wagtailvillage -.-> Django 
- sites-faciles-.-> Wagtail 
- django-village -.-> Django
+django-dsfr -.-> Django 
+sites-faciles-.-> Wagtail 
+django-village -.-> Django
 wagtail-village -.-> Wagtail 
 DSFR -.-> NodeJS 
-web-village  -.-> NodeJS 
+fabrique-village  -.-> NodeJS 
 
-DSFR --> django-wagtailvillage
-django-wagtailvillage --> sites-faciles
+DSFR --> django-dsfr
+django-dsfr --> sites-faciles
 DSFR --> uniquement-generique{{Reprise uniquement\ndes éléments\ngénériques}}
-uniquement-generique --> web-village
-web-village --> django-village
+uniquement-generique --> fabrique-village
+fabrique-village --> django-village
 
-django-wagtailvillage --> intro-submodules{{Introduction\nde submodules\npar desgin de site}}
+django-dsfr --> intro-submodules{{Introduction\nde submodules\npar desgin de site}}
 intro-submodules --> django-village
 django-village --> wagtail-village
 sites-faciles --> wagtail-village
