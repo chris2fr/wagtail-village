@@ -99,3 +99,19 @@ ul.village-nav__list {
 --background-action-high-village-primary-hover
 --background-action-high-village-primary-active
 --background-action-high-village-primary */
+
+/* For Astro Homepage */
+
+h1.title p,
+div.container-lg h2,
+div.container-lg h3,
+div.container-md h2,
+div.container-md h3
+{
+  color: rgb(var(--color-light) / var(--tw-text-opacity));
+}
+
+h1.title p {
+  font-size: unset;
+  line-height: unset;
+}
