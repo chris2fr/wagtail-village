@@ -115,3 +115,25 @@ h1.title p {
   font-size: unset;
   line-height: unset;
 }
+@media (min-width: 62em) {
+  header.lesgrandsvoisins-home div.village-header__body{
+    display: none;
+  }
+}
+
+@media (max-width: 62em) {
+  header.lesgrandsvoisins-home button.village-btn--search {
+    display: none;
+  }
+}
+
+header.lesgrandsvoisins-home button.village-btn--display {
+  display: none;
+}
+
+
+
+/* header.lesgrandsvoisins-home div.village-header__tools {
+  display: none;
+} */
+

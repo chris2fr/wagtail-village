@@ -1,5 +1,5 @@
 {% load i18n static wagtailcore_tags wagtailimages_tags menu_tags static l10n %}
-
+{% load i18n static l10n %}
 <header role="banner" class="village-header lesgrandsvoisins-home">
   <div class="village-header__menu village-modal" id="village-menu-mobile" aria-labelledby="village-btn-menu-mobile">
     <div class="village-container">
@@ -13,15 +13,11 @@
       id="village-navigation"
       aria-label="Menu principal"
       data-village-js-navigation="true">
-      {% block main_menu %}
-      {% comment %}
-      <nav class="village-nav" id="village-navigation" aria-label="{{ main_menu_label }}">
-        {% endcomment %}
-        {% main_menu max_levels=2 template="menus/custom_main_menu.html" sub_menu_template="menus/custom_sub_menu.html" %}
-        {% comment %}
-      </nav>
-      {% endcomment %}
-      {% endblock main_menu %}
+{% block main_menu %}
+        <nav class="village-nav" id="village-navigation" aria-label="{{ main_menu_label }}">
+          {% main_menu max_levels=2 template="menus/custom_main_menu.html" sub_menu_template="menus/custom_sub_menu.html" %}
+        </nav>
+{% endblock main_menu %}
       </nav>
       <div class="village-header__tools">
         <div class="village-header__tools-links">
@@ -32,12 +28,12 @@
                 {% translate "Display settings" %}
               </button>
             </li>
-            {% block header_tools %}
+{% block header_tools %}
             <li>
               {% include "wagtail_village/language_selector.html" %}
             </li>
               {% flat_menu handle="header_tools" template="menus/custom_flat_menu.html" %}
-            {% endblock header_tools %}
+{% endblock header_tools %}
           </ul>
         </div>
 {% block header_search %}
@@ -83,11 +79,9 @@
       </div>
     </div>
   </div>
-  {% comment %}
   <div class="village-header__body">
     <div class="village-container">
       <div class="village-header__body-row">
-
         <div class="village-header__brand village-enlarge-link">
           <div class="village-header__brand-top">
             <div class="village-header__navbar">
@@ -105,32 +99,27 @@
 {% endblock burger_menu %}
             </div>
           </div>
-          <div class="village-header__service">
+            <div class="village-header__service">
 {% block service_title %}
-            <a href="{{ home_url }}" title="{% translate 'Accueil' %} — {{ SITE_CONFIG.site_title }}">
-              <p class="village-header__service-title">
-                {{ SITE_CONFIG.site_title }}
-                {% if SITE_CONFIG.beta_tag %}
-                <span class="village-badge village-badge--sm village-badge--green-emeraude">BETA</span>
-                {% endif %}
-              </p>
-            </a>
+              <a href="{{ home_url }}" title="{% translate 'Accueil' %} — {{ SITE_CONFIG.site_title }}">
+                <p class="village-header__service-title">
+                  {{ SITE_CONFIG.site_title }}
+                  {% if SITE_CONFIG.beta_tag %}
+                  <span class="village-badge village-badge--sm village-badge--green-emeraude">BETA</span>
+                  {% endif %}
+                </p>
+              </a>
 {% endblock service_title %}
-            <p class="village-header__service-tagline">
+              <p class="village-header__service-tagline">
 {% block service_tagline %}
-              {{ SITE_CONFIG.site_tagline }}
+                {{ SITE_CONFIG.site_tagline }}
 {% endblock service_tagline %}
-            </p>
+              </p>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
   </div>
-  {% endcomment %}
-</div>
 </header>
-
-
-
-
-

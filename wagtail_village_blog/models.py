@@ -49,19 +49,15 @@ class BlogIndexPage(ContentPage):
     @property
     def posts(self):
         # Get list of blog pages that are descendants of this page
-        print("HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE ")
         posts = BlogEntryPage.objects.descendant_of(self).live()
-        print("HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE ")
         posts = (
             posts.order_by("-date").select_related("owner").prefetch_related("tags", "blog_categories", "date__year")
         )
-        print("HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE ")
         return posts
 
     def get_context(self, request, tag=None, category=None, author=None, year=None, *args, **kwargs):  # NOSONAR
         context = super(BlogIndexPage, self).get_context(request, *args, **kwargs)
         posts = self.posts
-        print("64 HERE 64 HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE ")
         locale = Locale.objects.get(language_code=get_language())
 
         breadcrumb = None
