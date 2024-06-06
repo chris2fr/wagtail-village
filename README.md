@@ -66,7 +66,7 @@ Django --> Wagtail
 Voici des notes aléatoires:
 
 ```sql
-CREATE USER wagtailvillage  with ENCRYPTED PASSWORD '';
+CREATE USER wagtailvillage  with ENCRYPTED PASSWORD 'SOMEPASSWORD';
 CREATE DATABASE "wagtailvillage" WITH OWNER "wagtailvillage" ENCODING 'UTF8';
 ALTER database wagtailvillage owner to wagtailvillage;
 GRANT ALL privileges ON DATABASE wagtailvillage TO wagtailvillage;
@@ -78,6 +78,7 @@ python -m venv venv
 source venv/bin/activate
 pip install pre-commit django
 cp .env.example .env
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 vi .env
 pre-commit install
 pre-commit run --all-files

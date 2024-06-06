@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "wagtail-village"
-version = "0.0.2"
+version = "0.0.3"
 description = "Gestionnaire de contenu permettant de créer et gérer un site internet basé sur le Système de design de l'État, accessible et responsive"
 authors = [
   "Chris Mann <chris@mann.fr>",
