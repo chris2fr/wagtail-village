@@ -61,8 +61,8 @@ type="text/css" />
 {% endblock breadcrumb %}
 
 {% block header %}
+{% wagtailuserbar %}
   {% include "wagtail_village/header.html" %}
-  {% wagtailuserbar %}
   {% if settings.wagtail_village.WagtailVillageConfig.notice %}
     {% village_notice title=settings.wagtail_village.WagtailVillageConfig.notice %}
   {% endif %}
