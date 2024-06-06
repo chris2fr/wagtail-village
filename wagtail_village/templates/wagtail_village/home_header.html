@@ -1,0 +1,136 @@
+{% load i18n static wagtailcore_tags wagtailimages_tags menu_tags static l10n %}
+
+<header role="banner" class="village-header lesgrandsvoisins-home">
+  <div class="village-header__menu village-modal" id="village-menu-mobile" aria-labelledby="village-btn-menu-mobile">
+    <div class="village-container">
+      <button class="village-btn--close village-btn" id="village-menu-close-btn" aria-controls="village-menu-mobile"
+        title='{% translate "Close" %}'>
+        {% translate "Close" %}
+      </button>
+      <div class="village-header__menu-links"></div>
+      <nav role="navigation"
+      class="village-nav"
+      id="village-navigation"
+      aria-label="Menu principal"
+      data-village-js-navigation="true">
+      {% block main_menu %}
+      {% comment %}
+      <nav class="village-nav" id="village-navigation" aria-label="{{ main_menu_label }}">
+        {% endcomment %}
+        {% main_menu max_levels=2 template="menus/custom_main_menu.html" sub_menu_template="menus/custom_sub_menu.html" %}
+        {% comment %}
+      </nav>
+      {% endcomment %}
+      {% endblock main_menu %}
+      </nav>
+      <div class="village-header__tools">
+        <div class="village-header__tools-links">
+          <ul class="village-btns-group">
+            <li>
+              <button class="village-btn--display village-btn" aria-controls="village-theme-modal"
+                data-village-opened="false">
+                {% translate "Display settings" %}
+              </button>
+            </li>
+            {% block header_tools %}
+            <li>
+              {% include "wagtail_village/language_selector.html" %}
+            </li>
+              {% flat_menu handle="header_tools" template="menus/custom_flat_menu.html" %}
+            {% endblock header_tools %}
+          </ul>
+        </div>
+{% block header_search %}
+        <div class="village-header__search village-modal" id="modal-search"
+          aria-labelledby="village-btn-search-mobile">
+          <div class="village-container village-container-lg--fluid">
+            {% translate "Search" as search_label %}
+            {% translate "Close" as close_label %}
+            <button class="village-btn--close village-btn" aria-controls="modal-search" title="{{ close_label }}">
+              {{ close_label }}
+            </button>
+            <form action="{% url 'wagtail_village_search' %}" method="get">
+              <div class="village-search-bar" id="search-bar" role="search">
+                <label class="village-label" for="search-bar-input">
+                  {{ search_label }}
+                </label>
+                <input class="village-input" placeholder="{{ search_label }}" type="search" id="search-bar-input" name="q">
+                <button class="village-btn" title="{{ search_label }}">
+                  {{ search_label }}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+{% endblock header_search %}
+      </div>
+      <div class="village-header__menu-logo">
+{% block brand %}
+        {% translate "Home page" as home_page %}
+        <a href="{{ home_url }}" title="{{ home_page }} — {{ SITE_CONFIG.site_title }}">
+          {% if SITE_CONFIG.operator_logo_file and SITE_CONFIG.operator_logo_alt %}
+          <div class='village-header__operator'>
+            <img class='village-responsive-img' src='{{ SITE_CONFIG.operator_logo_file.url }}'
+              alt='{{ SITE_CONFIG.operator_logo_alt }}' {% if SITE_CONFIG.operator_logo_width >= 1 %}
+            style='max-width:{{ SITE_CONFIG.operator_logo_width|unlocalize }}rem;'
+            {% endif %} />
+          </div>
+          {% else %}
+          <p>{{ SITE_CONFIG.site_title }}</p>
+          {% endif %}
+        </a>
+{% endblock brand %}
+      </div>
+    </div>
+  </div>
+  {% comment %}
+  <div class="village-header__body">
+    <div class="village-container">
+      <div class="village-header__body-row">
+
+        <div class="village-header__brand village-enlarge-link">
+          <div class="village-header__brand-top">
+            <div class="village-header__navbar">
+{% block burger_menu %}
+              {% translate "Search" as search_label %}
+              <button class="village-btn--search village-btn" data-village-opened="false" aria-controls="modal-search"
+                id="village-btn-search-mobile" title="{{ search_label }}">
+                {{ search_label }}
+              </button>
+              {% translate "Menu" as menu_label %}
+              <button class="village-btn--menu village-btn" data-village-opened="false" aria-controls="village-menu-mobile"
+                id="village-btn-menu-mobile" title="{{ menu_label }}">
+                {{ menu_label }}
+              </button>
+{% endblock burger_menu %}
+            </div>
+          </div>
+          <div class="village-header__service">
+{% block service_title %}
+            <a href="{{ home_url }}" title="{% translate 'Accueil' %} — {{ SITE_CONFIG.site_title }}">
+              <p class="village-header__service-title">
+                {{ SITE_CONFIG.site_title }}
+                {% if SITE_CONFIG.beta_tag %}
+                <span class="village-badge village-badge--sm village-badge--green-emeraude">BETA</span>
+                {% endif %}
+              </p>
+            </a>
+{% endblock service_title %}
+            <p class="village-header__service-tagline">
+{% block service_tagline %}
+              {{ SITE_CONFIG.site_tagline }}
+{% endblock service_tagline %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endcomment %}
+</div>
+</header>
+
+
+
+
+
