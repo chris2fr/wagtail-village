@@ -102,18 +102,18 @@ ul.village-nav__list {
 
 /* For Astro Homepage */
 
-h1.title p,
-div.container-lg h2,
-div.container-lg h3,
-div.container-md h2,
-div.container-md h3
+main.lesgrandsvoisins-home h1.title p,
+main.lesgrandsvoisins-home h2,
+main.lesgrandsvoisins-home h3
 {
   color: rgb(var(--color-light) / var(--tw-text-opacity));
 }
 
-h1.title p {
-  font-size: unset;
-  line-height: unset;
+main.lesgrandsvoisins-home h2,
+main.lesgrandsvoisins-home h3,
+main.lesgrandsvoisins-home h1.title p {
+  font-size: revert;
+  line-height: revert;
 }
 @media (min-width: 62em) {
   header.lesgrandsvoisins-home div.village-header__body{
