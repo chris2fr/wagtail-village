@@ -154,6 +154,10 @@ main.lesgrandsvoisins-home h1.title p {
   column-gap: 1rem;
 }
 
-.village-header__brand {
+.village-header__service {
   display: none;
+}
+
+body {
+  color: var(--text-title-grey);
 }
