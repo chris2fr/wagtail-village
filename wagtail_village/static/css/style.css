@@ -149,3 +149,11 @@ main.lesgrandsvoisins-home h1.title p {
   position: absolute;
   pointer-events: none;
 } */
+
+.village-header .village-header__menu .village-container {
+  column-gap: 1rem;
+}
+
+.village-header__brand {
+  display: none;
+}
