@@ -69,10 +69,10 @@
       line-height: 1.3em;
     }
     */
-    div.village-home-hero h2 p em,
-    div.village-home-hero h2 p b,
-    div.village-home-hero h2 p i,
-    div.village-home-hero h2 p strong {
+    div.village-home-hero h2 em,
+    div.village-home-hero h2 b,
+    div.village-home-hero h2 i,
+    div.village-home-hero h2 strong {
       color: var(--text-label-village-secondary);
     }
   </style>
@@ -152,5 +152,6 @@
 {% include "wagtail_village/blocks_stream.html" with stream=page.section_3_body %}
 <span class="wavybottom"></span>
 </div>
+{% include "wagtail_village/blocks_stream.html" with stream=body %}
 {% endblock content %}
 
