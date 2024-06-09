@@ -54,14 +54,17 @@ type="text/css" />
 {% endblock tracking %}
 
 {% block skiplinks %}
+  {% wagtailuserbar %}
   {% village_skiplinks skiplinks %}
 {% endblock skiplinks %}
 
 {% block breadcrumb %}
 {% endblock breadcrumb %}
 
+{% block topbody%}
+{% endblock topbody%}
+
 {% block header %}
-{% wagtailuserbar %}
   {% include "wagtail_village/header.html" %}
   {% if settings.wagtail_village.WagtailVillageConfig.notice %}
     {% village_notice title=settings.wagtail_village.WagtailVillageConfig.notice %}
@@ -82,8 +85,6 @@ type="text/css" />
   {% include "wagtail_village/footer.html" %}
 {% endblock footer %}
 
-{% block extra_js %}
-{% endblock extra_js %}
 
 {% block body_tracking_scripts %}
   {% if settings.wagtail_village.AnalyticsSettings.body_scripts %}

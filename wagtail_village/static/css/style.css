@@ -61,6 +61,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'lack', 'system-ui', 'sans-serif';
+  font-weight: unset;
 }
 
 .village-logo:after {
@@ -127,9 +128,9 @@ main.lesgrandsvoisins-home h1.title p {
   }
 }
 
-header.lesgrandsvoisins-home button.village-btn--display {
+/* header.lesgrandsvoisins-home button.village-btn--display {
   display: none;
-}
+} */
 
 
 
@@ -137,3 +138,14 @@ header.lesgrandsvoisins-home button.village-btn--display {
   display: none;
 } */
 
+
+/* div.lesgrandsvoisins-home-hero {
+  --color-primary: 0 146 11;
+  --color-secondary: 24 150 255;
+  will-change: transform;
+  backface-visibility: hidden;
+  background-image: radial-gradient(50vMax at -10vw -20vw, rgb(var(--color-secondary) / 1), rgb(var(--color-secondary) / 80%) 40%, rgb(var(--color-secondary) / 0%)), radial-gradient(60vMax at 100vw 100vh, rgb(var(--color-primary) / 1), rgb(var(--color-primary) / 80%) 40%, rgb(var(--color-primary) / 0%));
+  inset: 0;
+  position: absolute;
+  pointer-events: none;
+} */

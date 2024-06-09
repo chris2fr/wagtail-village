@@ -11,7 +11,7 @@ maintainers = [
 readme = "README.md"
 
 [tool.poetry.dependencies]
-django-village = "^0.0.2"
+django-village = "^0.0.3"
 python = "^3.11"
 django = "^5.0.6"
 wagtail = "^6.1.1"

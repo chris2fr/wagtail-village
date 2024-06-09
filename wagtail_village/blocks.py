@@ -179,6 +179,13 @@ class CardBlock(blocks.StructBlock):
         template = "wagtail_village/blocks/card.html"
 
 
+class GradientBlock(blocks.StructBlock):
+    content = blocks.RichTextBlock(label=_("Content"))
+
+    class Meta:
+        template = "wagtail_village/blocks/gradient.html"
+
+
 class IframeBlock(blocks.StructBlock):
     title = blocks.CharBlock(
         label=_("Title"),
@@ -417,6 +424,7 @@ STREAMFIELD_COMMON_BLOCKS = [
     ("alert", AlertBlock(label=_("Alert message"))),
     ("callout", CalloutBlock(label=_("Callout"))),
     ("quote", QuoteBlock(label=_("Quote"))),
+    # ("gradient", GradientBlock(label=_("Gradient"))),
     ("video", VideoBlock(label=_("Video"))),
     ("accordions", AccordionsBlock(label=_("Accordions"))),
     ("stepper", StepperBlock(label=_("Stepper"))),

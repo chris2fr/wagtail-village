@@ -7,8 +7,11 @@ from wagtail_village.models import ContentPage
 
 
 class WagtailVillageLesgrandsvoisinsHome(ContentPage):
-    title_rich = RichTextField(null=True, blank=True, verbose_name=_("Titre Homepage"))
-    description_rich = RichTextField(null=True, blank=True, verbose_name=_("Description Homepage"))
+    section_1_body = StreamField(
+        STREAMFIELD_COMMON_BLOCKS,
+        blank=True,
+        use_json_field=True,
+    )
 
     section_2_description_rich = RichTextField(null=True, blank=True, verbose_name=_("Description Section 2"))
     section_2_body = StreamField(
@@ -25,8 +28,7 @@ class WagtailVillageLesgrandsvoisinsHome(ContentPage):
 
     content_panels = (
         [
-            FieldPanel("title_rich"),
-            FieldPanel("description_rich"),
+            FieldPanel("section_1_body"),
         ]
         + ContentPage.content_panels
         + [
