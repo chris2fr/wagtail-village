@@ -152,6 +152,7 @@ main.lesgrandsvoisins-home h1.title p {
 
 .village-header .village-header__menu .village-container {
   column-gap: 1rem;
+  height: auto;
 }
 
 .village-header__service {
@@ -160,4 +161,8 @@ main.lesgrandsvoisins-home h1.title p {
 
 body {
   color: var(--text-title-grey);
+}
+
+#village-menu-close-btn {
+  height: fit-content;
 }
