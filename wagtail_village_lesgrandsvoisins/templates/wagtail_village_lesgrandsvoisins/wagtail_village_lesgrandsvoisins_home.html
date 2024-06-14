@@ -2,7 +2,6 @@
 {% load static wagtailsettings_tags i18n wagtailimages_tags village_tags wagtailcore_tags wagtailuserbar %}
 {% get_settings use_default_site=True %}
 
-
 {block bodyclass}surface-base{endblock bodyclass}
 
 {block mainclass}lesgrandsvoisins-home{endblock mainclass}
@@ -12,8 +11,6 @@
 
 
 {% block content %}
-
-
 <style>
   :root {
       --color-primary: 0 146 11;
@@ -76,6 +73,7 @@
       color: var(--text-label-village-secondary);
     }
   </style>
+  {{ page.sections }}
   <div class="bg-gradient full-width village-home-hero notlesgrandsvoisins-home-hero">
     {% include "wagtail_village/home_header.html" %}
     {% if settings.wagtail_village.WagtailVillageConfig.notice %}
