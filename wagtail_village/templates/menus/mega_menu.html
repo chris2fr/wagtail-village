@@ -27,7 +27,8 @@
                             {% endif %}
                         </a>
                     </h5>
-                    {% flat_menu category.category.handle template="wagtail_village/menus/mega_menu_category.html" %}
+                    {% comment %} {% include_block category.category.handle template="wagtail_village/menus/mega_menu_category.html" %}  {% endcomment %}
+                    {% flat_menu category.category.handle template="wagtail_village/menus/mega_menu_category.html" %} 
                 </div>
             {% endfor %}
         </div>
