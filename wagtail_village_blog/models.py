@@ -41,17 +41,21 @@ class BlogIndexPage(ContentPage):
         FieldPanel("posts_per_page"),
     ]
 
-    subpage_types = ["wagtail_village_blog.BlogEntryPage"]
+    subpage_types = ["wagtail_village_blog.BlogEntryPage", "wagtail_village_blog.DirectoryEntryPage"]
 
     class Meta:
         verbose_name = _("Blog index")
+
+    order_by = "-date"
 
     @property
     def posts(self):
         # Get list of blog pages that are descendants of this page
         posts = BlogEntryPage.objects.descendant_of(self).live()
         posts = (
-            posts.order_by("-date").select_related("owner").prefetch_related("tags", "blog_categories", "date__year")
+            posts.order_by(self.order_by)
+            .select_related("owner")
+            .prefetch_related("tags", "blog_categories", "date__year")
         )
         return posts
 
@@ -162,6 +166,13 @@ class BlogIndexPage(ContentPage):
         )
 
 
+class DirectoryIndexPage(BlogIndexPage):
+    order_by = "title"
+
+    class meta:
+        verbose_name = "Directory Index"
+
+
 class BlogEntryPage(ContentPage):
     #  tags = ClusterTaggableManager(through="TagEntryPage", blank=True)
     blog_categories = ParentalManyToManyField(
@@ -175,7 +186,7 @@ class BlogEntryPage(ContentPage):
         "wagtail_village_blog.Person", blank=True, help_text=_("Author entries can be created in Snippets > Persons")
     )
 
-    parent_page_types = ["wagtail_village_blog.BlogIndexPage"]
+    parent_page_types = ["wagtail_village_blog.BlogIndexPage", "wagtail_village_blog.DirectoryIndexPage"]
     subpage_types = []
 
     settings_panels = ContentPage.settings_panels + [
@@ -277,6 +288,12 @@ class Category(TranslatableMixin, index.Indexed, models.Model):
         ]
 
     search_fields = [index.SearchField("name")]
+
+
+class DirectoryEntryPage(BlogEntryPage):
+    class Meta:
+        verbose_name = _("Entry")
+        verbose_name_plural = _("Entries")
 
 
 class CategoryEntryPage(models.Model):
