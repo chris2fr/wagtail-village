@@ -8,8 +8,8 @@
 {{ page.intro|richtext }}
 <form action="{% pageurl page %}" method="POST" id="le_wagtail_village_formulaire">
     {% csrf_token %}
-    <fieldset class="village-fieldset" aria-labelledby="text-legend text-messages">
     {{ form.as_p }}
+    <fieldset class="village-fieldset" aria-labelledby="text-legend text-messages">
     </fieldset>
         <p>
     <button type="submit" class="village-btn">
