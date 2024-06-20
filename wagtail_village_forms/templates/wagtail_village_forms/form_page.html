@@ -3,9 +3,9 @@
 {% load static village_tags wagtailcore_tags wagtailimages_tags i18n %}
 
 {% block content %}
-{% include "wagtail_village/heading.html" %}
 
-{{ page.intro|richtext }}
+{{ block.super }}
+
 <form action="{% pageurl page %}" method="POST" id="le_wagtail_village_formulaire">
     {% csrf_token %}
     {{ form.as_p }}
@@ -16,6 +16,7 @@
         Envoyer
     </button>
 </form>
+
 <script>
     function addClassnameLabel(element) {
         element.classList.add("village-label");
@@ -29,6 +30,5 @@
     
     labels.forEach(addClassnameLabel);
     inputs.forEach(addClassnameInput);
-
 </script>
 {% endblock content %}
