@@ -170,7 +170,7 @@ class DirectoryIndexPage(BlogIndexPage):
     order_by = "title"
 
     class meta:
-        verbose_name = "Directory Index"
+        verbose_name = _("Directory Index")
 
 
 class BlogEntryPage(ContentPage):

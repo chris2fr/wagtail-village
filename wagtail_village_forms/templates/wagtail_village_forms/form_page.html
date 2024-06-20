@@ -1,0 +1,34 @@
+{% extends "wagtail_village/content_page.html" %}
+
+{% load static village_tags wagtailcore_tags wagtailimages_tags i18n %}
+
+{% block content %}
+{% include "wagtail_village/heading.html" %}
+
+{{ page.intro|richtext }}
+<form action="{% pageurl page %}" method="POST" id="le_wagtail_village_formulaire">
+    {% csrf_token %}
+    <fieldset class="village-fieldset" aria-labelledby="text-legend text-messages">
+    {{ form.as_p }}
+    </fieldset>
+        <p>
+    <button type="submit" class="village-btn">
+        Envoyer
+    </button>
+</form>
+<script>
+    function addClassnameLabel(element) {
+        element.classList.add("village-label");
+    }
+    function addClassnameInput(element) {
+        element.classList.add("village-input");
+    }
+    leform = document.getElementById("le_wagtail_village_formulaire");
+    labels = leform.querySelectorAll("label");
+    inputs = leform.querySelectorAll("input");
+    
+    labels.forEach(addClassnameLabel);
+    inputs.forEach(addClassnameInput);
+
+</script>
+{% endblock content %}
