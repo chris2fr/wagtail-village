@@ -8,7 +8,7 @@ register = template.Library()
 def field_class_from_name(field_name, form_fields):
     class_corres = {
         "singleline": "input",
-        "multiline": "input",
+        "multiline": "none",
         "email": "input",
         "number": "input",
         "url": "input",
