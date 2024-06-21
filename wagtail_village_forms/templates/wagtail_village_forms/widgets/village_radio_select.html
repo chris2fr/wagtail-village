@@ -1,0 +1,12 @@
+{% for group, options, index in widget.optgroups %}
+    {% for option in options %}
+    <div class="village-fieldset__element">
+        <div class="village-radio-group">
+            <input type="radio" name="{{ widget.name }}" value="{{ option.value }}"{% if option.selected %} checked{% endif %}{{ option.attrs }}>
+            <label class="village-label" {{ option.attrs.label_for }}>
+                {{ option.label }}
+            </label>
+        </div>
+    </div>
+    {% endfor %}
+{% endfor %}

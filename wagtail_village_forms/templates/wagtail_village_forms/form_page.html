@@ -1,6 +1,6 @@
 {% extends "wagtail_village/content_page.html" %}
 
-{% load static village_tags wagtailcore_tags wagtailimages_tags i18n %}
+{% load static village_tags wagtailcore_tags wagtailimages_tags i18n form_filters %}
 
 {% block content %}
 
@@ -8,27 +8,28 @@
 
 <form action="{% pageurl page %}" method="POST" id="le_wagtail_village_formulaire">
     {% csrf_token %}
-    {{ form.as_p }}
+    {% comment %} {{ form.as_p }} {% endcomment %}
+    {{ form.non_field_errors }}
+    {% for field in form %}
     <fieldset class="village-fieldset" aria-labelledby="text-legend text-messages">
+        <div class="village-label">
+        {{ field.label_tag }}
+        </div>
+        <div class="village-fieldset__element">
+            <div class="village-{{ field.name|field_class_from_name:form_fields }}">
+                {{ field }}
+            </div>
+            {{ field.help_text }}
+            {{ field.errors }}
+        </div>
     </fieldset>
+    {% endfor %}
+    <div class="form-group">
+    </div>
         <p>
     <button type="submit" class="village-btn">
         Envoyer
     </button>
 </form>
 
-<script>
-    function addClassnameLabel(element) {
-        element.classList.add("village-label");
-    }
-    function addClassnameInput(element) {
-        element.classList.add("village-input");
-    }
-    leform = document.getElementById("le_wagtail_village_formulaire");
-    labels = leform.querySelectorAll("label");
-    inputs = leform.querySelectorAll("input");
-    
-    labels.forEach(addClassnameLabel);
-    inputs.forEach(addClassnameInput);
-</script>
 {% endblock content %}
