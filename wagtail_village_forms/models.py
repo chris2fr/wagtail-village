@@ -98,6 +98,9 @@ class FormPage(EmailFormMixin, FormMixin, ContentPage):
         context["form_fields"] = self.form_fields.all()
         return context
 
+    # def send_mail(self, form):
+    #     return 1
+
     # def get_context(self, request, *args, **kwargs):
     #     context = super().get_context(request, *args, **kwargs)
 
