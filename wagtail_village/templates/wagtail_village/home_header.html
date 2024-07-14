@@ -2,11 +2,10 @@
 
 {% load i18n static wagtailcore_tags wagtailimages_tags menu_tags static %}
 
-{% comment %} 
 {% block brand %}
         {% translate "Home page" as home_page %}
         <a href="{{ home_url }}" title="{{ home_page }} — {{ SITE_CONFIG.site_title }}">
-          {% if SITE_CONFIG.operator_logo_file and SITE_CONFIG.operator_logo_alt %}
+          {% if SITE_CONFIG.operator_logo_file %}
           <div class='village-header__operator'>
             <img class='village-responsive-img' src='{{ SITE_CONFIG.operator_logo_file.url }}'
               alt='{{ SITE_CONFIG.operator_logo_alt }}' {% if SITE_CONFIG.operator_logo_width >= 1 %}
@@ -18,7 +17,6 @@
           {% endif %}
         </a>
 {% endblock brand %} 
-{% endcomment %}
 
 <div class="village-header__menu village-modal"
 id="village-menu-mobile"
