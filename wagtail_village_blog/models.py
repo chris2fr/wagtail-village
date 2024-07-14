@@ -62,6 +62,7 @@ class BlogIndexPage(ContentPage):
     def get_context(self, request, tag=None, category=None, author=None, year=None, *args, **kwargs):  # NOSONAR
         # context = super(BlogIndexPage, self).get_context(request, *args, **kwargs)
         context = super().get_context(request, *args, **kwargs)
+
         posts = self.posts
         locale = Locale.objects.get(language_code=get_language())
 
@@ -168,7 +169,7 @@ class BlogIndexPage(ContentPage):
 
 
 class DirectoryIndexPage(BlogIndexPage):
-    order_by = False
+    order_by = "title"
 
     subpage_types = ["wagtail_village_blog.DirectoryEntryPage"]
 
