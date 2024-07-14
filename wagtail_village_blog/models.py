@@ -168,7 +168,7 @@ class BlogIndexPage(ContentPage):
 
 
 class DirectoryIndexPage(BlogIndexPage):
-    order_by = "title"
+    order_by = False
 
     subpage_types = ["wagtail_village_blog.DirectoryEntryPage"]
 
