@@ -2,23 +2,15 @@
 
 {% load i18n static wagtailcore_tags wagtailimages_tags menu_tags static %}
 
-{% comment %} 
 {% block brand %}
-        {% translate "Home page" as home_page %}
-        <a href="{{ home_url }}" title="{{ home_page }} — {{ SITE_CONFIG.site_title }}">
-          {% if SITE_CONFIG.operator_logo_file and SITE_CONFIG.operator_logo_alt %}
+        <a href="{{ home_url }}" title="{{ full_site_title }} ">
           <div class='village-header__operator'>
-            <img class='village-responsive-img' src='{{ SITE_CONFIG.operator_logo_file.url }}'
-              alt='{{ SITE_CONFIG.operator_logo_alt }}' {% if SITE_CONFIG.operator_logo_width >= 1 %}
-            style='max-width:{{ SITE_CONFIG.operator_logo_width|unlocalize }}rem;'
-            {% endif %} />
+            <img class='village-responsive-img' src='/medias/logos/lesgrandsvoisins.png'
+              alt='Village Les Grands Voisins' 
+            style='max-width:16rem;'
           </div>
-          {% else %}
-          <p>{{ SITE_CONFIG.site_title }}</p>
-          {% endif %}
         </a>
 {% endblock brand %} 
-{% endcomment %}
 
 <div class="village-header__menu village-modal"
 id="village-menu-mobile"
