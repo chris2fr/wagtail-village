@@ -51,13 +51,13 @@ class WagtailVillageLesgrandsvoisinsHome(ContentPage):
         use_json_field=True,
     )
 
-    content_panels = [
+    content_panels = ContentPage.content_panels + [
         FieldPanel("sections"),
         FieldPanel("section_1_body"),
         FieldPanel("section_2_description_rich"),
         FieldPanel("section_2_body"),
         FieldPanel("section_3_body"),
-    ] + ContentPage.content_panels
+    ]
 
     class Meta:
         verbose_name = _("Home Page Les Grands Voisins")

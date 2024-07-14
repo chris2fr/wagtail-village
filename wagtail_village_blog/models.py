@@ -169,7 +169,9 @@ class BlogIndexPage(ContentPage):
 class DirectoryIndexPage(BlogIndexPage):
     order_by = "title"
 
-    class meta:
+    subpage_types = ["wagtail_village_blog.DirectoryEntryPage"]
+
+    class Meta:
         verbose_name = _("Directory Index")
 
 
@@ -292,8 +294,10 @@ class Category(TranslatableMixin, index.Indexed, models.Model):
 
 class DirectoryEntryPage(BlogEntryPage):
     class Meta:
-        verbose_name = _("Entry")
-        verbose_name_plural = _("Entries")
+        verbose_name = _("Directory Entry")
+        verbose_name_plural = _("Directory Entries")
+
+    parent_page_types = ["wagtail_village_blog.DirectoryIndexPage"]
 
 
 class CategoryEntryPage(models.Model):
