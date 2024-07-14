@@ -60,7 +60,8 @@ class BlogIndexPage(ContentPage):
         return posts
 
     def get_context(self, request, tag=None, category=None, author=None, year=None, *args, **kwargs):  # NOSONAR
-        context = super(BlogIndexPage, self).get_context(request, *args, **kwargs)
+        # context = super(BlogIndexPage, self).get_context(request, *args, **kwargs)
+        context = super().get_context(request, *args, **kwargs)
         posts = self.posts
         locale = Locale.objects.get(language_code=get_language())
 

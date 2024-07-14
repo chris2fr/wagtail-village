@@ -227,8 +227,8 @@ class SitesFacilesBasePage(Page):
                 self.search_description = search_description
         return super().save(*args, **kwargs)
 
-    def get_context(self, request):
-        context = super(SitesFacilesBasePage, self).get_context(request)
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
         # settings = WagtailVillageConfig.for_request(request)
         # context["langcode"] = settings.language
         # context["data_village_mourning"] = ""
