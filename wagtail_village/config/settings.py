@@ -326,6 +326,15 @@ for host in ALLOWED_HOSTS:
 
 SF_ALLOW_RAW_HTML_BLOCKS = os.getenv("SF_ALLOW_RAW_HTML_BLOCKS", "False").lower() == "true"
 
+#   WAGTAILTRANSFER_UPDATE_RELATED_MODELS = ['wagtailimages.image']
+
+WAGTAILTRANSFER_LOOKUP_FIELDS = {
+    "taggit.tag": ["slug"],
+    "wagtailcore.locale": ["language_code"],
+    "contenttypes.contenttype": ["app_label", "model"],
+    "auth.permission": ["codename"],
+}
+
 # if DEBUG and "localhost" in HOST_URL:
 if DEBUG_TOOLBAR:
     INTERNAL_IPS = [
