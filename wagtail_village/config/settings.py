@@ -335,6 +335,7 @@ WAGTAILTRANSFER_LOOKUP_FIELDS = {
     "auth.permission": ["codename"],
     "auth.group": ["name"],
     "auth.user": ["username"],
+    "wagtail_village.ContentPage": ["locale", "slug", "content_type", "parent_id"],
 }
 
 # if DEBUG and "localhost" in HOST_URL:
