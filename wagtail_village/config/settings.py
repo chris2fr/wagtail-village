@@ -326,15 +326,15 @@ for host in ALLOWED_HOSTS:
 
 SF_ALLOW_RAW_HTML_BLOCKS = os.getenv("SF_ALLOW_RAW_HTML_BLOCKS", "False").lower() == "true"
 
-WAGTAILTRANSFER_UPDATE_RELATED_MODELS = [
-    "wagtail_village.contentpage",
-    # 'wagtailimages.image',
-]
+# WAGTAILTRANSFER_UPDATE_RELATED_MODELS = [
+#     "wagtail_village.contentpage",
+#     # 'wagtailimages.image',
+# ]
 
 WAGTAILTRANSFER_LOOKUP_FIELDS = {
-    "taggit.tag": ["slug"],
-    "wagtailcore.locale": ["language_code"],
-    "contenttypes.contenttype": ["app_label", "model"],
+    # "taggit.tag": ["slug"],
+    # "wagtailcore.locale": ["language_code"],
+    # "contenttypes.contenttype": ["app_label", "model"],
     "auth.permission": ["codename"],
     "auth.group": ["name"],
     "auth.user": ["username"],
