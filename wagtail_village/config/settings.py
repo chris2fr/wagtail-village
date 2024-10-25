@@ -333,6 +333,7 @@ WAGTAILTRANSFER_LOOKUP_FIELDS = {
     "wagtailcore.locale": ["language_code"],
     "contenttypes.contenttype": ["app_label", "model"],
     "auth.permission": ["codename"],
+    "auth.group": ["name"],
 }
 
 # if DEBUG and "localhost" in HOST_URL:
