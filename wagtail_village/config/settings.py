@@ -334,6 +334,7 @@ WAGTAILTRANSFER_LOOKUP_FIELDS = {
     "contenttypes.contenttype": ["app_label", "model"],
     "auth.permission": ["codename"],
     "auth.group": ["name"],
+    "auth.user": ["username"],
 }
 
 # if DEBUG and "localhost" in HOST_URL:
