@@ -31,6 +31,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY")
+WAGTAILTRANSFER_SECRET_KEY = os.getenv("WAGTAILTRANSFER_SECRET_KEY")
+WAGTAILTRANSFER_SOURCES = {}
+for i in range(0, 3):
+    if os.getenv("WAGTAILTRANSFER_%i_SECRET_KEY" % i):
+        WAGTAILTRANSFER_SOURCES[os.getenv("WAGTAILTRANSFER_%i_NAME" % i)] = {
+            "BASE_URL": os.getenv("WAGTAILTRANSFER_%i_BASE_URL" % i),
+            "SECRET_KEY": os.getenv("WAGTAILTRANSFER_%i_SECRET_KEY" % i),
+        }
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.getenv("DEBUG") == "True" else False
@@ -78,6 +86,7 @@ INSTALLED_APPS = [
     "wagtail_village_blog",
     "wagtail_village_lesgrandsvoisins",
     "wagtail_village_forms",
+    "wagtail_transfer",
 ]
 
 # Only add these on a dev machine
