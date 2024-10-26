@@ -1,0 +1,39 @@
+{% load wagtailimages_tags %}
+{% for item in posts %}
+  <div class="card">
+      <div class="card-body">
+      <div class="article">
+        <h3>
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        </h3>
+        <div class="user-info">
+          {% comment %}
+          <p><small>{{item.published_at|date:"F d, Y"}}</small></p>
+          {% endcomment %}
+      </div>
+        <a href="{{ item.url }}"><div class="card-header">
+          <img src="{{ item.feature_image }}" alt="{{ item.feature_image_alt }}"  />
+        </div></a>
+        <p><small>{{item.published_at|truncatechars:11}}</small></p>
+        <p>{{ item.excerpt }}</p>
+      </div>
+      </div>
+      <div class="author">
+          <div class="tags">
+              {% for tag in item.tags %}
+              {% if not "#Import 20" in tag.name %}
+              <a href="{{ tag.url }}"><span class="tag tag-{{ tag.slug }}" >{{ tag.name }}</span></a>
+              {% endif %}
+              {% endfor %} 
+          </div>
+          <p style="text-align: right;"><a href="{{ item.url }}">lire l'article : {{ item.title }}</a></p>
+          {% for author in item.authors %}
+          <a href="{{ author.url }}"><img src="{{ author.profile_image}}" alt="user" /></a>
+          <div class="user-info">
+              <p><a href="{{item.primary_author.url}}">{{item.primary_author.name}}</a></p>
+          </div>
+          {% endfor %} 
+
+        </div>
+    </div>
+  {% endfor %}    

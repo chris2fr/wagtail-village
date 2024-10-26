@@ -1,0 +1,97 @@
+{% extends "lesgv/faire_main_page.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}fait-ma-page-home{% endblock %}
+
+{% block faire_ma_page_extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/lesgv/faire-ma-home-page.css' %}" />
+{% block faire_ma_home_page_extra_css %}
+{% endblock faire_ma_home_page_extra_css %}
+{% endblock faire_ma_page_extra_css %}
+
+{% block content %}
+{%comment%}
+<div class="HH">
+  <a href="{{ homepage_link }}">{% image site_logo max-1000x100 %}</a>
+</div>
+{%endcomment%}
+<div class="subtitle">{{ page.intro|richtext }}</div>
+<main>
+<div class="mission">
+  <div class="card apropos">
+    <div class="card-body">
+      {% comment %}
+      <div class="card-header">
+        <a href="{{ homepage_link }}">{% image site_logo max-600x600 %}</a>
+      </div>
+      {% endcomment %}
+      <div class="article">
+        {{ page.body|richtext }}
+      </div>
+    </div>
+    <div class="author">
+      <hr>
+    </div>
+  </div>
+</div>
+{% if related_agenda %}
+<div class="agendas">
+  <div class="card agenda">
+    <div class="card-body">
+      <div class="agenda-home">
+        <h2>
+          Agenda
+        </h2>
+        {% for item in related_agenda %}
+        <div class="agenda-item">
+          {% if item.agenda_item.redirect_url %}
+          <h3><a href="{{ item.agenda_item.redirect_url }}">{{ item.agenda_item.title }}</a></h3>
+          {% else %}
+          <h3><a href="{{ item.agenda_item.url }}">{{ item.agenda_item.title }}</a></h3>
+          {% endif %}
+          <ul class="agenda-item-date-lieu">
+            {% if item.agenda_item.start %}
+            <li>{{ item.agenda_item.start }}</li>
+            {% endif %}
+            {% if item.agenda_item.end %}
+            <li>{{ item.agenda_item.end }}</li>
+            {% endif %}
+            {% if item.agenda_item.place %}
+            {% if item.agenda_item.place_url %}
+            <li><a href="{{ item.agenda_item.place_url }}">{{ item.agenda_item.place }}</a></li>
+            {% else %}
+            <li>{{ item.agenda_item.place }}</li>
+            {% endif %}
+            {% endif %}
+          </ul>
+          <a href="{{ item.agenda_item.url }}"
+            class='{% if forloop.counter|divisibleby:"2" %}left{% else %}right{% endif %}'>
+            {% image item.agenda_item.image width-600 %}</a>
+          {% if item.agenda_item.intro and item.agenda_item.intro != "" %}
+          {{ item.agenda_item.intro|richtext }}
+          {% else %}
+          {{ item.agenda_item.body|richtext }}
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="author">
+    </div>
+  </div>
+</div>
+{% endif %}
+{% include "lesgv/fragments/blog_posts.html" with posts=posts %}
+</main>
+
+
+  <footer class="lesgv-footer">
+    <div class="footer1">
+      {{ footer1|richtext }}
+    </div>
+    <div class="footer2">
+      {{ footer2|richtext }}
+    </div>
+  </div>
+
+  {% endblock content %}

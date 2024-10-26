@@ -1,0 +1,64 @@
+{% load wagtailimages_tags %}
+
+{% for item in posts %}
+<div class="card">
+  <div class="card-body">
+    <a href="{{ item.url }}">
+    </a>
+    <div class="article">
+      <h2>
+        <a href="{{ item.url }}">{{ item.title }}</a>
+      </h2>
+      <div class="user-info">
+        {% comment %}
+        <p><small>{{item.published_at|date:"F d, Y"}}</small></p>
+        {% endcomment %}
+        <p><small>{{item.published_at|truncatechars:11}}</small></p>
+      </div>
+      <img src="{{ item.feature_image_600 }}" alt="{{ item.feature_image_alt }}"  loading="lazy" />
+      <p>{{ item.excerpt }}</p>
+    </div>
+    {% comment %}
+    <div class="card-header">
+      
+    </div>
+    {% endcomment %}
+
+  </div>
+  <div class="tags">
+    {% for tag in item.tags %}
+    {% if not "#Import 20" in tag.name %}
+    <a href="{{ tag.url }}"><span class="tag tag-{{ tag.slug }}">{{ tag.name }}</span></a>
+    {% endif %}
+    {% endfor %}
+  </div>
+  <div class="author">
+    <p style="text-align: right;"><a href="{{ item.url }}">lire l'article : {{ item.title }}</a></p>
+    {% comment %}
+    {% for author in item.authors %}
+    <a href="{{ author.url }}"><img src="{{ author.profile_image}}" alt="user"  loading="lazy" /></a>
+    <div class="user-info">
+      <p><a href="{{item.primary_author.url}}">{{item.primary_author.name}}</a></p>
+    </div>
+    {% endfor %}
+    {% endcomment %}
+
+  </div>
+</div>
+{% endfor %}
+{% if posts and False %}
+<div class="card">
+  <div class="card-body">
+
+    <div class="card-header">
+
+    </div>
+    <div class="article">
+      <a href="https://blog.lesgrandsvoisins.com">Venez sur notre blog ...</a>
+    </div>
+    <div class="author">
+
+    </div>
+  </div>
+</div>
+{% endif %}
