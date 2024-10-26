@@ -20,7 +20,7 @@ load_dotenv()
 
 # Check to see if basic variables needed are defined
 
-REQUIRED = ["DATABASE_URL","SITE_NAME","SECRET_KEY", "WAGTAILTRANSFER_SECRET_KEY","HOST_DOMAIN"]
+REQUIRED = ["DATABASE_URL","SITE_NAME","SECRET_KEY", "WAGTAILTRANSFER_SECRET_KEY","HOST_URL"]
 
 needs_required = []
 for i in REQUIRED:
@@ -29,6 +29,8 @@ for i in REQUIRED:
 
 if needs_required != []:
   raise ValueError("Merci de mettre les variables suivantes dans .env: %s" % ', '.join(needs_required))
+
+
 
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -43,7 +45,7 @@ DEBUG_TOOLBAR = True if os.getenv("DEBUG_TOOLBAR") == "True" else False
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1, localhost").replace(" ", "").split(",")
 
-HOST_DOMAIN = os.getenv("HOST_DOMAIN", "localhost")
+HOST_URL = os.getenv("HOST_URL", "localhost")
 
 # Application definition
 
@@ -90,7 +92,7 @@ INSTALLED_APPS = [
 ]
 
 # Only add these on a dev machine
-# if DEBUG and "localhost" in HOST_DOMAIN:
+# if DEBUG and "localhost" in HOST_URL:
 if DEBUG:
   INSTALLED_APPS += [
     "django_extensions",
@@ -114,7 +116,7 @@ MIDDLEWARE = [
   "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
-# if DEBUG and "localhost" in HOST_DOMAIN:
+# if DEBUG and "localhost" in HOST_URL:
 if DEBUG_TOOLBAR:
   MIDDLEWARE += [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
@@ -278,7 +280,7 @@ WAGTAILSEARCH_BACKENDS = {
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = f"{os.getenv('HOST_PROTO', 'https')}://{HOST_DOMAIN}"
+WAGTAILADMIN_BASE_URL = f"{os.getenv('HOST_PROTO', 'https')}://{HOST_URL}"
 
 HOST_PORT = os.getenv("HOST_PORT", "")
 if HOST_PORT != "":
@@ -299,7 +301,7 @@ WAGTAILDOCS_EXTENSIONS = [
   "txt",
   "xlsx",
   "zip",
-]
+]/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY")
