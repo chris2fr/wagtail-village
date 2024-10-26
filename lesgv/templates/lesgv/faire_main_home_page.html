@@ -9,12 +9,15 @@
 {% endblock faire_ma_home_page_extra_css %}
 {% endblock faire_ma_page_extra_css %}
 
-{% block content %}
-{%comment%}
+{% block top %}
 <div class="HH">
   <a href="{{ homepage_link }}">{% image site_logo max-1000x100 %}</a>
 </div>
-{%endcomment%}
+{% endblock top %}
+{% block content %}
+
+
+
 <div class="subtitle">{{ page.intro|richtext }}</div>
 <main>
 <div class="mission">
@@ -85,13 +88,13 @@
 </main>
 
 
-  <footer class="lesgv-footer">
-    <div class="footer1">
-      {{ footer1|richtext }}
-    </div>
-    <div class="footer2">
-      {{ footer2|richtext }}
-    </div>
+<footer class="lesgv-footer">
+  <div class="footer1">
+    {{ footer1|richtext }}
   </div>
+  <div class="footer2">
+    {{ footer2|richtext }}
+  </div>
+</div>
 
-  {% endblock content %}
+{% endblock content %}

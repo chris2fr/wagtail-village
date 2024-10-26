@@ -1,6 +1,6 @@
 {% load static wagtailcore_tags %}
 <div class="wrapper">
-<ul class=" nav__list__less">
+<ul class="nav__list__less">
 {% for p in breadcrumbs %}
   {% if p.children %}
     <li class="breadcrumb nav__item nav_top"><a href="{{ p.url }}" class="breadcrumb nav__list">{{ p.title }}  &gt; </a>
