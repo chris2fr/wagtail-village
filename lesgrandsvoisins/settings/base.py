@@ -239,8 +239,8 @@ else:
   STORAGES["default"] = {
     "BACKEND": "django.core.files.storage.FileSystemStorage",
   }
-  MEDIA_URL = "/media/" # and not /medias/
-  MEDIA_ROOT = os.path.join(BASE_DIR, os.getenv("MEDIA_ROOT", "medias")) # From defaul os.path.join(BASE_DIR, "media")
+  MEDIA_URL = "/medias/" # and not /media/
+  MEDIA_ROOT = os.path.join(BASE_DIR, os.getenv("MEDIA_ROOT", "/medias/")) # From defaul os.path.join(BASE_DIR, "media")
 
 STORAGES["staticfiles"] = STORAGES["default"] 
 
