@@ -31,8 +31,6 @@ if needs_required != []:
   raise ValueError("Merci de mettre les variables suivantes dans .env: %s" % ', '.join(needs_required))
 
 
-
-
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 

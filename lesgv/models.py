@@ -249,7 +249,7 @@ class FaireMainHomePage(FaireMainPage):
     ghost_limit = models.CharField(blank=True, null=True, max_length=8)
     ghost_include = models.CharField(blank=True, null=True, max_length=32)
     page_description = "Faire Main Home Page: Une page home "
-    parent_page_types =['wagtailcore.Page','lesgv.FaireMainHomePage']
+    # parent_page_types =['wagtailcore.Page','lesgv.FaireMainHomePage']
     # subpage_types = ['lesgv.FaireMainPage','lesgv.FaireMainAgendaItemPage','lesgv.FaireMainMenu',]
     content_panels = FaireMainPage.content_panels + [
         InlinePanel('agenda_home',label="Items de l'agenda"),
