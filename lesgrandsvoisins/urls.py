@@ -44,7 +44,7 @@ if settings.DEBUG:
 
 urlpatterns += i18n_patterns( # Pour l'internationalisation de Wagtail_Village et Wagtail_Village_Blog
   path("", include("wagtail_village.urls")),
-  
+  path('accounts/', include('allauth.urls')),
   path("", include("wagtail_village_blog.urls", namespace="wagtail_village_blog")),
   prefix_default_language=True,
 )
