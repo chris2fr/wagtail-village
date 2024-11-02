@@ -48,7 +48,7 @@ urlpatterns += i18n_patterns( # Pour l'internationalisation de Wagtail_Village e
 )
 
 urlpatterns = urlpatterns + [
-  url(r'', include('allauth.urls')),
+  path("", include('allauth.urls')),
   # For anything not caught by a more specific rule above, hand over to
   # Wagtail's page serving mechanism. This should be the last pattern in
   # the list:
