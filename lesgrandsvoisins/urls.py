@@ -24,7 +24,8 @@ urlpatterns = [
   path("documents/", include(wagtaildocs_urls)),
   path("search/", search_views.search, name="search"),
   path("wagtail-transfer/", include(wagtailtransfer_urls)), # Pour Wagtail Transfer
-  path('htmlmenu', lesgv_views.htmlmenu) # Ajouté
+  path('htmlmenu', lesgv_views.htmlmenu), # Ajouté
+  path('accounts/', include('allauth.urls')),
 ]     
 
 if settings.DEBUG_TOOLBAR:
@@ -43,13 +44,14 @@ if settings.DEBUG:
 
 urlpatterns += i18n_patterns( # Pour l'internationalisation de Wagtail_Village et Wagtail_Village_Blog
   path("", include("wagtail_village.urls")),
+  
   path("", include("wagtail_village_blog.urls", namespace="wagtail_village_blog")),
   prefix_default_language=True,
 )
 
 urlpatterns = urlpatterns + [
   # path("", include('allauth.urls')),
-  path('accounts/', include('allauth.urls')),
+  
   # For anything not caught by a more specific rule above, hand over to
   # Wagtail's page serving mechanism. This should be the last pattern in
   # the list:
