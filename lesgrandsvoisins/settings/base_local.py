@@ -1,3 +1,8 @@
+import os
+from dotenv import load_dotenv # Pour les variables d'.env
+# Prendre les variables d'environnement
+load_dotenv()
+
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
