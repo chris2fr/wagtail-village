@@ -53,6 +53,7 @@ INSTALLED_APPS = [
   "allauth",
   "allauth.account",
   "allauth.socialaccount",
+  'allauth.socialaccount.providers.openid_connect',
   "lesgrandsvoisins",
   "lesgv",
   "django_village.theme_designsystem",
@@ -108,12 +109,12 @@ if DEBUG_TOOLBAR:
   ]
 
 MIDDLEWARE = [
-  "django.contrib.sessions.middleware.SessionMiddleware",
-  "django.middleware.common.CommonMiddleware",
-  "django.middleware.csrf.CsrfViewMiddleware",
   "django.contrib.auth.middleware.AuthenticationMiddleware",
   "django.contrib.messages.middleware.MessageMiddleware",
+  "django.contrib.sessions.middleware.SessionMiddleware",
   "django.middleware.clickjacking.XFrameOptionsMiddleware",
+  "django.middleware.common.CommonMiddleware",
+  "django.middleware.csrf.CsrfViewMiddleware",
   "django.middleware.locale.LocaleMiddleware", # Ajouté pour la localisation
   "django.middleware.security.SecurityMiddleware",
   "wagtail.contrib.redirects.middleware.RedirectMiddleware",
