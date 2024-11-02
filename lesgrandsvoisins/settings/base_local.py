@@ -27,7 +27,7 @@ SOCIALACCOUNT_PROVIDERS = {
             # May be one of "client_secret_basic", "client_secret_post"
             # If omitted, a method from the the server's
             # token auth methods list is used
-            "token_auth_method": "client_secret_basic",
+            "token_auth_method": "client_secret_post",
         },
       },
     ],
