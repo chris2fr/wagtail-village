@@ -1,0 +1,11 @@
+{
+  "username": "john.doe",
+  "email": "john.doe@example.com",
+  "enabled": true,
+  "firstName": "John",
+  "lastName": "Doe",
+  "credentials": [{
+    "type": "password",
+    "value": "password"
+  }]
+}
