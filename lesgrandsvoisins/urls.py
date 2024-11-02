@@ -8,16 +8,18 @@ from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from wagtail_transfer import urls as wagtailtransfer_urls # for Wagtail-Transfer
 
-from dotenv import load_dotenv # Pour les variables d'.env
+from .forms import RegistrationForm
 
+from dotenv import load_dotenv # Pour les variables d'.env
 # Prendre les variables d'environnement
 load_dotenv()
 
 from search import views as search_views
-
 from lesgv import views as lesgv_views
+from lesgrandsvoisins import views as lesgrandsvoisins_views
 
 urlpatterns = [
+  path("registrationform/", lesgrandsvoisins_views.registrationform_view,name="registrationform_view"),
   path("django-admin/", admin.site.urls),
   # path("admin/", include(wagtailadmin_urls)),
   path("cms-admin/", include(wagtailadmin_urls)), # Sites-Faciles préfère ceci

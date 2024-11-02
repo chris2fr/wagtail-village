@@ -14,7 +14,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 import dj_database_url # Pour un syntaxe différent de base de données
 from dotenv import load_dotenv # Pour les variables d'.env
-
 # Prendre les variables d'environnement
 load_dotenv()
 

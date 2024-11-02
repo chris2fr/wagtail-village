@@ -24,6 +24,8 @@ libsass
 pre-commit
 psycopg2-binary
 python-dotenv
+python-keycloak
+requests
 unidecode
 wagtail-localize
 wagtail-markdown
