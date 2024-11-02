@@ -119,6 +119,10 @@ MIDDLEWARE = [
   "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
+MIDDLEWARE += [
+  "allauth.account.middleware.AccountMiddleware",
+]
+
 # if DEBUG and "localhost" in HOST_URL:
 if DEBUG_TOOLBAR:
   MIDDLEWARE += [
