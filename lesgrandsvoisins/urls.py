@@ -8,6 +8,11 @@ from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from wagtail_transfer import urls as wagtailtransfer_urls # for Wagtail-Transfer
 
+from dotenv import load_dotenv # Pour les variables d'.env
+
+# Prendre les variables d'environnement
+load_dotenv()
+
 from search import views as search_views
 
 from lesgv import views as lesgv_views
@@ -43,6 +48,7 @@ urlpatterns += i18n_patterns( # Pour l'internationalisation de Wagtail_Village e
 )
 
 urlpatterns = urlpatterns + [
+  url(r'', include('allauth.urls')),
   # For anything not caught by a more specific rule above, hand over to
   # Wagtail's page serving mechanism. This should be the last pattern in
   # the list:
@@ -51,3 +57,5 @@ urlpatterns = urlpatterns + [
   # of your site, rather than the site root:
   #  path("pages/", include(wagtail_urls)),
 ]
+
+

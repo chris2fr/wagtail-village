@@ -47,7 +47,12 @@ HOST_URL = os.getenv("HOST_URL", "localhost")
 
 # Application definition
 
+SITE_ID = 1
+
 INSTALLED_APPS = [
+  "allauth",
+  "allauth.account",
+  "allauth.socialaccount",
   "lesgrandsvoisins",
   "lesgv",
   "django_village.theme_designsystem",
@@ -385,3 +390,7 @@ if DEBUG_TOOLBAR:
     "127.0.0.1",
     "0.0.0.0",
   ]
+
+
+
+from .base_local import *

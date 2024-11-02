@@ -3,6 +3,7 @@ black
 boto3
 dj-database-url
 dj-static
+django-allauth
 django_distill
 django-compressor
 django-debug-toolbar
