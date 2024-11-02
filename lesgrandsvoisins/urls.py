@@ -21,11 +21,11 @@ urlpatterns = [
   path("django-admin/", admin.site.urls),
   # path("admin/", include(wagtailadmin_urls)),
   path("cms-admin/", include(wagtailadmin_urls)), # Sites-Faciles préfère ceci
+  path('accounts/', include('allauth.urls')),
   path("documents/", include(wagtaildocs_urls)),
   path("search/", search_views.search, name="search"),
   path("wagtail-transfer/", include(wagtailtransfer_urls)), # Pour Wagtail Transfer
   path('htmlmenu', lesgv_views.htmlmenu), # Ajouté
-  path('accounts/', include('allauth.urls')),
 ]     
 
 if settings.DEBUG_TOOLBAR:
@@ -44,7 +44,6 @@ if settings.DEBUG:
 
 urlpatterns += i18n_patterns( # Pour l'internationalisation de Wagtail_Village et Wagtail_Village_Blog
   path("", include("wagtail_village.urls")),
-  path('accounts/', include('allauth.urls')),
   path("", include("wagtail_village_blog.urls", namespace="wagtail_village_blog")),
   prefix_default_language=True,
 )
