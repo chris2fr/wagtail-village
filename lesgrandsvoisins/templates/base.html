@@ -34,7 +34,9 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
+        <div style="max-width:30rem;margin:4rem auto;width:fit-content">
         {% block content %}{% endblock %}
+        </div>
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/lesgrandsvoisins.js' %}"></script>

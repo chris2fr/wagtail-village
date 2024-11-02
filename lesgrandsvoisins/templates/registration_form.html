@@ -1,9 +1,43 @@
-{{ validate_message }}
+{% extends "wagtail_village/content_page.html" %}
+{% if info %} 
+  {{ info }}
+{% endif %}
 
-<form action = "" method = "post">
+{% block inner_content %}
+<div style="max-width:30rem;margin:4rem auto;width:fit-content;text-align: center;">
+  {% block form_content %}
+<form action="" method="post" class="registration_form">
+  <script>
+    function peekAtPass() {
+      var x = document.getElementById("id_password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+  </script>
   {% csrf_token %}
-  <table>
+  <table class="registration_form" >
   {{ form.as_table }} 
-  </table>
-  <input type="submit" value=Submit">
+    </table>
+    <p><input type="submit" style="width: 100%;font-weight: bold;padding: 0.3rem;"/></p>
+    <p>[ <a href="#" onclick="peekAtPass();">voir le mot de passe</a> ]</p>
+
+    
 </form> 
+
+{% endblock %}
+<hr/>
+<p style="margin: 1rem auto 0">Si vous avez déjà un compte, vous pouvez <a href="https://key.lesgrandsvoisins.com/realms/master/account/applications">vous authentifier ici</a>.</p>
+<style>
+  table.registration_form tr th {
+    text-align: right;
+  }
+  form.registration_form input {
+    border-width: thin;
+    border-style: solid;
+  }
+</style>
+</div>
+{% endblock %}

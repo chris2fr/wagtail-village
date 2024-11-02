@@ -35,6 +35,8 @@ wagtail-modeladmin = "^2.0.0"
 wagtail-transfer = "^0.9.4"
 wagtailmenus = "^4.0"
 django-allauth = "^65.1.0"
+python-keycloak = "^4.6.3"
+django-simple-captcha = "^0.6.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.3.0"

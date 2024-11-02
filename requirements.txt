@@ -9,6 +9,7 @@ django-compressor
 django-debug-toolbar
 django-extensions
 django-sass-processor
+django-simple-captcha
 django-storages
 django-taggit
 django-village
@@ -20,7 +21,7 @@ gunicorn
 ipython
 isort
 libsass
-libsass
+poerty
 pre-commit
 psycopg2-binary
 python-dotenv
