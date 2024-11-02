@@ -11,11 +11,10 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
-
-
 SOCIALACCOUNT_PROVIDERS = {
-  "OAUTH_PKCE_ENABLED": True,
   'openid_connect': {
+    "OAUTH_PKCE_ENABLED": True,
+    # 'SOCIALACCOUNT_ONLY': True,
     "APPS": [
       {
         "provider_id": "key-lesgrandsvoisins-com",
@@ -32,7 +31,6 @@ SOCIALACCOUNT_PROVIDERS = {
         },
       },
     ],
-    # 'SOCIALACCOUNT_ONLY': True
   }
 }
 
