@@ -1,0 +1,69 @@
+{% extends "sites_faciles/base.html" %}
+
+{% load static village_tags wagtailcore_tags wagtailimages_tags wagtailsettings_tags %}
+
+
+{% block title %}
+    <title>
+        {% if object_list.count %}
+            {{ object_list.count }} résultat{{ object_list.count|pluralize }}
+        {% else %}
+            Aucun résultat
+        {% endif %}
+    pour la recherche « {{ query }} » {% comment %} — {{ settings('sites_faciles.WagtailVillageConfig', use_default_site=True).site_title }}{% endcomment %}
+    </title>
+{% endblock title %}
+
+
+{% if page.search_description %}
+    {% block description %}
+        <meta name="description"
+              content="{% if object_list.count %} {{ object_list.count }} résultat{{ object_list.count|pluralize }} {% else %} Aucun résultat {% endif %} pour la recherche « {{ query }} »" />
+    {% endblock description %}
+{% endif %}
+
+{% block content %}
+    <div class="village-container village-my-4w">
+        <h1>
+            {% if object_list.count %}
+                {{ object_list.count }} résultat{{ object_list.count|pluralize }}
+            {% else %}
+                Aucun résultat
+            {% endif %}
+            pour la recherche « {{ query }} »
+        </h1>
+        {% if object_list.count %}
+            <ol>
+                {% for result in object_list %}
+                    <li>
+                        <h2 class="village-h4">
+                            <a href="{% pageurl result %}">{{ result }}</a>
+                        </h2>
+                        {% if result.search_description %}<p>{{ result.search_description|safe }}</p>{% endif %}
+
+                    </li>
+                {% endfor %}
+            </ol>
+        {% else %}
+            <div class="village-my-7w village-mt-md-12w village-mb-md-10w village-grid-row village-grid-row--gutters village-grid-row--middle village-grid-row--center">
+                <div class="village-py-0 village-col-12 village-col-md-6">
+                    <h2 class="village-mb-3w">Nous n’avons trouvé aucun contenu correspondant à votre recherche.</h2>
+                    <p>Pour continuer votre visite, vous pouvez consulter notre page d’accueil.</p>
+                    <ul class="village-btns-group village-btns-group--inline-md">
+                        <li>
+                            <a class="village-btn" href="/">Page d’accueil</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="village-col-12 village-col-md-3 village-col-offset-md-1 village-px-6w village-px-md-0 village-py-0">
+                    <img src="{% static 'django_village/dist/artwork/pictograms/digital/search.svg' %}"
+                         class="village-responsive-img"
+                         alt=""
+                         width="300"
+                         height="300" />
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock content %}

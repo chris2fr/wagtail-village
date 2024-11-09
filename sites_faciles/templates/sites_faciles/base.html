@@ -1,0 +1,106 @@
+{% extends "django_village/base.html" %}
+{% load  static village_tags wagtailcore_tags wagtailimages_tags i18n wagtailuserbar wagtailsettings_tags sass_tags %}
+
+{% get_settings use_default_site=True %}
+
+{% block description %}
+    {% if search_description %}<meta name="description" content="{{ search_description }}" />{% endif %}
+{% endblock description %}
+
+{% block extra_css %}
+
+<link href="{% static 'css/style.css' %}"
+rel="stylesheet"
+type="text/css" />
+
+{% endblock extra_css %}
+
+{% block opengraph %}
+    <meta property="og:site_name" content="{{ request.get_host }}" />
+    <meta property="og:title"
+          content="{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ page.full_url }}" />
+    <meta property="og:description" content="{{ page.search_description }}" />
+    <meta property="og:locale" content="{{ LANGUAGE_CODE }}" />
+
+    {% if page.get_translations.live %}
+        {% for translation in page.get_translations.live %}
+            <meta property="og:locale:alternate"
+                  content="{{ translation.locale.language_code }}" />
+        {% endfor %}
+    {% endif %}
+{% endblock opengraph %}
+
+{% block social_media %}
+    <meta name="twitter:title"
+          content="{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}" />
+    <meta name="twitter:description" content="{{ page.search_description }}" />
+
+    {% if page.header_image %}
+        <meta name="twitter:card" content="summary_large_image" />
+        {% image page.header_image fill-1200x627 as header_image %}
+        <meta property="og:image" content="{{ header_image.full_url }}" />
+        <meta name="twitter:image" content="{{ header_image.full_url }}" />
+    {% else %}
+        <meta name="twitter:card" content="summary" />
+    {% endif %}
+{% endblock social_media %}
+
+{% block tracking %}
+  {% if settings.sites_faciles.AnalyticsSettings.head_scripts %}
+    {{ settings.sites_faciles.AnalyticsSettings.head_scripts|safe }}
+  {% endif %}
+{% endblock tracking %}
+
+{% block skiplinks %}
+  {% wagtailuserbar %}
+  {% village_skiplinks skiplinks %}
+{% endblock skiplinks %}
+
+{% block breadcrumb %}
+{% endblock breadcrumb %}
+
+{% block topbody%}
+{% endblock topbody%}
+
+{% block header %}
+  {% include "sites_faciles/header.html" %}
+  {% if settings.sites_faciles.WagtailVillageConfig.notice %}
+    {% village_notice title=settings.sites_faciles.WagtailVillageConfig.notice %}
+  {% endif %}
+{% endblock header %}
+
+{% comment %}
+  {% village_theme_modale %}
+{% endcomment %}
+
+{% block follow_newsletter_social_media %}
+  {% if settings.sites_faciles.WagtailVillageConfig.show_newsletter_and_social_block %}
+    {% include "sites_faciles/follow.html" %}
+  {% endif %}
+{% endblock follow_newsletter_social_media %}
+
+{% block footer %}
+  {% include "sites_faciles/footer.html" %}
+{% endblock footer %}
+
+
+{% block body_tracking_scripts %}
+  {% if settings.sites_faciles.AnalyticsSettings.body_scripts %}
+    {{ settings.sites_faciles.AnalyticsSettings.body_scripts|safe }}
+  {% endif %}
+{% endblock body_tracking_scripts %}
+
+{% comment %}
+{% village_js nonce=request.csp_nonce %}
+{% endcomment %}
+
+{% block extra_js %}
+<script src="{% static 'js/common.js' %}">
+</script>
+{% endblock extra_js %}
+
+{# djlint:off #}
+{% block lang %}{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}{% endblock lang %}
+{# djlint:on #}

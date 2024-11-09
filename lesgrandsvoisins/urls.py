@@ -46,9 +46,9 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-urlpatterns += i18n_patterns(  # Pour l'internationalisation de Wagtail_Village et Wagtail_Village_Blog
-    path("", include("wagtail_village.urls")),
-    path("", include("wagtail_village_blog.urls", namespace="wagtail_village_blog")),
+urlpatterns += i18n_patterns(  # Pour l'internationalisation de sites_faciles et sites_faciles_Blog
+    path("", include("sites_faciles.urls")),
+    path("", include("sites_faciles_blog.urls", namespace="sites_faciles_blog")),
     path("signup/", lesgrandsvoisins_views.signup_view, name="signup_view"),
     path("signup", lesgrandsvoisins_views.signup_view, name="signup_view"),
     prefix_default_language=True,

@@ -1,0 +1,30 @@
+{% extends "sites_faciles/base.html" %}
+
+{% load static village_tags wagtailcore_tags wagtailimages_tags i18n %}
+
+{% block title %}
+    <title>{{ page.seo_title|default:page.title }} — {{ settings('sites_faciles.WagtailVillageConfig', use_default_site=True).site_title }}</title>
+{% endblock title %}
+
+{% if page.search_description %}
+    {% block description %}
+        <meta name="description" content="{{ page.search_description }}" />
+    {% endblock description %}
+{% endif %}
+
+{% block content %}
+    {% include "sites_faciles/messages.html" %}
+
+    <div class="village-container village-my-6w">
+        {% village_breadcrumb breadcrumb %}
+        <h1>{% translate "Categories" %}</h1>
+        <ul>
+            {% for category in categories|dictsort:"cat_name" %}
+                <li>
+                    <a href="{% url 'sites_faciles_blog:category' page.slug category.cat_slug %}"><strong>{{ category.cat_name }}</strong> ({{ category.cat_count }})</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock content %}

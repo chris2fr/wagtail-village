@@ -1,0 +1,155 @@
+{% extends "sites_faciles/base.html" %}
+{% load static wagtailsettings_tags i18n wagtailimages_tags village_tags wagtailcore_tags wagtailuserbar %}
+{% get_settings use_default_site=True %}
+
+{block bodyclass}surface-base{endblock bodyclass}
+
+{block mainclass}lesgrandsvoisins-home{endblock mainclass}
+
+{% block header %}
+{% endblock header %}
+
+
+{% block content %}
+<style>
+  :root {
+      --color-primary: 0 146 11;
+      --color-secondary: 24 150 255;
+  }
+   body {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       background: var(--background-default-grey);
+   }
+   article {
+       margin: 0;
+       padding: 1rem 2rem;
+       color: var(--text-default-grey);
+       position: relative;
+   }
+   .bg-gradient {
+      will-change: transform;
+      backface-visibility: hidden;
+      background-image: radial-gradient(50vMax at -10vw -20vw,rgb(var(--color-secondary) / 1),rgb(var(--color-secondary) / 80%) 40%,rgb(var(--color-secondary) / 0%)),radial-gradient(60vMax at 100vw 100vh,rgb(var(--color-primary) / 1),rgb(var(--color-primary) / 80%) 40%,rgb(var(--color-primary) / 0%));    
+   }
+   span.wavybottom {
+     height: 120px;
+     width: 100%;
+     clip-path: url(#village-wavybottom);
+     background-color: var(--background-default-grey);
+     display: block;
+   }
+   span.wavytop {
+    height: 120px;
+    width: 100%;
+    clip-path: url(#village-wavytop);
+    background-color: var(--background-default-grey);
+    display: block;
+  }
+   .full-width {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+    #content header {
+      background: transparent;
+      display: flex;
+      justify-content: space-between;
+    }
+    /*
+    div.village-home-hero h2 p {
+      font-size: larger;
+      line-height: 1.3em;
+    }
+    */
+    div.village-home-hero h2 em,
+    div.village-home-hero h2 b,
+    div.village-home-hero h2 i,
+    div.village-home-hero h2 strong {
+      color: var(--text-label-village-secondary);
+    }
+  </style>
+  {{ page.sections }}
+  <div class="bg-gradient full-width village-home-hero notlesgrandsvoisins-home-hero">
+    {% include "sites_faciles/home_header.html" %}
+    {% if settings.sites_faciles.WagtailVillageConfig.notice %}
+      {% village_notice title=settings.sites_faciles.WagtailVillageConfig.notice %}
+    {% endif %}
+    {% include "sites_faciles/blocks_stream.html" with stream=page.section_1_body %}
+      <span class="wavybottom"></span>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="0 0 1200 120.2">
+      <defs>
+          <clipPath id="village-wavybottom" clipPathUnits="objectBoundingBox" transform="scale(0.0008333, 0.00832571666)">
+              <path d="M0 82.8v37.4h1200V14.3c-67.8-23.1-144.3-15.5-214.3 3-79 20.8-161.9 61.8-241.8 78.6-82.3 17.3-168.1 16.3-250.5-.4-57.8-11.7-114-31.1-172-41.9C213.6 33.9 102.5 44 0 82.8z">
+              </path> 
+          </clipPath> 
+      </defs>
+  </svg>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="0 0 1200 120.2">
+  <defs>
+      <clipPath id="village-wavytop" clipPathUnits="objectBoundingBox" transform="scale(0.0008333, 0.00832571666)" >
+          <path d="M 0 0 v -58.2 h 1200 V 14.3 c -67.8 -23.1 -144.3 -15.5 -214.3 3 c -79 20.8 -161.9 61.8 -241.8 78.6 c -82.3 17.3 -168.1 16.3 -250.5 -0.4 c -57.8 -11.7 -114 -31.1 -172 -41.9 C 213.6 33.9 102.5 44 0 82.8 z">
+          </path> 
+      </clipPath> 
+  </defs>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="0 0 1200 220.2"> <defs> <clipPath id="heroclip" clipPathUnits="objectBoundingBox" transform="scale(0.0008333, 0.0045413)"> <path d="M0 82.8v137.4h1200V14.3c-67.8-23.1-144.3-15.5-214.3 3-79 20.8-161.9 61.8-241.8 78.6-82.3 17.3-168.1 16.3-250.5-.4-57.8-11.7-114-31.1-172-41.9C213.6 33.9 102.5 44 0 82.8z"> </path> </clipPath> </defs> </svg> 
+<style>
+  div.village-home-section2 {
+    display: grid;
+    grid-template: "d c";
+    grid-template-columns: 1fr 3fr;
+  }
+  div.village-home-section2-description {
+    grid-area: d;
+  }
+  div.village-home-section2-description-float {
+    position: sticky;
+    top: 3.5rem;
+  }
+  div.village-home-section2-content {
+    grid-area: c;
+  }
+  @media (max-width: 62rem) {
+    div.village-home-section2 {
+      grid-template: "d" "c";
+      grid-template-columns: unset;
+    }
+    div.village-home-section2-description {
+      grid-area: d;
+    }
+    div.village-home-section2-description-float {
+      position: unset;
+      top: unset;
+    }
+  }
+</style>
+<div class="village-home-section2">
+<div class="village-container village-home-section2-description">
+  <div class="village-home-section2-description-float">
+{{ page.section_2_description_rich|richtext }}
+</div>
+</div>
+<div class="village-home-section2-content">
+  {% include "sites_faciles/blocks_stream.html" with stream=page.section_2_body %}
+</div>
+</div>
+<style>
+  div.village-home-section3 {
+    background-color: var(--background-alt-village-primary-active);
+  }
+</style>
+<div class="village-home-section3">
+  <span class="wavytop"></span>
+{% include "sites_faciles/blocks_stream.html" with stream=page.section_3_body %}
+<span class="wavybottom"></span>
+</div>
+{% include "sites_faciles/blocks_stream.html" with stream=page.body %}
+{% endblock content %}
+

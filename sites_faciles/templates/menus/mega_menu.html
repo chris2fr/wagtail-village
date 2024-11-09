@@ -1,0 +1,36 @@
+{% load menu_tags %}
+<div class="village-collapse village-mega-menu"
+     id="mega-menu-{{ menu.parent_menu_item.id }}"
+     tabindex="-1">
+    <div class="village-container village-container--fluid village-container-lg">
+        <button class="village-link--close village-link"
+                aria-controls="mega-menu-{{ menu.parent_menu_item.id }}">Fermer</button>
+        <div class="village-grid-row village-grid-row-lg--gutters">
+            <div class="village-col-12 village-col-lg-8 village-col-offset-lg-4--right">
+                <div class="village-mega-menu__leader">
+                    <h4 class="village-h4 village-mb-2v">{{ menu.title }}</h4>
+                    {% if menu.description %}<p class="village-hidden village-displayed-lg">{{ menu.description|safe }}</p>{% endif %}
+                    {% if menu.main_link %}
+                        <a class="village-link village-fi-arrow-right-line village-link--icon-right village-link--align-on-content"
+                           href="{{ menu.main_link }}">Voir toute la rubrique</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% for category in menu.get_categories %}
+                <div class="village-col-12 village-col-lg-3">
+                    <h5 class="village-mega-menu__category">
+                        <a class="village-nav__link" href="#" target="_self">
+                            {% if category.category.heading %}
+                                {{ category.category.heading }}
+                            {% else %}
+                                {{ category.category.title }}
+                            {% endif %}
+                        </a>
+                    </h5>
+                    {% comment %} {% include_block category.category.handle template="sites_faciles/menus/mega_menu_category.html" %}  {% endcomment %}
+                    {% flat_menu category.category.handle template="sites_faciles/menus/mega_menu_category.html" %} 
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,26 +1,26 @@
-- wagtail_village_blog/templates/blog/blog_entry_page.html
+- sites_faciles_blog/templates/blog/blog_entry_page.html
   - description
   - content
   - social_media
   - title
-- wagtail_village_blog/templates/blog/blog_index_page.html
+- sites_faciles_blog/templates/blog/blog_index_page.html
   - description
   - content
   - social_media
   - title
-- wagtail_village_blog/templates/blog/categories_list_page.html
+- sites_faciles_blog/templates/blog/categories_list_page.html
   - description
   - content
   - title
-- wagtail_village_blog/templates/blog/tags_list_page.html
+- sites_faciles_blog/templates/blog/tags_list_page.html
   - description
   - content
   - title
-- wagtail_village/templates/404.html
+- sites_faciles/templates/404.html
   - content
-- wagtail_village/templates/500.html
+- sites_faciles/templates/500.html
   - content
-- wagtail_village/templates/base.html
+- sites_faciles/templates/base.html
   - body_tracking_scripts
   - extra_js
   - follow_newsletter_social_media
@@ -30,7 +30,7 @@
   - title
   - tracking
   - extra_css
-- wagtail_village/templates/django_village/base.html
+- sites_faciles/templates/django_village/base.html
   - extra_css
   - extra_js
   - follow_newsletter_social_media
@@ -43,21 +43,21 @@
   - breadcrumb
   - content
 <html lang="  - langcodefr{% endblock langcode"
-- wagtail_village/templates/django_village/search_results.html
+- sites_faciles/templates/django_village/search_results.html
   - description
   - content
   - title
-- wagtail_village/templates/django_village/tag_page.html
-  - content
-  - description
-  - social_media
-  - title
-- wagtail_village/templates/django_village/tags_list_page.html
+- sites_faciles/templates/django_village/tag_page.html
   - content
   - description
   - social_media
   - title
-- wagtail_village/templates/wagtail_village/base.html
+- sites_faciles/templates/django_village/tags_list_page.html
+  - content
+  - description
+  - social_media
+  - title
+- sites_faciles/templates/sites_faciles/base.html
   - body_tracking_scripts
   - extra_js
   - follow_newsletter_social_media
@@ -67,15 +67,15 @@
   - title
   - tracking
   - extra_css
-- wagtail_village/templates/wagtail_village/follow.html
+- sites_faciles/templates/sites_faciles/follow.html
   - follow_newsletter
   - follow_social
-- wagtail_village/templates/wagtail_village/footer.html
+- sites_faciles/templates/sites_faciles/footer.html
   - brand
   - footer_content
   - footer_links
   - not_footer_brand
-- wagtail_village/templates/wagtail_village/header.html
+- sites_faciles/templates/sites_faciles/header.html
   - header_search
   - header_tools
   - main_menu
@@ -83,7 +83,7 @@
   - operator_logo
   - service_tagline
   - service_title
-- wagtail_village/templates/wagtail_village/content_page.html
+- sites_faciles/templates/sites_faciles/content_page.html
   - content
   - description
   - header

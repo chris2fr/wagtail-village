@@ -76,11 +76,11 @@ INSTALLED_APPS = [
     "wagtail_localize.locales",
     "wagtail_localize",
     "wagtail_transfer",
-    "wagtail_village_blog",
-    "wagtail_village_dashboard",
-    "wagtail_village_forms",
-    "wagtail_village_lesgrandsvoisins",
-    "wagtail_village",
+    "sites_faciles_blog",
+    "sites_faciles_dashboard",
+    "sites_faciles_forms",
+    "sites_faciles_lesgrandsvoisins",
+    "sites_faciles",
     "wagtail.admin",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
@@ -141,11 +141,11 @@ TEMPLATES = [
         "DIRS": [
             os.path.join(BASE_DIR, "django_village/templates"),  # Pour Django_Village
             os.path.join(PROJECT_DIR, "templates"),
-            os.path.join(BASE_DIR, "wagtail_village_blog/templates"),  # Pour wagtail_village_
-            os.path.join(BASE_DIR, "wagtail_village_dashbord/templates"),  # Pour wagtail_village_
-            os.path.join(BASE_DIR, "wagtail_village_forms/templates"),  # Pour wagtail_village_
-            os.path.join(BASE_DIR, "wagtail_village_lesgrandsvoisins/templates"),  # Pour wagtail_village_
-            os.path.join(BASE_DIR, "wagtail_village/templates"),
+            os.path.join(BASE_DIR, "sites_faciles_blog/templates"),  # Pour sites_faciles_
+            os.path.join(BASE_DIR, "sites_faciles_dashbord/templates"),  # Pour sites_faciles_
+            os.path.join(BASE_DIR, "sites_faciles_forms/templates"),  # Pour sites_faciles_
+            os.path.join(BASE_DIR, "sites_faciles_lesgrandsvoisins/templates"),  # Pour sites_faciles_
+            os.path.join(BASE_DIR, "sites_faciles/templates"),
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -155,10 +155,10 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
-                "wagtail_village.context_processors.mega_menus",  # Ajouté
-                "wagtail_village.context_processors.sitevars",  # Ajouté
-                "wagtail_village.context_processors.skiplinks",  # Ajouté
-                "wagtail_village.context_processors.urlangs",  # Ajouté
+                "sites_faciles.context_processors.mega_menus",  # Ajouté
+                "sites_faciles.context_processors.sitevars",  # Ajouté
+                "sites_faciles.context_processors.skiplinks",  # Ajouté
+                "sites_faciles.context_processors.urlangs",  # Ajouté
                 "wagtail.contrib.settings.context_processors.settings",  # Ajouté
                 "wagtailmenus.context_processors.wagtailmenus",  # Ajouté
             ],
@@ -380,7 +380,7 @@ for host in ALLOWED_HOSTS:
 SF_ALLOW_RAW_HTML_BLOCKS = os.getenv("SF_ALLOW_RAW_HTML_BLOCKS", "False").lower() == "true"
 
 WAGTAILTRANSFER_UPDATE_RELATED_MODELS = [
-    # "wagtail_village.contentpage",
+    # "sites_faciles.contentpage",
     "wagtailimages.image",
 ]
 
@@ -391,7 +391,7 @@ WAGTAILTRANSFER_LOOKUP_FIELDS = {
     "auth.permission": ["codename"],
     "auth.group": ["name"],
     "auth.user": ["username"],
-    # "wagtail_village.ContentPage": ["locale", "slug", "content_type", "parent_id"],
+    # "sites_faciles.ContentPage": ["locale", "slug", "content_type", "parent_id"],
 }
 
 # if DEBUG and "localhost" in HOST_URL:
