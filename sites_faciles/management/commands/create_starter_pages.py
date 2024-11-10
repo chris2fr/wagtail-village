@@ -95,7 +95,7 @@ class Command(BaseCommand):
 
         image = import_image(
             full_path="static/artwork/coding.svg",
-            title="Pictogrammes DSFR — Internet",
+            title="Pictogrammes — Internet",
         )
 
         text_raw = """<p>Bienvenue !</p>
@@ -111,7 +111,7 @@ class Command(BaseCommand):
             "image": image,
             "image_ratio": "3",
             "text": RichText(text_raw),
-            "link": {"external_url": "https://www.village.org", "text": "Village !"},
+            "link": {"external_url": "https://www.lesgrandsvoisins.com", "text": "Village !"},
         }
 
         body.append(("imageandtext", image_and_text_block))

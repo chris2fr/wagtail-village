@@ -7,10 +7,10 @@ from unidecode import unidecode
 from sites_faciles.models import ContentPage, Tag
 
 
-# from sites_faciles_blog.models import ContentOrBlogPage
+# from sites_faciles.sites_faciles_blog.models import ContentOrBlogPage
 
 
-# from django_village import views
+# from django_design_system import views
 
 
 class SearchResultsView(ListView):

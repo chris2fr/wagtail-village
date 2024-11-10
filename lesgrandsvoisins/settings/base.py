@@ -59,9 +59,9 @@ INSTALLED_APPS = [
     "lesgrandsvoisins",
     "lesgv",
     "captcha",
-    "django_village.theme_designsystem",
-    "django_village.theme_lesgrandsvoisins",
-    "django_village",
+    "django_design_system.theme_designsystem",
+    "django_design_system.theme_lesgrandsvoisins",
+    "django_design_system",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -76,9 +76,6 @@ INSTALLED_APPS = [
     "wagtail_localize.locales",
     "wagtail_localize",
     "wagtail_transfer",
-    "sites_faciles_blog",
-    "sites_faciles_dashboard",
-    "sites_faciles_forms",
     "sites_faciles_lesgrandsvoisins",
     "sites_faciles",
     "wagtail.admin",
@@ -139,18 +136,20 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(BASE_DIR, "django_village/templates"),  # Pour Django_Village
-            os.path.join(PROJECT_DIR, "templates"),
-            os.path.join(BASE_DIR, "sites_faciles_blog/templates"),  # Pour sites_faciles_
-            os.path.join(BASE_DIR, "sites_faciles_dashbord/templates"),  # Pour sites_faciles_
-            os.path.join(BASE_DIR, "sites_faciles_forms/templates"),  # Pour sites_faciles_
+            os.path.join(BASE_DIR, "django_design_system/templates"),  # Pour Django_Design_System
+            os.path.join(BASE_DIR, "templates"),
+            os.path.join(BASE_DIR, "django_design_system/theme_design_system/templates"),
+            os.path.join(BASE_DIR, "django_design_system/theme_lesgrandsvoisins/templates"),
+            # os.path.join(BASE_DIR, "sites_faciles_blog/templates"),  # Pour sites_faciles_
+            # os.path.join(BASE_DIR, "sites_faciles_dashbord/templates"),  # Pour sites_faciles_
+            # os.path.join(BASE_DIR, "sites_faciles_forms/templates"),  # Pour sites_faciles_
             os.path.join(BASE_DIR, "sites_faciles_lesgrandsvoisins/templates"),  # Pour sites_faciles_
             os.path.join(BASE_DIR, "sites_faciles/templates"),
         ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
-                "django_village.context_processors.site_config",  # Ajouté
+                "django_design_system.context_processors.site_config",  # Ajouté
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "django.template.context_processors.debug",
@@ -250,9 +249,9 @@ else:
     STORAGES["default"] = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     }
-    MEDIA_URL = "/medias/"  # and not /media/
+    MEDIA_URL = "media/"  # and not /media/
     MEDIA_ROOT = os.path.join(
-        BASE_DIR, os.getenv("MEDIA_ROOT", "/medias/")
+        BASE_DIR, os.getenv("MEDIA_ROOT", "media")
     )  # From defaul os.path.join(BASE_DIR, "media")
 
 STORAGES["staticfiles"] = STORAGES["default"]
@@ -266,10 +265,13 @@ STATICFILES_FINDERS = [
     "sass_processor.finders.CssFinder",  # Ajouté
 ]
 
-STATICFILES_DIRS = (os.path.join(PROJECT_DIR, "static"),)  # I suppose staticfiles are parsed to static
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "django_design_system/static"),
+]  # I suppose staticfiles are parsed to static
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles/")  # static to staticfiles
-STATIC_URL = "/static/"  # Leading Slash optional?
+STATIC_URL = "static/"  # Leading Slash optional?
 
 # Django Sass
 SASS_PROCESSOR_ROOT = os.path.join(

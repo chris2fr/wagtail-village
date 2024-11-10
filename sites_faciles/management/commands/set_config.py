@@ -5,7 +5,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 from wagtail.models import Site
 
-from sites_faciles.models import WagtailVillageConfig
+from sites_faciles.sites_faciles_page.models import WagtailSitesFacilesConfig
 
 
 class Command(BaseCommand):
@@ -21,7 +21,7 @@ class Command(BaseCommand):
 
                 config_data["site_id"] = site.id
 
-                _config, created = WagtailVillageConfig.objects.get_or_create(id=1, defaults=config_data)
+                _config, created = WagtailSitesFacilesConfig.objects.get_or_create(id=1, defaults=config_data)
                 # if _config.operator_logo_file_wagtail:
                 #     _config.operator_logo_file = _config.operator_logo_file_wagtail
                 if created:

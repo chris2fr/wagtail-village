@@ -15,7 +15,7 @@ Les conditions de l'utilisation de dango-wagtailvillage and sites-faciles (conte
 Maîtriser l'ensemble de la chaîne de wagtailvillage à django-wagtailvillage à sites-faciles a été une joie parce-que les développements sont propres et faits de manière responsable.  
 
 
-Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable [Wagtail-VILLAGE](https://github.com/chris2fr/wagtail-village) avec [Django-VILLAGE](https://github.com/chris2fr/django-village) [Module Python Django-VILLAGE](https://pypi.org/project/django_village/
+Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable [Wagtail-VILLAGE](https://github.com/chris2fr/wagtail-village) avec [Django-VILLAGE](https://github.com/chris2fr/django-village) [Module Python Django-VILLAGE](https://pypi.org/project/django-design-system/
 ) et [Fabrique-VILLAGE](https://github.com/chris2fr/fabrique-village).
 
 ```mermaid
@@ -194,7 +194,7 @@ Les tests unitaires peuvent être lancés avec `make test-unit`.
 
 Vous pouvez également générer un rapport sur la couverture de tests :
 ```sh
-coverage run manage.py test --settings sites_faciles.config.settings_test
+coverage run manage.py test --settings config.settings_test
 ```
 
 ## Indexation des contenus

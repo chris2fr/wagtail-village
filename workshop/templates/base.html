@@ -1,9 +1,9 @@
-{% load i18n static village_tags wagtailuserbar wagtailsettings_tags sass_tags %}
+{% load i18n static design_system_tags wagtailuserbar wagtailsettings_tags sass_tags %}
 {% get_settings use_default_site=True %}
 <!DOCTYPE html>
 <html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
       data-village-scheme="system"
-      {% if settings.sites_faciles.WagtailVillageConfig.mourning %}data-village-mourning{% endif %}>
+      {% if settings.sites_faciles.WagtailSitesFacilesConfig.mourning %}data-village-mourning{% endif %}>
 
   <head>
     <meta charset="utf-8" />
@@ -12,21 +12,21 @@
     {% block title %}
       <title>
         {% if title %}{{ title }} —{% endif %}
-      {{ settings.sites_faciles.WagtailVillageConfig.site_title }}</title>
+      {{ settings.sites_faciles.WagtailSitesFacilesConfig.site_title }}</title>
     {% endblock title %}
 
     {% block description %}
     {% endblock description %}
 
-    {% village_favicon %}
+    {% design_system_favicon %}
 
-    {% village_css %}
+    {% design_system_css %}
 
-    <link href="{% static 'django_village/dist/utility/utility.min.css' %}"
+    <link href="{% static 'design-system/dist/utility/utility.min.css' %}"
           rel="stylesheet"
           type="text/css" />
 
-    <link href="{% static 'css/style.css' %}"
+    <link href="{% static 'sites-faciles/css/style.css' %}"
           rel="stylesheet"
           type="text/css" />
 
@@ -47,15 +47,15 @@
 
   <body>
     {% block skiplinks %}
-      {% village_skiplinks skiplinks %}
+      {% design_system_skiplinks skiplinks %}
     {% endblock skiplinks %}
 
     {% include "sites_faciles/header.html" %}
-    {% village_theme_modale %}
+    {% design_system_theme_modale %}
     {% wagtailuserbar %}
 
-    {% if settings.sites_faciles.WagtailVillageConfig.notice %}
-      {% village_notice title=settings.sites_faciles.WagtailVillageConfig.notice %}
+    {% if settings.sites_faciles.WagtailSitesFacilesConfig.notice %}
+      {% design_system_notice title=settings.sites_faciles.WagtailSitesFacilesConfig.notice %}
     {% endif %}
 
     <main id="content" role="main">
@@ -64,14 +64,14 @@
     </main>
 
     {% block follow_newsletter_social_media %}
-      {% if settings.sites_faciles.WagtailVillageConfig.show_newsletter_and_social_block %}
+      {% if settings.sites_faciles.WagtailSitesFacilesConfig.show_newsletter_and_social_block %}
         {% include "sites_faciles/follow.html" %}
       {% endif %}
     {% endblock follow_newsletter_social_media %}
 
     {% include "sites_faciles/footer.html" %}
 
-    {% village_js nonce=request.csp_nonce %}
+    {% design_system_js nonce=request.csp_nonce %}
 
     {% block extra_js %}
     {% endblock extra_js %}

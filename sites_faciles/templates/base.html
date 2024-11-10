@@ -1,4 +1,4 @@
-{% load static village_tags wagtailcore_tags wagtailimages_tags i18n wagtailuserbar wagtailsettings_tags sass_tags %}
+{% load static design_system_tags wagtailcore_tags wagtailimages_tags i18n wagtailuserbar wagtailsettings_tags sass_tags %}
 
 {% get_settings use_default_site=True %}
 
@@ -6,7 +6,7 @@
 
 <html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
       data-village-scheme="system"
-      {% block mourning %}{% if settings.sites_faciles.WagtailVillageConfig.mourning %}data-village-mourning{% endif %}{% endblock mourning %}>
+      {% block mourning %}{% if settings.sites_faciles.WagtailSitesFacilesConfig.mourning %}data-village-mourning{% endif %}{% endblock mourning %}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport"
@@ -19,14 +19,14 @@
       {% if title %}
         {{ title }} — {{ SITE_CONFIG.site_title }}
       {% else %}
-        {{ settings.sites_faciles.WagtailVillageConfig.site_title }}
+        {{ settings.sites_faciles.WagtailSitesFacilesConfig.site_title }}
       {% endif %}
       </title>
     {% endblock title %}
 
-    {% village_css %}
+    {% design_system_css %}
     
-    {% village_favicon %}
+    {% design_system_favicon %}
 
     {% block extra_css %}
     {% endblock extra_css %}
@@ -46,7 +46,7 @@
   <body>
 
     {% block skiplinks %}
-      {% village_skiplinks skiplinks %}
+      {% design_system_skiplinks skiplinks %}
     {% endblock skiplinks %}
 
     {% block header %}
@@ -55,7 +55,7 @@
 
     <div class="village-container village-mt-4w village-mb-6w">
       {% block breadcrumb %}
-        {% village_breadcrumb %}
+        {% design_system_breadcrumb %}
       {% endblock breadcrumb %}
       <main id="content" role="main">
         {% block content %}
@@ -63,21 +63,21 @@
       </main>
     </div>
 
-    {% village_theme_modale %}
+    {% design_system_theme_modale %}
 
     {% if SITE_CONFIG.notice %}
-      {% village_notice title=SITE_CONFIG.notice %}
+      {% design_system_notice title=SITE_CONFIG.notice %}
     {% endif %}
 
     {% block header_after %}
       {% wagtailuserbar %}
-      {% if settings.sites_faciles.WagtailVillageConfig.notice %}
-        {% village_notice title=settings.sites_faciles.WagtailVillageConfig.notice %}
+      {% if settings.sites_faciles.WagtailSitesFacilesConfig.notice %}
+        {% design_system_notice title=settings.sites_faciles.WagtailSitesFacilesConfig.notice %}
       {% endif %}
     {% endblock header_after %}
 
     {% block follow_newsletter_social_media %}
-      {% if settings.sites_faciles.WagtailVillageConfig.show_newsletter_and_social_block %}
+      {% if settings.sites_faciles.WagtailSitesFacilesConfig.show_newsletter_and_social_block %}
         {% include "sites_faciles/follow.html" %}
       {% endif %}
     {% endblock follow_newsletter_social_media %}
@@ -86,7 +86,7 @@
       {% include "sites_faciles/footer.html" %}
     {% endblock footer %}
 
-    {% village_js nonce=request.csp_nonce %}
+    {% design_system_js nonce=request.csp_nonce %}
 
     {% block extra_js %}
     {% endblock extra_js %}

@@ -876,8 +876,8 @@ description = "Render Design System VILLAGE into a generic Django app"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "django_village-0.0.3-py3-none-any.whl", hash = "sha256:1249cec67a67410de8f5230655c4d56d94e96b8a752be3a3eb4adc0447883adf"},
-    {file = "django_village-0.0.3.tar.gz", hash = "sha256:024a652757b1dcd12f2f46542afca8544ad0d6254f6e3b508669d60ef951e828"},
+    {file = "django_design_system-0.0.3-py3-none-any.whl", hash = "sha256:1249cec67a67410de8f5230655c4d56d94e96b8a752be3a3eb4adc0447883adf"},
+    {file = "django_design_system-0.0.3.tar.gz", hash = "sha256:024a652757b1dcd12f2f46542afca8544ad0d6254f6e3b508669d60ef951e828"},
 ]
 
 [package.dependencies]

@@ -30,7 +30,7 @@
   - title
   - tracking
   - extra_css
-- sites_faciles/templates/django_village/base.html
+- sites_faciles/templates/django_design_system/base.html
   - extra_css
   - extra_js
   - follow_newsletter_social_media
@@ -43,16 +43,16 @@
   - breadcrumb
   - content
 <html lang="  - langcodefr{% endblock langcode"
-- sites_faciles/templates/django_village/search_results.html
+- sites_faciles/templates/django_design_system/search_results.html
   - description
   - content
   - title
-- sites_faciles/templates/django_village/tag_page.html
+- sites_faciles/templates/django_design_system/tag_page.html
   - content
   - description
   - social_media
   - title
-- sites_faciles/templates/django_village/tags_list_page.html
+- sites_faciles/templates/django_design_system/tags_list_page.html
   - content
   - description
   - social_media

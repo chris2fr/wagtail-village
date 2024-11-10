@@ -1,9 +1,9 @@
 {% extends "sites_faciles/base.html" %}
 
-{% load static village_tags wagtailcore_tags wagtailimages_tags i18n %}
+{% load static design_system_tags wagtailcore_tags wagtailimages_tags i18n %}
 
 {% block title %}
-    <title>{{ title }} — {{ settings('sites_faciles.WagtailVillageConfig', use_default_site=True).site_title }}</title>
+    <title>{{ title }} — {{ settings('sites_faciles.WagtailSitesFacilesConfig', use_default_site=True).site_title }}</title>
 {% endblock title %}
 
 {% block description %}
@@ -12,7 +12,7 @@
 
 {% block social_media %}
     <meta property="og:site_name"
-          content="{{ settings('sites_faciles.WagtailVillageConfig', use_default_site=True).site_title }}" />
+          content="{{ settings('sites_faciles.WagtailSitesFacilesConfig', use_default_site=True).site_title }}" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ request.build_absolute_uri }}" />
@@ -27,7 +27,7 @@
     {% include "sites_faciles/messages.html" %}
 
     <div class="village-container village-mt-6w">
-        {% village_breadcrumb breadcrumb %}
+        {% design_system_breadcrumb breadcrumb %}
         <h1>{{ title }}</h1>
     </div>
 
@@ -61,7 +61,7 @@
     </div>
 
     {% if posts.paginator.num_pages > 1 %}
-        <div class="village-container village-grid-row village-grid-row--center village-mt-6w">{% village_pagination posts %}</div>
+        <div class="village-container village-grid-row village-grid-row--center village-mt-6w">{% design_system_pagination posts %}</div>
     {% endif %}
 
 {% endblock content %}

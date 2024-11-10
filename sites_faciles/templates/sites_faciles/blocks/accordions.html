@@ -1,4 +1,4 @@
-{% load village_tags wagtailcore_tags %}
+{% load design_system_tags wagtailcore_tags %}
 <div class="village-container village-py-3w">
     <div class="village-grid-row village-grid-row--gutters">
         <div class="village-col-12 village-col-offset-md-2 village-col-md-8">
@@ -14,7 +14,7 @@
                     {% if subblock.block_type == 'accordion' %}
                         {% with forloop.counter0|lower as str_counter %}
                             {% with "accordion-"|add:accordions_id|add:"-"|add:str_counter as accordion_id %}  
-                                {% village_accordion id=accordion_id title=subblock.value.title content=subblock.value.content|richtext %}
+                                {% design_system_accordion id=accordion_id title=subblock.value.title content=subblock.value.content|richtext %}
                             {% endwith %}
                         {% endwith %}
                     {% endif %}

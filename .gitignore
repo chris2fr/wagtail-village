@@ -151,3 +151,9 @@ config.json
 cron.json
 
 medias/
+
+django_design_system
+mediafiles
+staticfiles
+venv
+.cache

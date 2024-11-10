@@ -1,26 +1,26 @@
-{% extends "django_village/header.html" %}
+{% extends "django_design_system/header.html" %}
 {% load i18n static wagtailcore_tags wagtailimages_tags menu_tags l10n %}
 
 {% block brand %}
   {% translate "Home page" as home_page %}
   <a href="/"
-     title="{{ home_page }} — {{ settings.sites_faciles.WagtailVillageConfig.header_brand }}">
-    <p class="gv-logo">{{ settings.sites_faciles.WagtailVillageConfig.header_brand_html|safe }}</p>
+     title="{{ home_page }} — {{ settings.sites_faciles.WagtailSitesFacilesConfig.header_brand }}">
+    <p class="gv-logo">{{ settings.sites_faciles.WagtailSitesFacilesConfig.header_brand_html|safe }}</p>
   </a>
 {% endblock brand %}
 
 {% block service_title %}
   {% translate "Home page" as home_page %}
   <a href="/"
-     title="{{ home_page }} — {{ settings.sites_faciles.WagtailVillageConfig.site_title }}">
+     title="{{ home_page }} — {{ settings.sites_faciles.WagtailSitesFacilesConfig.site_title }}">
 
     <p class="village-header__service-title">
-      {% if settings.sites_faciles.WagtailVillageConfig.site_title|slice:"-2:" == "fr" %}
-        {{ settings.sites_faciles.WagtailVillageConfig.site_title|slice:":-2" }}<em>fr</em>
+      {% if settings.sites_faciles.WagtailSitesFacilesConfig.site_title|slice:"-2:" == "fr" %}
+        {{ settings.sites_faciles.WagtailSitesFacilesConfig.site_title|slice:":-2" }}<em>fr</em>
       {% else %}
-        {{ settings.sites_faciles.WagtailVillageConfig.site_title }}
+        {{ settings.sites_faciles.WagtailSitesFacilesConfig.site_title }}
       {% endif %}
-      {% if settings.sites_faciles.WagtailVillageConfig.beta_tag %}
+      {% if settings.sites_faciles.WagtailSitesFacilesConfig.beta_tag %}
         <span class="village-badge village-badge--sm village-badge--green-emeraude">BETA</span>
       {% endif %}
 
@@ -29,39 +29,39 @@
 {% endblock service_title %}
 
 {% block service_tagline %}
-  {{ settings.sites_faciles.WagtailVillageConfig.site_tagline }}
+  {{ settings.sites_faciles.WagtailSitesFacilesConfig.site_tagline }}
 {% endblock service_tagline %}
 
 {% block operator_logo %}
-  {% if settings.sites_faciles.WagtailVillageConfig.operator_logo_file and settings.sites_faciles.WagtailVillageConfig.operator_logo_alt %}
-    {% image settings.sites_faciles.WagtailVillageConfig.operator_logo_file original as logo_img %}
+  {% if settings.sites_faciles.WagtailSitesFacilesConfig.operator_logo_file and settings.sites_faciles.WagtailSitesFacilesConfig.operator_logo_alt %}
+    {% image settings.sites_faciles.WagtailSitesFacilesConfig.operator_logo_file original as logo_img %}
 
     <div class="village-header__operator">
       <img class="village-responsive-img"
            src="{{ logo_img.url }}"
-           alt="{{ settings.sites_faciles.WagtailVillageConfig.operator_logo_alt }}"
-           {% if settings.sites_faciles.WagtailVillageConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.sites_faciles.WagtailVillageConfig.operator_logo_width|unlocalize }}rem;"{% endif %} />
+           alt="{{ settings.sites_faciles.WagtailSitesFacilesConfig.operator_logo_alt }}"
+           {% if settings.sites_faciles.WagtailSitesFacilesConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.sites_faciles.WagtailSitesFacilesConfig.operator_logo_width|unlocalize }}rem;"{% endif %} />
     </div>
   {% endif %}
 {% endblock operator_logo %}
 
 {% block header_tools %}
 <li>
-  {% include "django_village/language_selector.html" %}
+  {% include "django_design_system/language_selector.html" %}
 </li>
   {% flat_menu handle="header_tools" template="menus/custom_flat_menu.html" %}
 {% endblock header_tools %}
 
 {% block header_search %}
   {% translate "Search" as search_label %}
-  {% if settings.sites_faciles.WagtailVillageConfig.search_bar %}
+  {% if settings.sites_faciles.WagtailSitesFacilesConfig.search_bar %}
     <div class="village-header__search village-modal" id="modal-search">
       <div class="village-container village-container-lg--fluid">
         {% translate "Close" as close_label %}
         <button class="village-btn--close village-btn"
                 aria-controls="modal-search"
                 title="{{ close_label }}">{{ close_label }}</button>
-        <form action="{% url 'sites_faciles_search' %}" method="get">
+        <form action="{% url 'design_system_search' %}" method="get">
           <div class="village-search-bar" id="search-bar" role="search">
             <label class="village-label" for="search-bar-input">{{ search_label }}</label>
             <input class="village-input"

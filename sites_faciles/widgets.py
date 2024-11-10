@@ -1,7 +1,7 @@
 from django.forms import Media, widgets
 
 
-class WagtailVillageIconPickerWidget(widgets.TextInput):
+class WagtailSitesFacilesIconPickerWidget(widgets.TextInput):
     template_name = "sites_faciles/widgets/village-icon-picker-widget.html"
 
     def __init__(self, attrs=None):
@@ -13,6 +13,6 @@ class WagtailVillageIconPickerWidget(widgets.TextInput):
     @property
     def media(self):
         return Media(
-            css={"all": ["css/icon-picker.css", "django_village/dist/utility/utility.min.css"]},
-            js=["django_village/icon-picker/assets/js/universal-icon-picker.min.js"],
+            css={"all": ["css/icon-picker.css", "design-system/dist/utility/utility.min.css"]},
+            js=["django_design_system/icon-picker/assets/js/universal-icon-picker.min.js"],
         )

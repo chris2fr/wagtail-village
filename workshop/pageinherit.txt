@@ -9,22 +9,22 @@
 - sites_faciles/templates/404.html
   - base.html
 - sites_faciles/templates/base.html
-  - django_village/base.html
+  - django_design_system/base.html
 - sites_faciles/templates/sites_faciles/base.html
-  - django_village/base.html
+  - django_design_system/base.html
 - sites_faciles/templates/sites_faciles/follow.html
-  - django_village/follow.html
+  - django_design_system/follow.html
 - sites_faciles/templates/sites_faciles/footer.html
-  - django_village/footer.html
+  - django_design_system/footer.html
 - sites_faciles/templates/sites_faciles/header.html
-  - django_village/header.html
+  - django_design_system/header.html
 - sites_faciles/templates/sites_faciles/content_page.html
   - sites_faciles/base.html
-- sites_faciles/templates/django_village/tag_page.html
+- sites_faciles/templates/django_design_system/tag_page.html
   - base.html
-- sites_faciles/templates/django_village/search_results.html
+- sites_faciles/templates/django_design_system/search_results.html
   - base.html
-- sites_faciles/templates/django_village/tags_list_page.html
+- sites_faciles/templates/django_design_system/tags_list_page.html
   - base.html
 - sites_faciles/templates/500.html
   - base.html

@@ -3,7 +3,7 @@
   {{ value.text|richtext }}
   {% if value.cta_url and value.cta_label %}
     <p class="village-mb-5w">
-      {# It doesn't use village_link or village_button because it's a link with a button style #}
+      {# It doesn't use design_system_link or design_system_button because it's a link with a button style #}
       <a href="{{ value.cta_url }}" class="village-btn village-btn--primary">{{ value.cta_label }}</a>
     </p>
   {% endif %}

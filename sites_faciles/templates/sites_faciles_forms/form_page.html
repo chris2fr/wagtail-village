@@ -1,0 +1,38 @@
+{% extends "sites_faciles/content_page.html" %}
+
+{% load static design_system_tags wagtailcore_tags wagtailimages_tags i18n form_filters %}
+
+{% block content %}
+
+{{ block.super }}
+
+<form action="{% pageurl page %}" method="POST" id="le_design_system_formulaire">
+    {% csrf_token %}
+    {% comment %} {{ form.as_p }} {% endcomment %}
+    {{ form.non_field_errors }}
+    {% for field in form %}
+    <fieldset class="village-fieldset" aria-labelledby="text-legend text-messages">
+        <div class="village-label">
+        {{ field.label_tag }}
+        </div>
+        <div class="village-fieldset__element">
+            <div class="village-{{ field.name|field_class_from_name:form_fields }}">
+                {{ field }}
+            </div>
+            {{ field.help_text }}
+            {{ field.errors }}
+        </div>
+    </fieldset>
+    {% endfor %}
+    <div class="form-group">
+    </div>
+        <p>
+    <button type="submit" class="village-btn">
+        Envoyer
+    </button>
+</form>
+
+{% endblock content %}
+
+{% block follow_newsletter_social_media %}
+{% endblock follow_newsletter_social_media %}

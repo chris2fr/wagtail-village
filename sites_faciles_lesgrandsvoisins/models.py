@@ -4,7 +4,7 @@ from wagtail.admin.panels import FieldPanel
 from wagtail.fields import RichTextField, StreamField
 
 from sites_faciles.blocks import STREAMFIELD_COMMON_BLOCKS
-from sites_faciles.models import ContentPage
+from sites_faciles.sites_faciles_page.models import ContentPage
 
 
 SECTION_CHOICES = [
@@ -30,7 +30,7 @@ class HomeSectionBlock(blocks.StructBlock):
     )
 
 
-class WagtailVillageLesgrandsvoisinsHome(ContentPage):
+class WagtailSitesFacilesLesgrandsvoisinsHome(ContentPage):
     sections = StreamField([("sections", HomeSectionBlock())], blank=True, use_json_field=True)
     section_1_body = StreamField(
         STREAMFIELD_COMMON_BLOCKS,

@@ -1,21 +1,21 @@
 import os
 
-from sites_faciles.abstract import WagtailVillageConfig
-from sites_faciles.models import MegaMenu  # , WagtailVillageConfig
+from sites_faciles.models import MegaMenu  # , WagtailSitesFacilesConfig
+from sites_faciles.sites_faciles_page.models import WagtailSitesFacilesConfig
 
 
 # from django.utils.translation import get_language
 
 
-# from django_village.context_processors import site_config
+# from django_design_system.context_processors import site_config
 
 # def site_config(request):
 #     # Tries to return the site config object in the current language first.
-#     config = WagtailVillageConfig.objects.filter(language=get_language()).first()
+#     config = WagtailSitesFacilesConfig.objects.filter(language=get_language()).first()
 
 #     # Failing that, it returns the first site config object
 #     if not config:
-#         config = WagtailVillageConfig.objects.first()
+#         config = WagtailSitesFacilesConfig.objects.first()
 
 #     config.operator_logo_file = config.operator_logo_file_wagtail
 
@@ -61,18 +61,18 @@ def urlangs(request):
 
 
 def sitevars(request):
-    settings = WagtailVillageConfig.for_request(request)
+    settings = WagtailSitesFacilesConfig.for_request(request)
     return {
         "langcode": settings.language,
         "home_url": "/{}/".format(settings.language),
-        "data_village_mourning": "data-village-mourning" if settings.mourning else "",
+        "data_sites_faciles_mourning": "data-village-mourning" if settings.mourning else "",
         "full_site_title": settings.site_title,
     }
     #
     # context["langcode"] = settings.language
-    # context["data_village_mourning"] = ""
+    # context["data_sites_faciles_mourning"] = ""
     # if settings.mourning:
-    #     context["data_village_mourning"] = "data-village-mourning"
+    #     context["data_sites_faciles_mourning"] = "data-village-mourning"
     # context["full_title"] = settings.site_title
     # if context["page"].title:
     #     context["full_title"] = context["page"].title + " - " + context["full_title"]

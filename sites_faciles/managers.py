@@ -1,6 +1,8 @@
 from django.db import models
 from django.db.models import Count
 
+from sites_faciles.sites_faciles_blog.blocks import *
+
 
 class TagManager(models.Manager):
     def tags_with_usecount(self, min_count=0):

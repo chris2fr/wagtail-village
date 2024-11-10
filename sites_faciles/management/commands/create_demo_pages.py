@@ -7,7 +7,7 @@ from wagtailmenus.models.menuitems import FlatMenuItem, MainMenuItem
 from wagtailmenus.models.menus import FlatMenu, MainMenu
 
 from sites_faciles.models import ContentPage, MegaMenu, MegaMenuCategory
-from sites_faciles_blog.models import BlogIndexPage
+from sites_faciles.sites_faciles_blog.models import BlogIndexPage
 
 
 ALL_ALLOWED_SLUGS = ["blog_index", "publications"]

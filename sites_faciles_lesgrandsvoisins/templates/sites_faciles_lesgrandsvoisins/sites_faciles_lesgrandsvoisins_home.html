@@ -1,5 +1,5 @@
 {% extends "sites_faciles/base.html" %}
-{% load static wagtailsettings_tags i18n wagtailimages_tags village_tags wagtailcore_tags wagtailuserbar %}
+{% load static wagtailsettings_tags i18n wagtailimages_tags design_system_tags wagtailcore_tags wagtailuserbar %}
 {% get_settings use_default_site=True %}
 
 {block bodyclass}surface-base{endblock bodyclass}
@@ -76,8 +76,8 @@
   {{ page.sections }}
   <div class="bg-gradient full-width village-home-hero notlesgrandsvoisins-home-hero">
     {% include "sites_faciles/home_header.html" %}
-    {% if settings.sites_faciles.WagtailVillageConfig.notice %}
-      {% village_notice title=settings.sites_faciles.WagtailVillageConfig.notice %}
+    {% if settings.sites_faciles.WagtailSitesFacilesConfig.notice %}
+      {% design_system_notice title=settings.sites_faciles.WagtailSitesFacilesConfig.notice %}
     {% endif %}
     {% include "sites_faciles/blocks_stream.html" with stream=page.section_1_body %}
       <span class="wavybottom"></span>
