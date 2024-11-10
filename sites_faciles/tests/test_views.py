@@ -6,7 +6,7 @@ from wagtail.test.utils import WagtailPageTestCase
 from wagtailmenus.models.menuitems import FlatMenuItem, MainMenuItem
 from wagtailmenus.models.menus import FlatMenu, MainMenu
 
-from sites_faciles.models import ContentPage, MegaMenu, MegaMenuCategory, WagtailSitesFacilesConfig
+from wagtail_design_system.models import ContentPage, MegaMenu, MegaMenuCategory, SitesFacilesConfig
 
 
 class ContentPageTestCase(WagtailPageTestCase):
@@ -51,7 +51,7 @@ class ConfigTestCase(WagtailPageTestCase):
         )
         self.content_page.save()
 
-        self.config, _created = WagtailSitesFacilesConfig.objects.update_or_create(
+        self.config, _created = SitesFacilesConfig.objects.update_or_create(
             site_id=1,
             defaults={
                 "site_title": "Site title",

@@ -62,8 +62,6 @@ SITE_ID = os.getenv("DJANGO_SITE_ID", 1)
 
 # Application definition
 INSTALLED_APPS = [
-    "django_design_system.theme_designsystem",
-    "django_design_system.theme_lesgrandsvoisins",
     "django_design_system",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -78,6 +76,7 @@ INSTALLED_APPS = [
     "storages",
     "taggit",
     "wagtail",
+    "wagtail_design_system",
     "wagtail_localize.locales",
     "wagtail_localize",
     "wagtail_transfer",
@@ -147,10 +146,10 @@ TEMPLATES = [
                 "wagtail.contrib.settings.context_processors.settings",
                 "wagtailmenus.context_processors.wagtailmenus",
                 "django_design_system.context_processors.site_config",
-                "sites_faciles.context_processors.skiplinks",
-                "sites_faciles.context_processors.mega_menus",
-                "sites_faciles.context_processors.urlangs",
-                "sites_faciles.context_processors.sitevars",
+                "wagtail_design_system.context_processors.skiplinks",
+                "wagtail_design_system.context_processors.mega_menus",
+                "wagtail_design_system.context_processors.urlangs",
+                "wagtail_design_system.context_processors.sitevars",
             ],
         },
     },
@@ -278,15 +277,18 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 WAGTAIL_SITE_NAME = os.getenv("APP_SITE_NAME", "Sites faciles")
 
-# # Base URL to use when referring to full URLs within the Wagtail admin backend -
-# # e.g. in notification emails. Don't include '/admin' or a trailing slash
-# WAGTAILADMIN_BASE_URL = "%s://%s" %  (os.getenv('APP_HOST_PROTO', 'https'),os.getenv('APP_HOST_DOMAIN', '0.0.0.0'),)
+# Base URL to use when referring to full URLs within the Wagtail admin backend -
+# e.g. in notification emails. Don't include '/admin' or a trailing slash
+WAGTAILADMIN_BASE_URL = "%s://%s" % (
+    os.getenv("APP_HOST_PROTO", "https"),
+    os.getenv("APP_HOST_DOMAIN", "0.0.0.0"),
+)
 
-# HOST_PORT = os.getenv("DJANGO_HOST_PORT", "8000")
-# if HOST_PORT != "":
-#     WAGTAILADMIN_BASE_URL = "%s:%s" %  (WAGTAILADMIN_BASE_URL, HOST_PORT)
+HOST_PORT = os.getenv("APP_HOST_PORT", "443")
+if HOST_PORT != "":
+    WAGTAILADMIN_BASE_URL = "%s:%s" % (WAGTAILADMIN_BASE_URL, HOST_PORT)
 
-WAGTAILADMIN_BASE_URL = "http://0.0.0.0"
+# WAGTAILADMIN_BASE_URL = "http://0.0.0.0"
 
 # Disable Gravatar service
 WAGTAIL_GRAVATAR_PROVIDER_URL = None
@@ -331,12 +333,17 @@ WAGTAILIMAGES_EXTENSIONS = ["gif", "jpg", "jpeg", "png", "webp", "svg"]
 
 CSRF_TRUSTED_ORIGINS = []
 for host in ALLOWED_HOSTS:
-    CSRF_TRUSTED_ORIGINS.append("https://" + host)
+    CSRF_TRUSTED_ORIGINS.append(
+        os.getenv("APP_HOST_PROTO", "http") + "://" + host + ":" + os.getenv("APP_HOST_PORT", "8000")
+    )
+
+
+print(CSRF_TRUSTED_ORIGINS)
 
 SF_ALLOW_RAW_HTML_BLOCKS = os.getenv("SF_ALLOW_RAW_HTML_BLOCKS", "False").lower() == "true"
 
 WAGTAILTRANSFER_UPDATE_RELATED_MODELS = [
-    # "sites_faciles.contentpage",
+    # "wagtail_design_system.contentpage",
     "wagtailimages.image",
 ]
 
@@ -347,7 +354,7 @@ WAGTAILTRANSFER_LOOKUP_FIELDS = {
     "auth.permission": ["codename"],
     "auth.group": ["name"],
     "auth.user": ["username"],
-    # "sites_faciles.ContentPage": ["locale", "slug", "content_type", "parent_id"],
+    # "wagtail_design_system.ContentPage": ["locale", "slug", "content_type", "parent_id"],
 }
 
 # if DEBUG and "localhost" in HOST_URL:

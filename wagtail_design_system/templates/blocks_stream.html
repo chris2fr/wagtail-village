@@ -1,0 +1,35 @@
+{% load static design_system_tags wagtailcore_tags wagtailimages_tags wagtailmarkdown %}
+
+{% for block in stream %}
+  {% if block.block_type == 'alert' %}
+    {% include "wagtail_design_system/blocks/alert.html" %}
+  {% elif block.block_type == 'callout' %}
+    {% include "wagtail_design_system/blocks/callout.html" %}
+  {% elif block.block_type == 'image' %}
+    <div class="design-system-container design-system-my-3w">
+      <div class="design-system-grid-row design-system-grid-row--gutters">
+        <div class="design-system-col-12">{% include_block block %}</div>
+      </div>
+    </div>
+  {% elif block.block_type == 'multicolumns' %}
+    {% include_block block %}
+  {% elif block.block_type == 'fullwidthbackground' %}
+    {% include_block block %}
+  {% elif block.block_type == 'paragraph' %}
+    <div class="design-system-container">{{ block.value|richtext }}</div>
+  {% elif block.block_type == 'accordions' %}
+    {% include "wagtail_design_system/blocks/accordions.html" with accordions_id=forloop.counter0|lower %}
+  {% elif block.block_type == 'stepper' %}
+    {% include "wagtail_design_system/blocks/stepper.html" %}
+  {% elif block.block_type == 'separator' %}
+    <div class="design-system-container">
+      <hr class="design-system-mt-{{ block.value.top_margin }}w design-system-mb-{{ block.value.bottom_margin }}w design-system-py-1v">
+    </div>
+  {% elif block.block_type == 'markdown' %}
+    <div class="design-system-container">{{ block.value|markdown }}</div>
+  {% elif block.block_type == 'html' %}
+    <div class="design-system-container">{{ block.value|safe }}</div>
+  {% else %}
+    <div class="design-system-container">{% include_block block %}</div>
+  {% endif %}
+{% endfor %}

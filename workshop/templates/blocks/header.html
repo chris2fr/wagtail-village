@@ -4,23 +4,23 @@
 {% block brand %}
   {% translate "Home page" as home_page %}
   <a href="/"
-     title="{{ home_page }} — {{ settings.sites_faciles.WagtailSitesFacilesConfig.header_brand }}">
-    <p class="gv-logo">{{ settings.sites_faciles.WagtailSitesFacilesConfig.header_brand_html|safe }}</p>
+     title="{{ home_page }} — {{ settings.wagtail_design_system.WagtailDesignSystemConfig.header_brand }}">
+    <p class="gv-logo">{{ settings.wagtail_design_system.WagtailDesignSystemConfig.header_brand_html|safe }}</p>
   </a>
 {% endblock brand %}
 
 {% block service_title %}
   {% translate "Home page" as home_page %}
   <a href="/"
-     title="{{ home_page }} — {{ settings.sites_faciles.WagtailSitesFacilesConfig.site_title }}">
+     title="{{ home_page }} — {{ settings.wagtail_design_system.WagtailDesignSystemConfig.site_title }}">
 
     <p class="design-system-header__service-title">
-      {% if settings.sites_faciles.WagtailSitesFacilesConfig.site_title|slice:"-2:" == "fr" %}
-        {{ settings.sites_faciles.WagtailSitesFacilesConfig.site_title|slice:":-2" }}<em>fr</em>
+      {% if settings.wagtail_design_system.WagtailDesignSystemConfig.site_title|slice:"-2:" == "fr" %}
+        {{ settings.wagtail_design_system.WagtailDesignSystemConfig.site_title|slice:":-2" }}<em>fr</em>
       {% else %}
-        {{ settings.sites_faciles.WagtailSitesFacilesConfig.site_title }}
+        {{ settings.wagtail_design_system.WagtailDesignSystemConfig.site_title }}
       {% endif %}
-      {% if settings.sites_faciles.WagtailSitesFacilesConfig.beta_tag %}
+      {% if settings.wagtail_design_system.WagtailDesignSystemConfig.beta_tag %}
         <span class="design-system-badge design-system-badge--sm design-system-badge--green-emeraude">BETA</span>
       {% endif %}
 
@@ -29,18 +29,18 @@
 {% endblock service_title %}
 
 {% block service_tagline %}
-  {{ settings.sites_faciles.WagtailSitesFacilesConfig.site_tagline }}
+  {{ settings.wagtail_design_system.WagtailDesignSystemConfig.site_tagline }}
 {% endblock service_tagline %}
 
 {% block operator_logo %}
-  {% if settings.sites_faciles.WagtailSitesFacilesConfig.operator_logo_file and settings.sites_faciles.WagtailSitesFacilesConfig.operator_logo_alt %}
-    {% image settings.sites_faciles.WagtailSitesFacilesConfig.operator_logo_file original as logo_img %}
+  {% if settings.wagtail_design_system.WagtailDesignSystemConfig.operator_logo_file and settings.wagtail_design_system.WagtailDesignSystemConfig.operator_logo_alt %}
+    {% image settings.wagtail_design_system.WagtailDesignSystemConfig.operator_logo_file original as logo_img %}
 
     <div class="design-system-header__operator">
       <img class="design-system-responsive-img"
            src="{{ logo_img.url }}"
-           alt="{{ settings.sites_faciles.WagtailSitesFacilesConfig.operator_logo_alt }}"
-           {% if settings.sites_faciles.WagtailSitesFacilesConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.sites_faciles.WagtailSitesFacilesConfig.operator_logo_width|unlocalize }}rem;"{% endif %} />
+           alt="{{ settings.wagtail_design_system.WagtailDesignSystemConfig.operator_logo_alt }}"
+           {% if settings.wagtail_design_system.WagtailDesignSystemConfig.operator_logo_width >= 1 %}style="max-width:{{ settings.wagtail_design_system.WagtailDesignSystemConfig.operator_logo_width|unlocalize }}rem;"{% endif %} />
     </div>
   {% endif %}
 {% endblock operator_logo %}
@@ -54,7 +54,7 @@
 
 {% block header_search %}
   {% translate "Search" as search_label %}
-  {% if settings.sites_faciles.WagtailSitesFacilesConfig.search_bar %}
+  {% if settings.wagtail_design_system.WagtailDesignSystemConfig.search_bar %}
     <div class="design-system-header__search design-system-modal" id="modal-search">
       <div class="design-system-container design-system-container-lg--fluid">
         {% translate "Close" as close_label %}

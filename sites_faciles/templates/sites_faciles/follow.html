@@ -2,17 +2,17 @@
 {% load i18n %}
 
 {% block follow_newsletter %}
-  {% if settings.sites_faciles.WagtailSitesFacilesConfig.show_newsletter_block %}
-    <div class="design-system-col-12{% if settings.sites_faciles.WagtailSitesFacilesConfig.show_social_block %} design-system-col-md-8{% endif %}">
+  {% if settings.wagtail_design_system.WagtailDesignSystemConfig.show_newsletter_block %}
+    <div class="design-system-col-12{% if settings.wagtail_design_system.WagtailDesignSystemConfig.show_social_block %} design-system-col-md-8{% endif %}">
       <div class="design-system-follow__newsletter">
         <div>
           <h2 class="design-system-h5">{% translate "Subscribe to our newsletter" context "Section title" %}</h2>
-          <p class="design-system-text--sm">{{ settings.sites_faciles.WagtailSitesFacilesConfig.newsletter_description | safe }}</p>
+          <p class="design-system-text--sm">{{ settings.wagtail_design_system.WagtailDesignSystemConfig.newsletter_description | safe }}</p>
         </div>
         <div class="design-system-btns-group design-system-btns-group--inline-md">
           {% translate "Subscribe to our newsletter" context "Button title" as subcribe_button_title %}
           <a class="design-system-btn"
-             href="{{ settings.sites_faciles.WagtailSitesFacilesConfig.newsletter_url }}"
+             href="{{ settings.wagtail_design_system.WagtailDesignSystemConfig.newsletter_url }}"
              target="_blank"
              rel="noopener external"
              title="{{ subcribe_button_title }} - {{ new_window_label }}">{% translate "Subscribe" %}</a>
@@ -23,8 +23,8 @@
 {% endblock follow_newsletter %}
 
 {% block follow_social %}
-  {% if settings.sites_faciles.WagtailSitesFacilesConfig.show_social_block %}
-    <div class="design-system-col-12{% if settings.sites_faciles.WagtailSitesFacilesConfig.show_newsletter_block %} design-system-col-md-4{% endif %}">
+  {% if settings.wagtail_design_system.WagtailDesignSystemConfig.show_social_block %}
+    <div class="design-system-col-12{% if settings.wagtail_design_system.WagtailDesignSystemConfig.show_newsletter_block %} design-system-col-md-4{% endif %}">
       <div class="design-system-follow__social">
         <h2 class="design-system-h5">
           {% blocktranslate trimmed %}
@@ -34,7 +34,7 @@
           {% endblocktranslate %}
         </h2>
         <ul class="design-system-btns-group">
-          {% for link in settings.sites_faciles.WagtailSitesFacilesConfig.social_media_items.all %}
+          {% for link in settings.wagtail_design_system.WagtailDesignSystemConfig.social_media_items.all %}
             <li>
               <a class="{{ link.icon_class }} design-system-btn"
                  href="{{ link.url }}"

@@ -1,4 +1,4 @@
-{% extends "sites_faciles/base.html" %}
+{% extends "wagtail_design_system/base.html" %}
 
 {% load static design_system_tags wagtailcore_tags wagtailimages_tags wagtailsettings_tags %}
 
@@ -10,7 +10,7 @@
         {% else %}
             Aucun résultat
         {% endif %}
-    pour la recherche « {{ query }} » {% comment %} — {{ settings('sites_faciles.WagtailSitesFacilesConfig', use_default_site=True).site_title }}{% endcomment %}
+    pour la recherche « {{ query }} » {% comment %} — {{ settings('wagtail_design_system.WagtailDesignSystemConfig', use_default_site=True).site_title }}{% endcomment %}
     </title>
 {% endblock title %}
 

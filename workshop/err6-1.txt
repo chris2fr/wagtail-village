@@ -3174,16 +3174,16 @@ ALTER TABLE
 ALTER TABLE
 ALTER TABLE
 ALTER TABLE
-ERROR:  insert or update on table "sites_faciles_blog_blogentrypage_authors" violates foreign key constraint "sites_faciles_blog_blogentrypage_a_blogentrypage_id_762f0f2c_"
-DETAIL:  Key (blogentrypage_id)=(109) is not present in table "sites_faciles_blog_blogentrypage".
+ERROR:  insert or update on table "wagtail_design_system_blog_blogentrypage_authors" violates foreign key constraint "wagtail_design_system_blog_blogentrypage_a_blogentrypage_id_762f0f2c_"
+DETAIL:  Key (blogentrypage_id)=(109) is not present in table "wagtail_design_system_blog_blogentrypage".
 ALTER TABLE
 ALTER TABLE
-ERROR:  insert or update on table "sites_faciles_blog_blogindexpage" violates foreign key constraint "sites_faciles_blog_blogindexpage_page_ptr_id_d87c3ac2_fk_wagt"
+ERROR:  insert or update on table "wagtail_design_system_blog_blogindexpage" violates foreign key constraint "wagtail_design_system_blog_blogindexpage_page_ptr_id_d87c3ac2_fk_wagt"
 DETAIL:  Key (contentpage_ptr_id)=(6) is not present in table "wagtailcore_page".
 ALTER TABLE
 ALTER TABLE
-ERROR:  insert or update on table "sites_faciles_blog_categoryentrypage" violates foreign key constraint "sites_faciles_blog_categoryentrypa_page_id_b20dc11c_fk_blog_b"
-DETAIL:  Key (page_id)=(7) is not present in table "sites_faciles_blog_blogentrypage".
+ERROR:  insert or update on table "wagtail_design_system_blog_categoryentrypage" violates foreign key constraint "wagtail_design_system_blog_categoryentrypa_page_id_b20dc11c_fk_blog_b"
+DETAIL:  Key (page_id)=(7) is not present in table "wagtail_design_system_blog_blogentrypage".
 ALTER TABLE
 ALTER TABLE
 ALTER TABLE

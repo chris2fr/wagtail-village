@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
       data-design-system-scheme="system"
-      {% if settings.sites_faciles.WagtailSitesFacilesConfig.mourning %}data-design-system-mourning{% endif %}>
+      {% if settings.wagtail_design_system.WagtailDesignSystemConfig.mourning %}data-design-system-mourning{% endif %}>
 
   <head>
     <meta charset="utf-8" />
@@ -12,7 +12,7 @@
     {% block title %}
       <title>
         {% if title %}{{ title }} —{% endif %}
-      {{ settings.sites_faciles.WagtailSitesFacilesConfig.site_title }}</title>
+      {{ settings.wagtail_design_system.WagtailDesignSystemConfig.site_title }}</title>
     {% endblock title %}
 
     {% block description %}
@@ -35,8 +35,8 @@
     {% endblock extra_css %}
 
     {% block tracking %}
-      {% if settings.sites_faciles.AnalyticsSettings.head_scripts %}
-        {{ settings.sites_faciles.AnalyticsSettings.head_scripts|safe }}
+      {% if settings.wagtail_design_system.AnalyticsSettings.head_scripts %}
+        {{ settings.wagtail_design_system.AnalyticsSettings.head_scripts|safe }}
       {% endif %}
     {% endblock tracking %}
 
@@ -50,12 +50,12 @@
       {% design_system_skiplinks skiplinks %}
     {% endblock skiplinks %}
 
-    {% include "sites_faciles/header.html" %}
+    {% include "wagtail_design_system/header.html" %}
     {% design_system_theme_modale %}
     {% wagtailuserbar %}
 
-    {% if settings.sites_faciles.WagtailSitesFacilesConfig.notice %}
-      {% design_system_notice title=settings.sites_faciles.WagtailSitesFacilesConfig.notice %}
+    {% if settings.wagtail_design_system.WagtailDesignSystemConfig.notice %}
+      {% design_system_notice title=settings.wagtail_design_system.WagtailDesignSystemConfig.notice %}
     {% endif %}
 
     <main id="content" role="main">
@@ -64,12 +64,12 @@
     </main>
 
     {% block follow_newsletter_social_media %}
-      {% if settings.sites_faciles.WagtailSitesFacilesConfig.show_newsletter_and_social_block %}
+      {% if settings.wagtail_design_system.WagtailDesignSystemConfig.show_newsletter_and_social_block %}
         {% include "sites_faciles/follow.html" %}
       {% endif %}
     {% endblock follow_newsletter_social_media %}
 
-    {% include "sites_faciles/footer.html" %}
+    {% include "wagtail_design_system/footer.html" %}
 
     {% design_system_js nonce=request.csp_nonce %}
 
@@ -77,8 +77,8 @@
     {% endblock extra_js %}
 
     {% block body_tracking_scripts %}
-      {% if settings.sites_faciles.AnalyticsSettings.body_scripts %}
-        {{ settings.sites_faciles.AnalyticsSettings.body_scripts|safe }}
+      {% if settings.wagtail_design_system.AnalyticsSettings.body_scripts %}
+        {{ settings.wagtail_design_system.AnalyticsSettings.body_scripts|safe }}
       {% endif %}
     {% endblock body_tracking_scripts %}
   </body>

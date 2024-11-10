@@ -2,7 +2,7 @@ from wagtail.images.models import Image
 from wagtail.test.utils import WagtailPageTestCase
 from wagtailmenus.models.menus import FlatMenu
 
-from sites_faciles.utils import get_or_create_footer_menu, import_image
+from wagtail_design_system.utils import get_or_create_footer_menu, import_image
 
 
 class UtilsTestCase(WagtailPageTestCase):

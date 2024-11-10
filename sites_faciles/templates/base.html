@@ -6,7 +6,7 @@
 
 <html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
       data-design-system-scheme="system"
-      {% block mourning %}{% if settings.sites_faciles.WagtailSitesFacilesConfig.mourning %}data-design-system-mourning{% endif %}{% endblock mourning %}>
+      {% block mourning %}{% if settings.wagtail_design_system.WagtailDesignSystemConfig.mourning %}data-design-system-mourning{% endif %}{% endblock mourning %}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport"
@@ -19,7 +19,7 @@
       {% if title %}
         {{ title }} — {{ SITE_CONFIG.site_title }}
       {% else %}
-        {{ settings.sites_faciles.WagtailSitesFacilesConfig.site_title }}
+        {{ settings.wagtail_design_system.WagtailDesignSystemConfig.site_title }}
       {% endif %}
       </title>
     {% endblock title %}
@@ -33,8 +33,8 @@
 
 
     {% block tracking %}
-      {% if settings.sites_faciles.AnalyticsSettings.head_scripts %}
-        {{ settings.sites_faciles.AnalyticsSettings.head_scripts|safe }}
+      {% if settings.wagtail_design_system.AnalyticsSettings.head_scripts %}
+        {{ settings.wagtail_design_system.AnalyticsSettings.head_scripts|safe }}
       {% endif %}
     {% endblock tracking %}
 
@@ -50,7 +50,7 @@
     {% endblock skiplinks %}
 
     {% block header %}
-      {% include "sites_faciles/header.html" %}
+      {% include "wagtail_design_system/header.html" %}
     {% endblock header %}
 
     <div class="design-system-container design-system-mt-4w design-system-mb-6w">
@@ -71,19 +71,19 @@
 
     {% block header_after %}
       {% wagtailuserbar %}
-      {% if settings.sites_faciles.WagtailSitesFacilesConfig.notice %}
-        {% design_system_notice title=settings.sites_faciles.WagtailSitesFacilesConfig.notice %}
+      {% if settings.wagtail_design_system.WagtailDesignSystemConfig.notice %}
+        {% design_system_notice title=settings.wagtail_design_system.WagtailDesignSystemConfig.notice %}
       {% endif %}
     {% endblock header_after %}
 
     {% block follow_newsletter_social_media %}
-      {% if settings.sites_faciles.WagtailSitesFacilesConfig.show_newsletter_and_social_block %}
+      {% if settings.wagtail_design_system.WagtailDesignSystemConfig.show_newsletter_and_social_block %}
         {% include "sites_faciles/follow.html" %}
       {% endif %}
     {% endblock follow_newsletter_social_media %}
 
     {% block footer %}
-      {% include "sites_faciles/footer.html" %}
+      {% include "wagtail_design_system/footer.html" %}
     {% endblock footer %}
 
     {% design_system_js nonce=request.csp_nonce %}
@@ -94,8 +94,8 @@
 
 
     {% block body_tracking_scripts %}
-      {% if settings.sites_faciles.AnalyticsSettings.body_scripts %}
-        {{ settings.sites_faciles.AnalyticsSettings.body_scripts|safe }}
+      {% if settings.wagtail_design_system.AnalyticsSettings.body_scripts %}
+        {{ settings.wagtail_design_system.AnalyticsSettings.body_scripts|safe }}
       {% endif %}
     {% endblock body_tracking_scripts %}
 

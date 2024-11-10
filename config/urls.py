@@ -14,7 +14,7 @@ from search import views as search_views
 
 
 # from sites_faciles import urls as wagtailsites_faciles_urls
-# from sites_faciles.views import SearchResultsView, TagsListView, TagView
+# from wagtail_design_system.views import SearchResultsView, TagsListView, TagView
 
 
 urlpatterns = [
@@ -37,7 +37,7 @@ if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += i18n_patterns(
-    path("", include("sites_faciles.urls")),
-    # path("", include("sites_faciles.sites_faciles_blog.urls", namespace="sites_faciles_blog")),
+    path("", include("wagtail_design_system.urls")),
+    # path("", include("wagtail_design_system.wagtail_design_system_blog.urls", namespace="wagtail_design_system_blog")),
     prefix_default_language=True,
 )

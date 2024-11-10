@@ -1,0 +1,82 @@
+{% extends "wagtail_design_system/base.html" %}
+
+{% load static design_system_tags wagtailcore_tags wagtailimages_tags i18n %}
+
+
+{% if page.search_description %}
+    {% block description %}
+        <meta name="description" content="{{ page.search_description }}" />
+    {% endblock description %}
+{% endif %}
+
+{% block content %}
+    {% include "sites_faciles/heading.html" %}
+    {% include "sites_faciles/messages.html" %}
+
+    <div class="design-system-container design-system-mt-6w">
+        {% if category %}
+            {% design_system_breadcrumb breadcrumb %}
+            <h1>{% blocktranslate %}Entries in category {{ category }}{% endblocktranslate %}</h1>
+            {% if category_description %}<p>{{ category_description }}</p>{% endif %}
+        {% elif tag %}
+            {% design_system_breadcrumb breadcrumb %}
+            <h1>{% blocktranslate %}Entries tagged with {{ tag }}{% endblocktranslate %}</h1>
+        {% elif author %}
+            {% design_system_breadcrumb breadcrumb %}
+            <h1>{% blocktranslate %}Entries written by{% endblocktranslate %} {{ author.first_name }} {{ author.last_name }}</h1>
+        {% elif year %}
+            <h1 class="title">{% blocktranslate %}Entries published in {{ year }}{% endblocktranslate %}</h1>
+        {% else %}
+            {% include "sites_faciles/breadcrumbs.html" %}
+            <h1>{{ page.title }}</h1>
+            {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+        {% endif %}
+    </div>
+
+    <div class="design-system-container design-system-mt-6w">
+        <div class="design-system-grid-row design-system-grid-row--gutters design-system-mb-3w">
+            {% for post in posts %}
+                <div class="design-system-col design-system-col-md-6">
+                    <div class="design-system-card design-system-enlarge-link">
+                        <div class="design-system-card__body">
+                            <div class="design-system-card__content">
+                                <h2 class="design-system-card__title">
+                                    <a href="{{ post.url }}">{{ post.title }}</a>
+                                </h2>
+                                <p class="design-system-card__desc">{{ post.search_description }}</p>
+
+                                {% if post.blog_categories.all %}
+                                    <div class="design-system-card__start">
+                                        <ul class="design-system-tags-group">
+                                            {% for category in post.blog_categories.all %}
+                                                <li>
+                                                    <p class="design-system-tag">{{ category.name }}</p>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% if post.header_image %}
+                            <div class="design-system-card__header">
+                                <div class="design-system-card__img">
+                                    <img class="design-system-responsive-img"
+                                         src="{{ post.header_image.file.url }}"
+                                         alt="">
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% empty %}
+                <p>Aucun article trouvé.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% if posts.paginator.num_pages > 1 %}
+        <div class="design-system-container design-system-grid-row design-system-grid-row--center design-system-mt-6w">{% design_system_pagination posts %}</div>
+    {% endif %}
+
+{% endblock content %}
