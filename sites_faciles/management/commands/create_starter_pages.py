@@ -94,8 +94,8 @@ class Command(BaseCommand):
         title = "Votre nouveau site avec Sites faciles"
 
         image = import_image(
-            full_path="static/artwork/coding.svg",
-            title="Pictogrammes — Internet",
+            full_path="sites_faciles/static/sites-faciles/artwork/coding.svg",
+            title="Dev Sites Faciles",
         )
 
         text_raw = """<p>Bienvenue !</p>

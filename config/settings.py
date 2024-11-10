@@ -20,10 +20,19 @@ import dj_database_url
 from dotenv import load_dotenv
 
 
+# Prendre les variables d'environnement
 load_dotenv()
+# Check to see if basic variables needed are defined
+REQUIRED = ["DBURL", "SECRET_KEY", "APP_DJANGO_ROOT"]
+needs_required = []
+for i in REQUIRED:
+    if not os.getenv(i) != "":
+        needs_required.append(i)
+if needs_required != []:
+    raise ValueError("Merci de mettre les variables suivantes dans .env: %s" % ", ".join(needs_required))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = os.getenv("APP_DJANGO_ROOT", Path(__file__).resolve().parent.parent)
 
 
 # Quick-start development settings - unsuitable for production
@@ -41,52 +50,47 @@ for i in range(0, 3):
         }
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if os.getenv("DEBUG") == "True" else False
-DEBUG_TOOLBAR = True if os.getenv("DEBUG_TOOLBAR") == "True" else False
+DEBUG = os.environ.get("DJANGO_DEBUG", "false").lower() == "true"
+DEBUG_TOOLBAR = os.environ.get("DJANGO_DEBUG_TOOLBAR", "false").lower() == "true"
 
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1, localhost").replace(" ", "").split(",")
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1, localhost").replace(" ", "").split(",")
+HOST_URL = os.getenv("DJANGO_HOST", "localhost")
 
-HOST_URL = os.getenv("HOST_URL", "localhost")
+# Sites Faciles and Wagtail Translation seem to need this parameter
+SITE_ID = os.getenv("DJANGO_SITE_ID", 1)
 
 # Application definition
-
 INSTALLED_APPS = [
-    "storages",
-    "wagtail.contrib.redirects",
-    "wagtail.contrib.settings",
-    "wagtail.contrib.forms",
-    # 'wagtail.wagtailforms',
-    "wagtail.embeds",
-    "wagtail.sites",
-    "wagtail.users",
-    "wagtail.documents",
-    "wagtail.images",
-    "wagtail.admin",
-    "wagtail.search",
-    "wagtail.snippets",
-    "wagtail",
-    "wagtailmarkdown",
-    "wagtailmenus",
-    "wagtail_localize",
-    "wagtail_localize.locales",
-    "taggit",
+    "django_design_system.theme_designsystem",
+    "django_design_system.theme_lesgrandsvoisins",
+    "django_design_system",
+    "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
-    "django.contrib.sessions",
     "django.contrib.messages",
+    "django.contrib.sessions",
     "django.contrib.staticfiles",
-    "widget_tweaks",
-    "django_design_system.theme_lesgrandsvoisins",
-    "django_design_system.theme_designsystem",
-    "django_design_system",
+    "modelcluster",
     "sass_processor",
+    "search",
     "sites_faciles",
-    # "sites_faciles_dashboard",
-    # "sites_faciles_blog",
-    "sites_faciles_lesgrandsvoisins",
-    # "sites_faciles_forms",
+    "storages",
+    "taggit",
+    "wagtail",
+    "wagtail_localize.locales",
+    "wagtail_localize",
     "wagtail_transfer",
+    "wagtail.admin",
+    "wagtail.contrib.forms",
+    "wagtail.contrib.redirects",
+    "wagtail.contrib.settings",
+    "wagtail.documents",
+    "wagtail.embeds",
+    "wagtail.images",
+    "wagtailmarkdown",
+    "wagtailmenus",
+    "widget_tweaks",
 ]
 
 # Only add these on a dev machine
@@ -121,7 +125,7 @@ if DEBUG_TOOLBAR:
         "debug_toolbar.middleware.DebugToolbarMiddleware",
     ]
 
-ROOT_URLCONF = "sites_faciles.config.urls"
+ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
     {
@@ -131,10 +135,6 @@ TEMPLATES = [
             os.path.join(BASE_DIR, "django_design_system/theme_design_system/templates"),
             os.path.join(BASE_DIR, "django_design_system/theme_lesgrandsvoisins/templates"),
             os.path.join(BASE_DIR, "sites_faciles/templates"),
-            # os.path.join(BASE_DIR, "sites_faciles_blog/templates"),
-            # os.path.join(BASE_DIR, "sites_faciles_dashbord/templates"),
-            # os.path.join(BASE_DIR, "sites_faciles_forms/templates"),
-            os.path.join(BASE_DIR, "sites_faciles_lesgrandsvoisins/templates"),
             os.path.join(BASE_DIR, "templates"),
         ],
         "APP_DIRS": True,
@@ -156,14 +156,15 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "sites_faciles.config.wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASE_URL = os.getenv("DATABASE_URL")
-if DATABASE_URL:
+DATABASE_URL = os.getenv("DBURL")
+print(DATABASE_URL)
+if DATABASE_URL != "":
     DATABASES = {
         "default": dj_database_url.parse(
             DATABASE_URL,
@@ -172,7 +173,7 @@ if DATABASE_URL:
         )
     }
 else:
-    raise ValueError("Please set the DATABASE_URL environment variable")
+    raise ValueError("Please set the DBURL environment variable")
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -192,7 +193,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-WAGTAIL_PASSWORD_RESET_ENABLED = os.getenv("WAGTAIL_PASSWORD_RESET_ENABLED", False)
+WAGTAIL_PASSWORD_RESET_ENABLED = os.getenv("WAGTAIL_PASSWORD_RESET_ENABLED", False).lower() == "true"
 
 
 # Internationalization
@@ -252,15 +253,15 @@ else:
     STORAGES["default"] = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     }
-    MEDIA_URL = "/medias/"
-    MEDIA_ROOT = os.path.join(BASE_DIR, os.getenv("MEDIA_ROOT", ""))
+    MEDIA_URL = os.getenv("DJANGO_MEDIA_URL", "media/")
+    MEDIA_ROOT = os.getenv("DJANGO_MEDIA_ROOT", os.path.join(BASE_DIR, "/mediafiles"))
 
 # Django Sass
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, "static/css")
 SASS_PROCESSOR_AUTO_INCLUDE = False
 
-STATIC_URL = "static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_URL = os.getenv("DJANGO_STATIC_URL", "static/")
+STATIC_ROOT = os.getenv("DJANGO_STATIC_ROOT", os.path.join(BASE_DIR, "/staticfiles"))
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
@@ -275,15 +276,17 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 # Wagtail settings
 # https://docs.wagtail.org/en/stable/reference/settings.html
 
-WAGTAIL_SITE_NAME = os.getenv("SITE_NAME", "Sites faciles")
+WAGTAIL_SITE_NAME = os.getenv("APP_SITE_NAME", "Sites faciles")
 
-# Base URL to use when referring to full URLs within the Wagtail admin backend -
-# e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = f"{os.getenv('HOST_PROTO', 'https')}://{HOST_URL}"
+# # Base URL to use when referring to full URLs within the Wagtail admin backend -
+# # e.g. in notification emails. Don't include '/admin' or a trailing slash
+# WAGTAILADMIN_BASE_URL = "%s://%s" %  (os.getenv('APP_HOST_PROTO', 'https'),os.getenv('APP_HOST_DOMAIN', '0.0.0.0'),)
 
-HOST_PORT = os.getenv("HOST_PORT", "")
-if HOST_PORT != "":
-    WAGTAILADMIN_BASE_URL = f"{WAGTAILADMIN_BASE_URL}:{HOST_PORT}"
+# HOST_PORT = os.getenv("DJANGO_HOST_PORT", "8000")
+# if HOST_PORT != "":
+#     WAGTAILADMIN_BASE_URL = "%s:%s" %  (WAGTAILADMIN_BASE_URL, HOST_PORT)
+
+WAGTAILADMIN_BASE_URL = "http://0.0.0.0"
 
 # Disable Gravatar service
 WAGTAIL_GRAVATAR_PROVIDER_URL = None
@@ -325,6 +328,7 @@ WAGTAILMENUS_FLAT_MENUS_HANDLE_CHOICES = (
 
 WAGTAILIMAGES_EXTENSIONS = ["gif", "jpg", "jpeg", "png", "webp", "svg"]
 
+
 CSRF_TRUSTED_ORIGINS = []
 for host in ALLOWED_HOSTS:
     CSRF_TRUSTED_ORIGINS.append("https://" + host)
@@ -352,3 +356,39 @@ if DEBUG_TOOLBAR:
         "127.0.0.1",
         "0.0.0.0",
     ]
+
+# AUTHENTICATION_BACKENDS = (
+#     # Needed to login by username in Django admin, regardless of `allauth`
+#     "django.contrib.auth.backends.ModelBackend",
+#     # `allauth` specific authentication methods, such as login by e-mail
+#     "allauth.account.auth_backends.AuthenticationBackend",
+# )
+
+# SOCIALACCOUNT_PROVIDERS = {
+#     "openid_connect": {
+#         "OAUTH_PKCE_ENABLED": True,
+#         # 'SOCIALACCOUNT_ONLY': True,
+#         "APPS": [
+#             {
+#                 "provider_id": "key-lesgrandsvoisins-com",
+#                 "name": "key.lesgrandsvoisins.com",
+#                 "client_id": os.getenv("OPENID_NAME"),
+#                 "secret": os.getenv("OPENID_SECRET"),
+#                 "settings": {
+#                     "server_url": os.getenv("OPENID_URL"),
+#                     # Optional token endpoint authentication method.
+#                     # May be one of "client_secret_basic", "client_secret_post"
+#                     # If omitted, a method from the the server's
+#                     # token auth methods list is used
+#                     "token_auth_method": "client_secret_post",
+#                 },
+#             },
+#         ],
+#     }
+# }
+
+# ACCOUNT_AUTHENTICATION_METHOD = "username"
+# SOCIALACCOUNT_AUTO_SIGNUP = True
+# ACCOUNT_EMAIL_VERIFICATION = "none"
+# SOCIALACCOUNT_ONLY = True
+# ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"

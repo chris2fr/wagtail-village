@@ -10,6 +10,7 @@ from wagtail_transfer import urls as wagtailtransfer_urls
 
 # from django.utils.translation import gettext_lazy as _
 from django_design_system.urls import urlpatterns as djangodesignsystem_urlpatterns
+from search import views as search_views
 
 
 # from sites_faciles import urls as wagtailsites_faciles_urls
@@ -20,6 +21,7 @@ urlpatterns = [
     path("cms-admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("wagtail-transfer/", include(wagtailtransfer_urls)),
+    path("search/", search_views.search, name="search"),
 ] + djangodesignsystem_urlpatterns
 if settings.DEBUG_TOOLBAR:
     urlpatterns += [

@@ -60,7 +60,7 @@ demo:
 
 .PHONY: runserver
 runserver:
-	$(EXEC_CMD) poetry run python manage.py runserver $(HOST_URL):$(HOST_PORT)
+	$(EXEC_CMD) poetry run python manage.py runserver $(DJANGO_HOST):$(DJANGO_PORT)
 
 
 .PHONY: test
