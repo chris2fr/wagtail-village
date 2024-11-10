@@ -3,15 +3,15 @@
 
 {% block follow_newsletter %}
   {% if settings.sites_faciles.WagtailSitesFacilesConfig.show_newsletter_block %}
-    <div class="village-col-12{% if settings.sites_faciles.WagtailSitesFacilesConfig.show_social_block %} village-col-md-8{% endif %}">
-      <div class="village-follow__newsletter">
+    <div class="design-system-col-12{% if settings.sites_faciles.WagtailSitesFacilesConfig.show_social_block %} design-system-col-md-8{% endif %}">
+      <div class="design-system-follow__newsletter">
         <div>
-          <h2 class="village-h5">{% translate "Subscribe to our newsletter" context "Section title" %}</h2>
-          <p class="village-text--sm">{{ settings.sites_faciles.WagtailSitesFacilesConfig.newsletter_description | safe }}</p>
+          <h2 class="design-system-h5">{% translate "Subscribe to our newsletter" context "Section title" %}</h2>
+          <p class="design-system-text--sm">{{ settings.sites_faciles.WagtailSitesFacilesConfig.newsletter_description | safe }}</p>
         </div>
-        <div class="village-btns-group village-btns-group--inline-md">
+        <div class="design-system-btns-group design-system-btns-group--inline-md">
           {% translate "Subscribe to our newsletter" context "Button title" as subcribe_button_title %}
-          <a class="village-btn"
+          <a class="design-system-btn"
              href="{{ settings.sites_faciles.WagtailSitesFacilesConfig.newsletter_url }}"
              target="_blank"
              rel="noopener external"
@@ -24,19 +24,19 @@
 
 {% block follow_social %}
   {% if settings.sites_faciles.WagtailSitesFacilesConfig.show_social_block %}
-    <div class="village-col-12{% if settings.sites_faciles.WagtailSitesFacilesConfig.show_newsletter_block %} village-col-md-4{% endif %}">
-      <div class="village-follow__social">
-        <h2 class="village-h5">
+    <div class="design-system-col-12{% if settings.sites_faciles.WagtailSitesFacilesConfig.show_newsletter_block %} design-system-col-md-4{% endif %}">
+      <div class="design-system-follow__social">
+        <h2 class="design-system-h5">
           {% blocktranslate trimmed %}
             Follow us
             <br />
             on social media
           {% endblocktranslate %}
         </h2>
-        <ul class="village-btns-group">
+        <ul class="design-system-btns-group">
           {% for link in settings.sites_faciles.WagtailSitesFacilesConfig.social_media_items.all %}
             <li>
-              <a class="{{ link.icon_class }} village-btn"
+              <a class="{{ link.icon_class }} design-system-btn"
                  href="{{ link.url }}"
                  target="_blank"
                  title="{{ link.title }} - {{ new_window_label }}"

@@ -48,11 +48,11 @@
 
     {% with categories=page.blog_categories.all %}
 
-        <div class="village-container village-mt-6w">
-            <div class="village-grid-row village-grid-row--gutters">
-                <div class="village-col-12">
+        <div class="design-system-container design-system-mt-6w">
+            <div class="design-system-grid-row design-system-grid-row--gutters">
+                <div class="design-system-col-12">
                     {% include "sites_faciles/breadcrumbs.html" %}
-                    <h1 class="village-display--sm">{{ page.title }}</h1>
+                    <h1 class="design-system-display--sm">{{ page.title }}</h1>
                 </div>
             </div>
             <p>
@@ -75,9 +75,9 @@
 
         {% with authors=page.authors.all %}
             {% if authors %}
-                <div class="village-container village-my-6w">
+                <div class="design-system-container design-system-my-6w">
                     <h2>{% translate "Posted by:" %}</h2>
-                    <div class="village-grid-row village-grid-row--gutters">
+                    <div class="design-system-grid-row design-system-grid-row--gutters">
                         {% for author in authors %}
                             {% include "design_system_blog/contact_card.html" with value=author %}
                         {% endfor %}
@@ -94,9 +94,9 @@
         {% endif %}
     {% endwith %}
 
-    <div class="village-container village-my-6w">
+    <div class="design-system-container design-system-my-6w">
         {% for tag in page.tags.all|dictsort:"slug" %}
-            <a class="village-tag"
+            <a class="design-system-tag"
                target="_self"
                href="{% url 'design_system_blog:tag' page.get_parent.slug tag.slug %}">{{ tag }}</a>
         {% endfor %}

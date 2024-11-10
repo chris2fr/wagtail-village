@@ -26,27 +26,27 @@
 {% block content %}
     {% include "sites_faciles/messages.html" %}
 
-    <div class="village-container village-mt-6w">
+    <div class="design-system-container design-system-mt-6w">
         {% design_system_breadcrumb breadcrumb %}
         <h1>{{ title }}</h1>
     </div>
 
-    <div class="village-container village-mt-6w">
-        <div class="village-grid-row village-grid-row--gutters village-mb-3w">
+    <div class="design-system-container design-system-mt-6w">
+        <div class="design-system-grid-row design-system-grid-row--gutters design-system-mb-3w">
             {% for entry in object_list %}
-                <div class="village-col village-col-md-6">
-                    <div class="village-card village-enlarge-link">
-                        <div class="village-card__body">
-                            <div class="village-card__content">
-                                <h2 class="village-card__title">
+                <div class="design-system-col design-system-col-md-6">
+                    <div class="design-system-card design-system-enlarge-link">
+                        <div class="design-system-card__body">
+                            <div class="design-system-card__content">
+                                <h2 class="design-system-card__title">
                                     <a href="{{ entry.url }}">{{ entry.title }}</a>
                                 </h2>
                             </div>
                         </div>
                         {% if entry.header_image %}
-                            <div class="village-card__header">
-                                <div class="village-card__img">
-                                    <img class="village-responsive-img"
+                            <div class="design-system-card__header">
+                                <div class="design-system-card__img">
+                                    <img class="design-system-responsive-img"
                                          src="{{ entry.header_image.file.url }}"
                                          alt="">
                                 </div>
@@ -61,7 +61,7 @@
     </div>
 
     {% if posts.paginator.num_pages > 1 %}
-        <div class="village-container village-grid-row village-grid-row--center village-mt-6w">{% design_system_pagination posts %}</div>
+        <div class="design-system-container design-system-grid-row design-system-grid-row--center design-system-mt-6w">{% design_system_pagination posts %}</div>
     {% endif %}
 
 {% endblock content %}

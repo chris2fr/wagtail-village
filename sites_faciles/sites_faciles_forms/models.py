@@ -104,8 +104,8 @@ class FormPage(EmailFormMixin, FormMixin, ContentPage):
             [
                 FieldRowPanel(
                     [
-                        FieldPanel("from_address", classname="village-input"),
-                        FieldPanel("to_address", classname="village-input"),
+                        FieldPanel("from_address", classname="design-system-input"),
+                        FieldPanel("to_address", classname="design-system-input"),
                     ]
                 ),
                 FieldPanel("subject"),

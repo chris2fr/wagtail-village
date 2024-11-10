@@ -4,26 +4,26 @@
 
 {% block brand %}
         <a href="{{ home_url }}" title="{{ full_site_title }} ">
-          <div class='village-header__operator'>
-            <img class='village-responsive-img' src="{% static 'sites-faciles/artwork/web-logo-square.jpg' %}"
+          <div class='design-system-header__operator'>
+            <img class='design-system-responsive-img' src="{% static 'sites-faciles/artwork/web-logo-square.jpg' %}"
               alt='SitesFaciles Les Grands Voisins' 
             style='max-width:16rem;'
           </div>
         </a>
 {% endblock brand %} 
 
-<div class="village-header__menu village-modal"
-id="village-menu-mobile"
-aria-labelledby="village-btn-menu-mobile">
-  <div class="village-container">
+<div class="design-system-header__menu design-system-modal"
+id="design-system-menu-mobile"
+aria-labelledby="design-system-btn-menu-mobile">
+  <div class="design-system-container">
   {% translate "Close" as close_label %}
     <button type="button"
-          class="village-btn--close village-btn"
-          aria-controls="village-menu-mobile">{{ close_label }}</button>
-    <div class="village-header__menu-links"></div>
+          class="design-system-btn--close design-system-btn"
+          aria-controls="design-system-menu-mobile">{{ close_label }}</button>
+    <div class="design-system-header__menu-links"></div>
     {% translate "Main menu" as main_menu_label %}
 {% block main_menu %}
-    <nav class="village-nav" id="village-navigation" aria-label="{{ main_menu_label }}">
+    <nav class="design-system-nav" id="design-system-navigation" aria-label="{{ main_menu_label }}">
       {% main_menu max_levels=2 template="menus/custom_main_menu.html" sub_menu_template="menus/custom_sub_menu.html" %}
     </nav>
 {% endblock main_menu %}

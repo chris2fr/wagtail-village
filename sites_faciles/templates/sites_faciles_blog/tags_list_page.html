@@ -15,7 +15,7 @@
 {% block content %}
     {% include "sites_faciles/messages.html" %}
 
-    <div class="village-container village-my-6w">
+    <div class="design-system-container design-system-my-6w">
         {% design_system_breadcrumb breadcrumb %}
         <h1>{% translate "Tags" %}</h1>
         <ul>
@@ -26,9 +26,9 @@
             {% endfor %}
         </ul>
 
-        <div class="village-mb-2w">
+        <div class="design-system-mb-2w">
             {% for first_letter in sorted_tags.keys|dictsort:0 %}
-                <a href="#{{ first_letter }}" class="village-tag">{{ first_letter }}</a>
+                <a href="#{{ first_letter }}" class="design-system-tag">{{ first_letter }}</a>
             {% endfor %}
         </div>
 

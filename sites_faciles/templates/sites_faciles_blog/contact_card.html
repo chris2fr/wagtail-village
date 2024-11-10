@@ -1,24 +1,24 @@
 {% load wagtailimages_tags %}
 {# Uses value instead of block.value because it is also used #}
 {# to display Person items #}
-<div class="village-container village-my-3w">
-    <div class="village-grid-row village-grid-row--gutters">
-        <div class="village-card village-card--horizontal village-col-12 village-col-md-6">
-            <div class="village-card__body">
-                <div class="village-card__content">
-                    <h3 class="village-card__title">{{ value.name }}</h3>
-                    <p class="village-card__desc">{{ value.role }} – {{ value.organization }}</p>
+<div class="design-system-container design-system-my-3w">
+    <div class="design-system-grid-row design-system-grid-row--gutters">
+        <div class="design-system-card design-system-card--horizontal design-system-col-12 design-system-col-md-6">
+            <div class="design-system-card__body">
+                <div class="design-system-card__content">
+                    <h3 class="design-system-card__title">{{ value.name }}</h3>
+                    <p class="design-system-card__desc">{{ value.role }} – {{ value.organization }}</p>
                     {% if value.contact_info %}
-                        <div class="village-card__end">
-                            <p class="village-card__detail">{{ value.contact_info }}</p>
+                        <div class="design-system-card__end">
+                            <p class="design-system-card__detail">{{ value.contact_info }}</p>
                         </div>
                     {% endif %}
                 </div>
             </div>
-            <div class="wagtailvillage-author_card__header village-card__header">
-                <div class="village-card__img">
+            <div class="design-system-author_card__header design-system-card__header">
+                <div class="design-system-card__img">
                     {% image value.image fill-200x200 as contact_image %}
-                    <img class="village-responsive-img wagtailvillage-author-img"
+                    <img class="design-system-responsive-img design-system-author-img"
                          src="{{ contact_image.url }}"
                          width="4.5em"
                          height="4.5em"

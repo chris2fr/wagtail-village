@@ -72,7 +72,7 @@ class ConfigTestCase(WagtailPageTestCase):
         self.assertInHTML(
             """<a href="/"
                 title="Accueil — République française">
-                <p class="village-logo">République<br />française</p>
+                <p class="design-system-logo">République<br />française</p>
             </a>""",
             response.content.decode(),
         )
@@ -82,10 +82,10 @@ class ConfigTestCase(WagtailPageTestCase):
         response = self.client.get(url)
 
         self.assertInHTML(
-            """<div class="village-footer__brand village-enlarge-link">
+            """<div class="design-system-footer__brand design-system-enlarge-link">
                 <a id="footer-operator" href="/"
                     title="Retour à l’accueil du site - Site title - République française">
-                    <p class="village-logo">
+                    <p class="design-system-logo">
                         République<br />française
                     </p>
                 </a>
@@ -98,11 +98,11 @@ class ConfigTestCase(WagtailPageTestCase):
         response = self.client.get(url)
 
         self.assertInHTML(
-            """<div class="village-header__service">
+            """<div class="design-system-header__service">
                 <a href="/" title="Accueil — Site title">
-                    <p class="village-header__service-title">Site title</p>
+                    <p class="design-system-header__service-title">Site title</p>
                 </a>
-                <p class="village-header__service-tagline">Site tagline</p>
+                <p class="design-system-header__service-tagline">Site tagline</p>
             </div>""",
             response.content.decode(),
         )
@@ -113,7 +113,7 @@ class ConfigTestCase(WagtailPageTestCase):
 
         self.assertNotContains(
             response,
-            "village-notice__body",
+            "design-system-notice__body",
         )
 
     def test_notice_can_be_set(self):
@@ -124,10 +124,10 @@ class ConfigTestCase(WagtailPageTestCase):
         response = self.client.get(url)
 
         self.assertInHTML(
-            """<div class="village-notice village-notice--info">
-                <div class="village-container">
-                    <div class="village-notice__body">
-                        <p class="village-notice__title">
+            """<div class="design-system-notice design-system-notice--info">
+                <div class="design-system-container">
+                    <div class="design-system-notice__body">
+                        <p class="design-system-notice__title">
                             Ceci est une information <b>importante</b> et <i>temporaire</i>.
                         </p>
                     </div>
@@ -142,7 +142,7 @@ class ConfigTestCase(WagtailPageTestCase):
 
         self.assertNotContains(
             response,
-            '<span class="village-badge village-badge--sm village-badge--green-emeraude">BETA</span>',
+            '<span class="design-system-badge design-system-badge--sm design-system-badge--green-emeraude">BETA</span>',
         )
 
     def test_beta_tag_can_be_set(self):
@@ -154,7 +154,7 @@ class ConfigTestCase(WagtailPageTestCase):
 
         self.assertContains(
             response,
-            '<span class="village-badge village-badge--sm village-badge--green-emeraude">BETA</span>',
+            '<span class="design-system-badge design-system-badge--sm design-system-badge--green-emeraude">BETA</span>',
         )
 
     def test_footer_description_uses_conf(self):
@@ -162,7 +162,7 @@ class ConfigTestCase(WagtailPageTestCase):
         response = self.client.get(url)
 
         self.assertInHTML(
-            """<p class="village-footer__content-desc">
+            """<p class="design-system-footer__content-desc">
                     Site <b>description</b>.
                 </p>""",
             response.content.decode(),
@@ -204,12 +204,12 @@ class MenusTestCase(WagtailPageTestCase):
 
         # Selected menu item : home page
         self.assertInHTML(
-            '<a class="village-nav__link" href="/" aria-current="page" target="_self">Accueil</a>',
+            '<a class="design-system-nav__link" href="/" aria-current="page" target="_self">Accueil</a>',
             response.content.decode(),
         )
 
         self.assertInHTML(
-            f"""<button class="village-nav__btn"
+            f"""<button class="design-system-nav__btn"
                 aria-expanded="false"
                 aria-controls="menu-{self.publications_menu_item.link_page.pk}">
                 Publications
@@ -218,19 +218,19 @@ class MenusTestCase(WagtailPageTestCase):
         )
 
         self.assertInHTML(
-            '<a class="village-nav__link" href="/publications/publication-1/" target="_self">Publication 1</a>',
+            '<a class="design-system-nav__link" href="/publications/publication-1/" target="_self">Publication 1</a>',
             response.content.decode(),
         )
 
         # Selected menu item : publication 1
         response = self.client.get(self.example_publication_page.url)
         self.assertInHTML(
-            '<a class="village-nav__link" href="/" target="_self">Accueil</a>',
+            '<a class="design-system-nav__link" href="/" target="_self">Accueil</a>',
             response.content.decode(),
         )
 
         self.assertInHTML(
-            f"""<button class="village-nav__btn"
+            f"""<button class="design-system-nav__btn"
                 aria-current="true"
                 aria-expanded="false"
                 aria-controls="menu-{self.publications_menu_item.link_page.pk}">
@@ -240,7 +240,7 @@ class MenusTestCase(WagtailPageTestCase):
         )
 
         self.assertInHTML(
-            """<a class="village-nav__link"
+            """<a class="design-system-nav__link"
                 aria-current="page"
                 href="/publications/publication-1/"
                 target="_self">
@@ -273,12 +273,12 @@ class MenusTestCase(WagtailPageTestCase):
         response = self.client.get(self.example_publication_page.url)
 
         self.assertInHTML(
-            '<p class="village-hidden village-displayed-lg">Ceci est une description</p>',
+            '<p class="design-system-hidden design-system-displayed-lg">Ceci est une description</p>',
             response.content.decode(),
         )
 
         self.assertInHTML(
-            f"""<button class="village-nav__btn"
+            f"""<button class="design-system-nav__btn"
                         aria-expanded="false"
                         aria-current="true"
                         aria-controls="mega-menu-{self.publications_menu_item.id}">Publications</button>
@@ -287,7 +287,7 @@ class MenusTestCase(WagtailPageTestCase):
         )
 
         self.assertInHTML(
-            """<a class="village-nav__link"
+            """<a class="design-system-nav__link"
                 aria-current="page"
                 href="/publications/publication-1/"
                 target="_self">

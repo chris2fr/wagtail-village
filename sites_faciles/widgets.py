@@ -2,7 +2,7 @@ from django.forms import Media, widgets
 
 
 class WagtailSitesFacilesIconPickerWidget(widgets.TextInput):
-    template_name = "sites_faciles/widgets/village-icon-picker-widget.html"
+    template_name = "sites_faciles/widgets/design-system-icon-picker-widget.html"
 
     def __init__(self, attrs=None):
         default_attrs = {}

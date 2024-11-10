@@ -4,7 +4,7 @@
 
 {% block content %}
     {% include "sites_faciles/heading.html" %}
-    <div class="village-container village-pt-4w">
+    <div class="design-system-container design-system-pt-4w">
         {% include "sites_faciles/breadcrumbs.html" %}
         {% if not page.header_with_title %}<h1>{{ page.title }}</h1>{% endif %}
     </div>
@@ -16,9 +16,9 @@
     {% block inner_content %}
     {% endblock inner_content %}
 
-    <div class="village-container village-my-6w">
+    <div class="design-system-container design-system-my-6w">
         {% for tag in page.tags.all|dictsort:"slug" %}
-            <a class="village-tag" target="_self" href="{% url 'global_tag' tag.slug %}">{{ tag }}</a>
+            <a class="design-system-tag" target="_self" href="{% url 'global_tag' tag.slug %}">{{ tag }}</a>
         {% endfor %}
     </div>
 {% endblock content %}

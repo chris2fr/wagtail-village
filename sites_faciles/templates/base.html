@@ -5,8 +5,8 @@
 <!DOCTYPE html>
 
 <html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
-      data-village-scheme="system"
-      {% block mourning %}{% if settings.sites_faciles.WagtailSitesFacilesConfig.mourning %}data-village-mourning{% endif %}{% endblock mourning %}>
+      data-design-system-scheme="system"
+      {% block mourning %}{% if settings.sites_faciles.WagtailSitesFacilesConfig.mourning %}data-design-system-mourning{% endif %}{% endblock mourning %}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport"
@@ -53,7 +53,7 @@
       {% include "sites_faciles/header.html" %}
     {% endblock header %}
 
-    <div class="village-container village-mt-4w village-mb-6w">
+    <div class="design-system-container design-system-mt-4w design-system-mb-6w">
       {% block breadcrumb %}
         {% design_system_breadcrumb %}
       {% endblock breadcrumb %}

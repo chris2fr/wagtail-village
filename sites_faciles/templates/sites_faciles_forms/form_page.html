@@ -11,12 +11,12 @@
     {% comment %} {{ form.as_p }} {% endcomment %}
     {{ form.non_field_errors }}
     {% for field in form %}
-    <fieldset class="village-fieldset" aria-labelledby="text-legend text-messages">
-        <div class="village-label">
+    <fieldset class="design-system-fieldset" aria-labelledby="text-legend text-messages">
+        <div class="design-system-label">
         {{ field.label_tag }}
         </div>
-        <div class="village-fieldset__element">
-            <div class="village-{{ field.name|field_class_from_name:form_fields }}">
+        <div class="design-system-fieldset__element">
+            <div class="design-system-{{ field.name|field_class_from_name:form_fields }}">
                 {{ field }}
             </div>
             {{ field.help_text }}
@@ -27,7 +27,7 @@
     <div class="form-group">
     </div>
         <p>
-    <button type="submit" class="village-btn">
+    <button type="submit" class="design-system-btn">
         Envoyer
     </button>
 </form>

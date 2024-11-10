@@ -10,11 +10,11 @@
         let widgetIcon = document.getElementById('{{ widget_id }}-icon');
 
         const options = {
-          iconLibraries: ['village-buildings.json', 'village-business.json', 'village-communication.json', 'village-design.json', 'village-development.json', 'village-device.json', 'village-document.json', 'village-editor.json', 'village-finance.json', 'village-health.json', 'village-logo.json', 'village-map.json', 'village-media.json', 'village-others.json', 'village-system.json', 'village-user.json', 'village-weather.json'],
+          iconLibraries: ['design-system-buildings.json', 'design-system-business.json', 'design-system-communication.json', 'design-system-design.json', 'design-system-development.json', 'design-system-device.json', 'design-system-document.json', 'design-system-editor.json', 'design-system-finance.json', 'design-system-health.json', 'design-system-logo.json', 'design-system-map.json', 'design-system-media.json', 'design-system-others.json', 'design-system-system.json', 'design-system-user.json', 'design-system-weather.json'],
           allowEmpty: true,
           onSelect: function (jsonIconData) {
             widgetInput.value = jsonIconData.iconClass;
-            widgetIcon.classList.add(jsonIconData.iconClass, "village-icon--lg", "village-mt-1w");
+            widgetIcon.classList.add(jsonIconData.iconClass, "design-system-icon--lg", "design-system-mt-1w");
             },
           onReset: function () {
             widgetInput.innerHTML = "";

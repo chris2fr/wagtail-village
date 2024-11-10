@@ -262,7 +262,7 @@ class SitesFacilesBasePage(Page):
         # context["langcode"] = settings.language
         # context["data_sites_faciles_mourning"] = ""
         # if settings.mourning:
-        #     context["data_sites_faciles_mourning"] = "data-village-mourning"
+        #     context["data_sites_faciles_mourning"] = "data-design-system-mourning"
         # context["full_title"] = settings.site_title
         if context["page"].title:
             context["full_title"] = context["page"].title + " - "  # + context["full_site_title"]

@@ -1,55 +1,55 @@
-/* Prefix the classes defined here with wagtailvillage- */
-.wagtailvillage-hero {
+/* Prefix the classes defined here with design-system- */
+.design-system-hero {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.wagtailvillage-hero h1,
-.wagtailvillage-hero h2,
-.wagtailvillage-hero h3,
-.wagtailvillage-hero p  {
+.design-system-hero h1,
+.design-system-hero h2,
+.design-system-hero h3,
+.design-system-hero p  {
   color: white;
 }
 
-.wagtailvillage-hero a.village-btn--secondary {
-  /* color: var(--village-primary-850-200); */
-  border-color: var(--village-primary-sun-625);
+.design-system-hero a.design-system-btn--secondary {
+  /* color: var(--design-system-primary-850-200); */
+  border-color: var(--design-system-primary-sun-625);
   background-color: white;
   color: black;
 }
 
-.wagtailvillage-hero a.village-btn--secondary:hover {
+.design-system-hero a.design-system-btn--secondary:hover {
   color: unset;
   border-color: unset;
 }
 
-header.village-header {
+header.design-system-header {
   justify-content: space-between;
 }
 
-.wagtailvillage-hero-large {
+.design-system-hero-large {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.wagtailvillage-background-dark h1,
-.wagtailvillage-background-dark p {
+.design-system-background-dark h1,
+.design-system-background-dark p {
   color: white;
 }
 
-.village-header__service-title em {
+.design-system-header__service-title em {
   font-weight: lighter;
 }
 
-.wagtailvillage-author_card__header {
+.design-system-author_card__header {
   flex: 0 0 6rem !important;
   width: 6rem !important;
 }
 
-.wagtailvillage-author-img {
+.design-system-author-img {
   border-radius: 50%;
   height: 4.5rem !important;
   margin: 1.5rem;
@@ -67,24 +67,24 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: unset;
 }
 
-.village-logo:after {
+.design-system-logo:after {
   background-image: unset;
 }
 
-.village-logo:before {
+.design-system-logo:before {
   background-image: unset;
 }
 
-div.village-footer__brand {
+div.design-system-footer__brand {
   column-gap: 1rem;
 }
 
-ul.village-nav__list {
+ul.design-system-nav__list {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.village-nav__list  > * > .village-nav__link {
+.design-system-nav__list  > * > .design-system-nav__link {
   align-content: center;
 }
 
@@ -100,9 +100,9 @@ ul.village-nav__list {
   fill: var(--text-default-grey);
 }
 /* 
---background-action-high-village-primary-hover
---background-action-high-village-primary-active
---background-action-high-village-primary */
+--background-action-high-design-system-primary-hover
+--background-action-high-design-system-primary-active
+--background-action-high-design-system-primary */
 
 /* For Astro Homepage */
 
@@ -120,24 +120,24 @@ main.lesgrandsvoisins-home h1.title p {
   line-height: revert;
 }
 @media (min-width: 62em) {
-  header.lesgrandsvoisins-home div.village-header__body{
+  header.lesgrandsvoisins-home div.design-system-header__body{
     display: none;
   }
 }
 
 @media (max-width: 62em) {
-  header.lesgrandsvoisins-home button.village-btn--search {
+  header.lesgrandsvoisins-home button.design-system-btn--search {
     display: none;
   }
 }
 
-/* header.lesgrandsvoisins-home button.village-btn--display {
+/* header.lesgrandsvoisins-home button.design-system-btn--display {
   display: none;
 } */
 
 
 
-/* header.lesgrandsvoisins-home div.village-header__tools {
+/* header.lesgrandsvoisins-home div.design-system-header__tools {
   display: none;
 } */
 
@@ -153,12 +153,12 @@ main.lesgrandsvoisins-home h1.title p {
   pointer-events: none;
 } */
 
-.village-header .village-header__menu .village-container {
+.design-system-header .design-system-header__menu .design-system-container {
   column-gap: 1rem;
   height: auto;
 }
 
-.village-header__service {
+.design-system-header__service {
   display: none;
 }
 
@@ -166,6 +166,6 @@ body {
   color: var(--text-title-grey);
 }
 
-#village-menu-close-btn {
+#design-system-menu-close-btn {
   height: fit-content;
 }

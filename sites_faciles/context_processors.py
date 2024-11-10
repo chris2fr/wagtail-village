@@ -26,7 +26,7 @@ def skiplinks(request) -> dict:
     return {
         "skiplinks": [
             {"link": "#content", "label": "Contenu"},
-            {"link": "#village-navigation", "label": "Menu"},
+            {"link": "#design-system-navigation", "label": "Menu"},
         ]
     }
 
@@ -65,14 +65,14 @@ def sitevars(request):
     return {
         "langcode": settings.language,
         "home_url": "/{}/".format(settings.language),
-        "data_sites_faciles_mourning": "data-village-mourning" if settings.mourning else "",
+        "data_sites_faciles_mourning": "data-design-system-mourning" if settings.mourning else "",
         "full_site_title": settings.site_title,
     }
     #
     # context["langcode"] = settings.language
     # context["data_sites_faciles_mourning"] = ""
     # if settings.mourning:
-    #     context["data_sites_faciles_mourning"] = "data-village-mourning"
+    #     context["data_sites_faciles_mourning"] = "data-design-system-mourning"
     # context["full_title"] = settings.site_title
     # if context["page"].title:
     #     context["full_title"] = context["page"].title + " - " + context["full_title"]

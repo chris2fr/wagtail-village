@@ -1,8 +1,8 @@
 {% load wagtailimages_tags wagtailcore_tags %}
-<div class="village-card{% if value.url or value.document %} village-enlarge-link{% endif %}">
-  <div class="village-card__body">
-    <div class="village-card__content">
-      <h3 class="village-card__title">
+<div class="design-system-card{% if value.url or value.document %} design-system-enlarge-link{% endif %}">
+  <div class="design-system-card__body">
+    <div class="design-system-card__content">
+      <h3 class="design-system-card__title">
         {% if value.url %}
           <a href="{{ value.url }}">{{ value.title }}</a>
         {% elif value.document %}
@@ -11,17 +11,17 @@
           {{ value.title }}
         {% endif %}
       </h3>
-      <p class="village-card__desc">{{ value.description|linebreaksbr }}</p>
+      <p class="design-system-card__desc">{{ value.description|linebreaksbr }}</p>
     </div>
   </div>
-  <div class="village-card__header">
+  <div class="design-system-card__header">
     {% if value.image %}
-      <div class="village-card__img">{% image value.image original class="village-responsive-img" %}</div>
+      <div class="design-system-card__img">{% image value.image original class="design-system-responsive-img" %}</div>
     {% endif %}
     {% if value.badge_text %}
-      <ul class="village-badges-group">
+      <ul class="design-system-badges-group">
         <li>
-          <p class="village-badge village-badge--{{ value.badge_level }}{% if value.badge_icon %} village-badge--no-icon{% endif %}">
+          <p class="design-system-badge design-system-badge--{{ value.badge_level }}{% if value.badge_icon %} design-system-badge--no-icon{% endif %}">
             {{ value.badge_text }}
           </p>
         </li>

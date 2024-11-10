@@ -1,13 +1,13 @@
-<div class="village-container village-my-3w">
-    <div class="village-stepper">
-        <h2 class="village-stepper__title">{{ block.value.title }}</h2>
-        <div class="village-stepper__steps"
-             data-village-current-step="{{ block.value.current }}"
-             data-village-steps="{{ block.value.total }}">
+<div class="design-system-container design-system-my-3w">
+    <div class="design-system-stepper">
+        <h2 class="design-system-stepper__title">{{ block.value.title }}</h2>
+        <div class="design-system-stepper__steps"
+             data-design-system-current-step="{{ block.value.current }}"
+             data-design-system-steps="{{ block.value.total }}">
         </div>
-        <div class="village-grid-row village-grid-row--gutters">
+        <div class="design-system-grid-row design-system-grid-row--gutters">
             {% for subblock in block.value.steps %}
-                <div class="village-col-12 village-col-sm">
+                <div class="design-system-col-12 design-system-col-sm">
                     <p>
                         <strong>{{ subblock.value.title }}</strong>
                     </p>

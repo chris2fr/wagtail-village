@@ -1,34 +1,34 @@
 {% extends "base.html" %}
 {% load widget_tweaks i18n static design_system_tags %}
 {% block content %}
-    <div class="village-container village-container--fluid village-my-md-14v">
-        <div class="village-grid-row village-grid-row-gutters village-grid-row--center">
-            <div class="village-col-12 village-col-md-8 village-col-lg-6">
-                <div class="village-container village-background-alt--grey village-px-md-0 village-py-10v village-py-md-14v">
-                    <div class="village-grid-row village-grid-row-gutters village-grid-row--center">
-                        <div class="village-col-12 village-col-md-9 village-col-lg-8">
+    <div class="design-system-container design-system-container--fluid design-system-my-md-14v">
+        <div class="design-system-grid-row design-system-grid-row-gutters design-system-grid-row--center">
+            <div class="design-system-col-12 design-system-col-md-8 design-system-col-lg-6">
+                <div class="design-system-container design-system-background-alt--grey design-system-px-md-0 design-system-py-10v design-system-py-md-14v">
+                    <div class="design-system-grid-row design-system-grid-row-gutters design-system-grid-row--center">
+                        <div class="design-system-col-12 design-system-col-md-9 design-system-col-lg-8">
                             <h1>Connexion</h1>
                             <div>
                                 <form id="login-form" action="{% url 'wagtailadmin_login' %}" method="post">
-                                    <fieldset class="village-fieldset"
+                                    <fieldset class="design-system-fieldset"
                                               id="login-form-fieldset"
                                               aria-labelledby="login-form-fieldset-legend login-form-fieldset-messages">
-                                        <legend class="village-fieldset__legend" id="login-form-fieldset-legend">
+                                        <legend class="design-system-fieldset__legend" id="login-form-fieldset-legend">
                                             <h2>Se connecter avec son compte</h2>
                                         </legend>
-                                        <div class="village-fieldset__element">
-                                            <p class="village-text--sm">Sauf mention contraire, tous les champs sont obligatoires.</p>
-                                            <div class="village-messages-group"
+                                        <div class="design-system-fieldset__element">
+                                            <p class="design-system-text--sm">Sauf mention contraire, tous les champs sont obligatoires.</p>
+                                            <div class="design-system-messages-group"
                                                  id="login-form-fieldset-messages"
                                                  aria-live="assertive">
                                                 {% if form.errors %}
-                                                    <div class="village-alert village-alert--error village-alert--sm">
+                                                    <div class="design-system-alert design-system-alert--error design-system-alert--sm">
                                                         <p>Erreur : Votre identifiant et mot de passe ne correspondent pas, merci de réessayer.</p>
                                                     </div>
                                                 {% endif %}
                                                 {% if next %}
                                                     {% if user.is_authenticated %}
-                                                        <div class="village-alert village-alert--error village-alert--sm">
+                                                        <div class="design-system-alert design-system-alert--error design-system-alert--sm">
                                                             <p>
                                                                 Erreur : Votre compte n’a pas accès à cette page. Pour continuer, merci de vous connecter
                                                                 avec un compte autorisé.
@@ -39,46 +39,46 @@
                                                 {% design_system_django_messages %}
                                             </div>
                                         </div>
-                                        <div class="village-fieldset__element">
+                                        <div class="design-system-fieldset__element">
                                             {% csrf_token %}
                                             {% url 'wagtailadmin_home' as home_url %}
                                             <input type="hidden" name="next" value="{{ next|default:home_url }}" />
-                                            <div class="village-input-group">
-                                                <label class="village-label" for="id_username">Identifiant&nbsp;:</label>
-                                                {{ form.username |add_class:"village-input" }}
+                                            <div class="design-system-input-group">
+                                                <label class="design-system-label" for="id_username">Identifiant&nbsp;:</label>
+                                                {{ form.username |add_class:"design-system-input" }}
                                             </div>
                                         </div>
-                                        <div class="village-fieldset__element">
-                                            <div class="village-password">
-                                                <label class="village-label" for="id_password">Mot de passe&nbsp;:</label>
-                                                {{ form.password |add_class:"village-password__input village-input" }}
-                                                <div class="village-password__checkbox village-checkbox-group village-checkbox-group--sm">
+                                        <div class="design-system-fieldset__element">
+                                            <div class="design-system-password">
+                                                <label class="design-system-label" for="id_password">Mot de passe&nbsp;:</label>
+                                                {{ form.password |add_class:"design-system-password__input design-system-input" }}
+                                                <div class="design-system-password__checkbox design-system-checkbox-group design-system-checkbox-group--sm">
                                                     <input aria-label="Afficher le mot de passe"
                                                            id="id_password-show"
                                                            type="checkbox"
                                                            aria-describedby="id_password-show-messages">
-                                                    <label class="village-password__checkbox village-label" for="id_password-show">Afficher</label>
-                                                    <div class="village-messages-group"
+                                                    <label class="design-system-password__checkbox design-system-label" for="id_password-show">Afficher</label>
+                                                    <div class="design-system-messages-group"
                                                          id="id_password-show-messages"
                                                          aria-live="assertive"></div>
                                                 </div>
                                                 {% if show_password_reset %}
-                                                    <a class="village-link" href="{% url 'wagtailadmin_password_reset' %}">Mot de passe oublié ?</a>
+                                                    <a class="design-system-link" href="{% url 'wagtailadmin_password_reset' %}">Mot de passe oublié ?</a>
                                                 {% endif %}
                                             </div>
                                         </div>
-                                        <div class="village-fieldset__element">
-                                            <div class="village-checkbox-group village-checkbox-group--sm">
-                                                <div class="village-checkbox-group}">
+                                        <div class="design-system-fieldset__element">
+                                            <div class="design-system-checkbox-group design-system-checkbox-group--sm">
+                                                <div class="design-system-checkbox-group}">
                                                     {{ form.remember }}
-                                                    <label for="{{ form.remember.id_for_label }}" class="village-label">Se souvenir de moi</label>
+                                                    <label for="{{ form.remember.id_for_label }}" class="design-system-label">Se souvenir de moi</label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="village-fieldset__element">
-                                            <ul class="village-btns-group">
+                                        <div class="design-system-fieldset__element">
+                                            <ul class="design-system-btns-group">
                                                 <li>
-                                                    <input class="village-btn" type="submit" value="Se connecter" />
+                                                    <input class="design-system-btn" type="submit" value="Se connecter" />
                                                 </li>
                                             </ul>
                                         </div>

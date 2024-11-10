@@ -1,42 +1,42 @@
 {% load static %}
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
-<div class="village-container village-my-6w">
-  <div class="village-grid-row village-grid-row--gutters">
+<div class="design-system-container design-system-my-6w">
+  <div class="design-system-grid-row design-system-grid-row--gutters">
     {% if value.image_side == "left" %}
-      <div class="village-col-12 village-col-sm-{{ value.image_ratio }}">
-        <div class="bordered village-px-2w">{% image value.image original class="village-responsive-img" alt="" %}</div>
+      <div class="design-system-col-12 design-system-col-sm-{{ value.image_ratio }}">
+        <div class="bordered design-system-px-2w">{% image value.image original class="design-system-responsive-img" alt="" %}</div>
       </div>
-      <div class="village-col-12 village-col-sm{{ -12|add:value.image_ratio }}">
+      <div class="design-system-col-12 design-system-col-sm{{ -12|add:value.image_ratio }}">
         {{ value.text|richtext }}
 
         {% if value.link is not None and value.link.url %}
-          <a class="village-link village-fi-arrow-right-line village-link--icon-right"
+          <a class="design-system-link design-system-fi-arrow-right-line design-system-link--icon-right"
              href="{{ value.link.url }}">{{ value.link.text }}</a>
         {% elif value.page and value.link_label %}
-          <a class="village-link village-fi-arrow-right-line village-link--icon-right"
+          <a class="design-system-link design-system-fi-arrow-right-line design-system-link--icon-right"
              href="{{ value.page.url }}">{{ value.link_label }}</a>
         {% elif value.link_url and value.link_label %}
-          <a class="village-link village-fi-arrow-right-line village-link--icon-right"
+          <a class="design-system-link design-system-fi-arrow-right-line design-system-link--icon-right"
              href="{{ value.link_url }}">{{ value.link_label }}</a>
         {% endif %}
       </div>
     {% else %}
-      <div class="village-col-12 village-col-sm{{ -12|add:value.image_ratio }}">
+      <div class="design-system-col-12 design-system-col-sm{{ -12|add:value.image_ratio }}">
         {{ value.text|richtext }}
         {% if value.link is not None and value.link.url %}
-          <a class="village-link village-fi-arrow-right-line village-link--icon-right"
+          <a class="design-system-link design-system-fi-arrow-right-line design-system-link--icon-right"
              href="{{ value.link.url }}">{{ value.link.text }}</a>
         {% elif value.page and value.link_label %}
-          <a class="village-link village-fi-arrow-right-line village-link--icon-right"
+          <a class="design-system-link design-system-fi-arrow-right-line design-system-link--icon-right"
              href="{{ value.page.url }}">{{ value.link_label }}</a>
         {% elif value.link_url and value.link_label %}
-          <a class="village-link village-fi-arrow-right-line village-link--icon-right"
+          <a class="design-system-link design-system-fi-arrow-right-line design-system-link--icon-right"
              href="{{ value.link_url }}">{{ value.link_label }}</a>
         {% endif %}
       </div>
-      <div class="village-col-12 village-col-sm-{{ value.image_ratio }}">
-        <div class="bordered village-px-2w">{% image value.image original class="village-responsive-img" alt="" %}</div>
+      <div class="design-system-col-12 design-system-col-sm-{{ value.image_ratio }}">
+        <div class="bordered design-system-px-2w">{% image value.image original class="design-system-responsive-img" alt="" %}</div>
       </div>
     {% endif %}
   </div>
