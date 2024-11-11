@@ -51,7 +51,7 @@ subgraph numerique-gouv["<strong><a href='https://www.numerique.gouv.fr/' style=
 end
 
 subgraph ResDigita["<strong><a href='https://www.resdigita.org/' style='color:white'>ResDigita</a><strong>"]
-    wagtail-village["<big><b>Wagtail SitesFaciles</big></b>
+    wagtail-design-system["<big><b>Wagtail SitesFaciles</big></b>
                    <hr/><small>Application Libre du système 
                                de gestion de contenu Wagtail
                                qui intègre Django SitesFaciles</small>"]
@@ -59,7 +59,7 @@ subgraph ResDigita["<strong><a href='https://www.resdigita.org/' style='color:wh
     %%  de gestionnaire de contenu Wagtail 
     %%  publié par github.com en Libre."]
 
-    django-village["<big><b>Django SitesFaciles</big></b>
+    django-design-system["<big><b>Django SitesFaciles</big></b>
     <hr/><small>Module Libre du serveur 
                 d'applications Django 
                 qui intègre Génération SitesFaciles</small>"]
@@ -68,7 +68,7 @@ subgraph ResDigita["<strong><a href='https://www.resdigita.org/' style='color:wh
     %%	publié par Pypi.org
     %%	et par github.com en Libre</small>"]
 
-    fabrique-village["<big><b>Fabrique SitesFaciles</big></b>
+    fabrique-sites-faciles["<big><b>Fabrique SitesFaciles</big></b>
     <hr/><small>Génération de composants 
                 HTML, CSS et Javascript
                 par le système de design
@@ -87,17 +87,17 @@ subgraph ResDigita["<strong><a href='https://www.resdigita.org/' style='color:wh
 
 %%  django-dsfr <-.- Django 
 %%  sites-faciles <-.- Wagtail 
-%%  django-village <-.- Django
-%%  wagtail-village <-.- Wagtail 
-%%  fabrique-village  <-.- NodeJS 
+%%  django-design-system <-.- Django
+%%  wagtail-design-system <-.- Wagtail 
+%%  fabrique-sites-faciles  <-.- NodeJS 
 %%  dsfr <-.- NodeJS 
 
 
-wagtail-village
+wagtail-design-system
 -->
-django-village
+django-design-system
 -->
-fabrique-village
+fabrique-sites-faciles
 
 
 
@@ -109,7 +109,7 @@ dsfr
 
 master-design
 -.-
-fabrique-village
+fabrique-sites-faciles
 
 
 master-django{{"<i>Sites et composants 
@@ -120,7 +120,7 @@ django-dsfr
 
 master-django
 -.-
-django-village
+django-design-system
 
 
 
@@ -132,7 +132,7 @@ sites-faciles
 
 master-wagtail
 -.-
-wagtail-village
+wagtail-design-system
 
 
 
@@ -154,9 +154,9 @@ classDef dashedOutline stroke-dasharray:4 5
 
 %%  Django --> Wagtail
 
-click wagtail-village href "https://github.com/chris2fr/wagtail-village"
-click django-village href "https://github.com/chris2fr/django-village"
-click fabrique-village href "https://github.com/chris2fr/fabrique-village"
+click wagtail-design-system href "https://github.com/chris2fr/wagtail-design-system"
+click django-design-system href "https://github.com/chris2fr/django-design-system"
+click fabrique-sites-faciles href "https://github.com/chris2fr/fabrique-sites-faciles"
 click sites-faciles href "https://github.com/numerique-gouv/sites-faciles"
 click django-dsfr href "https://github.com/numerique-gouv/django-dsfr"
 click dsfr href "https://github.com/GouvernementFR/dsfr/"

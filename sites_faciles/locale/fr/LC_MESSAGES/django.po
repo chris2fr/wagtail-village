@@ -147,7 +147,7 @@ msgid "Icon"
 msgstr "Icône"
 
 #: wagtail_design_system/blocks.py:124
-msgctxt "village Tag"
+msgctxt "sites-faciles Tag"
 msgid "Tag"
 msgstr "Tag"
 

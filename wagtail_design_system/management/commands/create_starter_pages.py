@@ -111,7 +111,7 @@ class Command(BaseCommand):
             "image": image,
             "image_ratio": "3",
             "text": RichText(text_raw),
-            "link": {"external_url": "https://www.lesgrandsvoisins.com", "text": "Village !"},
+            "link": {"external_url": "https://www.lesgrandsvoisins.com", "text": "Sites Faciles !"},
         }
 
         body.append(("imageandtext", image_and_text_block))
