@@ -3,13 +3,14 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.urls import include, path
 
+# from django.utils.translation import gettext_lazy as _
+from django_design_system.urls import urlpatterns as djangodesignsystem_urlpatterns
+
 # from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from wagtail_transfer import urls as wagtailtransfer_urls
 
-# from django.utils.translation import gettext_lazy as _
-from django_design_system.urls import urlpatterns as djangodesignsystem_urlpatterns
 from search import views as search_views
 
 

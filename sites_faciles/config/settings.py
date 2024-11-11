@@ -32,7 +32,7 @@ if needs_required != []:
     raise ValueError("Merci de mettre les variables suivantes dans .env: %s" % ", ".join(needs_required))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.getenv("APP_DJANGO_ROOT", Path(__file__).resolve().parent.parent)
+BASE_DIR = os.getenv("APP_DJANGO_ROOT", Path(__file__).resolve().parent.parent.parent)
 
 
 # Quick-start development settings - unsuitable for production
@@ -124,7 +124,7 @@ if DEBUG_TOOLBAR:
         "debug_toolbar.middleware.DebugToolbarMiddleware",
     ]
 
-ROOT_URLCONF = "config.urls"
+ROOT_URLCONF = "sites_faciles.config.urls"
 
 TEMPLATES = [
     {
@@ -155,7 +155,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "config.wsgi.application"
+WSGI_APPLICATION = "sites_faciles.config.wsgi.application"
 
 
 # Database

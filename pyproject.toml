@@ -1,6 +1,6 @@
 [tool.poetry]                            
 name = "sites-faciles"
-version = "0.0.1"
+version = "0.0.2"
 description = "Gestionnaire de contenu permettant de créer et gérer un site internet basé sur le Système de design de l'État, accessible et responsive"
 authors = [
   "Chris Mann <chris@mann.fr>",
@@ -30,9 +30,6 @@ classifiers = [
 homepage = "https://github.com/chris2fr/sites-faciles"
 keywords = ["wagtail",]
 repository = "https://github.com/chris2fr/sites-faciles/tree/sites-faciles"
-packages = [
-  {include = "sites_faciles"},
-]
                                                     
 [tool.poetry.dependencies]
 beautifulsoup4 = "^4.12.3"        
