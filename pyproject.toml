@@ -1,6 +1,6 @@
 [tool.poetry]                            
-name = "sites-faciles"
-version = "0.0.3"
+name = "wagtail-design-system"
+version = "0.0.1"
 description = "Gestionnaire de contenu permettant de créer et gérer un site internet basé sur le Système de design de l'État, accessible et responsive"
 authors = [
   "Chris Mann <chris@mann.fr>",
@@ -8,7 +8,32 @@ authors = [
 maintainers = [           
   "Chris Mann <chris@mann.fr>",   
 ]                              
-readme = "README.md"                    
+readme = "README.md"   
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Web Environment",
+  "Framework :: Django",
+  "Framework :: Django :: 4.2",
+  "Framework :: Django :: 5.0",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Utilities",
+  "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+  "Framework :: Wagtail",
+  "Framework :: Wagtail :: 5",
+  "Framework :: Wagtail :: 6",
+]
+homepage = "https://github.com/chris2fr/sites-faciles"
+keywords = ["wagtail",]
+readme = "README.md"
+repository = "https://github.com/chris2fr/sites-faciles/tree/wagtail-design-system"
+packages = [
+  {include = "wagtail_design_system"},
+]
                                                     
 [tool.poetry.dependencies]
 beautifulsoup4 = "^4.12.3"        
