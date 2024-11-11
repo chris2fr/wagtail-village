@@ -690,6 +690,23 @@ django = ">=4.2.9"
 sqlparse = ">=0.2"
 
 [[package]]
+name = "django-design-system"
+version = "0.0.1"
+description = "Render Design System DESIGN_SYSTEM into a generic Django app"
+optional = false
+python-versions = "<4.0,>=3.8"
+files = [
+    {file = "django_design_system-0.0.1-py3-none-any.whl", hash = "sha256:c9d35b19cac6975431a3829c594f50337d0a0d0d5cd05a3e35c8664bc5416815"},
+    {file = "django_design_system-0.0.1.tar.gz", hash = "sha256:7b9ce8c2802d1c2f16441c02399176e0b23be44af4a3eb82081b3dd7cfd0bd00"},
+]
+
+[package.dependencies]
+Django = ">3.2.5"
+django-crispy-forms = ">=2.0,<3.0"
+django-widget-tweaks = ">=1.4.12,<2.0.0"
+requests = ">=2.26.0,<3.0.0"
+
+[[package]]
 name = "django-distill"
 version = "3.2.7"
 description = "Static site renderer and publisher for Django."
@@ -876,8 +893,8 @@ description = "Render Design System VILLAGE into a generic Django app"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "django_design-system-0.0.3-py3-none-any.whl", hash = "sha256:1249cec67a67410de8f5230655c4d56d94e96b8a752be3a3eb4adc0447883adf"},
-    {file = "django_design-system-0.0.3.tar.gz", hash = "sha256:024a652757b1dcd12f2f46542afca8544ad0d6254f6e3b508669d60ef951e828"},
+    {file = "django_village-0.0.3-py3-none-any.whl", hash = "sha256:1249cec67a67410de8f5230655c4d56d94e96b8a752be3a3eb4adc0447883adf"},
+    {file = "django_village-0.0.3.tar.gz", hash = "sha256:024a652757b1dcd12f2f46542afca8544ad0d6254f6e3b508669d60ef951e828"},
 ]
 
 [package.dependencies]
@@ -2448,6 +2465,44 @@ docs = ["Sphinx (>=7.3)", "myst-parser (==2.0.0)", "pyenchant (>=3.1.1,<4)", "sp
 testing = ["Jinja2 (>=3.0,<3.2)", "azure-mgmt-cdn (>=12.0,<13.0)", "azure-mgmt-frontdoor (>=1.0,<1.1)", "boto3 (>=1.28,<2)", "coverage (>=3.7.0)", "curlylint (==0.13.1)", "django-pattern-library (>=0.7)", "djhtml (==3.0.6)", "doc8 (==0.8.1)", "factory-boy (>=3.2)", "freezegun (>=0.3.8)", "polib (>=1.1,<2.0)", "python-dateutil (>=2.7)", "ruff (==0.1.5)", "semgrep (==1.40.0)", "tblib (>=2.0,<3.0)"]
 
 [[package]]
+name = "wagtail-design-system"
+version = "0.0.1"
+description = "Gestionnaire de contenu permettant de créer et gérer un site internet basé sur le Système de design de l'État, accessible et responsive"
+optional = false
+python-versions = "<4.0,>=3.11"
+files = [
+    {file = "wagtail_design_system-0.0.1-py3-none-any.whl", hash = "sha256:44b5ee93cbc3cd76b11a969c15f1295f5653723fd94ddf49e6294c43ead76fe4"},
+    {file = "wagtail_design_system-0.0.1.tar.gz", hash = "sha256:8239f7ea68a4fcffb46f54f5b750e70accbc88629fcdb89b0ffd164bd0580fab"},
+]
+
+[package.dependencies]
+beautifulsoup4 = ">=4.12.3,<5.0.0"
+boto3 = ">=1.34.56,<2.0.0"
+dj-database-url = ">=2.1.0,<3.0.0"
+dj-static = ">=0.0.6,<0.0.7"
+django = ">=5.0.6,<6.0.0"
+django-allauth = ">=65.1.0,<66.0.0"
+django-debug-toolbar = ">=4.3.0,<5.0.0"
+django_distill = ">=3.1.3,<4.0.0"
+django-sass-processor = ">=1.3,<2.0"
+django-simple-captcha = ">=0.6.0,<0.7.0"
+django-storages = {version = ">=1.14.2,<2.0.0", extras = ["s3"]}
+django-taggit = ">=5.0.1,<6.0.0"
+django-village = ">=0.0.3,<0.0.4"
+gunicorn = ">=22.0.0,<23.0.0"
+libsass = ">=0.22.0,<0.23.0"
+psycopg2-binary = ">=2.9.9,<3.0.0"
+python-dotenv = ">=1.0.0,<2.0.0"
+python-keycloak = ">=4.6.3,<5.0.0"
+unidecode = ">=1.3.8,<2.0.0"
+wagtail = ">=6.1.1,<7.0.0"
+wagtail-localize = ">=1.9,<2.0"
+wagtail-markdown = ">=0.11.1,<0.12.0"
+wagtail-modeladmin = ">=2.0.0,<3.0.0"
+wagtail-transfer = ">=0.9.4,<0.10.0"
+wagtailmenus = ">=4.0,<5.0"
+
+[[package]]
 name = "wagtail-localize"
 version = "1.10"
 description = "Translation plugin for Wagtail CMS"
@@ -2593,4 +2648,4 @@ wand = ["Wand (>=0.6,<1.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "3fe61433aa2add2a793023eb1792c5c5d1d6c665b5cce4be9153e2327c0815ab"
+content-hash = "4c32f030e994773d39480f24c8822f4dc8d4a8da76fc19cd4ed2faa43e907fd4"

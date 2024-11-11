@@ -1,4 +1,4 @@
-de# Gestionnaire de contenu Wagtail VILLAGE
+# Gestionnaire de contenu Sites-Faciles 
 
 Sur la base de l'application gestionnaire de contenu CMS et blog sous technologie Wagtail [sites-facile de la DINUM, France](https://github.com/numerique-gouv/sites-faciles), elle-même à base de l'application de mise en page de site dynamique Django [django-dsfr](https://github.com/numerique-gouv/django-dsfr), elle même basé sur le [Design Système de l'Etat ou DSFR du gouvernement français](https://github.com/GouvernementFR/dsfr/), cette application gestionnaire de contenu dit CMS et blog [VILLAGE](https://www.village.ngo) propose de capitaliser sur le travail de fond pour le traitement d'information et de la communication en rendant les composants génériques. 
 
@@ -15,8 +15,8 @@ Les conditions de l'utilisation de dango-wagtailvillage and sites-faciles (conte
 Maîtriser l'ensemble de la chaîne de wagtailvillage à django-wagtailvillage à sites-faciles a été une joie parce-que les développements sont propres et faits de manière responsable.  
 
 
-Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable [Wagtail-VILLAGE](https://github.com/chris2fr/wagtail-village) avec [Django-VILLAGE](https://github.com/chris2fr/django-village) [Module Python Django-VILLAGE](https://pypi.org/project/django-design-system/
-) et [Fabrique-VILLAGE](https://github.com/chris2fr/fabrique-village).
+Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable [wagtail-design-system](https://github.com/chris2fr/sites-faciles) avec [django-design-system](https://github.com/chris2fr/django-design-system) [Module Python django-design-system](https://pypi.org/project/django-design-system/
+) et [design-system](https://github.com/chris2fr/design-system).
 
 ```mermaid
 flowchart TD
@@ -29,39 +29,33 @@ subgraph numerique-gouv
 	sites-faciles
 end
 subgraph ResDigita 
-	fabrique-village
-	django-village
-	wagtail-village
+	design-system
+	django-design-system
+	wagtail-design-system
+	resdigita-sites-faciles
 end
 
 
 django-dsfr -.-> Django 
 sites-faciles-.-> Wagtail 
-django-village -.-> Django
-wagtail-village -.-> Wagtail 
+django-design-system -.-> Django
+wagtail-design-system -.-> Wagtail 
 DSFR -.-> NodeJS 
-fabrique-village  -.-> NodeJS 
+design-system  -.-> NodeJS 
 
 DSFR --> django-dsfr
 django-dsfr --> sites-faciles
 DSFR --> uniquement-generique{{Reprise uniquement\ndes éléments\ngénériques}}
-uniquement-generique --> fabrique-village
-fabrique-village --> django-village
+uniquement-generique --> design-system
+design-system --> django-design-system
 
 django-dsfr --> intro-submodules{{Introduction\nde submodules\npar desgin de site}}
-intro-submodules --> django-village
-django-village --> wagtail-village
-sites-faciles --> wagtail-village
+intro-submodules --> django-design-system
+django-design-system --> wagtail-design-system --> resdigita-sites-faciles
+sites-faciles --> wagtail-design-system
 
 Django --> Wagtail
 ```
-
-
-
-
-
- 
-
 
 Voici des notes aléatoires:
 
@@ -73,7 +67,7 @@ GRANT ALL privileges ON DATABASE wagtailvillage TO wagtailvillage;
 ```
 
 ```bash
-git clone git@github.com:chris2fr/wagtail-village.git
+git clone git@github.com:chris2fr/sites-faciles.git
 python -m venv venv
 source venv/bin/activate
 pip install pre-commit django

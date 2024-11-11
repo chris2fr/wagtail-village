@@ -12,7 +12,7 @@ django-sass-processor
 django-simple-captcha
 django-storages
 django-taggit
-django-village
+django-design-system
 Django>=4.2,<5.1
 djlint
 faker

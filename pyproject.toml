@@ -45,7 +45,7 @@ django-debug-toolbar = "^4.3.0"
 django-sass-processor = "^1.3"
 django-storages = {extras = ["s3"], version = "^1.14.2"}
 django-taggit = "^5.0.1"
-django-village = "^0.0.3"
+django-design-system = "^0.0.1"
 gunicorn = "^22.0.0"
 libsass = "^0.22.0"
 psycopg2-binary = "^2.9.9"
@@ -61,6 +61,7 @@ wagtailmenus = "^4.0"
 django-allauth = "^65.1.0"
 python-keycloak = "^4.6.3"
 django-simple-captcha = "^0.6.0"
+wagtail-design-system = "^0.0.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.3.0"
