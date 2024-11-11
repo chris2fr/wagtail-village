@@ -29,7 +29,6 @@ classifiers = [
 ]
 homepage = "https://github.com/chris2fr/sites-faciles"
 keywords = ["wagtail",]
-readme = "README.md"
 repository = "https://github.com/chris2fr/sites-faciles/tree/wagtail-design-system"
 packages = [
   {include = "wagtail_design_system"},
