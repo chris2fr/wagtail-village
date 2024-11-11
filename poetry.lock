@@ -887,23 +887,6 @@ files = [
 Django = ">=3.2"
 
 [[package]]
-name = "django-village"
-version = "0.0.3"
-description = "Render Design System VILLAGE into a generic Django app"
-optional = false
-python-versions = "<4.0,>=3.8"
-files = [
-    {file = "django_village-0.0.3-py3-none-any.whl", hash = "sha256:1249cec67a67410de8f5230655c4d56d94e96b8a752be3a3eb4adc0447883adf"},
-    {file = "django_village-0.0.3.tar.gz", hash = "sha256:024a652757b1dcd12f2f46542afca8544ad0d6254f6e3b508669d60ef951e828"},
-]
-
-[package.dependencies]
-Django = ">3.2.5"
-django-crispy-forms = ">=2.0,<3.0"
-django-widget-tweaks = ">=1.4.12,<2.0.0"
-requests = ">=2.26.0,<3.0.0"
-
-[[package]]
 name = "django-widget-tweaks"
 version = "1.5.0"
 description = "Tweak the form field rendering in templates, not in python-level form definitions."
@@ -2469,13 +2452,13 @@ testing = ["Jinja2 (>=3.0,<3.2)", "azure-mgmt-cdn (>=12.0,<13.0)", "azure-mgmt-f
 
 [[package]]
 name = "wagtail-design-system"
-version = "0.0.1"
+version = "0.0.2"
 description = "Gestionnaire de contenu permettant de créer et gérer un site internet basé sur le Système de design de l'État, accessible et responsive"
 optional = false
 python-versions = "<4.0,>=3.11"
 files = [
-    {file = "wagtail_design_system-0.0.1-py3-none-any.whl", hash = "sha256:44b5ee93cbc3cd76b11a969c15f1295f5653723fd94ddf49e6294c43ead76fe4"},
-    {file = "wagtail_design_system-0.0.1.tar.gz", hash = "sha256:8239f7ea68a4fcffb46f54f5b750e70accbc88629fcdb89b0ffd164bd0580fab"},
+    {file = "wagtail_design_system-0.0.2-py3-none-any.whl", hash = "sha256:76663d7b2ce22202415a66839335bb9fbf0f490f5d28d34b2915f5b24a3369d1"},
+    {file = "wagtail_design_system-0.0.2.tar.gz", hash = "sha256:fb0e55b1e8d11a7b3573cbf3b17a69c04f886b5d3e6f63deafd0e735f5d78e00"},
 ]
 
 [package.dependencies]
@@ -2486,13 +2469,12 @@ dj-static = ">=0.0.6,<0.0.7"
 django = ">=5.0.6,<6.0.0"
 django-allauth = ">=65.1.0,<66.0.0"
 django-debug-toolbar = ">=4.3.0,<5.0.0"
+django-design-system = ">=0.0.2,<0.0.3"
 django_distill = ">=3.1.3,<4.0.0"
 django-sass-processor = ">=1.3,<2.0"
 django-simple-captcha = ">=0.6.0,<0.7.0"
 django-storages = {version = ">=1.14.2,<2.0.0", extras = ["s3"]}
 django-taggit = ">=5.0.1,<6.0.0"
-django-village = ">=0.0.3,<0.0.4"
-gunicorn = ">=22.0.0,<23.0.0"
 libsass = ">=0.22.0,<0.23.0"
 psycopg2-binary = ">=2.9.9,<3.0.0"
 python-dotenv = ">=1.0.0,<2.0.0"
@@ -2651,4 +2633,4 @@ wand = ["Wand (>=0.6,<1.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "c770c8eb76fb5a626281f95cd480bdb540adc35ca0f53163313e7fb764aa6c02"
+content-hash = "846c13a4cab8cfb37bd959a2e20becb2138351438ea40df5a7603fbabfe2bc14"

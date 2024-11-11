@@ -28,9 +28,10 @@ python-dotenv
 python-keycloak
 requests
 unidecode
+django-design-system
 wagtail-localize
 wagtail-markdown
 wagtail-modeladmin
-wagtail-transfer      
+wagtail-transfer
 wagtail>=6.2,<6.3
 wagtailmenus

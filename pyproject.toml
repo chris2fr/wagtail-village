@@ -58,7 +58,7 @@ wagtailmenus = "^4.0"
 django-allauth = "^65.1.0"
 python-keycloak = "^4.6.3"
 django-simple-captcha = "^0.6.0"
-wagtail-design-system = "^0.0.1"
+wagtail-design-system = "^0.0.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.3.0"

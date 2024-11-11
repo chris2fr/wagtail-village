@@ -1,6 +1,7 @@
-# Gestionnaire de contenu Sites-Faciles 
+# Sites-Faciles 
 
-Sur la base de l'application gestionnaire de contenu CMS et blog sous technologie Wagtail [sites-facile de la DINUM, France](https://github.com/numerique-gouv/sites-faciles), elle-même à base de l'application de mise en page de site dynamique Django [django-dsfr](https://github.com/numerique-gouv/django-dsfr), elle même basé sur le [Design Système de l'Etat ou DSFR du gouvernement français](https://github.com/GouvernementFR/dsfr/), cette application gestionnaire de contenu dit CMS et blog [VILLAGE](https://www.village.ngo) propose de capitaliser sur le travail de fond pour le traitement d'information et de la communication en rendant les composants génériques. 
+
+Sur la base de l'application gestionnaire de contenu CMS et blog sous technologie Wagtail [sites-facile de la DINUM, France](https://github.com/numerique-gouv/sites-faciles), elle-même à base de l'application de mise en page de site dynamique Django [django-dsfr](https://github.com/numerique-gouv/django-dsfr), elle même basé sur le [Design Système de l'Etat ou DSFR du gouvernement français](https://github.com/GouvernementFR/dsfr/), cette application gestionnaire de contenu dit CMS et blog [Sites-Faciles](https://github.com/chris2fr/sites-faciles) propose de capitaliser sur le travail de fond pour le traitement d'information et de la communication en rendant les composants génériques. 
 
 Les [conditions d’utilisation de DSFR pour des acteurs privés](https://github.com/GouvernementFR/dsfr/blob/main/doc/legal/cgu.md#2-conditions-dutilisation-des-composants-par-les-autres-utilisateurs) sont claires : 
 
@@ -10,9 +11,9 @@ Les [conditions d’utilisation de DSFR pour des acteurs privés](https://github
 > 
 > Il est expressément rappelé aux Autres Utilisateurs que toute utilisation des Composants en dehors des limites visées aux présentes ou dans le but de les détourner et de s’approprier d’une manière ou d’une autre la Marque de l’État est punissable de sanctions civiles et/ou pénales.
 
-Les conditions de l'utilisation de dango-wagtailvillage and sites-faciles (content_manager) sont encore moins problématiques un fois que la question fondamentale du DSFR est traitée de manière responsable. Le défi est de proposer un deal équitable et sympa pour l'Etat. Cela serait aidé, je pense, par la contribution fondamentale de proposer des thèmes graphiques très différents de la charte du DSFR. Il y a encore un peu de travail à faire dans ce sens, mais c'est bien parti.
+Les conditions de l'utilisation de dango-design-system and sites-faciles (content_manager) sont encore moins problématiques un fois que la question fondamentale du DSFR est traitée de manière responsable. Le défi est de proposer un deal équitable et sympa pour l'Etat. Cela serait aidé, je pense, par la contribution fondamentale de proposer des thèmes graphiques très différents de la charte du DSFR. Il y a encore un peu de travail à faire dans ce sens, mais c'est bien parti.
 
-Maîtriser l'ensemble de la chaîne de wagtailvillage à django-wagtailvillage à sites-faciles a été une joie parce-que les développements sont propres et faits de manière responsable.  
+Maîtriser l'ensemble de la chaîne de design-system à django-design-system à wagtail-design-system à sites-faciles a été une joie parce-que les développements sont propres et faits de manière responsable.  
 
 
 Voici un autre diagramme autour de l'idée de faire un outil publiquement utilisable [wagtail-design-system](https://github.com/chris2fr/sites-faciles) avec [django-design-system](https://github.com/chris2fr/django-design-system) [Module Python django-design-system](https://pypi.org/project/django-design-system/
@@ -60,10 +61,10 @@ Django --> Wagtail
 Voici des notes aléatoires:
 
 ```sql
-CREATE USER wagtailvillage  with ENCRYPTED PASSWORD 'SOMEPASSWORD';
-CREATE DATABASE "wagtailvillage" WITH OWNER "wagtailvillage" ENCODING 'UTF8';
-ALTER database wagtailvillage owner to wagtailvillage;
-GRANT ALL privileges ON DATABASE wagtailvillage TO wagtailvillage;
+CREATE USER sitesfaciles  with ENCRYPTED PASSWORD 'SOMEPASSWORD';
+CREATE DATABASE "sitesfaciles" WITH OWNER "sitesfaciles" ENCODING 'UTF8';
+ALTER database sitesfaciles owner to sitesfaciles;
+GRANT ALL privileges ON DATABASE sitesfaciles TO sitesfaciles;
 ```
 
 ```bash
@@ -89,9 +90,9 @@ DEBUG=False
 HOST_PROTO=http
 # HOST_URL and ALLOWED_HOSTS: use 0.0.0.0 for Docker
 HOST_URL=0.0.0.0
-ALLOWED_HOSTS=localhost, 127.0.0.1, wagtail.village.org
+ALLOWED_HOSTS=localhost, 127.0.0.1, sites-pfaciles.resdigita.com
 HOST_PORT=8890
-SITE_NAME=Wagtail VILLAGE
+SITE_NAME=Sites Faciles
 MEDIA_ROOT=medias
 
 
