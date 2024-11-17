@@ -1,8 +1,9 @@
 from django.apps import AppConfig
-from django.contrib.auth.models import Group
 
 
 def user_signed_up_callback(sender, request, user, **kargs):
+    from django.contrib.auth.models import Group
+
     dashboard_user_group = Group.objects.get(name="dashboard")
     user.groups.add(dashboard_user_group)
 
