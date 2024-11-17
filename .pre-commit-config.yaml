@@ -9,8 +9,12 @@ repos:
     rev: 6.1.0
     hooks:
     - id: flake8
-      exclude: /migrations/
-      exclude: lesgrandsvoisins/settings/production.py
+      exclude: |
+        (?x)(
+          .*/migrations/.*.py|
+          lesgrandsvoisins/settings/.*.py|
+          lesgv/settings/.*.py
+        )
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0
     hooks:

@@ -12,13 +12,15 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
+
 # import ldap
-# from django_auth_ldap.config import LDAPSearch, GroupOfNamesType 
+# from django_auth_ldap.config import LDAPSearch, GroupOfNamesType
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
- 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -50,14 +52,14 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "wagtail_transfer",
-    'wagtail.contrib.settings',
-    'wagtail.contrib.sitemaps',
-    'wagtail.contrib.routable_page',
-    'django_social_share',
+    "wagtail.contrib.settings",
+    "wagtail.contrib.sitemaps",
+    "wagtail.contrib.routable_page",
+    "django_social_share",
     # 'puput',
-    'colorful',
+    "colorful",
     "wagtailmarkdown",
-    #"oauth2_provider",
+    # "oauth2_provider",
 ]
 
 MIDDLEWARE = [
@@ -86,15 +88,13 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                'wagtail.contrib.settings.context_processors.settings',
+                "wagtail.contrib.settings.context_processors.settings",
             ],
         },
     },
 ]
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.template.context_processors.request',
-)
+TEMPLATE_CONTEXT_PROCESSORS = ("django.template.context_processors.request",)
 
 WSGI_APPLICATION = "lesgv.wsgi.application"
 
@@ -133,8 +133,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
-    ('fr-fr', "French"),
-    ('en-en', "English"),
+    ("fr-fr", "French"),
+    ("en-en", "English"),
 ]
 
 
@@ -158,12 +158,10 @@ STATICFILES_FINDERS = [
 ]
 
 
-
 # ManifestStaticFilesStorage is recommended in production, to prevent outdated
 # JavaScript / CSS assets being served from cache (e.g. after a Wagtail upgrade).
 # See https://docs.djangoproject.com/en/4.2/ref/contrib/staticfiles/#manifeststaticfilesstorage
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
-
 
 
 # Wagtail settings
@@ -179,13 +177,13 @@ WAGTAILSEARCH_BACKENDS = {
 }
 
 WAGTAILTRANSFER_SOURCES = {
-    'production': {
-        'BASE_URL': 'https://wagtail.l-g-v.com/wagtail-transfer/',
-        'SECRET_KEY': 'a16a98a3d773c8df5817365a81d528bd',
+    "production": {
+        "BASE_URL": "https://wagtail.l-g-v.com/wagtail-transfer/",
+        "SECRET_KEY": "a16a98a3d773c8df5817365a81d528bd",
     },
 }
 
-WAGTAILTRANSFER_SECRET_KEY = 'a16a98a3d773c8df5817365a81d528bd'
+WAGTAILTRANSFER_SECRET_KEY = "a16a98a3d773c8df5817365a81d528bd"
 
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
@@ -193,7 +191,7 @@ WAGTAILTRANSFER_SECRET_KEY = 'a16a98a3d773c8df5817365a81d528bd'
 WAGTAILADMIN_BASE_URL = "http://www.lesgrandsvoisins.com"
 
 # https://koenwoortman.com/python-django-auto-created-primary-key-used-when-not-defining-primary-key-type/
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 WAGTAILIMAGES_EXTENSIONS = ["gif", "jpg", "jpeg", "png", "webp", "svg"]
 
