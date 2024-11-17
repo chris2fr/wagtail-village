@@ -17,9 +17,6 @@ import dj_database_url  # Pour un syntaxe différent de base de données
 from dotenv import load_dotenv  # Pour les variables d'.env
 
 
-# from allauth.account.signals import user_signed_up
-# from django.contrib.auth.models import Group
-
 # Prendre les variables d'environnement
 load_dotenv()
 
@@ -449,9 +446,3 @@ ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 # # ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 # ACCOUNT_USERNAME_BLACKLIST = ["admin", "god"]
 # # ACCOUNT_USERNAME_MIN_LENGTH = 2
-
-
-# @receiver(user_signed_up)
-# def user_signed_up_callback(sender, request, user, **kargs):
-#     dashboard_user_group = Group.objects.get(name="dashboard")
-#     user.groups.add(dashboard_user_group)

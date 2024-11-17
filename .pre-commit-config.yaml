@@ -13,7 +13,8 @@ repos:
         (?x)(
           .*/migrations/.*.py|
           lesgrandsvoisins/settings/.*.py|
-          lesgv/settings/.*.py
+          lesgv/settings/.*.py|
+          lesgrandsvoisins/wsgi.py
         )
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0
