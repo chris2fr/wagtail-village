@@ -4,7 +4,7 @@ from django.apps import AppConfig
 def user_signed_up_callback(sender, request, user, **kargs):
     from django.contrib.auth.models import Group
 
-    dashboard_user_group = Group.objects.get(name="dashboard")
+    dashboard_user_group = Group.objects.get(name="Dashboard")
     user.groups.add(dashboard_user_group)
 
 
