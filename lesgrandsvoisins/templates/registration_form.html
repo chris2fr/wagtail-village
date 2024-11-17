@@ -5,11 +5,25 @@
 
 {% block inner_content %}
 <div style="max-width:30rem;margin:4rem auto;width:fit-content;text-align: center;">
-  {% block form_content %}
+  {% block form_content %}  
+  <style>
+    label::after {
+      content: '   ';
+    }
+    label[for=id_email]::after,
+    label[for=id_password]::after,
+    label[for=id_lastName]::after,
+    label[for=id_username]::after,
+    label[for=id_captcha_1]::after
+     {
+      content: ' * ';
+      color: red;
+    }
+  </style>
 <form action="" method="post" class="registration_form">
   <script>
-    function peekAtPass() {
-      var x = document.getElementById("id_password");
+    function peekAtPass(input) {
+      var x = input;
       if (x.type === "password") {
         x.type = "text";
       } else {
@@ -22,11 +36,10 @@
   {{ form.as_table }} 
     </table>
     <p><input type="submit" style="width: 100%;font-weight: bold;padding: 0.3rem;"/></p>
+    {% comment %}
     <p>[ <a href="#" onclick="peekAtPass();">voir le mot de passe</a> ]</p>
-
-    
+    {% endcomment %}
 </form> 
-
 {% endblock %}
 <hr/>
 <p style="margin: 1rem auto 0">Si vous avez déjà un compte, vous pouvez <a href="https://key.lesgrandsvoisins.com/realms/master/account/applications">vous authentifier ici</a>.</p>
