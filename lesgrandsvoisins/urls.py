@@ -21,7 +21,7 @@ urlpatterns = [
     # path("signup/", lesgrandsvoisins_views.signup_view,name="signup_view"),
     path("captcha/", include("captcha.urls")),
     path("captcha", include("captcha.urls")),
-    # path("signup", lesgrandsvoisins_views.signup_view,name="signup_view"),
+    path("signup", lesgrandsvoisins_views.signup_view, name="signup_view"),
     path("django-admin/", admin.site.urls),
     # path("admin/", include(wagtailadmin_urls)),
     path("cms-admin/", include(wagtailadmin_urls)),  # Sites-Faciles préfère ceci
