@@ -169,3 +169,7 @@ body {
 #village-menu-close-btn {
   height: fit-content;
 }
+
+div.village-input input {
+  width: 100%;
+}
