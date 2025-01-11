@@ -151,3 +151,5 @@ config.json
 cron.json
 
 medias/
+
+cache-blog.*

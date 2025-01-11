@@ -1,0 +1,300 @@
+drop table if exists obsolete_content_type_ids;
+SELECT id into obsolete_content_type_ids from django_content_type 
+WHERE app_label in ('blog', 'dsfr', '') 
+OR (app_label = 'wagtail_village' AND model IN ('formpage','formfield','cmsdsfrconfig') 
+OR (app_label = 'wagtaildocs' AND  model= 'uploadeddocument')
+OR (app_label = 'wagtailimages' AND model = 'uploadedimage'));
+DELETE FROM public.auth_group_permissions 
+WHERE permission_id in (select id from auth_permission where content_type_id IN (select * from obsolete_content_type_ids));
+DELETE FROM wagtailcore_groupcollectionpermission 
+WHERE permission_id in (select id from auth_permission where content_type_id IN (select * from obsolete_content_type_ids));
+DELETE FROM public.auth_permission WHERE content_type_id IN (select * from obsolete_content_type_ids);
+DELETE FROM public.wagtailcore_referenceindex WHERE content_type_id IN (select * from obsolete_content_type_ids);
+DELETE FROM public.wagtailcore_referenceindex WHERE base_content_type_id IN (select * from obsolete_content_type_ids);
+DELETE FROM public.wagtailcore_referenceindex WHERE to_content_type_id IN (select * from obsolete_content_type_ids);
+DELETE FROM public.wagtailsearch_indexentry WHERE content_type_id IN (select * from obsolete_content_type_ids);
+DELETE FROM taggit_taggeditem WHERE content_type_id IN (select * from obsolete_content_type_ids);
+DELETE FROM wagtailcore_modellogentry WHERE content_type_id IN (select * from obsolete_content_type_ids);
+DELETE FROM wagtailcore_taskstate WHERE task_id IN (SELECT id FROM wagtailcore_task WHERE  content_type_id IN (select * from obsolete_content_type_ids));
+DELETE FROM wagtailcore_task WHERE  content_type_id IN (select * from obsolete_content_type_ids);
+DELETE FROM wagtailcore_workflowcontenttype WHERE content_type_id IN (select * from obsolete_content_type_ids);
+DELETE FROM wagtailcore_revision WHERE  content_type_id IN (select * from obsolete_content_type_ids); 
+SELECT id from django_content_type 
+WHERE app_label in ('blog', 'dsfr', '') 
+OR (app_label = 'wagtail_village' AND model IN ('formpage','formfield','cmsdsfrconfig') 
+OR (app_label = 'wagtaildocs' AND  model= 'uploadeddocument')
+OR (app_label = 'wagtailimages' AND model = 'uploadedimage'));
+DELETE FROM django_content_type WHERE id IN (select * from obsolete_content_type_ids); 
+                    drop table if exists dsfr_dsfrconfig;
+                    drop table if exists dsfr_dsfrsocialmedia;
+                    drop table if exists wagtaildocs_uploadeddocument;
+                    drop table if exists wagtailimages_uploadedimage;
+                    drop table if exists wagtail_village_formpage;
+                    drop table if exists wagtail_village_formfield;
+                    drop table if exists wagtail_village_cmsdsfrconfig;
+                    drop table if exists blog_person;
+                    drop table if exists blog_article;
+
+-------
+
+  SELECT id from django_content_type 
+  WHERE app_label in ('blog', 'dsfr', '') 
+  OR (app_label = 'wagtail_village' AND model IN ('formpage','formfield','cmsdsfrconfig') 
+  OR (app_label = 'wagtaildocs' AND  model= 'uploadeddocument')
+  OR (app_label = 'wagtailimages' AND model = 'uploadedimage'));
+
+-------
+
+
+DELETE FROM wagtail_transfer_idmapping WHERE content_type_id IN (select * from obsolete_content_type_ids);
+DELETE FROM wagtailadmin_editingsession WHERE content_type_id IN (select * from obsolete_content_type_ids);
+
+
+----------------
+
+
+DELETE FROM public.auth_group_permissions 
+WHERE permission_id in (select id from auth_permission where content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34));
+DELETE FROM wagtailcore_groupcollectionpermission 
+WHERE permission_id in (select id from auth_permission where content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34));
+DELETE FROM public.auth_permission WHERE content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34);
+DELETE FROM public.wagtailcore_referenceindex WHERE content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34);
+DELETE FROM public.wagtailcore_referenceindex WHERE base_content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34);
+DELETE FROM public.wagtailcore_referenceindex WHERE to_content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34);
+DELETE FROM public.wagtailsearch_indexentry WHERE content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34);
+DELETE FROM taggit_taggeditem WHERE content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34);
+DELETE FROM wagtailcore_modellogentry WHERE content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34);
+DELETE FROM wagtail_transfer_idmapping WHERE content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34);
+
+DELETE FROM wagtailadmin_editingsession WHERE content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34);
+DELETE FROM wagtailcore_taskstate WHERE task_id IN (SELECT id FROM wagtailcore_task WHERE  content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34));
+DELETE FROM wagtailcore_task WHERE  content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34);
+DELETE FROM wagtailcore_workflowcontenttype WHERE content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34);
+DELETE FROM wagtailcore_revision WHERE  content_type_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34);
+
+
+DELETE FROM django_content_type WHERE id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34);
+
+
+
+
+-- Auto-generated SQL script #202410250821
+DELETE FROM public.django_content_type
+	WHERE id=36;
+
+
+'auth',
+'contenttypes',
+    'django_village',
+'sessions',
+'taggit',
+'wagtail_localize',
+'wagtail_transfer',
+'wagtail_village_blog',
+'wagtail_village_forms',
+'wagtail_village_lesgrandsvoisins',
+'wagtail_village',
+'wagtailadmin',
+'wagtailcore',
+'wagtaildocs',
+'wagtailembeds',
+'wagtailforms',
+'wagtailimages',
+'wagtailmenus',
+'wagtailredirects',
+'wagtailsearch',
+'wagtailusers',
+
+
+'dsfr',
+'blog',
+
+
+------
+
+## Keep     
+
+00 admin LANGUAGE_CODE
+
+61	auth	user
+59	auth	permission
+60	auth	group
+
+62	contenttypes	contenttype
+
+76	django_village	villagesocialmedia
+81	django_village	djangovillageconfig
+
+63	sessions	session
+
+00 home homepage
+
+58	taggit	taggeditem
+57	taggit	tag
+
+27	wagtailadmin	admin
+92	wagtailadmin	editing     session
+
+16	wagtailcore	workflowtask
+19	wagtailcore	workflowstate
+14	wagtailcore	workflowpage
+15	wagtailcore	workflowcontenttype
+18	wagtailcore	workflow
+20	wagtailcore	taskstate
+17	wagtailcore	task
+77	wagtailcore	uploadedfile
+5	wagtailcore	site
+11	wagtailcore	revision
+10	wagtailcore	referenceindex
+13	wagtailcore	pageviewrestriction
+24	wagtailcore	pagesubscription
+21	wagtailcore	pagelogentry
+1	wagtailcore	page
+6	wagtailcore	modellogentry
+4	wagtailcore	locale
+12	wagtailcore	grouppagepermission
+9	wagtailcore	groupcollectionpermission
+3	wagtailcore	groupapprovaltask
+23	wagtailcore	commentreply
+22	wagtailcore	comment
+7	wagtailcore	collectionviewrestriction
+8	wagtailcore	collection
+
+28	wagtaildocs	document
+
+30	wagtailembeds	embed
+
+86	wagtailforms	formsubmission
+
+47	wagtail_localize	translationsource
+48	wagtail_localize	translationlog
+49	wagtail_localize	translationcontext
+26	wagtail_localize	translation
+46	wagtail_localize	translatableobject
+50	wagtail_localize	templatesegment
+45	wagtail_localize	template
+53	wagtail_localize	stringtranslation
+51	wagtail_localize	stringsegment
+44	wagtail_localize	string
+55	wagtail_localize	segmentoverride
+52	wagtail_localize	relatedobjectsegment
+54	wagtail_localize	overridablesegment
+56	wagtail_localize	localesynchronization
+
+94	wagtail_transfer	importedfile
+93	wagtail_transfer	idmapping 
+
+25	wagtail_village	contentpage
+68	wagtail_village	tagcontentpage
+41	wagtail_village	tag
+66	wagtail_village	analyticssettings
+70	wagtail_village	socialmediaitem
+69	wagtail_village	megamenucategory
+37	wagtail_village	megamenu
+78	wagtail_village	wagtailvillageconfig
+
+90	wagtail_village_forms	formpage
+91	wagtail_village_forms	formfield
+
+82	wagtail_village_blog	category
+72	wagtail_village_blog	blogindexpage
+71	wagtail_village_blog	blogentrypage
+73	wagtail_village_blog	categoryentrypage
+88	wagtail_village_blog	directoryindexpage
+89	wagtail_village_blog	directoryentrypage
+83	wagtail_village_blog	person
+74	wagtail_village_blog	tagentrypage
+
+87	wagtail_village_lesgrandsvoisins	wagtailvillagelesgrandsvoisinshome
+
+2	wagtailimages	image
+33	wagtailimages	rendition
+
+43	wagtailmenus	mainmenuitem
+40	wagtailmenus	mainmenu
+42	wagtailmenus	flatmenuitem
+39	wagtailmenus	flatmenu
+
+29	wagtailredirects	redirect
+
+35	wagtailsearch	indexentry
+
+31	wagtailusers	userprofile
+
+
+
+
+
+
+
+
+## Discard
+
+36	blog	article
+38	blog	person
+65	dsfr	dsfrsocialmedia
+64	dsfr	dsfrconfig
+2	home	homepage
+84	wagtail_village	formpage
+85	wagtail_village	formfield
+67	wagtail_village	cmsdsfrconfig
+32	wagtaildocs	uploadeddocument
+34	wagtailimages	uploadedimage
+
+
+## Sources 
+
+
+
+
+WHERE content_id IN (36, 38, 75, 65, 64, 2, 84, 85, 67, 32, 34);
+
+
+
+
+
+-------------------------
+
+1	wagtailcore	page
+2	home	homepage
+3	wagtailadmin	admin
+4	wagtailcore	groupapprovaltask
+5	wagtailcore	locale
+6	wagtailcore	site
+7	wagtailcore	modellogentry
+8	wagtailcore	collectionviewrestriction
+9	wagtailcore	collection
+10	wagtailcore	groupcollectionpermission
+11	wagtailcore	uploadedfile
+12	wagtailcore	referenceindex
+13	wagtailcore	revision
+14	wagtailcore	grouppagepermission
+15	wagtailcore	pageviewrestriction
+16	wagtailcore	workflowpage
+17	wagtailcore	workflowcontenttype
+18	wagtailcore	workflowtask
+19	wagtailcore	task
+20	wagtailcore	workflow
+21	wagtailcore	workflowstate
+22	wagtailcore	taskstate
+23	wagtailcore	pagelogentry
+24	wagtailcore	comment
+25	wagtailcore	commentreply
+26	wagtailcore	pagesubscription
+27	wagtaildocs	document
+28	wagtailimages	image
+29	wagtailforms	formsubmission
+30	wagtailredirects	redirect
+31	wagtailembeds	embed
+32	wagtailusers	userprofile
+33	wagtailimages	rendition
+34	wagtailsearch	indexentry
+35	wagtailadmin	editingsession
+36	taggit	tag
+37	taggit	taggeditem
+38	admin	logentry
+39	auth	permission
+40	auth	group
+41	auth	user
+42	contenttypes	contenttype
+43	sessions	session
