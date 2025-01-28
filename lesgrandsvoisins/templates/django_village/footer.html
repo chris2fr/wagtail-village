@@ -1,0 +1,116 @@
+{% load i18n l10n %}
+{% translate "Opens a new window" as new_window_label %}
+<footer class="village-footer" role="contentinfo" id="footer">
+  {% block footer_top %}
+  {% endblock footer_top %}
+  <div class="village-container">
+    <div class="village-footer__body">
+      {% block footer_brand %}
+        {% translate "Back to home page" as back_to_home_label %}
+        {% if SITE_CONFIG.operator_logo_file and SITE_CONFIG.operator_logo_alt %}
+          <div class="village-footer__brand village-enlarge-link">
+            <p class="village-logo"
+               title="{{ SITE_CONFIG.footer_brand|default:'village' }}">
+              {{ SITE_CONFIG.footer_brand_html| default_if_none:'république<br />française' | safe }}
+            </p>
+            <a class="village-footer__brand-link"
+               href="/"
+               title="{{ back_to_home_label }} - {{ SITE_CONFIG.operator_logo_alt }} - {{ SITE_CONFIG.footer_brand|default:'village' }}">
+              <img class="village-footer__logo"
+                   src="{{ SITE_CONFIG.operator_logo_file.url }}"
+                   alt="{{ SITE_CONFIG.operator_logo_alt }}"
+                   {% if SITE_CONFIG.operator_logo_width >= 1 %}style="max-width:{{ SITE_CONFIG.operator_logo_width|unlocalize }}rem;"{% endif %} />
+              {# L'alternative de l'image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l'image #}
+            </a>
+          </div>
+        {% else %}
+          <div class="village-footer__brand village-enlarge-link">
+            <a id="footer-operator"
+               href="/"
+               title="{{ back_to_home_label }} - {{ SITE_CONFIG.site_title }} - {{ SITE_CONFIG.footer_brand|default:'village' }}">
+              {% block brand %}
+                <p class="village-logo">
+                  {{ SITE_CONFIG.footer_brand_html| default_if_none:'Les<br />Grands<BR />Voisins' | safe }}
+                </p>
+              {% endblock brand %}
+            </a>
+          </div>
+        {% endif %}
+      {% endblock footer_brand %}
+      <div class="village-footer__content">
+        {% block footer_description %}
+          <p class="village-footer__content-desc">
+            {% block footer_content %}
+              {{ SITE_CONFIG.footer_description | safe }}
+            {% endblock footer_content %}
+          </p>
+        {% endblock footer_description %}
+        <ul class="village-footer__content-list">
+            <li class="village-footer__content-item">
+                <a target="_blank"
+                   rel="noopener external"
+                   title="LesGrandsVoisins.com- {{ new_window_label }}"
+                   id="footer__content-link-legifrance"
+                   class="village-footer__content-link"
+                   href="https://www.LesGrandsVoisins.com">LesGrandsVoisins.com</a>
+              </li>
+              <li class="village-footer__content-item">
+                <a target="_blank"
+                   rel="noopener external"
+                   title="ResDigita.com- {{ new_window_label }}"
+                   id="footer__content-link-legifrance"
+                   class="village-footer__content-link"
+                   href="https://www.resdigita.com">Res Digita</a>
+              </li>
+            <li class="village-footer__content-item">
+              <a target="_blank"
+                 rel="noopener external"
+                 title="LesArtsVoisins.com- {{ new_window_label }}"
+                 id="footer__content-link-legifrance"
+                 class="village-footer__content-link"
+                 href="https://www.LesArtsVoisins.com">Les Arts Voisins</a>
+            </li>
+            {% block footer_content_extra %}
+          {% endblock footer_content_extra %}
+        </ul>
+      </div>
+    </div>
+    {% block footer_partners %}
+    {% endblock footer_partners %}
+    <div class="village-footer__bottom">
+      <ul class="village-footer__bottom-list">
+        {% block footer_links %}
+          <li class="village-footer__bottom-item">
+            <a class="village-footer__bottom-link" href="#">{% translate "Sitemap" %}</a>
+          </li>
+          <li class="village-footer__bottom-item">
+            <a class="village-footer__bottom-link" href="#">
+              {% with accessibility_status=SITE_CONFIG.get_accessibility_status_display|default:"non" %}
+                {% blocktranslate %}Accessibility: {{ accessibility_status }} compliant{% endblocktranslate %}
+              {% endwith %}
+            </a>
+          </li>
+          <li class="village-footer__bottom-item">
+            <a class="village-footer__bottom-link" href="#">{% translate "Legal notice" %}</a>
+          </li>
+          <li class="village-footer__bottom-item">
+            <a class="village-footer__bottom-link" href="#">{% translate "Personal data" %}</a>
+          </li>
+          <li class="village-footer__bottom-item">
+            <a class="village-footer__bottom-link" href="#">{% translate "Cookie management" %}</a>
+          </li>
+        {% endblock footer_links %}
+      </ul>
+      <div class="village-footer__bottom-copy">
+        <p>
+          {% translate "etalab-2.0 license" as etalab_license %}
+          {% translate "Unless explicit mention of intellectual property held by third parties, the contents of this site are offered under" %}
+          <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md"
+             target="_blank"
+             rel="noopener external"
+             title="{{ etalab_license|capfirst }} - {{ new_window_label }}">{{ etalab_license }}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
